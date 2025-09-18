@@ -1,0 +1,17 @@
+---
+const nav = [
+  { href: '/', label: 'Home' },
+  { href: '/blog/', label: 'Blog' },
+  { href: '/photos/', label: 'Photos' },
+  { href: '/about/', label: 'About' }
+];
+---
+<header class="container py-6 flex items-center justify-between">
+  <a href="/" class="font-bold text-xl tracking-tight no-underline">Reuben Ingber</a>
+  <nav class="flex gap-4 text-sm">
+    {nav.map(item => (
+      <a href={item.href} class="hover:text-accent no-underline">{item.label}</a>
+    ))}
+  </nav>
+</header>
+<hr />

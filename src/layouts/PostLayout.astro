@@ -1,0 +1,11 @@
+---
+import Base from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+<Base title={`${frontmatter.title} · Reuben Ingber`} description={frontmatter.description || "Blog post"}>
+  <article class="prose prose-neutral max-w-none">
+    <h1 class="!mb-2">{frontmatter.title}</h1>
+    <time datetime={frontmatter.pubDate?.toISOString?.() || frontmatter.pubDate}>{frontmatter.pubDate?.toDateString?.() || frontmatter.pubDate}</time>
+    <slot />
+  </article>
+</Base>

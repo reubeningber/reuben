@@ -1,0 +1,26 @@
+---
+import Base from "../../layouts/BaseLayout.astro";
+import { getCollection } from 'astro:content';
+const albums = await getCollection('albums');
+---
+<Base title="Photos · Reuben Ingber">
+  <h1 class="text-2xl font-bold mb-6">Photos</h1>
+  <ul class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    {albums.map(a => (
+      <li class="border border-gray-200 rounded-xl overflow-hidden">
+        <a class="block no-underline" href={`/photos/${a.data.slug}/`}>
+          <img
+            src={`https://res.cloudinary.com/${import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,q_auto,w_1200/${a.data.coverPublicId || a.data.items[0].publicId}.jpg`}
+            alt={a.data.title}
+            class="w-full h-auto"
+            loading="lazy"
+          />
+          <div class="p-4">
+            <h3 class="font-semibold">{a.data.title}</h3>
+            {a.data.description && <p class="text-sm text-gray-600 mt-1">{a.data.description}</p>}
+          </div>
+        </a>
+      </li>
+    ))}
+  </ul>
+</Base>

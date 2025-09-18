@@ -1,0 +1,41 @@
+---
+import Base from "../../layouts/BaseLayout.astro";
+import { getCollection } from 'astro:content';
+
+// Build Cloudinary URL with responsive width
+function buildUrl(publicId, width = 1200) {
+  const cloud = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
+  return `https://res.cloudinary.com/${cloud}/image/upload/f_auto,q_auto,w_${width}/${publicId}.jpg`;
+}
+
+export async function getStaticPaths() {
+  const albums = await getCollection('albums');
+  return albums.map((a) => ({ params: { album: a.data.slug }, props: { album: a } }));
+}
+
+const { album } = Astro.props;
+---
+<Base title={`${album.data.title} · Photos · Reuben Ingber`}>
+  <h1 class="text-2xl font-bold mb-4">{album.data.title}</h1>
+  {album.data.description && <p class="mb-6 text-gray-700">{album.data.description}</p>}
+
+  <div class="grid grid-cols-2 sm:grid-cols-3 gap-2" id="gallery">
+    {album.data.items.map((it, idx) => (
+      <a href={buildUrl(it.publicId, 1600)} data-pswp-width="1600" data-pswp-height="1067" target="_blank" rel="noopener">
+        <img src={buildUrl(it.publicId, 600)} alt={it.caption || ''} loading="lazy" class="w-full h-auto rounded-lg" />
+      </a>
+    ))}
+  </div>
+
+  <script type="module">
+    import PhotoSwipeLightbox from 'photoswipe/lightbox';
+    import 'photoswipe/style.css';
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: '#gallery',
+      children: 'a',
+      showHideAnimationType: 'fade',
+      pswpModule: () => import('photoswipe')
+    });
+    lightbox.init();
+  </script>
+</Base>

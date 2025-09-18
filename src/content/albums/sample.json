@@ -1,0 +1,32 @@
+{
+  "title": "Sample Album",
+  "slug": "sample-album",
+  "description": "A placeholder album wired to Cloudinary. Replace the public IDs with your own.",
+  "coverPublicId": "reuben/sample/cover",
+  "items": [
+    {
+      "publicId": "reuben/sample/01",
+      "caption": "Sample 01"
+    },
+    {
+      "publicId": "reuben/sample/02",
+      "caption": "Sample 02"
+    },
+    {
+      "publicId": "reuben/sample/03",
+      "caption": "Sample 03"
+    },
+    {
+      "publicId": "reuben/sample/04",
+      "caption": "Sample 04"
+    },
+    {
+      "publicId": "reuben/sample/05",
+      "caption": "Sample 05"
+    },
+    {
+      "publicId": "reuben/sample/06",
+      "caption": "Sample 06"
+    }
+  ]
+}

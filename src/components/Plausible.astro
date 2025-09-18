@@ -1,0 +1,6 @@
+---
+const domain = import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN;
+---
+{domain && (
+  <script defer data-domain={domain} src="https://plausible.io/js/script.js"></script>
+)}
