@@ -5,14 +5,14 @@ import PostLayout from '../../layouts/PostLayout.astro';
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
   return posts.map((post) => ({
-    params: { slug: post.slug.split('/') },
+    params: { slug: post.slug },
     props: { post }
   }));
 }
 
 const { post } = Astro.props;
-const { Content, data } = await post.render();
+const { Content } = await post.render();
 ---
-<PostLayout frontmatter={data}>
+<PostLayout frontmatter={post.data}>
   <Content />
 </PostLayout>

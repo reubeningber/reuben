@@ -1,17 +1,24 @@
 ---
 const nav = [
-  { href: '/', label: 'Home' },
-  { href: '/blog/', label: 'Blog' },
-  { href: '/photos/', label: 'Photos' },
-  { href: '/about/', label: 'About' }
+  { href: '/start-here/', label: 'START HERE' },
+  { href: '/articles/', label: 'ARTICLES' },
+  { href: '/photos/', label: 'PHOTOS' },
 ];
 ---
-<header class="container py-6 flex items-center justify-between">
-  <a href="/" class="font-bold text-xl tracking-tight no-underline">Reuben Ingber</a>
-  <nav class="flex gap-4 text-sm">
-    {nav.map(item => (
-      <a href={item.href} class="hover:text-accent no-underline">{item.label}</a>
-    ))}
-  </nav>
+<header class="border-b border-gray-200">
+  <div class="container py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <div class="flex items-center gap-4">
+      <img 
+        src="https://placehold.co/80x80/ea580c/ffffff?text=RI" 
+        alt="Reuben Ingber" 
+        class="w-20 h-20 rounded-full object-cover border-2 border-gray-200"
+      />
+      <a href="/" class="font-bold text-4xl tracking-tight no-underline text-primary">REUBEN INGBER</a>
+    </div>
+    <nav class="flex gap-8 text-sm font-semibold">
+      {nav.map(item => (
+        <a href={item.href} class="hover:text-accent no-underline text-primary tracking-wide">{item.label}</a>
+      ))}
+    </nav>
+  </div>
 </header>
-<hr />

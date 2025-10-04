@@ -19,9 +19,9 @@ const { title = "Reuben Ingber", description = "Runner, dad, EM, and photo-taker
     {ogImage && <meta property="og:image" content={ogImage} />}
     <meta name="theme-color" content="#ea580c" />
   </head>
-  <body class="font-sans antialiased">
+  <body class="font-sans antialiased bg-white">
     <Header />
-    <main class="container py-10">
+    <main class="container py-12 max-w-4xl">
       <slot />
     </main>
     <Footer />

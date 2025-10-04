@@ -1,9 +1,42 @@
-<footer class="container py-12 text-sm text-gray-500">
-  <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-    <p>© {new Date().getFullYear()} Reuben Ingber</p>
-    <div class="flex gap-4">
-      <a href="/rss.xml">RSS</a>
-      <a href="mailto:ringber@insider.com">Email</a>
+<footer class="border-t border-gray-200 mt-16">
+  <div class="container py-12">
+    <!-- Expanded footer content -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+      <!-- Quick Links -->
+      <section>
+        <h3 class="text-lg font-bold mb-4 text-primary tracking-wide">QUICK LINKS</h3>
+        <ul class="space-y-2">
+          <li><a href="/start-here/" class="text-accent hover:underline">START HERE</a></li>
+          <li><a href="/articles/" class="text-accent hover:underline">ARTICLES</a></li>
+          <li><a href="/photos/" class="text-accent hover:underline">PHOTOS</a></li>
+        </ul>
+      </section>
+
+      <!-- Connect -->
+      <section>
+        <h3 class="text-lg font-bold mb-4 text-primary tracking-wide">CONNECT WITH ME</h3>
+        <ul class="space-y-2">
+          <li><a href="mailto:ringber@insider.com" class="text-accent hover:underline">EMAIL</a></li>
+          <li><a href="/rss.xml" class="text-accent hover:underline">RSS</a></li>
+        </ul>
+      </section>
+
+      <!-- About -->
+      <section>
+        <h3 class="text-lg font-bold mb-4 text-primary tracking-wide">REUBEN INGBER</h3>
+        <p class="text-secondary text-sm leading-relaxed">
+          Engineering Manager at Business Insider. Father of two in Queens, runner, and photo-taker. 
+          Building teams and systems that help journalists tell important stories.
+        </p>
+      </section>
+    </div>
+
+    <!-- Copyright -->
+    <div class="border-t border-gray-200 pt-6">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <p class="text-secondary text-sm">© {new Date().getFullYear()} Reuben Ingber</p>
+        <p class="text-secondary text-sm">Built with Astro, Tailwind CSS, and Cloudinary</p>
+      </div>
     </div>
   </div>
 </footer>
