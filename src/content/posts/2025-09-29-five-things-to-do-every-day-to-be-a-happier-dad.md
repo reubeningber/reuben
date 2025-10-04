@@ -1,6 +1,6 @@
 ---
 title: "5 Things to Do Every Day to Be a Happier Dad"
-pubDate: "2025-10-01"
+pubDate: "2025-09-29"
 image: "/assets/images/fatherhood.jpg"
 ---
 
@@ -51,7 +51,7 @@ It’s a small thing, but it’s a daily reminder that you’re in this together
 
 ---
 
-## End
+## Final Thought
 Happier doesn’t mean perfect. It doesn’t mean nailing every single day. But when I do these five things, I feel more present, more patient, and more like the dad I want to be.
 
 It’s not about adding more to the to-do list. It’s about weaving small, intentional moments into the day. And those little things? They add up.

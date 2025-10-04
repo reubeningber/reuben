@@ -1,6 +1,18 @@
 ---
 import Base from "./BaseLayout.astro";
-const { frontmatter } = Astro.props;
+import { getCollection } from 'astro:content';
+
+const { frontmatter, currentPost } = Astro.props;
+
+// Get navigation posts
+const allPosts = await getCollection("posts");
+const sortedPosts = allPosts
+  .filter(post => !post.data.draft)
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+
+const currentPostIndex = sortedPosts.findIndex(post => post.slug === currentPost?.slug);
+const previousPost = currentPostIndex > 0 ? sortedPosts[currentPostIndex - 1] : undefined;
+const nextPost = currentPostIndex < sortedPosts.length - 1 ? sortedPosts[currentPostIndex + 1] : undefined;
 ---
 <Base title={`${frontmatter?.title || 'Blog Post'} · Reuben Ingber`} description="Blog post by Reuben Ingber">
   <article class="max-w-3xl">
@@ -28,5 +40,54 @@ const { frontmatter } = Astro.props;
     <div class="prose prose-lg prose-neutral max-w-none prose-headings:text-primary prose-headings:font-bold prose-headings:tracking-wide prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4 prose-p:text-gray-800 prose-p:leading-relaxed prose-p:mb-6 prose-strong:text-primary prose-strong:font-semibold prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-hr:border-gray-200 prose-hr:my-12">
       <slot />
     </div>
+
+    <!-- Post Navigation -->
+    {(previousPost || nextPost) && (
+      <nav class="border-t border-gray-200 mt-12 pt-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Previous Post -->
+          <div class="text-left">
+            {previousPost && (
+              <div>
+                <p class="text-sm text-secondary font-semibold tracking-wide mb-2">PREVIOUS POST</p>
+                <a href={`/articles/${previousPost.slug}/`} class="block group">
+                  <h3 class="text-lg font-bold text-primary group-hover:text-accent transition-colors tracking-wide">
+                    {previousPost.data.title.toUpperCase()}
+                  </h3>
+                  <p class="text-sm text-secondary mt-1">
+                    {previousPost.data.pubDate.toLocaleDateString('en-US', { 
+                      year: 'numeric', 
+                      month: 'short', 
+                      day: 'numeric' 
+                    })}
+                  </p>
+                </a>
+              </div>
+            )}
+          </div>
+          
+          <!-- Next Post -->
+          <div class="text-left md:text-right">
+            {nextPost && (
+              <div>
+                <p class="text-sm text-secondary font-semibold tracking-wide mb-2">NEXT POST</p>
+                <a href={`/articles/${nextPost.slug}/`} class="block group">
+                  <h3 class="text-lg font-bold text-primary group-hover:text-accent transition-colors tracking-wide">
+                    {nextPost.data.title.toUpperCase()}
+                  </h3>
+                  <p class="text-sm text-secondary mt-1">
+                    {nextPost.data.pubDate.toLocaleDateString('en-US', { 
+                      year: 'numeric', 
+                      month: 'short', 
+                      day: 'numeric' 
+                    })}
+                  </p>
+                </a>
+              </div>
+            )}
+          </div>
+        </div>
+      </nav>
+    )}
   </article>
 </Base>

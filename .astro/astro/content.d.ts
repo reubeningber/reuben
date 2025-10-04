@@ -141,23 +141,16 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"posts": {
-"2025-09-18-five-things-to-do-every-day-to-be-a-happier-dad.md": {
-	id: "2025-09-18-five-things-to-do-every-day-to-be-a-happier-dad.md";
-  slug: "2025-09-18-five-things-to-do-every-day-to-be-a-happier-dad";
+"2025-09-29-five-things-to-do-every-day-to-be-a-happier-dad.md": {
+	id: "2025-09-29-five-things-to-do-every-day-to-be-a-happier-dad.md";
+  slug: "2025-09-29-five-things-to-do-every-day-to-be-a-happier-dad";
   body: string;
   collection: "posts";
   data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
-"2025-09-18-hello-world.md": {
-	id: "2025-09-18-hello-world.md";
-  slug: "2025-09-18-hello-world";
-  body: string;
-  collection: "posts";
-  data: InferEntrySchema<"posts">
-} & { render(): Render[".md"] };
-"2025-10-01-third-post.md": {
-	id: "2025-10-01-third-post.md";
-  slug: "2025-10-01-third-post";
+"2025-10-01-read-the-anxious-generation.md": {
+	id: "2025-10-01-read-the-anxious-generation.md";
+  slug: "2025-10-01-read-the-anxious-generation";
   body: string;
   collection: "posts";
   data: InferEntrySchema<"posts">
