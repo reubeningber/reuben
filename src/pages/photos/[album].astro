@@ -19,17 +19,18 @@ const { album } = Astro.props;
   <h1 class="text-2xl font-bold mb-4">{album.data.title}</h1>
   {album.data.description && <p class="mb-6 text-gray-700">{album.data.description}</p>}
 
-  <div class="grid grid-cols-2 sm:grid-cols-3 gap-2" id="gallery">
+  <div class="columns-2 sm:columns-3 gap-2 space-y-2" id="gallery">
     {album.data.items.map((it, idx) => (
-      <a href={buildUrl(it.publicId, 1600)} data-pswp-width="1600" data-pswp-height="1067" target="_blank" rel="noopener">
-        <img src={buildUrl(it.publicId, 600)} alt={it.caption || ''} loading="lazy" class="w-full h-auto rounded-lg" />
+      <a href={buildUrl(it.publicId, 1600)} data-pswp-width="1600" data-pswp-height="1067" target="_blank" rel="noopener" class="block mb-2 break-inside-avoid">
+        <img src={buildUrl(it.publicId, 600)} alt={it.caption || ''} loading="lazy" class="w-full h-auto rounded-lg hover:opacity-90 transition-opacity" />
       </a>
     ))}
   </div>
 
-  <script type="module">
+  <script>
     import PhotoSwipeLightbox from 'photoswipe/lightbox';
     import 'photoswipe/style.css';
+    
     const lightbox = new PhotoSwipeLightbox({
       gallery: '#gallery',
       children: 'a',
