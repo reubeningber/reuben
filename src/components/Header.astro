@@ -3,6 +3,7 @@ const nav = [
   { href: '/start-here/', label: 'START HERE' },
   { href: '/articles/', label: 'ARTICLES' },
   { href: '/photos/', label: 'PHOTOS' },
+  { href: '/contact/', label: 'CONTACT' },
 ];
 ---
 <header class="border-b border-gray-200">
@@ -19,7 +20,7 @@ const nav = [
         REUBEN INGBER
       </a>
     </div>
-    <nav class="flex gap-8 text-sm font-semibold">
+    <nav class="flex gap-4 text-sm font-semibold">
       {nav.map(item => (
         <a href={item.href} class="hover:text-accent no-underline text-primary tracking-wide">{item.label}</a>
       ))}
