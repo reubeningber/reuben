@@ -2,6 +2,7 @@
 title: "Why Every Dad Should Read The Anxious Generation"
 pubDate: "2025-10-01"
 image: "/assets/images/cellphone.jpg"
+category: "Books"
 ---
 
 I picked up Jonathan Haidt’s The Anxious Generation recently, and I can’t stop thinking about it. It’s one of those books that makes you look at your kids, your phone, and even your own childhood a little differently.

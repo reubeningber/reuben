@@ -2,6 +2,7 @@
 title: "5 Things to Do Every Day to Be a Happier Dad"
 pubDate: "2025-09-29"
 image: "/assets/images/fatherhood.jpg"
+category: "Fatherhood"
 ---
 
 Being a dad is the best thing I’ve ever done — and also the hardest. Some days I’m winning, other days I’m just hanging on. But I’ve learned there are a handful of small things that make me feel more grounded, more patient, and more present.

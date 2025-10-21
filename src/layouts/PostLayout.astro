@@ -27,13 +27,23 @@ const nextPost = currentPostIndex < sortedPosts.length - 1 ? sortedPosts[current
     )}
     
     <header class="mb-8 pb-6 border-b border-gray-200">
-      <time datetime={frontmatter?.pubDate?.toISOString?.() || frontmatter?.pubDate} class="text-sm text-secondary font-semibold tracking-wide">
-        {frontmatter?.pubDate?.toLocaleDateString?.('en-US', { 
-          year: 'numeric', 
-          month: 'short', 
-          day: 'numeric' 
-        }).toUpperCase() || frontmatter?.pubDate}
-      </time>
+      <div class="flex items-center gap-2 text-sm font-semibold tracking-wide">
+        <time datetime={frontmatter?.pubDate?.toISOString?.() || frontmatter?.pubDate} class="text-secondary">
+          {frontmatter?.pubDate?.toLocaleDateString?.('en-US', { 
+            year: 'numeric', 
+            month: 'short', 
+            day: 'numeric' 
+          }).toUpperCase() || frontmatter?.pubDate}
+        </time>
+        {frontmatter?.category && (
+          <>
+            <span class="text-gray-300">|</span>
+            <a href={`/articles/category/${frontmatter.category.toLowerCase().replace(/\s+/g, '-')}/`} class="text-accent hover:underline no-underline">
+              {frontmatter.category.toUpperCase()}
+            </a>
+          </>
+        )}
+      </div>
       <h1 class="text-3xl font-bold mt-2 text-primary tracking-wide">{(frontmatter?.title || 'Blog Post').toUpperCase()}</h1>
     </header>
     
