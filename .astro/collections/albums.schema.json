@@ -13,6 +13,22 @@
         "description": {
           "type": "string"
         },
+        "pubDate": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "integer",
+              "format": "unix-time"
+            }
+          ]
+        },
         "coverPublicId": {
           "type": "string"
         },
@@ -47,6 +63,7 @@
       "required": [
         "title",
         "slug",
+        "pubDate",
         "items"
       ],
       "additionalProperties": false

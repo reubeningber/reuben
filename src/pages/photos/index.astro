@@ -2,11 +2,14 @@
 import Base from "../../layouts/BaseLayout.astro";
 import { getCollection } from 'astro:content';
 const albums = await getCollection('albums');
+const sortedAlbums = albums.sort((a, b) => 
+  new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+);
 ---
 <Base title="Photos · Reuben Ingber">
   <h1 class="text-2xl font-bold mb-6">Photos</h1>
   <ul class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-    {albums.map(a => (
+    {sortedAlbums.map(a => (
       <li class="border border-gray-200 rounded-xl overflow-hidden">
         <a class="block no-underline" href={`/photos/${a.data.slug}/`}>
           <img

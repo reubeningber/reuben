@@ -18,6 +18,7 @@ const albums = defineCollection({
     title: z.string(),
     slug: z.string(),
     description: z.string().optional(),
+    pubDate: z.coerce.date(),
     coverPublicId: z.string().optional(),
     items: z.array(z.object({
       publicId: z.string(),

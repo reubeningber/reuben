@@ -19,9 +19,9 @@ const { album } = Astro.props;
   <h1 class="text-2xl font-bold mb-4">{album.data.title}</h1>
   {album.data.description && <p class="mb-6 text-gray-700">{album.data.description}</p>}
 
-  <div class="columns-2 sm:columns-3 gap-2 space-y-2" id="gallery">
+  <div class="columns-2 sm:columns-3 gap-3" id="gallery">
     {album.data.items.map((it, idx) => (
-      <a href={buildUrl(it.publicId, 1600)} data-pswp-width="1600" data-pswp-height="1067" target="_blank" rel="noopener" class="block mb-2 break-inside-avoid">
+      <a href={buildUrl(it.publicId, 2400)} class="block mb-3 break-inside-avoid" data-pswp-src={buildUrl(it.publicId, 2400)}>
         <img src={buildUrl(it.publicId, 600)} alt={it.caption || ''} loading="lazy" class="w-full h-auto rounded-lg hover:opacity-90 transition-opacity" />
       </a>
     ))}
@@ -37,6 +37,19 @@ const { album } = Astro.props;
       showHideAnimationType: 'fade',
       pswpModule: () => import('photoswipe')
     });
+    
+    // Dynamically get image dimensions from the thumbnail
+    lightbox.addFilter('itemData', (itemData, index) => {
+      const img = itemData.element.querySelector('img');
+      if (img) {
+        // Use natural dimensions or calculate from thumbnail
+        const aspectRatio = img.naturalWidth / img.naturalHeight;
+        itemData.width = 2400;
+        itemData.height = Math.round(2400 / aspectRatio);
+      }
+      return itemData;
+    });
+    
     lightbox.init();
   </script>
 </Base>
