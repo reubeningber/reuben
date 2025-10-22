@@ -293,6 +293,29 @@ Edit the social links in:
 
 Update `src/layouts/BaseLayout.astro` for default SEO values.
 
+### Favicons
+
+The site includes a simple SVG favicon (`public/favicon.svg`) with an orange "R" that matches the site's accent color.
+
+**To customize your favicon:**
+
+1. **Option 1: Use the SVG** (simplest)
+   - Edit `public/favicon.svg` to change the letter or design
+   - Modern browsers will use this automatically
+
+2. **Option 2: Generate PNG versions** (better compatibility)
+   - Create your favicon design (recommended: 512x512px)
+   - Generate multiple sizes using a tool like:
+     - [RealFaviconGenerator](https://realfavicongenerator.net/)
+     - [Favicon.io](https://favicon.io/)
+   - Replace files in `public/`:
+     - `favicon.ico` (16x16, 32x32)
+     - `favicon-16x16.png`
+     - `favicon-32x32.png`
+     - `apple-touch-icon.png` (180x180)
+
+The layout includes proper favicon links for all major browsers and devices.
+
 ## Development
 
 ```bash
