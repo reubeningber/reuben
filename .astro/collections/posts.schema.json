@@ -46,6 +46,12 @@
         "image": {
           "type": "string"
         },
+        "imageCredit": {
+          "type": "string"
+        },
+        "imageCreditUrl": {
+          "type": "string"
+        },
         "category": {
           "type": "string"
         },

@@ -94,6 +94,8 @@ The script will prompt you for:
 - Post title
 - Publication date (defaults to today)
 - Image path (optional)
+- Image credit (optional, only if image provided)
+- Image credit URL (optional, only if image credit provided)
 - Category
 
 It automatically creates a properly formatted Markdown file in `src/content/posts/`.
@@ -107,13 +109,21 @@ Create a file in `src/content/posts/` with the format: `YYYY-MM-DD-slug.md`
 title: "Your Post Title"
 pubDate: "2025-10-22"
 image: "/assets/images/photo.jpg"
+imageCredit: "Unsplash"
+imageCreditUrl: "https://unsplash.com/photos/example"
 category: "Fatherhood"
 ---
 
 Your post content here...
 ```
 
-**Available categories:** Fatherhood, Engineering, Books, or create your own.
+**Available categories:** Fatherhood, Engineering, Books, Life, or create your own.
+
+**Optional frontmatter fields:**
+- `image` - Path or URL to post header image
+- `imageCredit` - Credit text for the image (e.g., "Unsplash", "John Doe")
+- `imageCreditUrl` - URL to link the image credit to (e.g., photographer's page)
+- `category` - Post category for filtering and organization
 
 ### Creating Photo Albums
 
@@ -167,12 +177,13 @@ Creates a new blog post with interactive prompts.
 ```
 
 **Features:**
-- Prompts for title, date, image, and category
+- Prompts for title, date, image, image credit, and category
 - Generates URL-friendly slug from title
-- Creates formatted Markdown file
+- Creates formatted Markdown file with all frontmatter fields
 - Includes starter content template
 - Validates date format
 - Checks for existing files
+- Conditional prompts (only asks for image credit if image provided)
 
 ### `scripts/prepare-photos.sh`
 

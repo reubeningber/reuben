@@ -34,9 +34,19 @@ fi
 # Get image path
 read -p "Image path (e.g., /assets/images/photo.jpg) [optional]: " IMAGE_PATH
 
+# Get image credit if image path provided
+IMAGE_CREDIT=""
+IMAGE_CREDIT_URL=""
+if [ -n "$IMAGE_PATH" ]; then
+    read -p "Image credit (e.g., Unsplash, John Doe) [optional]: " IMAGE_CREDIT
+    if [ -n "$IMAGE_CREDIT" ]; then
+        read -p "Image credit URL [optional]: " IMAGE_CREDIT_URL
+    fi
+fi
+
 # Get category
 echo ""
-echo "Available categories: Fatherhood, Engineering, Books, Other"
+echo "Available categories: Fatherhood, Engineering, Books, Life, Other"
 read -p "Category: " CATEGORY
 
 # Create URL-friendly slug from title
@@ -67,6 +77,16 @@ EOF
 # Add image if provided
 if [ -n "$IMAGE_PATH" ]; then
     echo "image: \"$IMAGE_PATH\"" >> "$FILEPATH"
+fi
+
+# Add image credit if provided
+if [ -n "$IMAGE_CREDIT" ]; then
+    echo "imageCredit: \"$IMAGE_CREDIT\"" >> "$FILEPATH"
+fi
+
+# Add image credit URL if provided
+if [ -n "$IMAGE_CREDIT_URL" ]; then
+    echo "imageCreditUrl: \"$IMAGE_CREDIT_URL\"" >> "$FILEPATH"
 fi
 
 # Add category if provided

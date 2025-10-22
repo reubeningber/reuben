@@ -23,6 +23,17 @@ const nextPost = currentPostIndex < sortedPosts.length - 1 ? sortedPosts[current
           alt={frontmatter.title || 'Blog post image'}
           class="w-full h-64 md:h-80 object-cover rounded-lg shadow-sm"
         />
+        {frontmatter?.imageCredit && (
+          <p class="text-xs text-gray-400 mt-2 text-right">
+            {frontmatter?.imageCreditUrl ? (
+              <a href={frontmatter.imageCreditUrl} target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors">
+                {frontmatter.imageCredit}
+              </a>
+            ) : (
+              <span>{frontmatter.imageCredit}</span>
+            )}
+          </p>
+        )}
       </div>
     )}
     

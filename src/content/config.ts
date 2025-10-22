@@ -8,6 +8,8 @@ const posts = defineCollection({
     updatedDate: z.coerce.date().optional(),
     draft: z.boolean().default(false),
     image: z.string().optional(),
+    imageCredit: z.string().optional(),
+    imageCreditUrl: z.string().optional(),
     category: z.string().optional()
   })
 });
