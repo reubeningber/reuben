@@ -6,7 +6,10 @@ const sortedAlbums = albums.sort((a, b) =>
   new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
 );
 ---
-<Base title="Photos · Reuben Ingber">
+<Base 
+  title="Photo Albums by Reuben Ingber: Family, NYC, Life in Queens" 
+  description="Browse photo galleries by Reuben Ingber. Family moments, NYC scenes, and life in Queens captured with a Sony A6000. Street photography and personal memories."
+>
   <h1 class="text-2xl font-bold mb-6">Photos</h1>
   <ul class="grid grid-cols-1 sm:grid-cols-2 gap-6">
     {sortedAlbums.map(a => (

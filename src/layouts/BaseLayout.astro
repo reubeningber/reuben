@@ -4,13 +4,20 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Plausible from "../components/Plausible.astro";
 
-const { title = "Reuben Ingber", description = "Runner, dad, EM, and photo-taker in Queens.", ogImage } = Astro.props;
+const { 
+  title = "Reuben Ingber: Personal Home Page, Articles, Photos", 
+  description = "Father of two in Queens, NY. Engineering Manager at Business Insider. Runner, photographer, and writer sharing thoughts on parenting, engineering, and life.",
+  ogImage = "https://reubeningber.com/assets/images/reuben_ingber_october_2025.jpg"
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
     
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -21,9 +28,26 @@ const { title = "Reuben Ingber", description = "Runner, dad, EM, and photo-taker
     
     <title>{title}</title>
     <Plausible />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="Reuben Ingber" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:site" content="@reubeningber" />
+    <meta name="twitter:creator" content="@reubeningber" />
+    
+    <!-- Additional SEO -->
+    <meta name="author" content="Reuben Ingber" />
     <meta name="theme-color" content="#ea580c" />
   </head>
   <body class="font-sans antialiased bg-white">
