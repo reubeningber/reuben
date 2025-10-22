@@ -241,21 +241,19 @@ The site automatically generates responsive URLs with optimal formats (WebP, AVI
 
 ## Deployment
 
-### GitHub Pages (Automated)
+### GitHub Pages with Custom Domain
 
-1. Push this project to a GitHub repository
-2. Go to Settings → Pages
-3. Set "Build and deployment" to "GitHub Actions"
-4. The included workflow (`.github/workflows/deploy.yml`) will build and deploy on every push to `main`
+**See [DEPLOYMENT.md](./DEPLOYMENT.md) for complete setup instructions.**
 
-### Custom Domain
+Quick steps:
+1. Update `astro.config.mjs` with your domain
+2. Add `PUBLIC_CLOUDINARY_CLOUD_NAME` to GitHub Secrets
+3. Enable GitHub Pages (Source: GitHub Actions)
+4. Configure DNS records at your domain provider
+5. Create `public/CNAME` file with your domain
+6. Push to `main` branch
 
-Update `astro.config.mjs`:
-```js
-export default defineConfig({
-  site: 'https://yourdomain.com',
-});
-```
+The included workflow (`.github/workflows/deploy.yml`) automatically builds and deploys on every push to `main`.
 
 ### Manual Build
 
