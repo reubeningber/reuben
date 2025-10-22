@@ -79,12 +79,25 @@ code {
   @apply border-l-4 border-accent pl-6 italic text-gray-700 my-6;
 }
 
-.prose ul, .prose ol {
+.prose ul {
   @apply my-6 pl-6;
+  list-style-type: disc;
+  list-style-position: outside;
+}
+
+.prose ol {
+  @apply my-6 pl-6;
+  list-style-type: decimal;
+  list-style-position: outside;
 }
 
 .prose li {
   @apply mb-2 leading-relaxed;
+  display: list-item;
+}
+
+.prose li::marker {
+  color: var(--accent);
 }
 
 .prose pre {
