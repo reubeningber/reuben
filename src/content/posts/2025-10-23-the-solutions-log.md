@@ -4,7 +4,7 @@ pubDate: "2025-10-23"
 image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1472"
 imageCredit: "Unsplash"
 imageCreditUrl: "https://unsplash.com/photos/person-using-macbook-pro-npxXWgQ33ZQ"
-category: "Engineering"
+category: "Engineering Management"
 ---
 
 If you’ve ever stared at an empty self‑review doc thinking “what did I actually do this year?”, you’re not alone. I was relying on memory (and scattered PRs/threads) to reconstruct impact across code and beyond code — incidents, cross‑team launches, coaching wins, process fixes, random notes in my journal. Recall was noisy, biased, and incomplete.
