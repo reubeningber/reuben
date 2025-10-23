@@ -25,18 +25,11 @@ function getListingImageConfig(imageUrl) {
     };
   }
   
-  // Case 2: Local assets/images path - convert to Cloudinary web_assets
+  // Case 2: Local assets/images path - fallback to standard lazy loading
   if (imageUrl.startsWith('assets/images/') || imageUrl.startsWith('/assets/images/')) {
-    const fileName = imageUrl.replace(/^\/?(assets\/images\/)/, '');
     return {
-      type: 'cloudinary-converted',
-      blurUrl: `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_20,e_blur:2000/v1761245976/web_assets/${fileName}`,
-      mainUrl: `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_400/v1761245976/web_assets/${fileName}`,
-      srcset: `
-        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_200/v1761245976/web_assets/${fileName} 200w,
-        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_300/v1761245976/web_assets/${fileName} 300w,
-        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_400/v1761245976/web_assets/${fileName} 400w
-      `
+      type: 'external',
+      mainUrl: imageUrl.startsWith('/') ? imageUrl : `/${imageUrl}`
     };
   }
   

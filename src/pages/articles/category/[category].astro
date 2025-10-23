@@ -2,6 +2,8 @@
 import Base from "../../../layouts/BaseLayout.astro";
 import { getCollection } from 'astro:content';
 
+const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
+
 export async function getStaticPaths() {
   const allPosts = await getCollection('posts');
   const categoriesSet = new Set<string>();
@@ -25,6 +27,54 @@ const allPosts = await getCollection('posts');
 const categoryPosts = allPosts
   .filter(p => !p.data.draft && p.data.category?.toLowerCase() === category.toLowerCase())
   .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+// Smart image URL logic for category listing
+function getCategoryImageConfig(imageUrl) {
+  if (!imageUrl) return null;
+  
+  // Case 1: Already a full Cloudinary URL - use as is but optimize
+  if (imageUrl.includes('res.cloudinary.com')) {
+    const cloudinaryPath = imageUrl.replace(/.*\/upload\/[^/]*\//, '');
+    return {
+      type: 'cloudinary-full',
+      blurUrl: `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_20,e_blur:2000/v1761245976/${cloudinaryPath}`,
+      mainUrl: `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_400/v1761245976/${cloudinaryPath}`,
+      srcset: `
+        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_200/v1761245976/${cloudinaryPath} 200w,
+        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_300/v1761245976/${cloudinaryPath} 300w,
+        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_400/v1761245976/${cloudinaryPath} 400w
+      `
+    };
+  }
+  
+  // Case 2: Local assets/images path - fallback to standard lazy loading
+  if (imageUrl.startsWith('assets/images/') || imageUrl.startsWith('/assets/images/')) {
+    return {
+      type: 'external',
+      mainUrl: imageUrl.startsWith('/') ? imageUrl : `/${imageUrl}`
+    };
+  }
+  
+  // Case 3: Direct web_assets path (your new format)
+  if (imageUrl.startsWith('web_assets/')) {
+    return {
+      type: 'cloudinary-web-assets',
+      blurUrl: `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_20,e_blur:2000/v1761245976/${imageUrl}`,
+      mainUrl: `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_400/v1761245976/${imageUrl}`,
+      srcset: `
+        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_200/v1761245976/${imageUrl} 200w,
+        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_300/v1761245976/${imageUrl} 300w,
+        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_400/v1761245976/${imageUrl} 400w
+      `
+    };
+  }
+  
+  // Case 4: Any other URL - just lazy load
+  return {
+    type: 'external',
+    mainUrl: imageUrl
+  };
+}
 
 // Function to create excerpt from post body
 function createExcerpt(body, maxLength = 120) {
@@ -59,18 +109,50 @@ function createExcerpt(body, maxLength = 120) {
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-    {categoryPosts.map(p => (
-      <article class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-        {p.data.image && (
-          <a href={`/articles/${p.slug}/`} class="block">
-            <img 
-              src={p.data.image} 
-              alt={p.data.title}
-              class="w-full h-48 object-cover"
-            />
-          </a>
-        )}
-        <div class="p-6">
+    {categoryPosts.map((p, index) => {
+      const imageConfig = getCategoryImageConfig(p.data.image);
+      const uniqueId = `category-${index}`;
+      
+      return (
+        <article class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          {imageConfig && (
+            <a href={`/articles/${p.slug}/`} class="block relative">
+              {/* Cloudinary images with blur-up effect */}
+              {imageConfig.type !== 'external' && (
+                <>
+                  <!-- Blur-up placeholder -->
+                  <img 
+                    src={imageConfig.blurUrl}
+                    alt={p.data.title}
+                    class="w-full h-48 object-cover absolute inset-0 transition-opacity duration-300"
+                    id={`blur-${uniqueId}`}
+                  />
+                  
+                  <!-- Main optimized image -->
+                  <img 
+                    src={imageConfig.mainUrl}
+                    srcset={imageConfig.srcset}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    alt={p.data.title}
+                    class="w-full h-48 object-cover relative z-10 opacity-0 transition-opacity duration-300"
+                    loading="lazy"
+                    onload={`this.style.opacity='1'; document.getElementById('blur-${uniqueId}').style.opacity='0';`}
+                  />
+                </>
+              )}
+              
+              {/* External images - simple lazy loading */}
+              {imageConfig.type === 'external' && (
+                <img 
+                  src={imageConfig.mainUrl}
+                  alt={p.data.title}
+                  class="w-full h-48 object-cover"
+                  loading="lazy"
+                />
+              )}
+            </a>
+          )}
+          <div class="p-6">
           <div class="text-sm font-semibold tracking-wide">
             <time datetime={p.data.pubDate.toISOString()} class="text-secondary">
               {p.data.pubDate.toLocaleDateString('en-US', { 
@@ -88,18 +170,19 @@ function createExcerpt(body, maxLength = 120) {
               </>
             )}
           </div>
-          <h3 class="text-xl font-bold mt-2 mb-3 text-primary tracking-wide">
-            <a href={`/articles/${p.slug}/`} class="hover:text-accent no-underline">
-              {p.data.title.toUpperCase()}
+            <h3 class="text-xl font-bold mt-2 mb-3 text-primary tracking-wide">
+              <a href={`/articles/${p.slug}/`} class="hover:text-accent no-underline">
+                {p.data.title.toUpperCase()}
+              </a>
+            </h3>
+            <p class="text-gray-700 mb-4 leading-relaxed">{createExcerpt(p.body)}</p>
+            <a href={`/articles/${p.slug}/`} class="text-accent hover:underline font-semibold text-sm">
+              READ MORE >
             </a>
-          </h3>
-          <p class="text-gray-700 mb-4 leading-relaxed">{createExcerpt(p.body)}</p>
-          <a href={`/articles/${p.slug}/`} class="text-accent hover:underline font-semibold text-sm">
-            READ MORE >
-          </a>
-        </div>
-      </article>
-    ))}
+          </div>
+        </article>
+      );
+    })}
   </div>
 
   <div class="mt-12 pt-8 border-t border-gray-200">

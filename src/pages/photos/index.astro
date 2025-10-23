@@ -28,6 +28,30 @@ function getAlbumCoverConfig(album) {
   title="Photo Albums by Reuben Ingber: Family, NYC, Life in Queens" 
   description="Browse photo galleries by Reuben Ingber. Family moments, NYC scenes, and life in Queens captured with a Sony A6000. Street photography and personal memories."
 >
+  <!-- Photos Collection Structured Data -->
+  <script type="application/ld+json" slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "@id": "https://reubeningber.com/photos/#collection",
+      "url": "https://reubeningber.com/photos/",
+      "name": "Reuben Ingber Photography",
+      "isPartOf": { "@id": "https://reubeningber.com/#website" },
+      "about": { "@id": "https://reubeningber.com/#person" },
+      "inLanguage": "en-US",
+      "description": "A collection of photographs taken by Reuben Ingber — runner, father, and photographer based in Queens, NY.",
+      "hasPart": [
+        ${sortedAlbums.map(album => `{
+          "@type": "ImageObject",
+          "@id": "https://reubeningber.com/photos/${album.data.slug}/#image",
+          "url": "https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_1200,c_fill/${album.data.coverPublicId || album.data.items[0].publicId}.jpg",
+          "caption": "${album.data.title}",
+          "creator": { "@id": "https://reubeningber.com/#person" },
+          "contentUrl": "https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_2400/${album.data.coverPublicId || album.data.items[0].publicId}.jpg"
+        }`).join(',')}
+      ]
+    }
+  </script>
   <h1 class="text-2xl font-bold mb-6">Photos</h1>
   <ul class="grid grid-cols-1 sm:grid-cols-2 gap-6">
     {sortedAlbums.map((album, index) => {

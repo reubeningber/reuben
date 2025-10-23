@@ -9,6 +9,36 @@ const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
   title="Reuben Ingber: Personal Home Page, Articles, Photos" 
   description="Father of two in Queens, New York. Engineering Manager at Business Insider. Runner, photographer, and writer sharing thoughts on parenting, engineering, and life."
 >
+  <!-- Homepage Structured Data -->
+  <script type="application/ld+json" slot="head">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://reubeningber.com/#website",
+        "url": "https://reubeningber.com/",
+        "name": "Reuben Ingber",
+        "publisher": { "@id": "https://reubeningber.com/#person" },
+        "inLanguage": "en-US"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://reubeningber.com/#webpage",
+        "url": "https://reubeningber.com/",
+        "name": "Reuben Ingber — Engineering Manager, Runner, Photographer",
+        "isPartOf": { "@id": "https://reubeningber.com/#website" },
+        "about": { "@id": "https://reubeningber.com/#person" },
+        "inLanguage": "en-US",
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://res.cloudinary.com/dt3vcpkj6/image/upload/f_auto,w_1600,h_900,c_fill,g_auto/v1761245976/web_assets/reuben_ingber_october_2025.jpg",
+          "width": 1600,
+          "height": 900
+        }
+      }
+    ]
+  </script>
   <section class="mb-16">
     <div class="mb-8 relative">
       <!-- Blur-up placeholder -->
@@ -59,7 +89,11 @@ const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
       </p>
 
       <p class="text-gray-800 leading-relaxed mb-4">
-        Here you'll find some of my <a href="/photos/" class="text-accent hover:underline">photography</a> and my thoughts on <a href="/articles/category/fatherhood/" class="text-accent hover:underline">parenting</a>, <a href="/articles/category/engineering/" class="text-accent hover:underline">engineering</a>, the occasional race report, and other musings. Feel free to <a href="/contact/" class="text-accent hover:underline">get in touch</a> if you'd like to connect.
+        Here you'll find my <a href="/articles/" class="text-accent hover:underline">thoughts</a> on <a href="/articles/category/fatherhood/" class="text-accent hover:underline">parenting</a>, <a href="/articles/category/engineering/" class="text-accent hover:underline">engineering</a>, the occasional race report, and other musings. You can also check out some of my latest <a href="/photos/" class="text-accent hover:underline">photography</a>.
+      </p>
+
+      <p class="text-gray-800 leading-relaxed mb-4">
+        I love meeting interesting people and hearing their stories. Whether you're a fellow parent, engineer, runner, photographer, or just someone doing meaningful work, I'd love to <a href="/contact/" class="text-accent hover:underline">connect</a>.
       </p>
       
     </div>

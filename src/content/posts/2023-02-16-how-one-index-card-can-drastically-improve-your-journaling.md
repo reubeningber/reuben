@@ -1,7 +1,7 @@
 ---
 title: "How One Index Card Can Drastically Improve Your Journaling?"
 pubDate: "2023-02-16"
-image: "/assets/images/journal_card.jpeg"
+image: "web_assets/journal_card.jpeg"
 category: "Journaling"
 ---
 

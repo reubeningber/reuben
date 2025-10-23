@@ -1,7 +1,7 @@
 ---
 title: "Why Every Dad Should Read The Anxious Generation"
 pubDate: "2025-10-01"
-image: "/assets/images/cellphone.jpg"
+image: "web_assets/cellphone.jpg"
 category: "Books"
 ---
 

@@ -19,6 +19,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
     
+    <!-- Sitemap for SEO -->
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    
     <!-- Preload fonts -->
     <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin />
     
@@ -53,33 +56,48 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="author" content="Reuben Ingber" />
     <meta name="theme-color" content="#ea580c" />
     
-    <!-- Structured Data -->
+    <!-- Enhanced Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
+        "@id": "https://reubeningber.com/#person",
         "name": "Reuben Ingber",
+        "alternateName": "Reuben",
+        "url": "https://reubeningber.com",
+        "image": "https://res.cloudinary.com/dt3vcpkj6/image/upload/f_auto,w_400,h_400,c_fill,g_face/v1761245976/web_assets/reuben_ingber_october_2025.jpg",
         "jobTitle": "Engineering Manager",
         "worksFor": {
           "@type": "Organization",
-          "name": "Business Insider"
+          "name": "Business Insider",
+          "url": "https://www.businessinsider.com"
         },
-        "url": "https://reubeningber.com",
-        "image": "https://res.cloudinary.com/dt3vcpkj6/image/upload/f_auto,q_auto,w_400,h_400,c_fill,g_face/reuben/reuben_ingber_october_2025.jpg",
+        "homeLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Queens",
+            "addressRegion": "NY",
+            "addressCountry": "US"
+          }
+        },
         "sameAs": [
           "https://twitter.com/reubeningber",
           "https://github.com/ringber",
-          "https://linkedin.com/in/reubeningber"
-          "https://instagram.com/reubeningber"
-          "https://instagram.com/reuben_in_color"
+          "https://www.linkedin.com/in/reubeningber",
+          "https://instagram.com/reubeningber",
+          "https://instagram.com/reuben_in_color",
           "https://facebook.com/reubeningber"
         ],
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Queens",
-          "addressRegion": "NY",
-          "addressCountry": "US"
-        },
+        "knowsAbout": [
+          "Engineering management",
+          "JavaScript",
+          "Web performance",
+          "Astro",
+          "Running",
+          "Photography",
+          "Parenting"
+        ],
         "description": "Father of two in Queens, NY. Engineering Manager at Business Insider. Runner, photographer, and writer sharing thoughts on parenting, engineering, and life."
       }
     </script>

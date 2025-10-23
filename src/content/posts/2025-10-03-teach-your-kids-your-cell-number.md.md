@@ -1,7 +1,7 @@
 ---
 title: "The one parenting hack I have not seen on Instagram"
 pubDate: "2025-10-20"
-image: "/assets/images/lock.jpg"
+image: "web_assets/lock.jpg"
 category: "Fatherhood"
 ---
 

@@ -6,6 +6,20 @@ import PostList from "../../components/PostList.astro";
   title="Articles by Reuben Ingber: Fatherhood, Engineering, Running, Life" 
   description="Read Reuben Ingber's articles on parenting, engineering management, running, books, and life lessons. Personal stories and insights from Queens, NY."
 >
+  <!-- Articles Collection Structured Data -->
+  <script type="application/ld+json" slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "@id": "https://reubeningber.com/articles/#blog",
+      "url": "https://reubeningber.com/articles/",
+      "name": "Reuben Ingber's Articles",
+      "description": "Personal blog covering fatherhood, engineering management, running, and life in Queens, NY",
+      "author": { "@id": "https://reubeningber.com/#person" },
+      "publisher": { "@id": "https://reubeningber.com/#person" },
+      "inLanguage": "en-US"
+    }
+  </script>
   <h1 class="text-4xl font-bold mb-12 text-primary tracking-wide">ARTICLES</h1>
   <PostList />
 </Base>

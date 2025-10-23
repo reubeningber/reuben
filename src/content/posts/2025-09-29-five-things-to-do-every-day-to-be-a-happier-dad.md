@@ -1,7 +1,7 @@
 ---
 title: "5 Things to Do Every Day to Be a Happier Dad"
 pubDate: "2025-09-29"
-image: "/assets/images/fatherhood.jpg"
+image: "web_assets/fatherhood.jpg"
 category: "Fatherhood"
 ---
 

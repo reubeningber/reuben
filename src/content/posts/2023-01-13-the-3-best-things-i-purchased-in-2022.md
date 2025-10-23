@@ -1,7 +1,7 @@
 ---
 title: "The 3 Best Things I Purchased in 2022"
 pubDate: "2023-01-13"
-image: "/assets/images/whateverpan.jpeg"
+image: "web_assets/whateverpan.jpeg"
 category: "Ramblings"
 ---
 

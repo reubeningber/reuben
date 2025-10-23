@@ -25,18 +25,11 @@ function getImageConfig(imageUrl) {
     };
   }
   
-  // Case 2: Local assets/images path - convert to Cloudinary web_assets
+  // Case 2: Local assets/images path - fallback to standard lazy loading
   if (imageUrl.startsWith('assets/images/') || imageUrl.startsWith('/assets/images/')) {
-    const fileName = imageUrl.replace(/^\/?(assets\/images\/)/, '');
     return {
-      type: 'cloudinary-converted',
-      blurUrl: `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_20,e_blur:2000/v1761245976/web_assets/${fileName}`,
-      mainUrl: `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_800/v1761245976/web_assets/${fileName}`,
-      srcset: `
-        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_400/v1761245976/web_assets/${fileName} 400w,
-        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_600/v1761245976/web_assets/${fileName} 600w,
-        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_800/v1761245976/web_assets/${fileName} 800w
-      `
+      type: 'external',
+      mainUrl: imageUrl.startsWith('/') ? imageUrl : `/${imageUrl}`
     };
   }
   
@@ -63,6 +56,23 @@ function getImageConfig(imageUrl) {
 
 const imageConfig = getImageConfig(frontmatter?.image);
 
+// Create blog posting schema
+const blogPostingSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": `https://reubeningber.com/articles/${currentPost?.slug}/#article`,
+  "headline": frontmatter?.title,
+  "description": frontmatter?.description || "A blog post by Reuben Ingber",
+  "image": imageConfig?.mainUrl || "https://res.cloudinary.com/dt3vcpkj6/image/upload/f_auto,w_1200,h_630,c_fill,g_face/v1761245976/web_assets/reuben_ingber_october_2025.jpg",
+  "datePublished": frontmatter?.pubDate?.toISOString?.() || frontmatter?.pubDate,
+  "dateModified": frontmatter?.pubDate?.toISOString?.() || frontmatter?.pubDate,
+  "author": { "@id": "https://reubeningber.com/#person" },
+  "publisher": { "@id": "https://reubeningber.com/#person" },
+  "mainEntityOfPage": `https://reubeningber.com/articles/${currentPost?.slug}/`,
+  "articleSection": frontmatter?.category || "General",
+  "inLanguage": "en-US"
+};
+
 // Get navigation posts
 const allPosts = await getCollection("posts");
 const sortedPosts = allPosts
@@ -73,7 +83,9 @@ const currentPostIndex = sortedPosts.findIndex(post => post.slug === currentPost
 const previousPost = currentPostIndex > 0 ? sortedPosts[currentPostIndex - 1] : undefined;
 const nextPost = currentPostIndex < sortedPosts.length - 1 ? sortedPosts[currentPostIndex + 1] : undefined;
 ---
-<Base title={`${frontmatter?.title || 'Blog Post'} · Reuben Ingber`} description="Blog post by Reuben Ingber">
+<Base title={`${frontmatter?.title || 'Blog Post'} · Reuben Ingber`} description={frontmatter?.description || "Blog post by Reuben Ingber"}>
+  <!-- Blog Post Structured Data -->
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(blogPostingSchema)}></script>
   <article class="max-w-3xl">
     {imageConfig && (
       <div class="mb-8 relative">
