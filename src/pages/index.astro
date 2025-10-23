@@ -1,27 +1,51 @@
 ---
 import Base from "../layouts/BaseLayout.astro";
 import PostList from "../components/PostList.astro";
+
+const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
 ---
+
 <Base 
   title="Reuben Ingber: Personal Home Page, Articles, Photos" 
-  description="Father of two in Queens, NY. Engineering Manager at Business Insider. Runner, photographer, and writer sharing thoughts on parenting, engineering, and life."
+  description="Father of two in Queens, New York. Engineering Manager at Business Insider. Runner, photographer, and writer sharing thoughts on parenting, engineering, and life."
 >
   <section class="mb-16">
-    <div class="mb-8">
+    <div class="mb-8 relative">
+      <!-- Blur-up placeholder -->
       <img 
-        src="/assets/images/reuben_ingber_october_2025.jpg" 
+        src={`https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_20,e_blur:2000/v1761245976/web_assets/reuben_ingber_october_2025.jpg`}
+        alt="Reuben Ingber"
+        class="w-full h-auto rounded-lg object-cover shadow-sm absolute inset-0 transition-opacity duration-300"
+        id="hero-placeholder"
+        width="1600"
+        height="1067"
+      />
+      
+      <!-- Main responsive image -->
+      <img 
+        src={`https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_1600/v1761245976/web_assets/reuben_ingber_october_2025.jpg`}
+        srcset={`
+          https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_768/v1761245976/web_assets/reuben_ingber_october_2025.jpg 768w,
+          https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_1200/v1761245976/web_assets/reuben_ingber_october_2025.jpg 1200w,
+          https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_1600/v1761245976/web_assets/reuben_ingber_october_2025.jpg 1600w
+        `}
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1600px"
         alt="Reuben Ingber" 
-        class="w-full h-auto rounded-lg object-cover shadow-sm"
+        class="w-full h-auto rounded-lg object-cover shadow-sm relative z-10 opacity-0 transition-opacity duration-300"
+        width="1600"
+        height="1067"
+        fetchpriority="high"
+        onload="this.style.opacity='1'; document.getElementById('hero-placeholder').style.opacity='0';"
       />
     </div>
     
     <div class="prose-lg text-xl max-w-none">
       <p class="text-gray-800 leading-relaxed mb-4">
-        Father of two and Queens native, I am a runner, a taker of <a href="/photos/">photos</a> and an Engineering Manager at Business Insider. 
+        Father of two and Queens native, I am a runner, a taker of <a href="/photos/">photos</a> and an Engineering Manager at <a href="/start-here/" class="text-accent hover:underline">Business Insider</a>. 
       </p>
 
       <p class="text-gray-800 leading-relaxed mb-4">
-        I truly believe my most important job is waking up my kids every morning and making sure they have a great day. Professioanlly, I am building
+        I truly believe my most important job is waking up my kids every morning and making sure they have a great day. Professionally, I am building
         a team and tools to help journalists tell important stories.
       </p>
       
@@ -35,7 +59,7 @@ import PostList from "../components/PostList.astro";
       </p>
 
       <p class="text-gray-800 leading-relaxed mb-4">
-        Here you'll find some of my photography and my thoughts on parenting, engineering, the occasional race report, and other musings.
+        Here you'll find some of my <a href="/photos/" class="text-accent hover:underline">photography</a> and my thoughts on <a href="/articles/category/fatherhood/" class="text-accent hover:underline">parenting</a>, <a href="/articles/category/engineering/" class="text-accent hover:underline">engineering</a>, the occasional race report, and other musings. Feel free to <a href="/contact/" class="text-accent hover:underline">get in touch</a> if you'd like to connect.
       </p>
       
     </div>

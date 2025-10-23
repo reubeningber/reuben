@@ -7,7 +7,7 @@ import Plausible from "../components/Plausible.astro";
 const { 
   title = "Reuben Ingber: Personal Home Page, Articles, Photos", 
   description = "Father of two in Queens, NY. Engineering Manager at Business Insider. Runner, photographer, and writer sharing thoughts on parenting, engineering, and life.",
-  ogImage = "https://reubeningber.com/assets/images/reuben_ingber_october_2025.jpg"
+  ogImage = "https://res.cloudinary.com/dt3vcpkj6/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_face/reuben/reuben_ingber_october_2025.jpg"
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -18,6 +18,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Preload fonts -->
+    <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin />
     
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -49,6 +52,37 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <!-- Additional SEO -->
     <meta name="author" content="Reuben Ingber" />
     <meta name="theme-color" content="#ea580c" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Reuben Ingber",
+        "jobTitle": "Engineering Manager",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Business Insider"
+        },
+        "url": "https://reubeningber.com",
+        "image": "https://res.cloudinary.com/dt3vcpkj6/image/upload/f_auto,q_auto,w_400,h_400,c_fill,g_face/reuben/reuben_ingber_october_2025.jpg",
+        "sameAs": [
+          "https://twitter.com/reubeningber",
+          "https://github.com/ringber",
+          "https://linkedin.com/in/reubeningber"
+          "https://instagram.com/reubeningber"
+          "https://instagram.com/reuben_in_color"
+          "https://facebook.com/reubeningber"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Queens",
+          "addressRegion": "NY",
+          "addressCountry": "US"
+        },
+        "description": "Father of two in Queens, NY. Engineering Manager at Business Insider. Runner, photographer, and writer sharing thoughts on parenting, engineering, and life."
+      }
+    </script>
   </head>
   <body class="font-sans antialiased bg-white">
     <Header />

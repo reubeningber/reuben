@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Font loading with display swap for performance */
+@font-face {
+  font-family: 'Inter Variable';
+  src: url('/fonts/inter-var.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root { 
   --accent: #ea580c;
   --primary: #1f2937;

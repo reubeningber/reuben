@@ -1,10 +1,28 @@
 ---
 import Base from "../../layouts/BaseLayout.astro";
 import { getCollection } from 'astro:content';
+
+const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
+
 const albums = await getCollection('albums');
 const sortedAlbums = albums.sort((a, b) => 
   new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
 );
+
+// Get album cover image configuration
+function getAlbumCoverConfig(album) {
+  const publicId = album.data.coverPublicId || album.data.items[0].publicId;
+  
+  return {
+    blurUrl: `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_20,e_blur:2000/${publicId}.jpg`,
+    mainUrl: `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_600/${publicId}.jpg`,
+    srcset: `
+      https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_300/${publicId}.jpg 300w,
+      https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_450/${publicId}.jpg 450w,
+      https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_600/${publicId}.jpg 600w
+    `
+  };
+}
 ---
 <Base 
   title="Photo Albums by Reuben Ingber: Family, NYC, Life in Queens" 
@@ -12,21 +30,41 @@ const sortedAlbums = albums.sort((a, b) =>
 >
   <h1 class="text-2xl font-bold mb-6">Photos</h1>
   <ul class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-    {sortedAlbums.map(a => (
-      <li class="border border-gray-200 rounded-xl overflow-hidden">
-        <a class="block no-underline" href={`/photos/${a.data.slug}/`}>
-          <img
-            src={`https://res.cloudinary.com/${import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,q_auto,w_1200/${a.data.coverPublicId || a.data.items[0].publicId}.jpg`}
-            alt={a.data.title}
-            class="w-full h-auto"
-            loading="lazy"
-          />
-          <div class="p-4">
-            <h3 class="font-semibold">{a.data.title}</h3>
-            {a.data.description && <p class="text-sm text-gray-600 mt-1">{a.data.description}</p>}
-          </div>
-        </a>
-      </li>
-    ))}
+    {sortedAlbums.map((album, index) => {
+      const coverConfig = getAlbumCoverConfig(album);
+      const uniqueId = `album-cover-${index}`;
+      
+      return (
+        <li class="border border-gray-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow">
+          <a class="block no-underline" href={`/photos/${album.data.slug}/`}>
+            <div class="relative">
+              <!-- Blur-up placeholder -->
+              <img
+                src={coverConfig.blurUrl}
+                alt={album.data.title}
+                class="w-full h-auto absolute inset-0 transition-opacity duration-300"
+                id={`blur-${uniqueId}`}
+              />
+              
+              <!-- Main optimized cover image -->
+              <img
+                src={coverConfig.mainUrl}
+                srcset={coverConfig.srcset}
+                sizes="(max-width: 640px) 100vw, 50vw"
+                alt={album.data.title}
+                class="w-full h-auto relative z-10 opacity-0 transition-opacity duration-300"
+                loading="lazy"
+                onload={`this.style.opacity='1'; document.getElementById('blur-${uniqueId}').style.opacity='0';`}
+              />
+            </div>
+            
+            <div class="p-4">
+              <h3 class="font-semibold">{album.data.title}</h3>
+              {album.data.description && <p class="text-sm text-gray-600 mt-1">{album.data.description}</p>}
+            </div>
+          </a>
+        </li>
+      );
+    })}
   </ul>
 </Base>
