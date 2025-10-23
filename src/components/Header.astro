@@ -1,4 +1,6 @@
 ---
+const { isHomepage = false } = Astro.props;
+
 const nav = [
   { href: '/start-here/', label: 'START HERE' },
   { href: '/articles/', label: 'ARTICLES' },
@@ -6,24 +8,41 @@ const nav = [
   { href: '/contact/', label: 'CONTACT' },
 ];
 ---
-<header class="border-b border-gray-200">
-  <div class="container py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-    <div class="flex items-center gap-4">
-      <a href="/" class="">
-        <img 
-          src="https://placehold.co/80x80/ea580c/ffffff?text=RI" 
-          alt="Reuben Ingber" 
-          class="w-12 h-12 sm:w-20 sm:h-20 rounded-full object-cover border-2 border-gray-200"
-        />
-      </a>
-      <a href="/" class="font-bold text-2xl sm:text-4xl tracking-tight no-underline text-primary whitespace-nowrap">
-        REUBEN INGBER
-      </a>
+<header class="bg-white border-b border-gray-200">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row sm:h-24 sm:items-center sm:justify-between py-4 sm:py-0">
+      <!-- Logo / Branding -->
+      <div class="flex items-center justify-center sm:justify-start mb-4 sm:mb-0">
+        <a href="/" class="flex items-center">
+          {isHomepage ? (
+            <!-- Homepage: Just the name in Rock Salt black -->
+            <span class="font-rock-salt text-2xl sm:text-2xl lg:text-3xl text-black text-center">Reuben Ingber</span>
+          ) : (
+            <!-- Other pages: Rock Salt name + square profile image -->
+            <div class="flex items-center space-x-3 sm:space-x-4">
+              <img 
+                src="https://res.cloudinary.com/dt3vcpkj6/image/upload/f_auto,w_150,h_150,c_thumb,g_face,z_0.8/v1761252984/web_assets/Reuben_Ingber_Square.jpg"
+                alt="Reuben Ingber"
+                class="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-full object-cover"
+                loading="lazy"
+              />
+              <span class="font-rock-salt text-xl sm:text-xl lg:text-3xl text-black">Reuben Ingber</span>
+            </div>
+          )}
+        </a>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="flex justify-center sm:justify-end space-x-3 sm:space-x-6 lg:space-x-8">
+        {nav.map((item) => (
+          <a
+            href={item.href}
+            class="text-gray-900 hover:text-orange-600 px-1 sm:px-3 py-2 text-xs sm:text-sm font-medium transition-colors whitespace-nowrap"
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
     </div>
-    <nav class="flex gap-4 text-sm font-semibold">
-      {nav.map(item => (
-        <a href={item.href} class="hover:text-accent no-underline text-primary tracking-wide">{item.label}</a>
-      ))}
-    </nav>
   </div>
 </header>

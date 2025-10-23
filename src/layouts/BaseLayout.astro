@@ -7,7 +7,8 @@ import Plausible from "../components/Plausible.astro";
 const { 
   title = "Reuben Ingber: Personal Home Page, Articles, Photos", 
   description = "Father of two in Queens, NY. Engineering Manager at Business Insider. Runner, photographer, and writer sharing thoughts on parenting, engineering, and life.",
-  ogImage = "https://res.cloudinary.com/dt3vcpkj6/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_face/reuben/reuben_ingber_october_2025.jpg"
+  ogImage = "https://res.cloudinary.com/dt3vcpkj6/image/upload/f_auto,w_1200,h_630,c_fill,g_face/reuben/reuben_ingber_october_2025.jpg",
+  isHomepage = false
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -22,8 +23,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <!-- Sitemap for SEO -->
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     
-    <!-- Preload fonts -->
-    <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
     
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -103,8 +106,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     </script>
   </head>
   <body class="font-sans antialiased bg-white">
-    <Header />
-    <main class="container py-12 max-w-4xl">
+    <Header isHomepage={isHomepage} />
+    <main class="container py-6 max-w-4xl">
       <slot />
     </main>
     <Footer />

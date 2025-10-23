@@ -124,17 +124,13 @@ function createExcerpt(body, maxLength = 120) {
         )}
         <div class="p-6">
         <div class="flex items-center gap-2 text-sm font-semibold tracking-wide">
-          <time datetime={p.data.pubDate.toISOString()} class="text-secondary">
-            {p.data.pubDate.toLocaleDateString('en-US', { 
-              year: 'numeric', 
-              month: 'short', 
-              day: 'numeric' 
-            }).toUpperCase()}
+          <time datetime={p.data.pubDate.toISOString()} class="text-secondary whitespace-nowrap">
+            {p.data.pubDate.getMonth() + 1}.{p.data.pubDate.getDate()}.{p.data.pubDate.getFullYear().toString().slice(-2)}
           </time>
           {p.data.category && (
             <>
               <span class="text-gray-300">|</span>
-              <a href={`/articles/category/${p.data.category.toLowerCase().replace(/\s+/g, '-')}/`} class="text-accent hover:underline no-underline">
+              <a href={`/articles/category/${p.data.category.toLowerCase().replace(/\s+/g, '-')}/`} class="text-accent hover:underline no-underline whitespace-nowrap">
                 {p.data.category.toUpperCase()}
               </a>
             </>
