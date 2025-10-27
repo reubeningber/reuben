@@ -5,7 +5,7 @@ import { getCollection } from 'astro:content';
 // Build Cloudinary URL with responsive width
 function buildUrl(publicId, width = 1200) {
   const cloud = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
-  return `https://res.cloudinary.com/${cloud}/image/upload/f_auto,q_auto,w_${width}/${publicId}.jpg`;
+  return `https://res.cloudinary.com/${cloud}/image/upload/f_auto,w_${width}/${publicId}.jpg`;
 }
 
 export async function getStaticPaths() {
@@ -14,8 +14,13 @@ export async function getStaticPaths() {
 }
 
 const { album } = Astro.props;
+const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
+
+// Generate og:image from album cover
+const coverPublicId = album.data.coverPublicId || album.data.items[0].publicId;
+const ogImage = `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_1200,h_630,c_fill/${coverPublicId}.jpg`;
 ---
-<Base title={`${album.data.title} · Photos · Reuben Ingber`}>
+<Base title={`${album.data.title} · Photos · Reuben Ingber`} ogImage={ogImage}>
   <h1 class="text-2xl font-bold mb-4">{album.data.title}</h1>
   {album.data.description && <p class="mb-6 text-gray-700">{album.data.description}</p>}
 

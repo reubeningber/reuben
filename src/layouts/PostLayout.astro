@@ -56,6 +56,29 @@ function getImageConfig(imageUrl) {
 
 const imageConfig = getImageConfig(frontmatter?.image);
 
+// Generate og:image for social sharing
+function getOgImage(imageUrl) {
+  if (!imageUrl) {
+    return "https://res.cloudinary.com/dt3vcpkj6/image/upload/f_auto,w_1200,h_630,c_fill,g_face/v1761245976/web_assets/reuben_ingber_october_2025.jpg";
+  }
+  
+  // Case 1: Already a full Cloudinary URL
+  if (imageUrl.includes('res.cloudinary.com')) {
+    const cloudinaryPath = imageUrl.replace(/.*\/upload\/[^/]*\//, '');
+    return `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_1200,h_630,c_fill/v1761245976/${cloudinaryPath}`;
+  }
+  
+  // Case 2: Direct web_assets path
+  if (imageUrl.startsWith('web_assets/')) {
+    return `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_1200,h_630,c_fill/v1761245976/${imageUrl}`;
+  }
+  
+  // Case 3: Any other URL - fallback to default
+  return "https://res.cloudinary.com/dt3vcpkj6/image/upload/f_auto,w_1200,h_630,c_fill,g_face/v1761245976/web_assets/reuben_ingber_october_2025.jpg";
+}
+
+const ogImage = getOgImage(frontmatter?.image);
+
 // Create blog posting schema
 const blogPostingSchema = {
   "@context": "https://schema.org",
@@ -83,7 +106,7 @@ const currentPostIndex = sortedPosts.findIndex(post => post.slug === currentPost
 const previousPost = currentPostIndex > 0 ? sortedPosts[currentPostIndex - 1] : undefined;
 const nextPost = currentPostIndex < sortedPosts.length - 1 ? sortedPosts[currentPostIndex + 1] : undefined;
 ---
-<Base title={`${frontmatter?.title || 'Blog Post'} · Reuben Ingber`} description={frontmatter?.description || "Blog post by Reuben Ingber"}>
+<Base title={`${frontmatter?.title || 'Blog Post'} · Reuben Ingber`} description={frontmatter?.description || "Blog post by Reuben Ingber"} ogImage={ogImage}>
   <!-- Blog Post Structured Data -->
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(blogPostingSchema)}></script>
   <article class="max-w-3xl">
