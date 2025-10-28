@@ -1,12 +1,18 @@
 ---
 import Base from "../../layouts/BaseLayout.astro";
+import PhotoGridWithLightbox from "../../components/PhotoGridWithLightbox.astro";
 import { getCollection } from 'astro:content';
 
 const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
 
 const albums = await getCollection('albums');
-// Filter out featured albums and sort by date
-const sortedAlbums = albums
+
+// Get the featured albums
+const featuredFamily = albums.find(album => album.data.slug === 'featured-family');
+const featuredPhotos = albums.find(album => album.data.slug === 'featured-photos');
+
+// Get regular albums (excluding featured ones)
+const regularAlbums = albums
   .filter(album => !album.data.slug.startsWith('featured-'))
   .sort((a, b) => 
     new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
@@ -26,6 +32,8 @@ function getAlbumCoverConfig(album) {
     `
   };
 }
+
+const activeTab = 'albums';
 ---
 <Base 
   title="Photo Albums by Reuben Ingber: Family, NYC, Life in Queens" 
@@ -44,7 +52,7 @@ function getAlbumCoverConfig(album) {
       "inLanguage": "en-US",
       "description": "A collection of photograph albums by Reuben Ingber — runner, father, and photographer based in Queens, NY.",
       "hasPart": [
-        ${sortedAlbums.map(album => `{
+        ${regularAlbums.map(album => `{
           "@type": "ImageObject",
           "@id": "https://reubeningber.com/photos/${album.data.slug}/#image",
           "url": "https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_1200,c_fill/${album.data.coverPublicId || album.data.items[0].publicId}.jpg",
@@ -56,47 +64,129 @@ function getAlbumCoverConfig(album) {
     }
   </script>
   
-  <div class="flex justify-between items-center mb-6">
-    <h1 class="text-4xl font-bold text-primary tracking-wide">ALBUMS</h1>
-    <a href="/photos/" class="text-accent hover:underline font-semibold text-sm">&lt; BACK TO PHOTOS</a>
+  <h1 class="text-4xl font-bold mb-6 text-primary tracking-wide">PHOTOS</h1>
+
+  <!-- Tab Navigation -->
+  <div class="border-b border-gray-200 mb-6">
+    <nav class="flex space-x-8">
+      <a 
+        href="/photos/"
+        class={`tab-link py-2 px-1 border-b-2 font-medium text-sm transition-colors ${activeTab === 'family' ? 'active' : ''}`}
+      >
+        FAMILY
+      </a>
+      <a 
+        href="/photos/highlights/"
+        class={`tab-link py-2 px-1 border-b-2 font-medium text-sm transition-colors ${activeTab === 'highlights' ? 'active' : ''}`}
+      >
+        HIGHLIGHTS
+      </a>
+      <a 
+        href="/photos/albums/"
+        class={`tab-link py-2 px-1 border-b-2 font-medium text-sm transition-colors ${activeTab === 'albums' ? 'active' : ''}`}
+      >
+        ALBUMS
+      </a>
+    </nav>
   </div>
-  
-  <ul class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-    {sortedAlbums.map((album, index) => {
-      const coverConfig = getAlbumCoverConfig(album);
-      const uniqueId = `album-cover-${index}`;
-      
-      return (
-        <li class="border border-gray-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow">
-          <a class="block no-underline" href={`/photos/${album.data.slug}/`}>
-            <div class="relative">
-              <!-- Blur-up placeholder -->
-              <img
-                src={coverConfig.blurUrl}
-                alt={album.data.title}
-                class="w-full h-auto absolute inset-0 transition-opacity duration-300"
-                id={`blur-${uniqueId}`}
-              />
+
+  <!-- Tab Content -->
+  <div class={`tab-content ${activeTab !== 'family' ? 'hidden' : ''}`} id="family-tab">
+    {featuredFamily && (
+      <PhotoGridWithLightbox items={featuredFamily.data.items} galleryId="family-gallery" />
+    )}
+  </div>
+
+  <div class={`tab-content ${activeTab !== 'highlights' ? 'hidden' : ''}`} id="highlights-tab">
+    {featuredPhotos && (
+      <PhotoGridWithLightbox items={featuredPhotos.data.items} galleryId="highlights-gallery" />
+    )}
+  </div>
+
+  <div class={`tab-content ${activeTab !== 'albums' ? 'hidden' : ''}`} id="albums-tab">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {regularAlbums.map((album, index) => {
+        const coverConfig = getAlbumCoverConfig(album);
+        const uniqueId = `album-cover-${index}`;
+        
+        return (
+          <div class="border border-gray-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow">
+            <a class="block no-underline" href={`/photos/${album.data.slug}/`}>
+              <div class="relative">
+                <!-- Blur-up placeholder -->
+                <img
+                  src={coverConfig.blurUrl}
+                  alt={album.data.title}
+                  class="w-full h-auto absolute inset-0 transition-opacity duration-300"
+                  id={`blur-${uniqueId}`}
+                />
+                
+                <!-- Main optimized cover image -->
+                <img
+                  src={coverConfig.mainUrl}
+                  srcset={coverConfig.srcset}
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                  alt={album.data.title}
+                  class="w-full h-auto relative z-10 opacity-0 transition-opacity duration-300"
+                  loading="lazy"
+                  onload={`this.style.opacity='1'; document.getElementById('blur-${uniqueId}').style.opacity='0';`}
+                />
+              </div>
               
-              <!-- Main optimized cover image -->
-              <img
-                src={coverConfig.mainUrl}
-                srcset={coverConfig.srcset}
-                sizes="(max-width: 640px) 100vw, 50vw"
-                alt={album.data.title}
-                class="w-full h-auto relative z-10 opacity-0 transition-opacity duration-300"
-                loading="lazy"
-                onload={`this.style.opacity='1'; document.getElementById('blur-${uniqueId}').style.opacity='0';`}
-              />
-            </div>
-            
-            <div class="p-4">
-              <h3 class="font-semibold">{album.data.title}</h3>
-              {album.data.description && <p class="text-sm text-gray-600 mt-1">{album.data.description}</p>}
-            </div>
-          </a>
-        </li>
-      );
-    })}
-  </ul>
+              <div class="p-4">
+                <h3 class="font-semibold">{album.data.title}</h3>
+                {album.data.description && <p class="text-sm text-gray-600 mt-1">{album.data.description}</p>}
+              </div>
+            </a>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+
+  <script>
+    import PhotoSwipeLightbox from 'photoswipe/lightbox';
+    import 'photoswipe/style.css';
+    
+    // Initialize lightboxes for photo galleries
+    const familyLightbox = new PhotoSwipeLightbox({
+      gallery: '#family-gallery',
+      children: 'a',
+      showHideAnimationType: 'fade',
+      pswpModule: () => import('photoswipe')
+    });
+    
+    const highlightsLightbox = new PhotoSwipeLightbox({
+      gallery: '#highlights-gallery',
+      children: 'a',
+      showHideAnimationType: 'fade',
+      pswpModule: () => import('photoswipe')
+    });
+    
+    // Add dynamic dimensions for both lightboxes
+    [familyLightbox, highlightsLightbox].forEach(lightbox => {
+      lightbox.addFilter('itemData', (itemData, index) => {
+        const img = itemData.element?.querySelector('img');
+        if (img) {
+          const aspectRatio = img.naturalWidth / img.naturalHeight;
+          itemData.width = 2400;
+          itemData.height = Math.round(2400 / aspectRatio);
+        }
+        return itemData;
+      });
+    });
+    
+    familyLightbox.init();
+    highlightsLightbox.init();
+  </script>
+
+  <style>
+    .tab-link {
+      @apply text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300 no-underline;
+    }
+    
+    .tab-link.active {
+      @apply text-accent border-accent;
+    }
+  </style>
 </Base>

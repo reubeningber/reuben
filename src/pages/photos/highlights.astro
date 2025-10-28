@@ -1,10 +1,10 @@
 ---
+// Import the same content as the main photos page but with highlights tab active
 import Base from "../../layouts/BaseLayout.astro";
 import PhotoGridWithLightbox from "../../components/PhotoGridWithLightbox.astro";
 import { getCollection } from 'astro:content';
 
 const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
-
 const albums = await getCollection('albums');
 
 // Get the featured albums
@@ -33,33 +33,25 @@ function getAlbumCoverConfig(album) {
   };
 }
 
-// Determine active tab from URL
-const url = new URL(Astro.request.url);
-const pathname = url.pathname;
-let activeTab = 'family'; // default
-
-if (pathname.includes('/albums')) {
-  activeTab = 'albums';
-} else if (pathname.includes('/highlights')) {
-  activeTab = 'highlights';
-}
+const activeTab = 'highlights';
 ---
+
 <Base 
-  title="Photos by Reuben Ingber: Family, NYC, Life in Queens" 
-  description="Browse photos by Reuben Ingber. Family moments, NYC scenes, and life in Queens captured with a Sony A6000. Street photography and personal memories."
+  title="Photo Highlights by Reuben Ingber" 
+  description="Browse photo highlights by Reuben Ingber. My favorite recent photos from Queens, NY and beyond."
 >
   <!-- Photos Collection Structured Data -->
   <script type="application/ld+json" slot="head">
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      "@id": "https://reubeningber.com/photos/#collection",
-      "url": "https://reubeningber.com/photos/",
-      "name": "Reuben Ingber Photography",
+      "@id": "https://reubeningber.com/photos/highlights/#collection",
+      "url": "https://reubeningber.com/photos/highlights/",
+      "name": "Reuben Ingber Photo Highlights",
       "isPartOf": { "@id": "https://reubeningber.com/#website" },
       "about": { "@id": "https://reubeningber.com/#person" },
       "inLanguage": "en-US",
-      "description": "A collection of photographs taken by Reuben Ingber — runner, father, and photographer based in Queens, NY."
+      "description": "A collection of highlight photographs taken by Reuben Ingber — runner, father, and photographer based in Queens, NY."
     }
   </script>
   
@@ -71,21 +63,18 @@ if (pathname.includes('/albums')) {
       <a 
         href="/photos/"
         class={`tab-link py-2 px-1 border-b-2 font-medium text-sm transition-colors ${activeTab === 'family' ? 'active' : ''}`}
-        data-tab="family"
       >
         FAMILY
       </a>
       <a 
         href="/photos/highlights/"
         class={`tab-link py-2 px-1 border-b-2 font-medium text-sm transition-colors ${activeTab === 'highlights' ? 'active' : ''}`}
-        data-tab="highlights"
       >
         HIGHLIGHTS
       </a>
       <a 
         href="/photos/albums/"
         class={`tab-link py-2 px-1 border-b-2 font-medium text-sm transition-colors ${activeTab === 'albums' ? 'active' : ''}`}
-        data-tab="albums"
       >
         ALBUMS
       </a>

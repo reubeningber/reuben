@@ -16,6 +16,19 @@ export async function getStaticPaths() {
 const { album } = Astro.props;
 const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
 
+// Shuffle array randomly using Fisher-Yates algorithm
+function shuffleArray(array) {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
+// Randomize photo order
+const randomizedItems = shuffleArray(album.data.items);
+
 // Generate og:image from album cover
 const coverPublicId = album.data.coverPublicId || album.data.items[0].publicId;
 const ogImage = `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_1200,h_630,c_fill/${coverPublicId}.jpg`;
@@ -25,7 +38,7 @@ const ogImage = `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_1
   {album.data.description && <p class="mb-6 text-gray-700">{album.data.description}</p>}
 
   <div class="columns-2 sm:columns-3 gap-3" id="gallery">
-    {album.data.items.map((it, idx) => (
+    {randomizedItems.map((it, idx) => (
       <a href={buildUrl(it.publicId, 2400)} class="block mb-3 break-inside-avoid" data-pswp-src={buildUrl(it.publicId, 2400)}>
         <img src={buildUrl(it.publicId, 600)} alt={it.caption || ''} loading="lazy" class="w-full h-auto rounded-lg hover:opacity-90 transition-opacity" />
       </a>
