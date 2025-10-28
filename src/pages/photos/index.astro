@@ -1,32 +1,19 @@
 ---
 import Base from "../../layouts/BaseLayout.astro";
+import PhotoGridWithLightbox from "../../components/PhotoGridWithLightbox.astro";
 import { getCollection } from 'astro:content';
 
 const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
 
 const albums = await getCollection('albums');
-const sortedAlbums = albums.sort((a, b) => 
-  new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
-);
 
-// Get album cover image configuration
-function getAlbumCoverConfig(album) {
-  const publicId = album.data.coverPublicId || album.data.items[0].publicId;
-  
-  return {
-    blurUrl: `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_20,e_blur:2000/${publicId}.jpg`,
-    mainUrl: `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_600/${publicId}.jpg`,
-    srcset: `
-      https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_300/${publicId}.jpg 300w,
-      https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_450/${publicId}.jpg 450w,
-      https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_600/${publicId}.jpg 600w
-    `
-  };
-}
+// Get the featured albums
+const featuredFamily = albums.find(album => album.data.slug === 'featured-family');
+const featuredPhotos = albums.find(album => album.data.slug === 'featured-photos');
 ---
 <Base 
-  title="Photo Albums by Reuben Ingber: Family, NYC, Life in Queens" 
-  description="Browse photo galleries by Reuben Ingber. Family moments, NYC scenes, and life in Queens captured with a Sony A6000. Street photography and personal memories."
+  title="Photos by Reuben Ingber: Family, NYC, Life in Queens" 
+  description="Browse photos by Reuben Ingber. Family moments, NYC scenes, and life in Queens captured with a Sony A6000. Street photography and personal memories."
 >
   <!-- Photos Collection Structured Data -->
   <script type="application/ld+json" slot="head">
@@ -39,56 +26,134 @@ function getAlbumCoverConfig(album) {
       "isPartOf": { "@id": "https://reubeningber.com/#website" },
       "about": { "@id": "https://reubeningber.com/#person" },
       "inLanguage": "en-US",
-      "description": "A collection of photographs taken by Reuben Ingber — runner, father, and photographer based in Queens, NY.",
-      "hasPart": [
-        ${sortedAlbums.map(album => `{
-          "@type": "ImageObject",
-          "@id": "https://reubeningber.com/photos/${album.data.slug}/#image",
-          "url": "https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_1200,c_fill/${album.data.coverPublicId || album.data.items[0].publicId}.jpg",
-          "caption": "${album.data.title}",
-          "creator": { "@id": "https://reubeningber.com/#person" },
-          "contentUrl": "https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_2400/${album.data.coverPublicId || album.data.items[0].publicId}.jpg"
-        }`).join(',')}
-      ]
+      "description": "A collection of photographs taken by Reuben Ingber — runner, father, and photographer based in Queens, NY."
     }
   </script>
-  <h1 class="text-4xl font-bold mb-6 text-primary tracking-wide">PHOTOS</h1>
-  <ul class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-    {sortedAlbums.map((album, index) => {
-      const coverConfig = getAlbumCoverConfig(album);
-      const uniqueId = `album-cover-${index}`;
+  
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="text-4xl font-bold text-primary tracking-wide">PHOTOS</h1>
+    <a href="/photos/albums/" class="text-accent hover:underline font-semibold text-sm">VIEW ALBUMS &gt;</a>
+  </div>
+
+  <!-- Tab Navigation -->
+  <div class="border-b border-gray-200 mb-6">
+    <nav class="flex space-x-8">
+      <button 
+        class="tab-button py-2 px-1 border-b-2 font-medium text-sm transition-colors active"
+        data-tab="family"
+      >
+        FAMILY
+      </button>
+      <button 
+        class="tab-button py-2 px-1 border-b-2 font-medium text-sm transition-colors"
+        data-tab="highlights"
+      >
+        HIGHLIGHTS
+      </button>
+    </nav>
+  </div>
+
+  <!-- Tab Content -->
+  <div class="tab-content" id="family-tab">
+    {featuredFamily && (
+      <PhotoGridWithLightbox items={featuredFamily.data.items} galleryId="family-gallery" />
+    )}
+  </div>
+
+  <div class="tab-content hidden" id="highlights-tab">
+    {featuredPhotos && (
+      <PhotoGridWithLightbox items={featuredPhotos.data.items} galleryId="highlights-gallery" />
+    )}
+  </div>
+
+  <script>
+    import PhotoSwipeLightbox from 'photoswipe/lightbox';
+    import 'photoswipe/style.css';
+    
+    // Tab functionality
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    // Initialize lightboxes for both galleries
+    const familyLightbox = new PhotoSwipeLightbox({
+      gallery: '#family-gallery',
+      children: 'a',
+      showHideAnimationType: 'fade',
+      pswpModule: () => import('photoswipe')
+    });
+    
+    const highlightsLightbox = new PhotoSwipeLightbox({
+      gallery: '#highlights-gallery',
+      children: 'a',
+      showHideAnimationType: 'fade',
+      pswpModule: () => import('photoswipe')
+    });
+    
+    // Add dynamic dimensions for both lightboxes
+    [familyLightbox, highlightsLightbox].forEach(lightbox => {
+      lightbox.addFilter('itemData', (itemData, index) => {
+        const img = itemData.element.querySelector('img');
+        if (img) {
+          const aspectRatio = img.naturalWidth / img.naturalHeight;
+          itemData.width = 2400;
+          itemData.height = Math.round(2400 / aspectRatio);
+        }
+        return itemData;
+      });
+    });
+    
+    familyLightbox.init();
+    highlightsLightbox.init();
+    
+    // Tab switching functionality
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const targetTab = button.getAttribute('data-tab');
+        
+        // Update button states
+        tabButtons.forEach(btn => {
+          btn.classList.remove('active');
+          btn.classList.add('text-gray-500', 'border-transparent');
+          btn.classList.remove('text-accent', 'border-accent');
+        });
+        
+        button.classList.add('active');
+        button.classList.remove('text-gray-500', 'border-transparent');
+        button.classList.add('text-accent', 'border-accent');
+        
+        // Update content visibility
+        tabContents.forEach(content => {
+          content.classList.add('hidden');
+        });
+        
+        document.getElementById(`${targetTab}-tab`).classList.remove('hidden');
+      });
+    });
+    
+    // Initialize default tab state
+    document.addEventListener('DOMContentLoaded', () => {
+      const activeButton = document.querySelector('.tab-button.active');
+      if (activeButton) {
+        activeButton.classList.add('text-accent', 'border-accent');
+        activeButton.classList.remove('text-gray-500', 'border-transparent');
+      }
       
-      return (
-        <li class="border border-gray-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow">
-          <a class="block no-underline" href={`/photos/${album.data.slug}/`}>
-            <div class="relative">
-              <!-- Blur-up placeholder -->
-              <img
-                src={coverConfig.blurUrl}
-                alt={album.data.title}
-                class="w-full h-auto absolute inset-0 transition-opacity duration-300"
-                id={`blur-${uniqueId}`}
-              />
-              
-              <!-- Main optimized cover image -->
-              <img
-                src={coverConfig.mainUrl}
-                srcset={coverConfig.srcset}
-                sizes="(max-width: 640px) 100vw, 50vw"
-                alt={album.data.title}
-                class="w-full h-auto relative z-10 opacity-0 transition-opacity duration-300"
-                loading="lazy"
-                onload={`this.style.opacity='1'; document.getElementById('blur-${uniqueId}').style.opacity='0';`}
-              />
-            </div>
-            
-            <div class="p-4">
-              <h3 class="font-semibold">{album.data.title}</h3>
-              {album.data.description && <p class="text-sm text-gray-600 mt-1">{album.data.description}</p>}
-            </div>
-          </a>
-        </li>
-      );
-    })}
-  </ul>
+      // Set inactive buttons
+      tabButtons.forEach(btn => {
+        if (!btn.classList.contains('active')) {
+          btn.classList.add('text-gray-500', 'border-transparent');
+        }
+      });
+    });
+  </script>
+
+  <style>
+    .tab-button {
+      @apply text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300;
+    }
+    
+    .tab-button.active {
+      @apply text-accent border-accent;
+    }
+  </style>
 </Base>
