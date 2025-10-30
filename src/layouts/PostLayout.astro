@@ -111,7 +111,7 @@ const nextPost = currentPostIndex < sortedPosts.length - 1 ? sortedPosts[current
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(blogPostingSchema)}></script>
   <article class="max-w-3xl">
     {imageConfig && (
-      <div class="mb-8 relative">
+      <div class="mb-4 relative group">
         {/* Cloudinary images with blur-up effect */}
         {(imageConfig.type !== 'external') && (
           <>
@@ -121,6 +121,7 @@ const nextPost = currentPostIndex < sortedPosts.length - 1 ? sortedPosts[current
               alt={frontmatter.title || 'Blog post image'}
               class="w-full h-64 md:h-80 object-cover rounded-lg shadow-sm absolute inset-0 z-0 opacity-100 transition-opacity duration-300"
               id={`blur-placeholder-${Math.random().toString(36).substr(2, 9)}`}
+              title={frontmatter?.imageCredit || ''}
             />
             
             <!-- Main optimized image -->
@@ -131,6 +132,7 @@ const nextPost = currentPostIndex < sortedPosts.length - 1 ? sortedPosts[current
               alt={frontmatter.title || 'Blog post image'}
               class="w-full h-64 md:h-80 object-cover rounded-lg shadow-sm relative z-10 opacity-0 transition-opacity duration-300"
               loading="lazy"
+              title={frontmatter?.imageCredit || ''}
               onload={`this.style.opacity='1'; this.previousElementSibling.style.opacity='0';`}
             />
           </>
@@ -143,24 +145,24 @@ const nextPost = currentPostIndex < sortedPosts.length - 1 ? sortedPosts[current
             alt={frontmatter.title || 'Blog post image'}
             class="w-full h-64 md:h-80 object-cover rounded-lg shadow-sm"
             loading="lazy"
+            title={frontmatter?.imageCredit || ''}
           />
         )}
         
+        {/* Image credit overlay - appears on hover */}
         {frontmatter?.imageCredit && (
-          <p class="text-xs text-gray-400 mt-2 text-right">
+          <div class="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded pointer-events-none">
             {frontmatter?.imageCreditUrl ? (
-              <a href={frontmatter.imageCreditUrl} target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors">
-                {frontmatter.imageCredit}
-              </a>
+              <span>Photo: {frontmatter.imageCredit}</span>
             ) : (
-              <span>{frontmatter.imageCredit}</span>
+              <span>Photo: {frontmatter.imageCredit}</span>
             )}
-          </p>
+          </div>
         )}
       </div>
     )}
     
-    <header class="mb-8 pb-6 border-b border-gray-200">
+    <header class="mb-6 pb-4 border-b border-gray-200">
       <div class="flex items-center gap-2 text-sm font-semibold tracking-wide">
         <time datetime={frontmatter?.pubDate?.toISOString?.() || frontmatter?.pubDate} class="text-secondary">
           {frontmatter?.pubDate?.toLocaleDateString?.('en-US', { 
@@ -179,6 +181,9 @@ const nextPost = currentPostIndex < sortedPosts.length - 1 ? sortedPosts[current
         )}
       </div>
       <h1 class="text-3xl font-bold mt-2 text-primary tracking-wide">{(frontmatter?.title || 'Blog Post').toUpperCase()}</h1>
+      {frontmatter?.subTitle && (
+        <p class="text-lg text-orange-600 mt-3 font-medium leading-relaxed">{frontmatter.subTitle}</p>
+      )}
     </header>
     
     <div class="prose prose-lg prose-neutral max-w-none prose-headings:text-primary prose-headings:font-bold prose-headings:tracking-wide prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4 prose-p:text-gray-800 prose-p:leading-relaxed prose-p:mb-6 prose-strong:text-primary prose-strong:font-semibold prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-hr:border-gray-200 prose-hr:my-12 prose-ul:my-6 prose-ul:pl-6 prose-ol:my-6 prose-ol:pl-6 prose-li:text-gray-800 prose-li:leading-relaxed prose-li:mb-2 prose-li:marker:text-accent">
