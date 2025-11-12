@@ -1,7 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
 const { limit } = Astro.props;
-const allPosts = (await getCollection('posts')).filter(p => !p.data.draft).sort((a,b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+const now = new Date();
+const allPosts = (await getCollection('posts'))
+  .filter(p => !p.data.draft && p.data.pubDate <= now)
+  .sort((a,b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 const posts = limit ? allPosts.slice(0, limit) : allPosts;
 
 const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
