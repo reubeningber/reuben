@@ -1,7 +1,7 @@
 ---
 title: "Leaders Don’t Tiptoe — They Jump"
 subTitle: "What The West Wing taught me about bold leadership."
-pubDate: "2025-11-04"
+pubDate: "2025-11-03"
 category: "Leadership"
 image: "https://images.unsplash.com/photo-1634424883142-3a39f366afbf?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470"
 imageCredit: "Unsplash"
