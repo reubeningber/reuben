@@ -131,12 +131,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/photos/first-day-of-first-grade/</loc>
-    <lastmod>2025-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://reubeningber.com/photos/paris-october-2025/</loc>
     <lastmod>2025-10-10</lastmod>
     <changefreq>monthly</changefreq>
@@ -150,6 +144,12 @@
   </url>
   <url>
     <loc>https://reubeningber.com/photos/september-2025-photo-walk/</loc>
+    <lastmod>2025-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://reubeningber.com/photos/first-day-of-first-grade/</loc>
     <lastmod>2025-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
