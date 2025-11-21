@@ -34,6 +34,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://reubeningber.com/articles/2023-01-05-annual-themes/</loc>
+    <lastmod>2023-01-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://reubeningber.com/articles/2023-01-13-the-3-best-things-i-purchased-in-2022/</loc>
     <lastmod>2023-01-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -42,12 +48,6 @@
   <url>
     <loc>https://reubeningber.com/articles/2023-01-20-take-your-reading-to-a-new-level-and-reread-a-book-this-year/</loc>
     <lastmod>2023-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://reubeningber.com/articles/2023-01-05-annual-themes/</loc>
-    <lastmod>2023-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -119,13 +119,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/photos/featured-family/</loc>
+    <loc>https://reubeningber.com/photos/featured-photos/</loc>
     <lastmod>2025-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/photos/featured-photos/</loc>
+    <loc>https://reubeningber.com/photos/featured-family/</loc>
     <lastmod>2025-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
