@@ -94,12 +94,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2025-10-28-why-every-dad-should-have-a-digital-camera/</loc>
-    <lastmod>2025-10-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://reubeningber.com/articles/2025-10-30-october-favorites/</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
@@ -111,6 +105,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://reubeningber.com/articles/2025-10-28-why-every-dad-should-have-a-digital-camera/</loc>
+    <lastmod>2025-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   
   <url>
     <loc>https://reubeningber.com/photos/august-park/</loc>
@@ -119,13 +119,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/photos/featured-photos/</loc>
+    <loc>https://reubeningber.com/photos/featured-family/</loc>
     <lastmod>2025-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/photos/featured-family/</loc>
+    <loc>https://reubeningber.com/photos/featured-photos/</loc>
     <lastmod>2025-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
