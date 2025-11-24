@@ -4,9 +4,7 @@ subTitle: "Rediscovering the happiness and health found in caring deeply about s
 pubDate: "2025-12-01"
 category: "Life"
 description: "A reflection on the magic of going all in — from childhood obsessions to adult hobbies — and how caring deeply can make us happier, healthier, and more alive."
-draft: false
 tags: ["hobbies", "mental health", "well-being", "running", "photography", "obsession"]
-draft: true
 ---
 
 When I was a kid, I became obsessed with building a recording studio.  

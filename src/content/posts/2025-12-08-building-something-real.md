@@ -4,7 +4,6 @@ subTitle: "On fatherhood, Lego, and the screen-free joy of building together"
 pubDate: "2025-12-08"
 category: "Fatherhood"
 description: "A reflection on rediscovering Lego with my son, the quiet joy of screen-free play, and the bittersweet moment when our kids start to build worlds of their own."
-draft: false
 tags: ["fatherhood", "parenting", "Lego", "screen-free", "nostalgia"]
 draft: true
 ---
