@@ -1,7 +1,11 @@
 ---
 title: "I Thought I Was Distracted — Turns Out It Was ADHD"
+subTitle: "How finally getting diagnosed changed the way I show up for my wife and kids."
 pubDate: "2025-11-24"
 category: "Mental Health"
+image: "https://images.unsplash.com/photo-1587654780291-39c9404d746b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+imageCredit: "Unsplash"
+imageCreditUr: "https://unsplash.com/photos/yellow-red-blue-and-green-lego-blocks-kn-UmDZQDjM"
 draft: true
 ---
 

@@ -3,6 +3,9 @@ title: "I Thought Work Was Boring — Turns Out I Have ADHD"
 subTitle: "How finally getting diagnosed at 30 changed the way I think, work, and show up every day."
 pubDate: "2025-11-17"
 category: "Mental Health"
+image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+imgageCredit: "Unsplash"
+imageCreditUrl: "https://unsplash.com/photos/people-sitting-down-near-table-with-assorted-laptop-computers-SYTO3xs06fU"
 draft: true
 ---
 For most of my twenties, work felt like a mystery I couldn’t solve. Some days I was unstoppable; others, I couldn’t start. I thought it was a motivation problem. Turns out, it was ADHD.
