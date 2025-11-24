@@ -1,54 +1,158 @@
 # Copilot Instructions for Reuben's Personal Site
 
 ## Architecture Overview
-This is an **Astro static site** with content collections for blog posts and photo albums. The site uses:
-- **Tailwind CSS** for styling with custom orange accent (`#ea580c`)
-- **Cloudinary** for responsive image delivery and optimization
-- **PhotoSwipe** for lightbox photo galleries
-- **Content collections** defined in `src/content/config.ts` for type-safe content management
+**Astro v5 static site** with type-safe content collections for blog posts and photo albums. Deployed to GitHub Pages with custom domain (`reubeningber.com`).
 
-## Content Management System
-- **Blog posts**: Markdown files in `src/content/posts/` with frontmatter (title, description, pubDate, draft)
-- **Photo albums**: JSON manifests in `src/content/albums/` containing Cloudinary `publicId` references
-- All content is type-validated using Zod schemas in `src/content/config.ts`
+**Stack:**
+- **Astro v5.14.7** - Static site generator with content collections
+- **Tailwind CSS v3.4.9** - Utility-first styling with orange accent (`#ea580c`)
+- **Cloudinary** - Responsive image delivery (no local image storage)
+- **PhotoSwipe v5.4.4** - Lightbox galleries with lazy loading
+- **Zod** - Runtime validation for content schemas
 
-## Key Patterns & Conventions
+## Content Collections System
 
-### Cloudinary Integration
-- Photos are referenced by `publicId` (e.g., `"reuben/sample/01"`) in album JSON files
-- The `buildUrl()` helper function creates responsive Cloudinary URLs: `https://res.cloudinary.com/${cloud}/image/upload/f_auto,q_auto,w_${width}/${publicId}.jpg`
-- Environment variable `PUBLIC_CLOUDINARY_CLOUD_NAME` must be set in `.env`
-
-### Routing Structure
-- Blog posts: `/articles/[...slug]` dynamic route handles nested slugs
-- Photo albums: `/photos/[album]` where `[album]` matches the `slug` field in album JSON
-- RSS feed: Generated at `/rss.xml` from blog posts collection
-
-### Component Architecture
-- `BaseLayout.astro`: Main layout with SEO meta tags, includes Header/Footer
-- `PostLayout.astro`: Extends BaseLayout for blog posts
-- `PhotoGrid.astro`: Reusable grid component for displaying Cloudinary images
-- `Plausible.astro`: Analytics component (check if configured)
-
-## Development Workflow
-```bash
-npm run dev      # Start dev server
-npm run build    # Build for production  
-npm run preview  # Preview production build
+### Blog Posts (`src/content/posts/`)
+Markdown files with frontmatter validated by Zod schema in `src/content/config.ts`:
+```yaml
+title: "Post Title"
+subTitle: "Optional subtitle"
+pubDate: "2025-11-23"
+draft: false
+category: "Fatherhood"  # or Engineering, Books, Life, Other
+image: "web_assets/filename.jpg"  # Cloudinary path OR full URL
+imageCredit: "Photographer Name"
+imageCreditUrl: "https://..."
 ```
 
-## Critical Files to Understand
-- `src/content/config.ts`: Content collection schemas and validation
-- `src/pages/photos/[album].astro`: Photo gallery implementation with PhotoSwipe
-- `astro.config.mjs`: Site URL configuration (update for custom domain)
-- `tailwind.config.cjs`: Custom styling with orange accent theme
+**Image handling logic** (see `PostLayout.astro` lines 8-56):
+- `web_assets/` prefix → Cloudinary with responsive srcset
+- Full Cloudinary URL → Extract path, apply transformations
+- `/assets/images/` → Local fallback (legacy)
+- External URLs → Plain lazy load
 
-## Adding Content
-- **New blog post**: Create `.md` file in `src/content/posts/` with required frontmatter
-- **New photo album**: 
-  1. Upload photos to Cloudinary folder (e.g., `reuben/album-name/`)
-  2. Create JSON manifest in `src/content/albums/` with `publicId` references
-  3. Set unique `slug` field for URL generation
+### Photo Albums (`src/content/albums/`)
+JSON manifests with Cloudinary `publicId` references:
+```json
+{
+  "title": "Album Name",
+  "slug": "url-friendly-slug",
+  "pubDate": "2025-10-10",
+  "coverPublicId": "folder/image-name",
+  "items": [
+    {"publicId": "folder/image-01", "caption": "Optional"}
+  ]
+}
+```
 
-## Environment Setup
-Copy `.env.example` to `.env` and set `PUBLIC_CLOUDINARY_CLOUD_NAME` to your Cloudinary cloud name for photo functionality.
+Albums **randomize photo order** on each page load using Fisher-Yates shuffle (see `[album].astro` lines 18-26).
+
+## Critical Workflows
+
+### Creating New Blog Posts
+**Always use the interactive script:**
+```bash
+./scripts/new-post.sh
+```
+This generates properly formatted frontmatter with:
+- Auto-slugified filename (`YYYY-MM-DD-title.md`)
+- Date defaulting to today
+- Optional image/credit fields
+- Category validation
+
+### Creating Photo Albums
+**Use the prepare script for batch uploads:**
+```bash
+./scripts/prepare-photos.sh /path/to/photos
+```
+This script:
+1. Resizes images to max 4000px width with 85% quality (ImageMagick required)
+2. Generates album JSON manifest interactively
+3. Creates `cloudinary-ready/` output folder
+4. Sorts files alphabetically before processing
+
+**Manual process:**
+1. Upload to Cloudinary folder (e.g., `paris-october-2025/`)
+2. Create JSON in `src/content/albums/` with matching `publicId` paths
+3. Set unique `slug` for URL generation
+
+### Cloudinary URL Pattern
+Helper function `buildUrl(publicId, width)` generates:
+```
+https://res.cloudinary.com/${cloud}/image/upload/f_auto,w_${width}/${publicId}.jpg
+```
+- `f_auto` = automatic format (WebP/AVIF)
+- `w_${width}` = responsive width (600/800/1200/2400)
+- `v1761245976` = version timestamp (cache busting)
+
+## Routing & Dynamic Paths
+
+### Blog Routes
+- `/articles/` - Post listing (chronological)
+- `/articles/[...slug]` - Individual posts (supports nested slugs)
+- `/articles/category/[category]` - Category-filtered listings
+
+All use `getStaticPaths()` with `getCollection('posts')` to generate routes at build time.
+
+### Photo Routes
+- `/photos/` - Album grid
+- `/photos/[album]` - Individual galleries with PhotoSwipe lightbox
+- `/photos/highlights` - Curated selection
+
+PhotoSwipe dynamically calculates dimensions from thumbnail aspect ratio (see `[album].astro` lines 55-66).
+
+## Styling Conventions
+
+### Tailwind Config (`tailwind.config.cjs`)
+```javascript
+colors: {
+  accent: '#ea580c',    // Primary orange (links, tags)
+  primary: '#1f2937',   // Dark gray (headings)
+  secondary: '#6b7280'  // Mid gray (body text)
+}
+```
+
+**Common patterns:**
+- Category tags: `bg-accent text-white px-2 py-1 rounded text-xs`
+- Hover states: `hover:opacity-90 transition-opacity`
+- Photo grids: `columns-2 sm:columns-3` (masonry layout)
+
+## Deployment (GitHub Pages)
+
+### Automated Workflow (`.github/workflows/deploy.yml`)
+Triggers on push to `main` branch:
+1. `npm ci` - Clean install
+2. `npm run build` with `PUBLIC_CLOUDINARY_CLOUD_NAME` secret
+3. Deploy `./dist` to GitHub Pages
+
+**Critical:** `public/CNAME` file must contain `reubeningber.com` to persist custom domain.
+
+### Environment Variables
+- **Local dev:** `.env` with `PUBLIC_CLOUDINARY_CLOUD_NAME`
+- **Production:** GitHub Secrets → `PUBLIC_CLOUDINARY_CLOUD_NAME`
+
+## Key Files Reference
+
+| File | Purpose |
+|------|---------|
+| `src/content/config.ts` | Zod schemas for posts/albums |
+| `src/layouts/PostLayout.astro` | Smart image handling + OG image generation |
+| `src/pages/photos/[album].astro` | PhotoSwipe implementation + randomization |
+| `tailwind.config.cjs` | Orange accent theme (`#ea580c`) |
+| `scripts/new-post.sh` | Interactive post creation |
+| `scripts/prepare-photos.sh` | Batch photo resizing + JSON generation |
+
+## Common Tasks
+
+**Filter draft posts:**
+```javascript
+const posts = await getCollection('posts', ({ data }) => !data.draft);
+```
+
+**Generate OG images:**
+Posts use smart fallback (see `PostLayout.astro` lines 58-77):
+1. Post image → Cloudinary w/ crop (1200x630)
+2. No image → Default headshot
+
+**Add new category:**
+Update validation in `src/content/config.ts` schema, then use in frontmatter.

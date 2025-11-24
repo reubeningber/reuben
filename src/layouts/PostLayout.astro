@@ -79,20 +79,35 @@ function getOgImage(imageUrl) {
 
 const ogImage = getOgImage(frontmatter?.image);
 
-// Create blog posting schema
+// Generate meta description from frontmatter or content excerpt
+function generateDescription() {
+  if (frontmatter?.description) {
+    return frontmatter.description;
+  }
+  
+  // Extract first paragraph as fallback
+  const content = currentPost?.body || '';
+  const firstParagraph = content.split('\n\n')[0]?.replace(/[#*\[\]]/g, '').trim();
+  return firstParagraph?.substring(0, 160) || 'A blog post by Reuben Ingber';
+}
+
+const metaDescription = generateDescription();
+
+// Create blog posting schema with enhanced keywords
 const blogPostingSchema = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "@id": `https://reubeningber.com/articles/${currentPost?.slug}/#article`,
   "headline": frontmatter?.title,
-  "description": frontmatter?.description || "A blog post by Reuben Ingber",
+  "description": metaDescription,
   "image": imageConfig?.mainUrl || "https://res.cloudinary.com/dt3vcpkj6/image/upload/f_auto,w_1200,h_630,c_fill,g_face/v1761245976/web_assets/reuben_ingber_october_2025.jpg",
   "datePublished": frontmatter?.pubDate?.toISOString?.() || frontmatter?.pubDate,
-  "dateModified": frontmatter?.pubDate?.toISOString?.() || frontmatter?.pubDate,
+  "dateModified": frontmatter?.updatedDate?.toISOString?.() || frontmatter?.pubDate?.toISOString?.() || frontmatter?.pubDate,
   "author": { "@id": "https://reubeningber.com/#person" },
   "publisher": { "@id": "https://reubeningber.com/#person" },
   "mainEntityOfPage": `https://reubeningber.com/articles/${currentPost?.slug}/`,
   "articleSection": frontmatter?.category || "General",
+  "keywords": frontmatter?.tags?.join(', ') || frontmatter?.category || 'blog',
   "inLanguage": "en-US"
 };
 
@@ -106,7 +121,7 @@ const currentPostIndex = sortedPosts.findIndex(post => post.slug === currentPost
 const previousPost = currentPostIndex > 0 ? sortedPosts[currentPostIndex - 1] : undefined;
 const nextPost = currentPostIndex < sortedPosts.length - 1 ? sortedPosts[currentPostIndex + 1] : undefined;
 ---
-<Base title={`${frontmatter?.title || 'Blog Post'} · Reuben Ingber`} description={frontmatter?.description || "Blog post by Reuben Ingber"} ogImage={ogImage}>
+<Base title={`${frontmatter?.title || 'Blog Post'} · Reuben Ingber`} description={metaDescription} ogImage={ogImage} keywords={frontmatter?.tags?.join(', ')}>
   <!-- Blog Post Structured Data -->
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(blogPostingSchema)}></script>
   <article class="max-w-3xl">
