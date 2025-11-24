@@ -27,6 +27,8 @@ jobs:
 
       - name: Build site
         run: npm run build
+        env:
+          PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

@@ -4,10 +4,13 @@ import PostLayout from '../../layouts/PostLayout.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
-  return posts.map((post) => ({
-    params: { slug: post.slug },
-    props: { post }
-  }));
+  const now = new Date();
+  return posts
+    .filter(post => !post.data.draft && post.data.pubDate <= now)
+    .map((post) => ({
+      params: { slug: post.slug },
+      props: { post }
+    }));
 }
 
 const { post } = Astro.props;

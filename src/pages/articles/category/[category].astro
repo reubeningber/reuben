@@ -6,10 +6,11 @@ const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
 
 export async function getStaticPaths() {
   const allPosts = await getCollection('posts');
+  const now = new Date();
   const categoriesSet = new Set<string>();
   
   allPosts.forEach(p => {
-    if (!p.data.draft && p.data.category) {
+    if (!p.data.draft && p.data.pubDate <= now && p.data.category) {
       categoriesSet.add(p.data.category);
     }
   });
@@ -24,8 +25,9 @@ export async function getStaticPaths() {
 
 const { category } = Astro.props as { category: string };
 const allPosts = await getCollection('posts');
+const now = new Date();
 const categoryPosts = allPosts
-  .filter(p => !p.data.draft && p.data.category?.toLowerCase() === category.toLowerCase())
+  .filter(p => !p.data.draft && p.data.pubDate <= now && p.data.category?.toLowerCase() === category.toLowerCase())
   .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 
 // Smart image URL logic for category listing
