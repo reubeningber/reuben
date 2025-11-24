@@ -4,19 +4,38 @@ import PostLayout from '../../layouts/PostLayout.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
-  const now = new Date();
-  return posts
-    .filter(post => !post.data.draft && post.data.pubDate <= now)
-    .map((post) => ({
-      params: { slug: post.slug },
-      props: { post }
-    }));
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post }
+  }));
 }
 
 const { post } = Astro.props;
-const { Content, data } = await post.render();
-console.log('Slug route - post:', post.slug, 'data:', data);
+
+// Runtime check for development - redirect future posts
+if (import.meta.env.DEV) {
+  const now = new Date();
+  const today = now.getFullYear() + '-' + 
+    String(now.getMonth() + 1).padStart(2, '0') + '-' + 
+    String(now.getDate()).padStart(2, '0');
+  
+  let postDateStr;
+  if (typeof post.data.pubDate === 'string') {
+    postDateStr = post.data.pubDate;
+  } else {
+    const pd = new Date(post.data.pubDate);
+    postDateStr = pd.getFullYear() + '-' + 
+      String(pd.getMonth() + 1).padStart(2, '0') + '-' + 
+      String(pd.getDate()).padStart(2, '0');
+  }
+  
+  if (post.data.draft || postDateStr > today) {
+    return Astro.redirect('/articles/');
+  }
+}
+
+const { Content } = await post.render();
 ---
-<PostLayout frontmatter={data}>
+<PostLayout frontmatter={post.data} currentPost={post}>
   <Content />
 </PostLayout>

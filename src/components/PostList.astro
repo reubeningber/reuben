@@ -1,9 +1,34 @@
 ---
 import { getCollection } from 'astro:content';
 const { limit } = Astro.props;
+// Get today's date in local timezone YYYY-MM-DD format
 const now = new Date();
+const today = now.getFullYear() + '-' + 
+  String(now.getMonth() + 1).padStart(2, '0') + '-' + 
+  String(now.getDate()).padStart(2, '0');
+
 const allPosts = (await getCollection('posts'))
-  .filter(p => !p.data.draft && p.data.pubDate <= now)
+  .filter(p => {
+    if (p.data.draft) return false;
+    
+    // Get post date as string (YYYY-MM-DD)  
+    // Use ISO string extraction to avoid timezone issues
+    let postDateStr;
+    if (typeof p.data.pubDate === 'string') {
+      postDateStr = p.data.pubDate;
+    } else if (p.data.pubDate.toISOString) {
+      // Extract date part from ISO string to avoid timezone conversion
+      postDateStr = p.data.pubDate.toISOString().split('T')[0];
+    } else {
+      // Fallback to local date parsing
+      const pd = new Date(p.data.pubDate);
+      postDateStr = pd.getFullYear() + '-' + 
+        String(pd.getMonth() + 1).padStart(2, '0') + '-' + 
+        String(pd.getDate()).padStart(2, '0');
+    }
+    
+    return postDateStr <= today;
+  })
   .sort((a,b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 const posts = limit ? allPosts.slice(0, limit) : allPosts;
 
@@ -128,7 +153,14 @@ function createExcerpt(body, maxLength = 120) {
         <div class="p-6">
         <div class="flex items-center gap-2 text-sm font-semibold tracking-wide">
           <time datetime={p.data.pubDate.toISOString()} class="text-secondary whitespace-nowrap">
-            {p.data.pubDate.getMonth() + 1}.{p.data.pubDate.getDate()}.{p.data.pubDate.getFullYear().toString().slice(-2)}
+            {(() => {
+              // Parse date as intended (YYYY-MM-DD) without timezone conversion
+              const dateStr = p.data.pubDate instanceof Date 
+                ? p.data.pubDate.toISOString().split('T')[0]
+                : typeof p.data.pubDate === 'string' ? p.data.pubDate : new Date(p.data.pubDate).toISOString().split('T')[0];
+              const [year, month, day] = dateStr.split('-');
+              return `${month}.${day}.${year.slice(-2)}`;
+            })()} 
           </time>
           {p.data.category && (
             <>
