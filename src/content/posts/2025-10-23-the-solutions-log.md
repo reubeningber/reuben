@@ -90,3 +90,5 @@ None of these are moonshots — and that’s the point. The log captures the eve
 If you lead teams or touch lots of surface area, a solutions log pays back quickly. It reduces repeated work, de‑stresses review season, and gives you a trustworthy trail of how and why decisions were made.
 
 Small, boring systems often make the biggest impact. This one certainly has for me.
+
+This same principle of documenting what works applies to personal life too. I've found [simple journaling prompts](/articles/2023-02-16-how-one-index-card-can-drastically-improve-your-journaling/) can be just as powerful for tracking life patterns and wins.

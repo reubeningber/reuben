@@ -48,7 +48,8 @@ Look I am not perfect, I still let my kid watch shows on my phone but I try my b
 Haidt gives the research, but here are a few practical ways I’ve been trying to apply it:
 - **Delay the phone.** The longer you can hold off on giving your kid a smartphone, the better. They don’t need one in elementary school.
 - **Push for outdoor play.** Even when it’s messy, inconvenient, or “boring,” let your kids be outside unsupervised when possible. That’s where confidence grows.
-- **Model screen sanity.** Probably the hardest for me. If we’re glued to our phones 24/7, our kids will be too. I’ve started putting mine down during family time so they see that I don’t need it every second.
+- **Model screen sanity.** Probably the hardest for me. If we're glued to our phones 24/7, our kids will be too. I've started putting mine down during family time so they see that I don't need it every second.
+- **Make screen time useful.** When they do use devices, [teach them practical skills like memorizing your phone number](/articles/2025-10-03-teach-your-kids-your-cell-number) through creative methods.
 - **Encourage independence.** This one hit me hard. Our kids need real-world reps. Let them order their own food at a restaurant. Hand them cash and send them into the 7-Eleven to buy a drink. Have them pay for something at the store.
   
   For example, whenever my 6-year-old Zeke and I go out for a slice of pizza, I always make sure to have cash on me. He takes the money, walks up to the counter, and buys his own slice. It’s a small thing, but every time he does it, he stands a little taller. These tiny acts of independence build resilience, confidence, and a sense of “I can handle life” — something a screen will never give them.

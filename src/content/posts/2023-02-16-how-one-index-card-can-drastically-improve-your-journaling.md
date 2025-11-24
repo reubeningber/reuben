@@ -35,7 +35,13 @@ Each morning when I sit down to journal, if I feel like I have nothing to write 
 
 I have kept a journal for over 3 years now. What started as a way to deal with the death of my father has become a tool that makes everyday better. My Journal Card is just one way that makes it easier to do.
 
-If my prompts don’t get you started just ask yourself [what is the best thing that happened yesterday](https://austinkleon.com/2018/07/14/the-best-thing-cheerful-retrospection/) and write about that.
+If my prompts don't get you started just ask yourself [what is the best thing that happened yesterday](https://austinkleon.com/2018/07/14/the-best-thing-cheerful-retrospection/) and write about that.
+
+Once you get into a rhythm of regular reflection, you might find it helpful to think bigger picture. I wrote about [how annual themes](/articles/2023-01-05-annual-themes/) can guide your year instead of rigid resolutions.
+
+---
+
+**Related:** [The Solutions Log](/articles/2025-10-23-the-solutions-log/) · [Annual Themes](/articles/2023-01-05-annual-themes/)
 
 --- 
 

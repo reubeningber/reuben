@@ -32,7 +32,9 @@ After starting medication, that noise quieted down. For the first time, I could 
 
 ## Systems, Routines, and Curveballs
 
-These days, I write everything down — reminders, lists, even thoughts I don’t want to lose mid-sentence. It sounds rigid, but honestly, it’s freedom. The less I have to remember, the more space I have to actually live.
+These days, I write everything down — reminders, lists, even thoughts I don't want to lose mid-sentence. It sounds rigid, but honestly, it's freedom. The less I have to remember, the more space I have to actually live.
+
+One thing that helped enormously was developing better systems for staying organized. [A simple index card system](/articles/2023-02-16-how-one-index-card-can-drastically-improve-your-journaling/) transformed my journaling practice — the kind of external structure that makes all the difference with ADHD.
 
 I’ve also learned I thrive on routines just as much as my kids do. Mornings, bedtime, weekends — when there’s rhythm, there’s peace. The problem? When life throws a curveball, all us (me and my kids) fall apart a little. But we recover faster now. We laugh about it more.
 

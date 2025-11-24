@@ -11,7 +11,9 @@ When I was a kid, I became obsessed with building a recording studio.
 
 I wasn’t in a band. I couldn’t sing or play an instrument. But none of that mattered. I spent every free minute sketching layouts, saving money, and piecing together gear in a spare bedroom at my grandma’s house. There was something magical about watching this idea — this thing that lived in my head — slowly become real.  
 
-The fun wasn’t in what I made. It was in *making it*.  
+The fun wasn't in what I made. It was in *making it*.
+
+That same obsessive energy shows up differently now as a dad — whether it's [getting lost behind a camera](/articles/2025-10-28-why-every-dad-should-have-a-digital-camera/) or [building Lego cities with my son](/articles/2025-12-08-building-something-real/). The medium changes, but the magic of going all in remains.  
 
 Looking back, that little recording studio was my first lesson in what it means to go all in on something.  
 

@@ -41,10 +41,14 @@ Around the same time, I started bullet journaling. I’d tried every productivit
 
 ## What I Know Now
 
-ADHD isn’t about laziness or lack of discipline. It’s about brain chemistry. Some of us need a different kind of help — and that’s okay.
+ADHD isn't about laziness or lack of discipline. It's about brain chemistry. Some of us need a different kind of help — and that's okay.
 
 The biggest change wasn’t focus — it was forgiveness. I stopped assuming every bad day meant I was failing.
 
-If I could tell my 25-year-old self one thing, it’d be this: just because it’s always been that way doesn’t mean it has to stay that way.
+If I could tell my 25-year-old self one thing, it'd be this: just because it's always been a certain way doesn't mean it has to stay that way.
 
-Get the help you need. Do the work you’re proud of. People don’t care how you get there — they just notice when you do.
+Get the help you need. Do the work you're proud of. People don't care how you get there — they just notice when you do.
+
+---
+
+**Related:** [I Thought I Was Distracted, Turns Out It Was ADHD](/articles/2025-11-24-i-thought-i-was-distracted-turns-out-it-was-adhd/)

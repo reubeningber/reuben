@@ -17,6 +17,12 @@ Depending on how much screen time they get, they’ll learn your number before y
 
 So yes limit their screen time but when they do use it make it useful.
 
+This kind of practical parenting hack fits perfectly into [my daily framework for being a happier dad](/articles/2025-09-29-five-things-to-do-every-day-to-be-a-happier-dad/) — small, consistent actions that add up to big differences.
+
+---
+
+This kind of practical parenting hack fits perfectly into [my daily framework for being a happier dad](/articles/2025-09-29-five-things-to-do-every-day-to-be-a-happier-dad/) — small, consistent actions that add up to big differences.
+
 ---
 
 *P.S. — I can't actually take credit for this idea, it was my wife but my son learned my phone number.*

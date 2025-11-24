@@ -17,6 +17,8 @@ There were times I told myself I just needed to try harder, that I was losing my
 
 Habits don’t have to be grand declarations or strict routines. They can be small, forgiving loops — short runs that don’t aim for mileage, quick journal entries that capture a thought instead of a page, moments of stillness instead of perfect meditations. The point isn’t to be who I was before life got busy. It’s to find patterns that fit who I am now — a dad, a husband, a person whose time and energy are spoken for, but who still wants to feel strong, grounded, and present.
 
-Rubin’s title — Better Than Before — feels especially right for this season of life. Progress doesn’t mean perfection. It means showing my kids what it looks like to start again, to care about the process even when it’s messy.
+Rubin's title — Better Than Before — feels especially right for this season of life. Progress doesn't mean perfection. It means showing my kids what it looks like to start again, to care about the process even when it's messy.
+
+Gretchen Rubin's insights on habits connect perfectly to [my approach to annual themes](/articles/2023-01-05-annual-themes/) and the [systems I use for daily reflection](/articles/2023-02-16-how-one-index-card-can-drastically-improve-your-journaling/). It's all about finding what works for this season of life.
 
 As the year ends, that’s the reminder I’m holding onto: habits aren’t about control, they’re about care. The small things we return to, again and again, not because we’re chasing improvement, but because they make us feel a little more like ourselves. And maybe that’s what we want our kids to see — that it’s okay to start over, and that “better” is enough.

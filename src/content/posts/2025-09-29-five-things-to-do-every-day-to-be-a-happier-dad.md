@@ -23,6 +23,8 @@ I’ll journal, sip coffee, or just sit in the quiet. No requests for cereal. No
 ## Give Your Kids Your Full Attention (Even for 10 Minutes)
 Life is busy. But a little uninterrupted time goes a long way.
 
+One of the best tools for staying present? [A dedicated camera](/articles/2025-10-28-why-every-dad-should-have-a-digital-camera/) that keeps you off your phone and focused on capturing the moment.
+
 Walk them to school and ask about their friends. Build a Lego race car. Do a puzzle. Paint their nails (or let them paint yours — bonus points for rocking hot pink at work).
 
 It doesn’t have to be long. What matters is that you’re fully present. Those 10–15 minutes of connection can shape the whole day — for them and for you.
@@ -53,6 +55,12 @@ It’s a small thing, but it’s a daily reminder that you’re in this together
 ---
 
 ## Final Thought
-Happier doesn’t mean perfect. It doesn’t mean nailing every single day. But when I do these five things, I feel more present, more patient, and more like the dad I want to be.
+Parenting isn't about being perfect. It's about being present. These five things help me show up better for my kids, even on the hardest days. 
+
+That's really what happiness as a dad boils down to: being there, being consistent, and being willing to start fresh every day.
+
+---
+
+**Related:** [Why Every Dad Should Have a Digital Camera](/articles/2025-10-28-why-every-dad-should-have-a-digital-camera/) · [Teach Your Kids Your Cell Number](/articles/2025-10-03-teach-your-kids-your-cell-number/) · [Read The Anxious Generation](/articles/2025-10-01-read-the-anxious-generation/)
 
 It’s not about adding more to the to-do list. It’s about weaving small, intentional moments into the day. And those little things? They add up.

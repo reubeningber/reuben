@@ -15,9 +15,11 @@ You don’t need to be a “photography guy” to enjoy it. Here’s why every d
 
 Smartphones are amazing, but they’re built for convenience, not creativity. A real camera captures depth, texture, and light in a way that just hits different. Your kids’ faces, the way the light hits their hair, the little moments between the big ones — they all come out more alive.
 
-## You won’t get distracted while taking photos
+## You won't get distracted while taking photos
 
-The best part? When you’re behind a camera, you’re not getting pulled into texts, emails, or Instagram. You’re just there — watching your kids run, laugh, and grow. No pings, no notifications, no temptation to scroll. Just you, them, and the moment.
+The best part? When you're behind a camera, you're not getting pulled into texts, emails, or Instagram. You're just there — watching your kids run, laugh, and grow. No pings, no notifications, no temptation to scroll. Just you, them, and the moment.
+
+For someone like me who struggles with distraction and focus, [having a camera helps me stay present](/articles/2025-11-24-i-thought-i-was-distracted-turns-out-it-was-adhd/) in ways my phone never could.
 
 ## You’ll get wall-worthy photos — no photoshoot required
 
