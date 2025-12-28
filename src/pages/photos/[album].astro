@@ -32,10 +32,60 @@ const randomizedItems = shuffleArray(album.data.items);
 // Generate og:image from album cover
 const coverPublicId = album.data.coverPublicId || album.data.items[0].publicId;
 const ogImage = `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_1200,h_630,c_fill/${coverPublicId}.jpg`;
+
+// Cover image configuration
+const coverImageConfig = {
+  blurUrl: `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_20,e_blur:2000/${coverPublicId}.jpg`,
+  mainUrl: `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_800/${coverPublicId}.jpg`,
+  srcset: `
+    https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_400/${coverPublicId}.jpg 400w,
+    https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_600/${coverPublicId}.jpg 600w,
+    https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_800/${coverPublicId}.jpg 800w,
+    https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_1200/${coverPublicId}.jpg 1200w
+  `.trim()
+};
 ---
 <Base title={`${album.data.title} · Photos · Reuben Ingber`} ogImage={ogImage}>
-  <h1 class="text-2xl font-bold mb-4">{album.data.title}</h1>
-  {album.data.description && <p class="mb-6 text-gray-700">{album.data.description}</p>}
+  <article class="max-w-3xl">
+    <!-- Cover Image -->
+    <div class="mb-4 relative group">
+      <!-- Blur-up placeholder -->
+      <img 
+        src={coverImageConfig.blurUrl}
+        alt={album.data.title}
+        class="w-full h-64 md:h-80 object-cover rounded-lg shadow-sm absolute inset-0 z-0 opacity-100 transition-opacity duration-300"
+        id={`blur-placeholder-${Math.random().toString(36).substr(2, 9)}`}
+      />
+      
+      <!-- Main optimized image -->
+      <img 
+        src={coverImageConfig.mainUrl}
+        srcset={coverImageConfig.srcset}
+        sizes="(max-width: 768px) 100vw, 800px"
+        alt={album.data.title}
+        class="w-full h-64 md:h-80 object-cover rounded-lg shadow-sm relative z-10 opacity-0 transition-opacity duration-300"
+        loading="lazy"
+        onload={`this.style.opacity='1'; this.previousElementSibling.style.opacity='0';`}
+      />
+    </div>
+
+    <header class="mb-8 pb-4 border-b border-gray-200">
+      <div class="flex items-center gap-2 text-sm font-semibold tracking-wide">
+        <time datetime={album.data.pubDate} class="text-secondary">
+          {new Date(album.data.pubDate).toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'short', 
+            day: 'numeric' 
+          }).toUpperCase()}
+        </time>
+        <span class="text-gray-300">|</span>
+        <a href="/photos/albums/" class="text-accent hover:underline no-underline">ALBUMS</a>
+      </div>
+      <h1 class="text-3xl font-bold mt-2 text-primary tracking-wide">{album.data.title.toUpperCase()}</h1>
+      {album.data.description && (
+        <p class="text-lg text-orange-600 mt-3 font-medium leading-relaxed">{album.data.description}</p>
+      )}
+    </header>
 
   <div class="columns-2 sm:columns-3 gap-3" id="gallery">
     {randomizedItems.map((it, idx) => (
@@ -70,4 +120,5 @@ const ogImage = `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_1
     
     lightbox.init();
   </script>
+  </article>
 </Base>
