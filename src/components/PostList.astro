@@ -106,82 +106,125 @@ function createExcerpt(body, maxLength = 120) {
   return lastSpace > 0 ? truncated.substring(0, lastSpace) + '...' : truncated + '...';
 }
 ---
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-  {posts.map((p, index) => {
-    const imageConfig = getListingImageConfig(p.data.image);
-    const uniqueId = `listing-${index}`;
-    
-    return (
-      <article class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-        {imageConfig && (
-          <a href={`/articles/${p.slug}/`} class="block relative">
-            {/* Cloudinary images with blur-up effect */}
-            {imageConfig.type !== 'external' && (
-              <>
-                <!-- Blur-up placeholder -->
-                <img 
-                  src={imageConfig.blurUrl}
-                  alt={p.data.title}
-                  class="w-full h-48 object-cover absolute inset-0 transition-opacity duration-300"
-                  id={`blur-${uniqueId}`}
-                />
+<div class="space-y-12">
+  <!-- Recent Posts Cards -->
+  <section>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {posts.slice(0, 4).map((p, index) => {
+        const imageConfig = getListingImageConfig(p.data.image);
+        const uniqueId = `listing-${index}`;
+        
+        return (
+          <article class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            {imageConfig && (
+              <a href={`/articles/${p.slug}/`} class="block relative">
+                {/* Cloudinary images with blur-up effect */}
+                {imageConfig.type !== 'external' && (
+                  <>
+                    <!-- Blur-up placeholder -->
+                    <img 
+                      src={imageConfig.blurUrl}
+                      alt={p.data.title}
+                      class="w-full h-48 object-cover absolute inset-0 transition-opacity duration-300"
+                      id={`blur-${uniqueId}`}
+                    />
+                    
+                    <!-- Main optimized image -->
+                    <img 
+                      src={imageConfig.mainUrl}
+                      srcset={imageConfig.srcset}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      alt={p.data.title}
+                      class="w-full h-48 object-cover relative z-10 opacity-0 transition-opacity duration-300"
+                      loading="lazy"
+                      onload={`this.style.opacity='1'; document.getElementById('blur-${uniqueId}').style.opacity='0';`}
+                    />
+                  </>
+                )}
                 
-                <!-- Main optimized image -->
-                <img 
-                  src={imageConfig.mainUrl}
-                  srcset={imageConfig.srcset}
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  alt={p.data.title}
-                  class="w-full h-48 object-cover relative z-10 opacity-0 transition-opacity duration-300"
-                  loading="lazy"
-                  onload={`this.style.opacity='1'; document.getElementById('blur-${uniqueId}').style.opacity='0';`}
-                />
-              </>
+                {/* External images - simple lazy loading */}
+                {imageConfig.type === 'external' && (
+                  <img 
+                    src={imageConfig.mainUrl}
+                    alt={p.data.title}
+                    class="w-full h-48 object-cover"
+                    loading="lazy"
+                  />
+                )}
+              </a>
             )}
+            <div class="p-6">
+            <div class="flex items-center gap-2 text-sm font-semibold tracking-wide">
+              <time datetime={p.data.pubDate.toISOString()} class="text-secondary whitespace-nowrap">
+                {(() => {
+                  // Parse date as intended (YYYY-MM-DD) without timezone conversion
+                  const dateStr = p.data.pubDate instanceof Date 
+                    ? p.data.pubDate.toISOString().split('T')[0]
+                    : typeof p.data.pubDate === 'string' ? p.data.pubDate : new Date(p.data.pubDate).toISOString().split('T')[0];
+                  const [year, month, day] = dateStr.split('-');
+                  return `${month}.${day}.${year.slice(-2)}`;
+                })()} 
+              </time>
+              {p.data.category && (
+                <>
+                  <span class="text-gray-300">|</span>
+                  <a href={`/articles/category/${p.data.category.toLowerCase().replace(/\s+/g, '-')}/`} class="text-accent hover:underline no-underline whitespace-nowrap">
+                    {p.data.category.toUpperCase()}
+                  </a>
+                </>
+              )}
+            </div>
+              <h3 class="text-xl font-bold mt-2 mb-3 text-primary tracking-wide">
+                <a href={`/articles/${p.slug}/`} class="hover:text-accent no-underline">
+                  {p.data.title.toUpperCase()}
+                </a>
+              </h3>
+              <p class="text-gray-700 mb-4 leading-relaxed">{p.data.subTitle || createExcerpt(p.body)}</p>
+              <a href={`/articles/${p.slug}/`} class="text-accent hover:underline font-semibold text-sm">
+                READ MORE >
+              </a>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- All Articles List -->
+  {posts.length > 4 && (
+    <section>
+      <div class="space-y-3">
+        {posts.slice(4).map((p) => (
+          <article class="flex items-start gap-4 py-3 border-b border-gray-100 last:border-b-0 hover:bg-gray-50 transition-colors rounded px-2">
+            <time datetime={p.data.pubDate.toISOString()} class="text-sm text-secondary font-medium whitespace-nowrap mt-1 w-20 flex-shrink-0">
+              {(() => {
+                const dateStr = p.data.pubDate instanceof Date 
+                  ? p.data.pubDate.toISOString().split('T')[0]
+                  : typeof p.data.pubDate === 'string' ? p.data.pubDate : new Date(p.data.pubDate).toISOString().split('T')[0];
+                const [year, month, day] = dateStr.split('-');
+                return `${month}.${day}.${year.slice(-2)}`;
+              })()}
+            </time>
             
-            {/* External images - simple lazy loading */}
-            {imageConfig.type === 'external' && (
-              <img 
-                src={imageConfig.mainUrl}
-                alt={p.data.title}
-                class="w-full h-48 object-cover"
-                loading="lazy"
-              />
-            )}
-          </a>
-        )}
-        <div class="p-6">
-        <div class="flex items-center gap-2 text-sm font-semibold tracking-wide">
-          <time datetime={p.data.pubDate.toISOString()} class="text-secondary whitespace-nowrap">
-            {(() => {
-              // Parse date as intended (YYYY-MM-DD) without timezone conversion
-              const dateStr = p.data.pubDate instanceof Date 
-                ? p.data.pubDate.toISOString().split('T')[0]
-                : typeof p.data.pubDate === 'string' ? p.data.pubDate : new Date(p.data.pubDate).toISOString().split('T')[0];
-              const [year, month, day] = dateStr.split('-');
-              return `${month}.${day}.${year.slice(-2)}`;
-            })()} 
-          </time>
-          {p.data.category && (
-            <>
-              <span class="text-gray-300">|</span>
-              <a href={`/articles/category/${p.data.category.toLowerCase().replace(/\s+/g, '-')}/`} class="text-accent hover:underline no-underline whitespace-nowrap">
+            <div class="flex-1 min-w-0">
+              <h3 class="text-lg font-semibold text-primary tracking-wide leading-tight">
+                <a href={`/articles/${p.slug}/`} class="hover:text-accent no-underline">
+                  {p.data.title}
+                </a>
+              </h3>
+              {p.data.subTitle && (
+                <p class="text-gray-600 text-sm mt-1 leading-relaxed">{p.data.subTitle}</p>
+              )}
+            </div>
+            
+            {p.data.category && (
+              <a href={`/articles/category/${p.data.category.toLowerCase().replace(/\s+/g, '-')}/`} class="text-xs font-semibold text-accent bg-accent bg-opacity-10 px-2 py-1 rounded whitespace-nowrap flex-shrink-0 hover:bg-opacity-20 transition-colors no-underline">
                 {p.data.category.toUpperCase()}
               </a>
-            </>
-          )}
-        </div>
-          <h3 class="text-xl font-bold mt-2 mb-3 text-primary tracking-wide">
-            <a href={`/articles/${p.slug}/`} class="hover:text-accent no-underline">
-              {p.data.title.toUpperCase()}
-            </a>
-          </h3>
-          <p class="text-gray-700 mb-4 leading-relaxed">{p.data.subTitle || createExcerpt(p.body)}</p>
-          <a href={`/articles/${p.slug}/`} class="text-accent hover:underline font-semibold text-sm">
-            READ MORE >
-          </a>
-        </div>
-      </article>
-    );
-  })}
+            )}
+          </article>
+        ))}
+      </div>
+    </section>
+  )}
 </div>
