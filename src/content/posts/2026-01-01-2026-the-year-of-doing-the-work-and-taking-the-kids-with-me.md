@@ -120,7 +120,7 @@ This is where the year comes into focus. Some of these are about money. Some abo
 3. Race a half marathon  
 4. Weekend away with the kids  
 5. Run to Rippers  
-6. Reach $20K in my brokerage account  
+6. Double my brokerage account  
 7. Visit a new museum  
 8. Go to a concert  
 9. 12 date nights  
