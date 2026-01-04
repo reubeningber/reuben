@@ -112,12 +112,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2025-11-07-better-than-before-and-the-season-of-starting-over/</loc>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://reubeningber.com/articles/2025-11-17-i-thought-work-was-boring-turns-out-i-have-adhd/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>monthly</changefreq>
@@ -142,8 +136,8 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2026-01-01-2026-the-year-of-doing-the-work-and-taking-the-kids-with-me/</loc>
-    <lastmod>2026-01-01</lastmod>
+    <loc>https://reubeningber.com/articles/2025-11-07-better-than-before-and-the-season-of-starting-over/</loc>
+    <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -153,10 +147,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://reubeningber.com/articles/2026-01-01-2026-the-year-of-doing-the-work-and-taking-the-kids-with-me/</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   
   <url>
-    <loc>https://reubeningber.com/photos/featured-family/</loc>
-    <lastmod>2025-10-28</lastmod>
+    <loc>https://reubeningber.com/photos/august-park/</loc>
+    <lastmod>2025-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -167,8 +167,8 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/photos/august-park/</loc>
-    <lastmod>2025-08-01</lastmod>
+    <loc>https://reubeningber.com/photos/featured-family/</loc>
+    <lastmod>2025-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
