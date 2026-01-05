@@ -166,9 +166,11 @@ const nextPost = currentPostIndex < sortedPosts.length - 1 ? sortedPosts[current
         
         {/* Image credit overlay - appears on hover */}
         {frontmatter?.imageCredit && (
-          <div class="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded pointer-events-none">
+          <div class="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
             {frontmatter?.imageCreditUrl ? (
-              <span>Photo: {frontmatter.imageCredit}</span>
+              <a href={frontmatter.imageCreditUrl} target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-300 no-underline">
+                Photo: {frontmatter.imageCredit}
+              </a>
             ) : (
               <span>Photo: {frontmatter.imageCredit}</span>
             )}
