@@ -106,6 +106,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://reubeningber.com/articles/2025-11-07-better-than-before-and-the-season-of-starting-over/</loc>
+    <lastmod>2025-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://reubeningber.com/articles/2025-11-10-building-something-real/</loc>
     <lastmod>2025-11-10</lastmod>
     <changefreq>monthly</changefreq>
@@ -136,12 +142,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2025-11-07-better-than-before-and-the-season-of-starting-over/</loc>
-    <lastmod>2025-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://reubeningber.com/articles/2025-12-30-reflections-on-2025/</loc>
     <lastmod>2025-12-30</lastmod>
     <changefreq>monthly</changefreq>
@@ -155,14 +155,14 @@
   </url>
   
   <url>
-    <loc>https://reubeningber.com/photos/august-park/</loc>
-    <lastmod>2025-08-01</lastmod>
+    <loc>https://reubeningber.com/photos/cars-2025/</loc>
+    <lastmod>2025-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/photos/cars-2025/</loc>
-    <lastmod>2025-08-11</lastmod>
+    <loc>https://reubeningber.com/photos/august-park/</loc>
+    <lastmod>2025-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -173,14 +173,14 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/photos/featured-photos/</loc>
-    <lastmod>2025-10-28</lastmod>
+    <loc>https://reubeningber.com/photos/first-day-of-first-grade/</loc>
+    <lastmod>2025-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/photos/first-day-of-first-grade/</loc>
-    <lastmod>2025-09-04</lastmod>
+    <loc>https://reubeningber.com/photos/featured-photos/</loc>
+    <lastmod>2025-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
