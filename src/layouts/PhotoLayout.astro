@@ -1,0 +1,117 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Plausible from "../components/Plausible.astro";
+
+const { 
+  title = "Reuben Ingber: Personal Home Page, Articles, Photos", 
+  description = "Father of two in Queens, NY. Engineering Manager at Business Insider. Runner, photographer, and writer sharing thoughts on parenting, engineering, and life.",
+  ogImage = "https://res.cloudinary.com/dt3vcpkj6/image/upload/f_auto,w_1200,h_630,c_fill,g_face/v1761245976/web_assets/reuben_ingber_october_2025.jpg",
+  keywords,
+  isHomepage = false
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Sitemap for SEO -->
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" href="/favicon.ico" />
+    
+    <title>{title}</title>
+    <Plausible />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="Reuben Ingber" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:site" content="@reubeningber" />
+    <meta name="twitter:creator" content="@reubeningber" />
+    
+    <!-- Additional SEO -->
+    <meta name="author" content="Reuben Ingber" />
+    <meta name="theme-color" content="#ea580c" />
+    
+    <!-- Enhanced Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": "https://reubeningber.com/#person",
+        "name": "Reuben Ingber",
+        "alternateName": "Reuben",
+        "url": "https://reubeningber.com",
+        "image": "https://res.cloudinary.com/dt3vcpkj6/image/upload/f_auto,w_400,h_400,c_fill,g_face/v1761245976/web_assets/reuben_ingber_october_2025.jpg",
+        "jobTitle": "Engineering Manager",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Business Insider",
+          "url": "https://www.businessinsider.com"
+        },
+        "homeLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Queens",
+            "addressRegion": "NY",
+            "addressCountry": "US"
+          }
+        },
+        "sameAs": [
+          "https://twitter.com/reubeningber",
+          "https://github.com/ringber",
+          "https://www.linkedin.com/in/reubeningber",
+          "https://instagram.com/reubeningber",
+          "https://instagram.com/reuben_in_color",
+          "https://facebook.com/reubeningber"
+        ],
+        "knowsAbout": [
+          "Engineering management",
+          "JavaScript",
+          "Web performance",
+          "Astro",
+          "Running",
+          "Photography",
+          "Parenting"
+        ],
+        "description": "Father of two in Queens, NY. Engineering Manager at Business Insider. Runner, photographer, and writer sharing thoughts on parenting, engineering, and life."
+      }
+    </script>
+  </head>
+  <body class="font-sans antialiased bg-white">
+    <Header isHomepage={isHomepage} />
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

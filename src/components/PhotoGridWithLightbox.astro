@@ -20,9 +20,9 @@ function buildUrl(publicId, width = 1200) {
   return `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_${width}/${publicId}.jpg`;
 }
 ---
-<div class="columns-2 sm:columns-3 gap-3" id={galleryId}>
+<div class="columns-2 gap-4" id={galleryId}>
   {randomizedItems.map((it, idx) => (
-    <a href={buildUrl(it.publicId, 2400)} class="block mb-3 break-inside-avoid" data-pswp-src={buildUrl(it.publicId, 2400)}>
+    <a href={buildUrl(it.publicId, 2400)} class="block mb-4 break-inside-avoid" data-pswp-src={buildUrl(it.publicId, 2400)}>
       <img src={buildUrl(it.publicId, 600)} alt={it.caption || ''} loading="lazy" class="w-full h-auto rounded-lg hover:opacity-90 transition-opacity" />
     </a>
   ))}

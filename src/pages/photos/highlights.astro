@@ -1,6 +1,6 @@
 ---
 // Import the same content as the main photos page but with highlights tab active
-import Base from "../../layouts/BaseLayout.astro";
+import PhotoLayout from "../../layouts/PhotoLayout.astro";
 import PhotoGridWithLightbox from "../../components/PhotoGridWithLightbox.astro";
 import { getCollection } from 'astro:content';
 
@@ -36,7 +36,7 @@ function getAlbumCoverConfig(album) {
 const activeTab = 'highlights';
 ---
 
-<Base 
+<PhotoLayout 
   title="Photo Highlights by Reuben Ingber" 
   description="Browse photo highlights by Reuben Ingber. My favorite recent photos from Queens, NY and beyond."
 >

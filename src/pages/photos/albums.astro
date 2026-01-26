@@ -1,5 +1,5 @@
 ---
-import Base from "../../layouts/BaseLayout.astro";
+import PhotoLayout from "../../layouts/PhotoLayout.astro";
 import PhotoGridWithLightbox from "../../components/PhotoGridWithLightbox.astro";
 import { getCollection } from 'astro:content';
 
@@ -35,7 +35,7 @@ function getAlbumCoverConfig(album) {
 
 const activeTab = 'albums';
 ---
-<Base 
+<PhotoLayout 
   title="Photo Albums by Reuben Ingber: Family, NYC, Life in Queens" 
   description="Browse photo galleries by Reuben Ingber. Family moments, NYC scenes, and life in Queens captured with a Sony A6000. Street photography and personal memories."
 >

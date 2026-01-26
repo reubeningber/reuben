@@ -1,5 +1,5 @@
 ---
-import Base from "../../layouts/BaseLayout.astro";
+import PhotoLayout from "../../layouts/PhotoLayout.astro";
 import { getCollection } from 'astro:content';
 
 // Build Cloudinary URL with responsive width
@@ -45,8 +45,8 @@ const coverImageConfig = {
   `.trim()
 };
 ---
-<Base title={`${album.data.title} · Photos · Reuben Ingber`} ogImage={ogImage}>
-  <article class="max-w-3xl">
+<PhotoLayout title={`${album.data.title} · Photos · Reuben Ingber`} ogImage={ogImage}>
+  <article>
     <!-- Cover Image -->
     <div class="mb-4 relative group">
       <!-- Blur-up placeholder -->
@@ -87,9 +87,9 @@ const coverImageConfig = {
       )}
     </header>
 
-  <div class="columns-2 sm:columns-3 gap-3" id="gallery">
+  <div class="columns-2 gap-4" id="gallery">
     {randomizedItems.map((it, idx) => (
-      <a href={buildUrl(it.publicId, 2400)} class="block mb-3 break-inside-avoid" data-pswp-src={buildUrl(it.publicId, 2400)}>
+      <a href={buildUrl(it.publicId, 2400)} class="block mb-4 break-inside-avoid" data-pswp-src={buildUrl(it.publicId, 2400)}>
         <img src={buildUrl(it.publicId, 600)} alt={it.caption || ''} loading="lazy" class="w-full h-auto rounded-lg hover:opacity-90 transition-opacity" />
       </a>
     ))}
