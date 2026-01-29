@@ -167,12 +167,6 @@
   </url>
   
   <url>
-    <loc>https://reubeningber.com/photos/august-park/</loc>
-    <lastmod>2025-08-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://reubeningber.com/photos/cars-2025/</loc>
     <lastmod>2025-08-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -193,6 +187,12 @@
   <url>
     <loc>https://reubeningber.com/photos/first-day-of-first-grade/</loc>
     <lastmod>2025-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://reubeningber.com/photos/august-park/</loc>
+    <lastmod>2025-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
