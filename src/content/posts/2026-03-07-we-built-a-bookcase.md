@@ -1,6 +1,6 @@
 ---
 title: "We built a bookcase"
-pubDate: "2026-02-26"
+pubDate: "2026-03-07"
 image: "web_assets/20260307-RAI01632.jpg"
 imageCredit: "Reuben Ingber"
 imageCreditUrl: "http://reubeningber.com"
