@@ -100,6 +100,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://reubeningber.com/articles/2025-10-30-october-favorites/</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://reubeningber.com/articles/2025-11-07-better-than-before-and-the-season-of-starting-over/</loc>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -124,12 +130,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2025-10-30-october-favorites/</loc>
-    <lastmod>2025-10-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://reubeningber.com/articles/2025-11-24-i-thought-i-was-distracted-turns-out-it-was-adhd/</loc>
     <lastmod>2025-11-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -148,14 +148,14 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2026-01-01-2026-the-year-of-doing-the-work-and-taking-the-kids-with-me/</loc>
-    <lastmod>2026-01-01</lastmod>
+    <loc>https://reubeningber.com/articles/2026-01-05-dads-should-read-the-anxious-generation/</loc>
+    <lastmod>2026-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2026-01-05-dads-should-read-the-anxious-generation/</loc>
-    <lastmod>2026-01-05</lastmod>
+    <loc>https://reubeningber.com/articles/2026-01-01-2026-the-year-of-doing-the-work-and-taking-the-kids-with-me/</loc>
+    <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -221,6 +221,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://reubeningber.com/photos/nyc-marathon-2025/</loc>
+    <lastmod>2025-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://reubeningber.com/photos/paris-october-2025/</loc>
     <lastmod>2025-10-10</lastmod>
     <changefreq>monthly</changefreq>
@@ -229,12 +235,6 @@
   <url>
     <loc>https://reubeningber.com/photos/pumpkin-season/</loc>
     <lastmod>2025-10-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://reubeningber.com/photos/nyc-marathon-2025/</loc>
-    <lastmod>2025-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
