@@ -1,0 +1,75 @@
+content:
+  - name: posts
+    label: Posts
+    type: collection
+    path: src/content/posts
+    format: yaml-frontmatter
+    subfolders: false
+    view:
+      primary: title
+      fields: [title, pubDate, category, draft]
+      sort: [pubDate, title, category]
+      default:
+        sort: pubDate
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: subTitle
+        label: Subtitle
+        type: text
+      - name: pubDate
+        label: Publish date
+        type: date
+        required: true
+      - name: updatedDate
+        label: Updated date
+        type: date
+      - name: draft
+        label: Draft
+        type: boolean
+        default: false
+      - name: category
+        label: Category
+        type: select
+        options:
+          values:
+            - Books
+            - Code
+            - Engineering Management
+            - Favorites
+            - Fatherhood
+            - Journaling
+            - Leadership
+            - Life
+            - Mental Health
+            - Photography
+            - Ramblings
+          creatable: true
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+      - name: description
+        label: Description
+        type: text
+      - name: image
+        label: Image URL or path
+        type: string
+        description: Supports remote URLs, Cloudinary paths, or local /assets paths.
+      - name: imageCredit
+        label: Image credit
+        type: string
+      - name: imageCreditUrl
+        label: Image credit URL
+        type: string
+      - name: body
+        label: Body
+        type: code
+        options:
+          language: markdown
+settings:
+  content:
+    merge: true

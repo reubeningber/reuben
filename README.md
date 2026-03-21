@@ -82,6 +82,17 @@ src/
 
 ## Content Management
 
+### Pages CMS
+
+Posts can be edited through Pages CMS without changing the Astro build or GitHub Pages deployment.
+
+1. Open the online editor for this repository in Pages CMS
+2. Sign in with GitHub
+3. Pages CMS will load the repo configuration from `.pages.yml`
+4. Edit entries in `Posts`, then commit the changes back to the repo
+
+The Astro site continues to read Markdown from `src/content/posts/`, so Pages CMS is only an editing layer on top of the existing files.
+
 ### Creating Blog Posts
 
 **Option 1: Use the helper script (recommended)**
