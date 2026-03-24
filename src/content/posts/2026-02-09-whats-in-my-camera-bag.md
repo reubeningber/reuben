@@ -1,18 +1,23 @@
 ---
-title: "What's in My Camera Bag for 2026"
-pubDate: "2026-02-26"
-image: ""
-imageCredit: "Unsplash"
-imageCreditUrl: ""
-category: "Photography"
-description: "A honest look at the gear I carry every day—not because it's the best, but because it works for capturing my kids and the life we're actually living."
-tags: ["photography", "gear", "sony a6700", "camera bag", "film photography", "fatherhood"]
+title: What's in My Camera Bag for 2026
+pubDate: 2026-02-26
+imageCredit: Unsplash
+category: Photography
+description: A honest look at the gear I carry—not because it's the best, but
+  because it works for capturing my kids and the life we're actually living.
+tags:
+  - photography
+  - gear
+  - sony a6700
+  - camera bag
+  - film photography
+  - fatherhood
 draft: true
+updatedDate: 2026-03-24
 ---
-
 # What's in My Camera Bag
 
-I am absolutely a gear guy.
+I am absolutely a gear guy. I have always loved new toys. 
 
 I know this about myself. I research lenses for weeks before buying. I compare specs. I watch YouTube reviews. I have opinions about which third-party filters are worth it and which ones aren't.
 
@@ -56,7 +61,7 @@ It's not cheap. But I'm not buying another body for five years. This one needs t
 
 ### Nikon L35AF
 
-The film camera that goes everywhere.
+The film camera that just works.
 
 Point-and-shoot. Sharp 35mm f/2.8 lens. Built like a tank. Completely automatic except for focus, which is delightfully manual.
 
