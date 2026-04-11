@@ -76,14 +76,14 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2025-10-21-paris-anniversary-website/</loc>
-    <lastmod>2025-10-21</lastmod>
+    <loc>https://reubeningber.com/articles/2025-10-03-teach-your-kids-your-cell-numbermd/</loc>
+    <lastmod>2025-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2025-10-03-teach-your-kids-your-cell-numbermd/</loc>
-    <lastmod>2025-10-20</lastmod>
+    <loc>https://reubeningber.com/articles/2025-10-21-paris-anniversary-website/</loc>
+    <lastmod>2025-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -185,6 +185,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://reubeningber.com/photos/cars-2025/</loc>
+    <lastmod>2025-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://reubeningber.com/photos/featured-family/</loc>
     <lastmod>2025-10-28</lastmod>
     <changefreq>monthly</changefreq>
@@ -197,20 +203,8 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/photos/cars-2025/</loc>
-    <lastmod>2025-08-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://reubeningber.com/photos/first-day-of-first-grade/</loc>
     <lastmod>2025-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://reubeningber.com/photos/touch-truck-2025/</loc>
-    <lastmod>2025-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -221,14 +215,20 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/photos/paris-october-2025/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://reubeningber.com/photos/touch-truck-2025/</loc>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://reubeningber.com/photos/nyc-marathon-2025/</loc>
     <lastmod>2025-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://reubeningber.com/photos/paris-october-2025/</loc>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
