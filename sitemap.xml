@@ -28,8 +28,8 @@
   </url>
   
   <url>
-    <loc>https://reubeningber.com/articles/2022-12-24-it-costs-nothing-to-be-nice/</loc>
-    <lastmod>2022-12-24</lastmod>
+    <loc>https://reubeningber.com/articles/2023-01-05-annual-themes/</loc>
+    <lastmod>2023-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -40,20 +40,14 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2023-01-05-annual-themes/</loc>
-    <lastmod>2023-01-05</lastmod>
+    <loc>https://reubeningber.com/articles/2022-12-24-it-costs-nothing-to-be-nice/</loc>
+    <lastmod>2022-12-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://reubeningber.com/articles/2023-01-20-take-your-reading-to-a-new-level-and-reread-a-book-this-year/</loc>
     <lastmod>2023-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://reubeningber.com/articles/2023-02-16-how-one-index-card-can-drastically-improve-your-journaling/</loc>
-    <lastmod>2023-02-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -70,8 +64,8 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2025-10-01-read-the-anxious-generation/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <loc>https://reubeningber.com/articles/2023-02-16-how-one-index-card-can-drastically-improve-your-journaling/</loc>
+    <lastmod>2023-02-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -88,8 +82,20 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://reubeningber.com/articles/2025-10-01-read-the-anxious-generation/</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://reubeningber.com/articles/2025-10-23-the-solutions-log/</loc>
     <lastmod>2025-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://reubeningber.com/articles/2025-10-28-why-every-dad-should-have-a-digital-camera/</loc>
+    <lastmod>2025-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -124,12 +130,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2025-10-28-why-every-dad-should-have-a-digital-camera/</loc>
-    <lastmod>2025-10-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://reubeningber.com/articles/2025-11-24-i-thought-i-was-distracted-turns-out-it-was-adhd/</loc>
     <lastmod>2025-11-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -142,8 +142,8 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2025-12-30-reflections-on-2025/</loc>
-    <lastmod>2025-12-30</lastmod>
+    <loc>https://reubeningber.com/articles/2026-01-01-2026-the-year-of-doing-the-work-and-taking-the-kids-with-me/</loc>
+    <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -154,14 +154,14 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2026-01-01-2026-the-year-of-doing-the-work-and-taking-the-kids-with-me/</loc>
-    <lastmod>2026-01-01</lastmod>
+    <loc>https://reubeningber.com/articles/2026-01-13-three-books-to-read-when-your-new-year-s-resolutions-have-already-fallen-apart/</loc>
+    <lastmod>2026-01-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2026-01-13-three-books-to-read-when-your-new-year-s-resolutions-have-already-fallen-apart/</loc>
-    <lastmod>2026-01-13</lastmod>
+    <loc>https://reubeningber.com/articles/2025-12-30-reflections-on-2025/</loc>
+    <lastmod>2025-12-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -185,13 +185,19 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://reubeningber.com/photos/featured-family/</loc>
+    <lastmod>2025-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://reubeningber.com/photos/cars-2025/</loc>
     <lastmod>2025-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/photos/featured-family/</loc>
+    <loc>https://reubeningber.com/photos/featured-photos/</loc>
     <lastmod>2025-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -203,26 +209,14 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/photos/featured-photos/</loc>
-    <lastmod>2025-10-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://reubeningber.com/photos/touch-truck-2025/</loc>
-    <lastmod>2025-11-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://reubeningber.com/photos/hanukkah-2025/</loc>
     <lastmod>2025-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/photos/paris-october-2025/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://reubeningber.com/photos/touch-truck-2025/</loc>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -235,6 +229,12 @@
   <url>
     <loc>https://reubeningber.com/photos/pumpkin-season/</loc>
     <lastmod>2025-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://reubeningber.com/photos/paris-october-2025/</loc>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
