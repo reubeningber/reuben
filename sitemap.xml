@@ -118,14 +118,14 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2025-11-17-i-thought-work-was-boring-turns-out-i-have-adhd/</loc>
-    <lastmod>2025-11-17</lastmod>
+    <loc>https://reubeningber.com/articles/2025-11-20-going-all-in/</loc>
+    <lastmod>2025-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2025-11-20-going-all-in/</loc>
-    <lastmod>2025-11-20</lastmod>
+    <loc>https://reubeningber.com/articles/2025-11-17-i-thought-work-was-boring-turns-out-i-have-adhd/</loc>
+    <lastmod>2025-11-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -209,12 +209,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/photos/hanukkah-2025/</loc>
-    <lastmod>2025-12-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://reubeningber.com/photos/touch-truck-2025/</loc>
     <lastmod>2025-11-08</lastmod>
     <changefreq>monthly</changefreq>
@@ -235,6 +229,12 @@
   <url>
     <loc>https://reubeningber.com/photos/pumpkin-season/</loc>
     <lastmod>2025-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://reubeningber.com/photos/hanukkah-2025/</loc>
+    <lastmod>2025-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
