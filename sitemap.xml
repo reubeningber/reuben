@@ -34,6 +34,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://reubeningber.com/articles/2023-01-05-annual-themes/</loc>
+    <lastmod>2023-01-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://reubeningber.com/articles/2023-01-13-the-3-best-things-i-purchased-in-2022/</loc>
     <lastmod>2023-01-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -42,12 +48,6 @@
   <url>
     <loc>https://reubeningber.com/articles/2023-01-20-take-your-reading-to-a-new-level-and-reread-a-book-this-year/</loc>
     <lastmod>2023-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://reubeningber.com/articles/2023-01-05-annual-themes/</loc>
-    <lastmod>2023-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -88,12 +88,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2025-10-23-the-solutions-log/</loc>
-    <lastmod>2025-10-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://reubeningber.com/articles/2025-10-28-why-every-dad-should-have-a-digital-camera/</loc>
     <lastmod>2025-10-28</lastmod>
     <changefreq>monthly</changefreq>
@@ -102,6 +96,12 @@
   <url>
     <loc>https://reubeningber.com/articles/2025-10-30-october-favorites/</loc>
     <lastmod>2025-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://reubeningber.com/articles/2025-10-23-the-solutions-log/</loc>
+    <lastmod>2025-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -124,6 +124,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://reubeningber.com/articles/2025-12-25-the-very-best-books-i-read-in-2025/</loc>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://reubeningber.com/articles/2025-11-20-going-all-in/</loc>
     <lastmod>2025-11-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -132,12 +138,6 @@
   <url>
     <loc>https://reubeningber.com/articles/2025-11-24-i-thought-i-was-distracted-turns-out-it-was-adhd/</loc>
     <lastmod>2025-11-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://reubeningber.com/articles/2025-12-25-the-very-best-books-i-read-in-2025/</loc>
-    <lastmod>2025-12-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -221,14 +221,14 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/photos/paris-october-2025/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://reubeningber.com/photos/nyc-marathon-2025/</loc>
+    <lastmod>2025-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/photos/nyc-marathon-2025/</loc>
-    <lastmod>2025-11-04</lastmod>
+    <loc>https://reubeningber.com/photos/paris-october-2025/</loc>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
