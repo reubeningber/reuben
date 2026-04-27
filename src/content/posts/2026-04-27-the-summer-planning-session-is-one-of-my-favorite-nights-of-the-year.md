@@ -1,8 +1,14 @@
 ---
-title: The Summer Planning Session Is One of My Favorite Nights of the Year
-pubDate: 2026-04-27
-updatedDate: 2026-04-27
-draft: true
+title: "Stop Letting Summer Happen to You"
+subTitle: "How we plan eleven weeks of family summer — and why the NYC school calendar gap still drives me crazy"
+pubDate: "2026-04-27"
+category: "Fatherhood"
+description: "Every year summer either happens to you or you make it happen. Here's how my wife and I plan our entire summer in one night — camps, trips, date nights, and the four-week gap that NYC families are left to figure out on their own."
+tags: ["summer", "parenting", "planning", "fatherhood", "NYC", "family", "intentional living"]
+image: "https://images.unsplash.com/photo-1770250959829-de36726e99c4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+imageCredit: "Unsplash"
+imageCreditUrl: "https://unsplash.com/photos/man-writing-on-a-large-2026-calendar-drg6s76J8YU"
+
 ---
 My wife and I recently sat down with a pen and a paper calendar and started mapping out the next five months of our lives. It sounds intense. It kind of is. But after last summer, we're fully bought in.
 
