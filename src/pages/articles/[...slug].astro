@@ -29,7 +29,8 @@ if (import.meta.env.DEV) {
       String(pd.getDate()).padStart(2, '0');
   }
   
-  if (post.data.draft || postDateStr > today) {
+  const showDrafts = import.meta.env.SHOW_DRAFTS === 'true';
+  if ((!showDrafts && post.data.draft) || postDateStr > today) {
     return Astro.redirect('/articles/');
   }
 }
