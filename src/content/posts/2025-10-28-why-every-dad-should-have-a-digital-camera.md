@@ -35,4 +35,4 @@ A real camera doesn’t just help you take better photos — it helps you see be
 
 So yeah — buy the camera. You’ll thank yourself later.
 
-📸 Check out some of my photos [here](/photos/).
+📸 Check out some of my photos [here](https://photos.reubeningber.com/).

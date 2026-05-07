@@ -4,7 +4,7 @@ const { isHomepage = false } = Astro.props;
 const nav = [
   { href: '/start-here/', label: 'START HERE' },
   { href: '/articles/', label: 'ARTICLES' },
-  { href: '/photos/', label: 'PHOTOS' },
+  { href: 'https://photos.reubeningber.com', label: 'PHOTOS', external: true },
   { href: '/contact/', label: 'CONTACT' },
 ];
 ---
@@ -37,6 +37,8 @@ const nav = [
         {nav.map((item) => (
           <a
             href={item.href}
+            target={item.external ? '_blank' : undefined}
+            rel={item.external ? 'noopener noreferrer' : undefined}
             class="text-gray-900 hover:text-orange-600 px-1 sm:px-3 py-2 text-xs sm:text-sm font-medium transition-colors whitespace-nowrap"
           >
             {item.label}

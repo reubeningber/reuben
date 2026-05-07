@@ -16,7 +16,7 @@ From the incredible food and world-class museums to buttery croissants and that 
 
 Fun fact: We toured the French Crown Jewels just days before they were reportedly stolen. Coincidence? I think not. 😉
 
-Check out photos from Paris [here](/photos/paris-october-2025/). 
+Check out photos from Paris [here](https://photos.reubeningber.com/paris/). 
 
 ## Officiated My Brother's Wedding
 
@@ -32,7 +32,7 @@ It still amazes me that this 47-acre working farm exists in the middle of Queens
 
 We stumbled upon a group harvesting vegetables, and Zeke was able to join in. He was excited to get his hands dirty and then try what he harvest -- beets were not a hit, but the potatoes were great.
 
-Check out the photos from our pumpkin patch adventure [here](/photos/pumpkin-season/). 
+Check out the photos from our pumpkin patch adventure [here](https://photos.reubeningber.com/). 
 
 ## AI Development Breakthrough at Work
 

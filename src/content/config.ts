@@ -17,22 +17,4 @@ const posts = defineCollection({
   })
 });
 
-// Albums store Cloudinary public IDs and captions
-const albums = defineCollection({
-  type: 'data',
-  schema: z.object({
-    title: z.string(),
-    slug: z.string(),
-    description: z.string().optional(),
-    pubDate: z.coerce.date(),
-    coverPublicId: z.string().optional(),
-    items: z.array(z.object({
-      publicId: z.string(),
-      width: z.number().optional(),
-      height: z.number().optional(),
-      caption: z.string().optional()
-    }))
-  })
-});
-
-export const collections = { posts, albums };
+export const collections = { posts };
