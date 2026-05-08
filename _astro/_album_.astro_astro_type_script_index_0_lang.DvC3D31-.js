@@ -1,1 +1,0 @@
-import{P as r,_ as n}from"./photoswipe.C5Qd8FX8.js";const t=new r({gallery:"#gallery",children:"a",showHideAnimationType:"fade",pswpModule:()=>n(()=>import("./photoswipe.esm.CKV1Bsxh.js"),[])});t.addFilter("itemData",(e,l)=>{const i=e.element.querySelector("img");if(i){const o=i.naturalWidth/i.naturalHeight;e.width=2400,e.height=Math.round(2400/o)}return e});t.init();
