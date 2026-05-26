@@ -8,6 +8,10 @@ category: Fatherhood
 image: https://res.cloudinary.com/dt3vcpkj6/image/upload/v1779807052/web_assets/IMG_5198.jpg
 tags:
   - fatherhood
+  - parenting
+  - work from home
+  - equality
+  - family
 description: I'm the default parent in our house. Not because I'm more nurturing
   — because I work from home. Here's what that arrangement actually looks like,
   what it costs both of us, and why the infrastructure still hasn't caught up.
