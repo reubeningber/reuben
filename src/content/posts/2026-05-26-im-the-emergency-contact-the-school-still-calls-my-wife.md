@@ -6,6 +6,11 @@ updatedDate: 2026-05-26
 draft: true
 category: Fatherhood
 image: https://res.cloudinary.com/dt3vcpkj6/image/upload/v1779807052/web_assets/IMG_5198.jpg
+tags:
+  - fatherhood
+description: I'm the default parent in our house. Not because I'm more nurturing
+  — because I work from home. Here's what that arrangement actually looks like,
+  what it costs both of us, and why the infrastructure still hasn't caught up.
 ---
 Every year, I fill out my son's school emergency contact form. Every year, I put my name first. My cell phone. My work number. My email.
 
