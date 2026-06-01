@@ -7,7 +7,10 @@ const { frontmatter, currentPost } = Astro.props;
 const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
 
 // Smart image URL logic
-function getImageConfig(imageUrl) {
+/**
+ * @param {string | null | undefined} imageUrl
+ */
+function getImageConfig(imageUrl: string | null | undefined) {
   if (!imageUrl) return null;
   
   // Case 1: Already a full Cloudinary URL - use as is but optimize
@@ -57,7 +60,10 @@ function getImageConfig(imageUrl) {
 const imageConfig = getImageConfig(frontmatter?.image);
 
 // Generate og:image for social sharing
-function getOgImage(imageUrl) {
+/**
+ * @param {string | null | undefined} imageUrl
+ */
+function getOgImage(imageUrl: string | null | undefined) {
   if (!imageUrl) {
     return "https://res.cloudinary.com/dt3vcpkj6/image/upload/f_auto,w_1200,h_630,c_fill,g_face/v1761245976/web_assets/reuben_ingber_october_2025.jpg";
   }
@@ -78,6 +84,31 @@ function getOgImage(imageUrl) {
 }
 
 const ogImage = getOgImage(frontmatter?.image);
+
+/**
+ * @param {string | Date | null | undefined} dateValue
+ */
+function formatDateOnly(dateValue: string | Date | null | undefined) {
+  if (!dateValue) return '';
+
+  const date = dateValue instanceof Date ? dateValue : new Date(dateValue);
+  return new Intl.DateTimeFormat('en-US', {
+    timeZone: 'UTC',
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric'
+  }).format(date).toUpperCase();
+}
+
+/**
+ * @param {string | Date | null | undefined} dateValue
+ */
+function getDateOnlyIso(dateValue: string | Date | null | undefined) {
+  if (!dateValue) return '';
+
+  const date = dateValue instanceof Date ? dateValue : new Date(dateValue);
+  return date.toISOString().split('T')[0];
+}
 
 // Generate meta description from frontmatter or content excerpt
 function generateDescription() {
@@ -112,12 +143,13 @@ const blogPostingSchema = {
 };
 
 // Get navigation posts
+/** @type {import('astro:content').CollectionEntry<'posts'>[]} */
 const allPosts = await getCollection("posts");
 const sortedPosts = allPosts
-  .filter(post => !post.data.draft)
-  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+  .filter((post: import('astro:content').CollectionEntry<'posts'>) => !post.data.draft)
+  .sort((a: import('astro:content').CollectionEntry<'posts'>, b: import('astro:content').CollectionEntry<'posts'>) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
 
-const currentPostIndex = sortedPosts.findIndex(post => post.slug === currentPost?.slug);
+const currentPostIndex = sortedPosts.findIndex((post: import('astro:content').CollectionEntry<'posts'>) => post.slug === currentPost?.slug);
 const previousPost = currentPostIndex > 0 ? sortedPosts[currentPostIndex - 1] : undefined;
 const nextPost = currentPostIndex < sortedPosts.length - 1 ? sortedPosts[currentPostIndex + 1] : undefined;
 ---
@@ -181,12 +213,8 @@ const nextPost = currentPostIndex < sortedPosts.length - 1 ? sortedPosts[current
     
     <header class="mb-6 pb-4 border-b border-gray-200">
       <div class="flex items-center gap-2 text-sm font-semibold tracking-wide">
-        <time datetime={frontmatter?.pubDate?.toISOString?.() || frontmatter?.pubDate} class="text-secondary">
-          {frontmatter?.pubDate?.toLocaleDateString?.('en-US', { 
-            year: 'numeric', 
-            month: 'short', 
-            day: 'numeric' 
-          }).toUpperCase() || frontmatter?.pubDate}
+        <time datetime={getDateOnlyIso(frontmatter?.pubDate)} class="text-secondary">
+          {formatDateOnly(frontmatter?.pubDate) || frontmatter?.pubDate}
         </time>
         {frontmatter?.category && (
           <>
