@@ -14,7 +14,7 @@ image: https://res.cloudinary.com/dt3vcpkj6/image/upload/v1781280607/web_assets/
 ---
 Yesterday Taylor Swift showed up to Game 4 of the 2026 NBA Finals at Madison Square Garden in a custom Knicks blue t-shirt with orange block lettering that said "STEVIE KNICKS." It blew up instantly. My feed was wall-to-wall.
 
-So I built the Knicks Shirt Maker, a free, browser-based tool where you type any text and it renders live on a Knicks blue t-shirt with arched orange lettering in the same style as the viral shirt. Download it as a PNG. Done.
+So I built the [Knicks Shirt Maker](https://reubeningber.github.io/knicks-shirt-maker/), a free, browser-based tool where you type any text and it renders live on a Knicks blue t-shirt with arched orange lettering in the same style as the viral shirt. Download it as a PNG. Done.
 
 I shipped it the same day.
 
@@ -38,4 +38,4 @@ The whole thing is pure HTML, CSS, and vanilla JavaScript. No frameworks, no bui
 
 I don't know how long this moment lasts. The Finals will be over soon and the internet will move on. But it was a good excuse to build something fast and ship it while it was still relevant — which, honestly, is a skill I don't exercise enough.
 
-[Go make your shirt!](https://reubeningber.github.io/knicks-shirt-maker/)
+[Go make your shirt!](https://reubeningber.github.io/knicks-shirt-maker/) or [view the code here](https://github.com/reubeningber/knicks-shirt-maker).
