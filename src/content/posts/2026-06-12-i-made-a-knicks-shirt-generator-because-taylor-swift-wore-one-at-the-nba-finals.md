@@ -4,6 +4,13 @@ subTitle: A one-day build while the moment was still alive.
 pubDate: 2026-06-12
 updatedDate: 2026-06-12
 draft: false
+category: Code
+tags:
+  - projects
+description: Taylor Swift wore a "STEVIE KNICKS" shirt to Game 4 of the NBA
+  Finals and I built a free browser tool to let anyone make their own version —
+  same arched orange lettering, instant PNG download, shipped same day.
+image: https://reubeningber.github.io/knicks-shirt-maker/og-image.png
 ---
 Yesterday Taylor Swift showed up to Game 4 of the 2026 NBA Finals at Madison Square Garden in a custom Knicks blue t-shirt with orange block lettering that said "STEVIE KNICKS." It blew up instantly. My feed was wall-to-wall.
 My first thought was: I want one. My second thought was: I could probably build that.
