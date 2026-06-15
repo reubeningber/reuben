@@ -1,4 +1,4 @@
---
+---
 title: Father's Day Without My Dad
 subTitle: The best cake in the world, with a piece that will always be missing.
 pubDate: 2026-06-15
@@ -7,7 +7,7 @@ category: Fatherhood
 image: 'https://res.cloudinary.com/dt3vcpkj6/image/upload/v1781554633/web_assets/ChatGPT_Image_Jun_15_2026_04_16_19_PM.png'
 tags: ["fatherhood", "grief", "family", "parenting", "personal"]
 description: My dad died the same year I became a father. Every Father's Day since, I get to be celebrated while quietly missing the person I most want to celebrate.
---
+---
 
 Imagine you bought the best cake in the world. You bring it home, you open the box, and a slice is missing. It's still the best cake you've ever tasted. But there's a piece that isn't there, and you can't stop noticing the empty space where it should be.
 
