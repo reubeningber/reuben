@@ -39,6 +39,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     
     <title>{title}</title>
     <Plausible />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8DBW26ND7K"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8DBW26ND7K');
+    </script>
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
