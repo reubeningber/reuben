@@ -23,26 +23,26 @@
   </url>
   
   <url>
-    <loc>https://reubeningber.com/articles/2023-01-05-annual-themes/</loc>
-    <lastmod>2023-01-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://reubeningber.com/articles/2022-12-24-it-costs-nothing-to-be-nice/</loc>
     <lastmod>2022-12-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2023-01-20-take-your-reading-to-a-new-level-and-reread-a-book-this-year/</loc>
-    <lastmod>2023-01-20</lastmod>
+    <loc>https://reubeningber.com/articles/2023-01-05-annual-themes/</loc>
+    <lastmod>2023-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://reubeningber.com/articles/2023-01-13-the-3-best-things-i-purchased-in-2022/</loc>
     <lastmod>2023-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://reubeningber.com/articles/2023-01-20-take-your-reading-to-a-new-level-and-reread-a-book-this-year/</loc>
+    <lastmod>2023-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -95,12 +95,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2025-10-30-october-favorites/</loc>
-    <lastmod>2025-10-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://reubeningber.com/articles/2025-11-07-better-than-before-and-the-season-of-starting-over/</loc>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -127,6 +121,12 @@
   <url>
     <loc>https://reubeningber.com/articles/2025-11-24-i-thought-i-was-distracted-turns-out-it-was-adhd/</loc>
     <lastmod>2025-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://reubeningber.com/articles/2025-10-30-october-favorites/</loc>
+    <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
