@@ -41,26 +41,26 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2023-02-16-how-one-index-card-can-drastically-improve-your-journaling/</loc>
-    <lastmod>2023-02-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://reubeningber.com/articles/2023-01-20-take-your-reading-to-a-new-level-and-reread-a-book-this-year/</loc>
     <lastmod>2023-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2025-09-29-five-things-to-do-every-day-to-be-a-happier-dad/</loc>
-    <lastmod>2025-09-29</lastmod>
+    <loc>https://reubeningber.com/articles/2023-02-16-how-one-index-card-can-drastically-improve-your-journaling/</loc>
+    <lastmod>2023-02-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://reubeningber.com/articles/2023-02-23-35-things-i-ve-learned-in-35-years/</loc>
     <lastmod>2023-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://reubeningber.com/articles/2025-09-29-five-things-to-do-every-day-to-be-a-happier-dad/</loc>
+    <lastmod>2025-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -83,12 +83,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2025-10-23-the-solutions-log/</loc>
-    <lastmod>2025-10-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://reubeningber.com/articles/2025-10-28-why-every-dad-should-have-a-digital-camera/</loc>
     <lastmod>2025-10-28</lastmod>
     <changefreq>monthly</changefreq>
@@ -101,20 +95,26 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://reubeningber.com/articles/2025-10-23-the-solutions-log/</loc>
+    <lastmod>2025-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://reubeningber.com/articles/2025-11-07-better-than-before-and-the-season-of-starting-over/</loc>
     <lastmod>2025-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2025-11-10-building-something-real/</loc>
-    <lastmod>2025-11-10</lastmod>
+    <loc>https://reubeningber.com/articles/2025-11-17-i-thought-work-was-boring-turns-out-i-have-adhd/</loc>
+    <lastmod>2025-11-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2025-11-17-i-thought-work-was-boring-turns-out-i-have-adhd/</loc>
-    <lastmod>2025-11-17</lastmod>
+    <loc>https://reubeningber.com/articles/2025-11-10-building-something-real/</loc>
+    <lastmod>2025-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -133,6 +133,12 @@
   <url>
     <loc>https://reubeningber.com/articles/2025-12-25-the-very-best-books-i-read-in-2025/</loc>
     <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://reubeningber.com/articles/2025-12-30-reflections-on-2025/</loc>
+    <lastmod>2025-12-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -167,8 +173,8 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2025-12-30-reflections-on-2025/</loc>
-    <lastmod>2025-12-30</lastmod>
+    <loc>https://reubeningber.com/articles/2026-04-27-the-summer-planning-session-is-one-of-my-favorite-nights-of-the-year/</loc>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -179,26 +185,20 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2026-04-27-the-summer-planning-session-is-one-of-my-favorite-nights-of-the-year/</loc>
-    <lastmod>2026-04-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://reubeningber.com/articles/2026-06-01-may-favorites/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2026-06-12-i-made-a-knicks-shirt-generator-because-taylor-swift-wore-one-at-the-nba-finals/</loc>
-    <lastmod>2026-06-12</lastmod>
+    <loc>https://reubeningber.com/articles/2026-06-15-fathers-day-without-my-dad/</loc>
+    <lastmod>2026-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://reubeningber.com/articles/2026-06-15-fathers-day-without-my-dad/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <loc>https://reubeningber.com/articles/2026-06-12-i-made-a-knicks-shirt-generator-because-taylor-swift-wore-one-at-the-nba-finals/</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
