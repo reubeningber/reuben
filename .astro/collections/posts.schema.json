@@ -49,6 +49,9 @@
         "image": {
           "type": "string"
         },
+        "imageAlt": {
+          "type": "string"
+        },
         "imageCredit": {
           "type": "string"
         },
@@ -66,6 +69,9 @@
           "items": {
             "type": "string"
           }
+        },
+        "canonicalURL": {
+          "type": "string"
         },
         "$schema": {
           "type": "string"

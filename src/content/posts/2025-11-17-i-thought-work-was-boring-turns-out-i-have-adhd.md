@@ -1,5 +1,5 @@
 ---
-title: "I Thought Work Was Boring — Turns Out I Have ADHD"
+title: "What Getting Diagnosed with ADHD at 30 Taught Me About Work"
 subTitle: "How finally getting diagnosed at 30 changed the way I think, work, and show up every day."
 pubDate: "2025-11-17"
 category: "Mental Health"
@@ -51,4 +51,4 @@ Get the help you need. Do the work you're proud of. People don't care how you ge
 
 ---
 
-**Related:** [I Thought I Was Distracted, Turns Out It Was ADHD](/articles/2025-11-24-i-thought-i-was-distracted-turns-out-it-was-adhd/)
+**Related:** [How My ADHD Diagnosis Changed the Way I Show Up as a Dad](/articles/2025-11-24-i-thought-i-was-distracted-turns-out-it-was-adhd/)

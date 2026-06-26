@@ -3,6 +3,7 @@ title: "Building a Paris Travel Site with AI in One Night"
 pubDate: "2025-10-21"
 image: "https://res.cloudinary.com/dt3vcpkj6/image/upload/v1761061487/paris-october-2025/20251013-DSC04348.jpg"
 category: "Code"
+description: "How I built a custom Paris travel website with GitHub Copilot in four hours — self-contained HTML pages, no build tools, 67 restaurant picks, and offline support."
 ---
 
 For our 10-year wedding anniversary my wife and I took a trip to Paris and our usual Google Doc itinerary just wouldn't do anymore. 

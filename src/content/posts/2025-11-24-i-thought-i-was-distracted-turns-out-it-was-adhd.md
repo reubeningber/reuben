@@ -1,5 +1,5 @@
 ---
-title: "I Thought I Was Distracted — Turns Out It Was ADHD"
+title: "How My ADHD Diagnosis Changed the Way I Show Up as a Dad"
 subTitle: "How finally getting diagnosed changed the way I show up for my wife and kids."
 pubDate: "2025-11-24"
 category: "Mental Health"
@@ -50,3 +50,7 @@ The people in front of you can’t.
 ## If You’re Wondering
 
 If you think you might have ADHD, talk to a doctor. It’s simple now — you can do it all online. And if you think your partner might, be kind. Support them. The person you love might be fighting noise you can’t hear.
+
+---
+
+**Related:** [What Getting Diagnosed with ADHD at 30 Taught Me About Work](/articles/2025-11-17-i-thought-work-was-boring-turns-out-i-have-adhd/)

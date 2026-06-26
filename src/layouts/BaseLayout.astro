@@ -115,6 +115,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         "description": "Father of two in Queens, NY. Engineering Manager at Business Insider. Runner, photographer, and writer sharing thoughts on parenting, engineering, and life."
       }
     </script>
+    <slot name="head" />
   </head>
   <body class="font-sans antialiased bg-white">
     <Header isHomepage={isHomepage} />

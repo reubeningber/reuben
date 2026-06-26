@@ -21,13 +21,16 @@ export async function GET() {
     <changefreq>weekly</changefreq>
     <priority>${page === '' ? '1.0' : '0.8'}</priority>
   </url>`).join('')}
-  ${publishedPosts.map(post => `
+  ${publishedPosts.map(post => {
+    const lastmod = (post.data.updatedDate || post.data.pubDate).toISOString().split('T')[0];
+    return `
   <url>
     <loc>${baseUrl}/articles/${post.slug}/</loc>
-    <lastmod>${post.data.pubDate.toISOString().split('T')[0]}</lastmod>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>`).join('')}
+  </url>`;
+  }).join('')}
 </urlset>`.trim();
 
   return new Response(sitemap, {

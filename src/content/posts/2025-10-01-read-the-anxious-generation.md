@@ -3,6 +3,8 @@ title: "Why Every Dad Should Read The Anxious Generation"
 pubDate: "2025-10-01"
 image: "web_assets/cellphone.jpg"
 category: "Books"
+canonicalURL: "https://reubeningber.com/articles/2026-01-05-dads-should-read-the-anxious-generation/"
+description: "Jonathan Haidt's The Anxious Generation explains how smartphones reshaped childhood — and why dads need to read it before handing their kid a phone."
 ---
 
 I picked up Jonathan Haidt’s The Anxious Generation recently, and I can’t stop thinking about it. It’s one of those books that makes you look at your kids, your phone, and even your own childhood a little differently.

@@ -5,6 +5,7 @@ image: "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?ixlib=rb-4.
 imageCredit: "Unsplash"
 imageCreditUrl: "https://unsplash.com/photos/book-lot-on-table-9BoqXzEeQqM"
 category: "Books"
+description: "Rereading books unlocks new insights as you grow — here's why reading the same book in a different format (audio, digital, print) is the smartest reading upgrade."
 ---
 
 On the first fathers day after my son was born, my wife gifted me a new Kindle. For years I had wanted to become a reader and this gift catapulted me into reading more than 100 books in each of the subsequent years.

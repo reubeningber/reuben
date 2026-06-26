@@ -5,6 +5,7 @@ image: "https://images.unsplash.com/photo-1483389127117-b6a2102724ae?ixlib=rb-4.
 imageCredit: "Unsplash"
 imageCreditUrl: "https://unsplash.com/photos/man-sitting-on-concrete-brick-with-opened-laptop-on-his-lap-Z3ownETsdNQ"
 category: "Life"
+description: "Ditch rigid New Year's resolutions for an annual theme — a guiding word or phrase that keeps you focused on consistency over perfection throughout the year."
 ---
 
 Themes in a book tend to encapsulate the main characters journey. In life, you are your own main character and your life is your journey and it needs a theme.

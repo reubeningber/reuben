@@ -3,6 +3,7 @@ title: "The one parenting hack I have not seen on Instagram"
 pubDate: "2025-10-20"
 image: "web_assets/lock.jpg"
 category: "Fatherhood"
+description: "Use your kid's tablet passcode to teach them your cell phone number — a clever screen-time trick that builds a real safety skill without any extra effort."
 ---
 
 While we are all trying to limit screen time and get our kids outside as much as possible -- we may have *unlocked* one good use.
@@ -16,10 +17,6 @@ So the hack: use their iPad (or tablet) passcode. Most iPads let you set a long 
 Depending on how much screen time they get, they’ll learn your number before you know it. Suddenly, screen time becomes kind of useful. A little independence, a little life skill, hidden in what otherwise feels like TV time.
 
 So yes limit their screen time but when they do use it make it useful.
-
-This kind of practical parenting hack fits perfectly into [my daily framework for being a happier dad](/articles/2025-09-29-five-things-to-do-every-day-to-be-a-happier-dad/) — small, consistent actions that add up to big differences.
-
----
 
 This kind of practical parenting hack fits perfectly into [my daily framework for being a happier dad](/articles/2025-09-29-five-things-to-do-every-day-to-be-a-happier-dad/) — small, consistent actions that add up to big differences.
 

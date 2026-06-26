@@ -4,6 +4,7 @@ subTitle: "Paris, family celebrations, fall fun, and building with AI"
 pubDate: "2025-10-30"
 category: "Favorites"
 image: "https://res.cloudinary.com/dt3vcpkj6/image/upload/v1761684777/paris-october-2025/20251012-DSC04019.jpg"
+description: "October 2025 highlights: celebrating a 10-year anniversary in Paris, officiating my brother's wedding, fall family moments, and building a travel site with AI."
 ---
 
 October 2025 was one of those months where everything seemed to align perfectly. Between celebrating our 10-year anniversary in Paris, officiating my brother's wedding, and diving deep into AI development, it felt like a month packed with meaningful moments and new adventures. Here are my favorite highlights.
