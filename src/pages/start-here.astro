@@ -1,10 +1,22 @@
 ---
 import Base from "../layouts/BaseLayout.astro";
 ---
-<Base 
-  title="About Reuben Ingber: Engineering Manager, Runner, Photographer" 
+<Base
+  title="About Reuben Ingber: Engineering Manager, Runner, Photographer"
   description="Learn more about Reuben Ingber - father, runner, photographer, and Engineering Manager at Business Insider in Queens, NY. My story, career, and dreams."
 >
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": "https://reubeningber.com/start-here/#webpage",
+    "url": "https://reubeningber.com/start-here/",
+    "name": "About Reuben Ingber",
+    "isPartOf": { "@id": "https://reubeningber.com/#website" },
+    "about": { "@id": "https://reubeningber.com/#person" },
+    "mainEntity": { "@id": "https://reubeningber.com/#person" },
+    "description": "Learn more about Reuben Ingber — father, runner, photographer, and Engineering Manager at Business Insider in Queens, NY.",
+    "inLanguage": "en-US"
+  })}></script>
   <div class="max-w-3xl">
     <h1 class="text-4xl font-bold mb-8 text-primary">Hey, I'm Reuben</h1>
     

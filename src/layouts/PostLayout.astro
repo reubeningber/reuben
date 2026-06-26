@@ -1,5 +1,6 @@
 ---
 import Base from "./BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 import { getCollection } from 'astro:content';
 
 const { frontmatter, currentPost } = Astro.props;
@@ -131,7 +132,12 @@ const blogPostingSchema = {
   "@id": `https://reubeningber.com/articles/${currentPost?.slug}/#article`,
   "headline": frontmatter?.title,
   "description": metaDescription,
-  "image": imageConfig?.mainUrl || "https://res.cloudinary.com/dt3vcpkj6/image/upload/f_auto,w_1200,h_630,c_fill,g_face/v1761245976/web_assets/reuben_ingber_october_2025.jpg",
+  "image": {
+    "@type": "ImageObject",
+    "url": imageConfig?.mainUrl || "https://res.cloudinary.com/dt3vcpkj6/image/upload/f_auto,w_1200,h_630,c_fill,g_face/v1761245976/web_assets/reuben_ingber_october_2025.jpg",
+    "width": 800,
+    "height": 533
+  },
   "datePublished": frontmatter?.pubDate?.toISOString?.() || frontmatter?.pubDate,
   "dateModified": frontmatter?.updatedDate?.toISOString?.() || frontmatter?.pubDate?.toISOString?.() || frontmatter?.pubDate,
   "author": { "@id": "https://reubeningber.com/#person" },
@@ -152,10 +158,28 @@ const sortedPosts = allPosts
 const currentPostIndex = sortedPosts.findIndex((post: import('astro:content').CollectionEntry<'posts'>) => post.slug === currentPost?.slug);
 const previousPost = currentPostIndex > 0 ? sortedPosts[currentPostIndex - 1] : undefined;
 const nextPost = currentPostIndex < sortedPosts.length - 1 ? sortedPosts[currentPostIndex + 1] : undefined;
+
+// Get related posts in same category (Fix 8)
+const relatedPosts = frontmatter?.category
+  ? sortedPosts
+      .filter((post: import('astro:content').CollectionEntry<'posts'>) =>
+        post.slug !== currentPost?.slug &&
+        post.data.category?.toLowerCase() === frontmatter.category.toLowerCase()
+      )
+      .slice(0, 3)
+  : [];
 ---
 <Base title={`${frontmatter?.title || 'Blog Post'} · Reuben Ingber`} description={metaDescription} ogImage={ogImage} keywords={frontmatter?.tags?.join(', ')}>
   <!-- Blog Post Structured Data -->
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(blogPostingSchema)}></script>
+  {frontmatter?.canonicalURL && (
+    <link rel="canonical" href={frontmatter.canonicalURL} slot="head" />
+  )}
+  <Breadcrumbs items={[
+    { name: "Home", item: "https://reubeningber.com/" },
+    { name: "Articles", item: "https://reubeningber.com/articles/" },
+    { name: frontmatter?.title || "Article", item: `https://reubeningber.com/articles/${currentPost?.slug}/` }
+  ]} />
   <article class="max-w-3xl">
     {imageConfig && (
       <div class="mb-4 relative group">
@@ -165,7 +189,7 @@ const nextPost = currentPostIndex < sortedPosts.length - 1 ? sortedPosts[current
             <!-- Blur-up placeholder -->
             <img 
               src={imageConfig.blurUrl}
-              alt={frontmatter.title || 'Blog post image'}
+              alt={frontmatter.imageAlt || frontmatter.title || 'Blog post image'}
               class="w-full h-64 md:h-80 object-cover rounded-lg shadow-sm absolute inset-0 z-0 opacity-100 transition-opacity duration-300"
               id={`blur-placeholder-${Math.random().toString(36).substr(2, 9)}`}
               title={frontmatter?.imageCredit || ''}
@@ -176,7 +200,7 @@ const nextPost = currentPostIndex < sortedPosts.length - 1 ? sortedPosts[current
               src={imageConfig.mainUrl}
               srcset={imageConfig.srcset}
               sizes="(max-width: 768px) 100vw, 800px"
-              alt={frontmatter.title || 'Blog post image'}
+              alt={frontmatter.imageAlt || frontmatter.title || 'Blog post image'}
               class="w-full h-64 md:h-80 object-cover rounded-lg shadow-sm relative z-10 opacity-0 transition-opacity duration-300"
               loading="lazy"
               title={frontmatter?.imageCredit || ''}
@@ -189,7 +213,7 @@ const nextPost = currentPostIndex < sortedPosts.length - 1 ? sortedPosts[current
         {imageConfig.type === 'external' && (
           <img 
             src={imageConfig.mainUrl}
-            alt={frontmatter.title || 'Blog post image'}
+            alt={frontmatter.imageAlt || frontmatter.title || 'Blog post image'}
             class="w-full h-64 md:h-80 object-cover rounded-lg shadow-sm"
             loading="lazy"
             title={frontmatter?.imageCredit || ''}
@@ -234,6 +258,34 @@ const nextPost = currentPostIndex < sortedPosts.length - 1 ? sortedPosts[current
     <div class="prose prose-lg prose-neutral max-w-none prose-headings:text-primary prose-headings:font-bold prose-headings:tracking-wide prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4 prose-p:text-gray-800 prose-p:leading-relaxed prose-p:mb-6 prose-strong:text-primary prose-strong:font-semibold prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-hr:border-gray-200 prose-hr:my-12 prose-ul:my-6 prose-ul:pl-6 prose-ol:my-6 prose-ol:pl-6 prose-li:text-gray-800 prose-li:leading-relaxed prose-li:mb-2 prose-li:marker:text-accent">
       <slot />
     </div>
+
+    <!-- Related Posts -->
+    {relatedPosts.length > 0 && (
+      <aside class="border-t border-gray-200 mt-12 pt-6">
+        <h2 class="text-lg font-bold text-primary tracking-wide mb-4">MORE IN {frontmatter.category.toUpperCase()}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {relatedPosts.map((post: import('astro:content').CollectionEntry<'posts'>) => (
+            <article class="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-sm transition-shadow">
+              <time class="text-xs text-secondary font-medium block mb-1">
+                {(() => {
+                  const dateStr = post.data.pubDate instanceof Date
+                    ? post.data.pubDate.toISOString().split('T')[0]
+                    : String(post.data.pubDate);
+                  const [year, month, day] = dateStr.split('-');
+                  const d = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+                  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                })()}
+              </time>
+              <h3 class="text-sm font-semibold text-primary leading-snug">
+                <a href={`/articles/${post.slug}/`} class="hover:text-accent no-underline">
+                  {post.data.title}
+                </a>
+              </h3>
+            </article>
+          ))}
+        </div>
+      </aside>
+    )}
 
     <!-- Post Navigation -->
     {(previousPost || nextPost) && (

@@ -3,6 +3,7 @@ title: "How One Index Card Can Drastically Improve Your Journaling?"
 pubDate: "2023-02-16"
 image: "web_assets/journal_card.jpeg"
 category: "Journaling"
+description: "A single index card with 8 journaling prompts ends the blank-page problem for good — the simple system that's kept a daily journaling practice alive for 3+ years."
 ---
 
 If you read any of guide to improving your life you likely already know the many benefits to a journaling practive. The biggest problem many aspirant journalers have is what to write about.

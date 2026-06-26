@@ -5,6 +5,7 @@ image: "https://images.unsplash.com/photo-1529650604660-cec743ea7788?ixlib=rb-4.
 imageCredit: "Unsplash"
 imageCreditUrl: "https://unsplash.com/photos/pink-emoji-neon-signage-60j0UB-Z_Yk"
 category: "Life"
+description: "A Christmas Eve Cracker Barrel story about giving grace to a struggling waitress on her first day — and why small kindnesses cost nothing but mean everything."
 ---
 
 Like so many others I’ve spent the past 48 hours traveling to spend time with family. For me that has meant lots of time in the car, lots of Daniel Tiger, and lots of slow food that was meant to be fast. It also meant countless interactions with other hard working adults — some also traveling and some just trying to make it through the work day.

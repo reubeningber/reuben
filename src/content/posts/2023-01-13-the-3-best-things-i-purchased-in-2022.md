@@ -3,6 +3,7 @@ title: "The 3 Best Things I Purchased in 2022"
 pubDate: "2023-01-13"
 image: "web_assets/whateverpan.jpeg"
 category: "Ramblings"
+description: "My three most worthwhile purchases in 2022: a grill pan that changed weeknight dinners, a bigger desk with a light bar, and Lego sets as a screen-free hobby."
 ---
 
 Looking through my Amazon purchase history I can see I bought a ton of stuff in 2022. Let’s be honest some of it was worth it and others well we all need diapers and baby wipes.

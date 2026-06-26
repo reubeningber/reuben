@@ -27,7 +27,7 @@ export async function GET(context) {
     
   return rss({
     title: 'Reuben Ingber',
-    description: 'Blog feed',
+    description: 'Articles on fatherhood, engineering management, ADHD, books, and life by Reuben Ingber.',
     site: context.site,
     items: publishedPosts.map((post) => ({
       title: post.data.title,
