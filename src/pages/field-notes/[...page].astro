@@ -74,7 +74,9 @@ const renderedEntries = await Promise.all(
         return (
           <article class="border-b border-gray-100 pb-10 last:border-b-0">
             <div class="text-xs text-gray-400 font-medium mb-3 tracking-wide uppercase">
-              <time datetime={pubDate.toISOString()}>{formatDate(pubDate)}</time>
+              <a href={`/field-notes/${entry.slug}/`} class="hover:text-orange-500 transition-colors no-underline">
+                <time datetime={pubDate.toISOString()}>{formatDate(pubDate)}</time>
+              </a>
               <span class="mx-2 text-gray-200">·</span>
               <span class={
                 type === 'link' ? 'text-orange-500' :

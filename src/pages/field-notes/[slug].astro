@@ -1,0 +1,105 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getImageConfig } from '../../utils/cloudinary';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('field-notes');
+  return entries
+    .filter(e => !e.data.draft)
+    .map(e => ({ params: { slug: e.slug }, props: { entry: e } }));
+}
+
+const { entry } = Astro.props;
+const { title, pubDate, type, url, image, embed } = entry.data;
+const { Content } = await render(entry);
+
+const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
+const imgConfig = getImageConfig(image, cloudName, [400, 600, 800]);
+
+function formatDate(date: Date) {
+  return new Intl.DateTimeFormat('en-US', {
+    timeZone: 'UTC',
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  }).format(date);
+}
+---
+
+<BaseLayout title={`${title} — Field Notes — Reuben Ingber`} description={title}>
+  <div class="max-w-2xl mx-auto px-4">
+
+    <div class="mb-8 mt-4">
+      <a href="/field-notes/" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-orange-600 transition-colors no-underline">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z"/></svg>
+        Field Notes
+      </a>
+    </div>
+
+    <article>
+      <div class="text-xs text-gray-400 font-medium mb-3 tracking-wide uppercase">
+        <time datetime={pubDate.toISOString()}>{formatDate(pubDate)}</time>
+        <span class="mx-2 text-gray-200">·</span>
+        <span class={
+          type === 'link' ? 'text-orange-500' :
+          type === 'image' ? 'text-blue-400' :
+          'text-purple-400'
+        }>{type}</span>
+      </div>
+
+      <h1 class="text-2xl font-bold text-primary tracking-wide mb-5 leading-snug">
+        {type === 'link' && url ? (
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-orange-600 transition-colors no-underline"
+          >
+            {title.toUpperCase()}
+            <span class="inline-block ml-1 text-orange-400 text-sm font-normal">↗</span>
+          </a>
+        ) : (
+          <span>{title.toUpperCase()}</span>
+        )}
+      </h1>
+
+      {/* Image */}
+      {type === 'image' && imgConfig && (
+        <div class="mb-5 relative overflow-hidden rounded-md bg-gray-100" style="min-height: 200px;">
+          {imgConfig.type === 'cloudinary' ? (
+            <>
+              <img
+                src={imgConfig.blurUrl}
+                alt={title}
+                class="w-full object-cover absolute inset-0 transition-opacity duration-300"
+                id="blur-fn"
+              />
+              <img
+                src={imgConfig.mainUrl}
+                srcset={imgConfig.srcset}
+                sizes="(max-width: 640px) 100vw, 672px"
+                alt={title}
+                class="w-full object-cover relative z-10 opacity-0 transition-opacity duration-300"
+                loading="lazy"
+                onload="this.style.opacity='1'; var b=document.getElementById('blur-fn'); if(b) b.style.opacity='0';"
+              />
+            </>
+          ) : (
+            <img src={imgConfig.mainUrl} alt={title} class="w-full object-cover rounded-md" loading="lazy" />
+          )}
+        </div>
+      )}
+
+      {/* Embed */}
+      {type === 'embed' && embed && (
+        <div class="mb-5 overflow-hidden rounded-md" set:html={embed} />
+      )}
+
+      <div class="prose prose-sm max-w-none text-gray-700 leading-relaxed">
+        <Content />
+      </div>
+    </article>
+
+  </div>
+</BaseLayout>
