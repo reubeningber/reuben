@@ -2,89 +2,14 @@
 import Base from "./BaseLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import { getCollection } from 'astro:content';
+import { getImageConfig as getCloudinaryConfig, getOgImageUrl } from '../utils/cloudinary';
 
 const { frontmatter, currentPost } = Astro.props;
 
 const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
 
-// Smart image URL logic
-/**
- * @param {string | null | undefined} imageUrl
- */
-function getImageConfig(imageUrl: string | null | undefined) {
-  if (!imageUrl) return null;
-  
-  // Case 1: Already a full Cloudinary URL - use as is but optimize
-  if (imageUrl.includes('res.cloudinary.com')) {
-    const cloudinaryPath = imageUrl.replace(/.*\/upload\/[^/]*\//, '');
-    return {
-      type: 'cloudinary-full',
-      blurUrl: `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_20,e_blur:2000/v1761245976/${cloudinaryPath}`,
-      mainUrl: `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_800/v1761245976/${cloudinaryPath}`,
-      srcset: `
-        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_400/v1761245976/${cloudinaryPath} 400w,
-        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_600/v1761245976/${cloudinaryPath} 600w,
-        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_800/v1761245976/${cloudinaryPath} 800w
-      `
-    };
-  }
-  
-  // Case 2: Local assets/images path - fallback to standard lazy loading
-  if (imageUrl.startsWith('assets/images/') || imageUrl.startsWith('/assets/images/')) {
-    return {
-      type: 'external',
-      mainUrl: imageUrl.startsWith('/') ? imageUrl : `/${imageUrl}`
-    };
-  }
-  
-  // Case 3: Direct web_assets path (your new format)
-  if (imageUrl.startsWith('web_assets/')) {
-    return {
-      type: 'cloudinary-web-assets',
-      blurUrl: `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_20,e_blur:2000/v1761245976/${imageUrl}`,
-      mainUrl: `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_800/v1761245976/${imageUrl}`,
-      srcset: `
-        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_400/v1761245976/${imageUrl} 400w,
-        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_600/v1761245976/${imageUrl} 600w,
-        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_800/v1761245976/${imageUrl} 800w
-      `
-    };
-  }
-  
-  // Case 4: Any other URL - just lazy load
-  return {
-    type: 'external',
-    mainUrl: imageUrl
-  };
-}
-
-const imageConfig = getImageConfig(frontmatter?.image);
-
-// Generate og:image for social sharing
-/**
- * @param {string | null | undefined} imageUrl
- */
-function getOgImage(imageUrl: string | null | undefined) {
-  if (!imageUrl) {
-    return "https://res.cloudinary.com/dt3vcpkj6/image/upload/f_auto,w_1200,h_630,c_fill,g_face/v1761245976/web_assets/reuben_ingber_october_2025.jpg";
-  }
-  
-  // Case 1: Already a full Cloudinary URL
-  if (imageUrl.includes('res.cloudinary.com')) {
-    const cloudinaryPath = imageUrl.replace(/.*\/upload\/[^/]*\//, '');
-    return `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_1200,h_630,c_fill/v1761245976/${cloudinaryPath}`;
-  }
-  
-  // Case 2: Direct web_assets path
-  if (imageUrl.startsWith('web_assets/')) {
-    return `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_1200,h_630,c_fill/v1761245976/${imageUrl}`;
-  }
-  
-  // Case 3: Any other URL - fallback to default
-  return "https://res.cloudinary.com/dt3vcpkj6/image/upload/f_auto,w_1200,h_630,c_fill,g_face/v1761245976/web_assets/reuben_ingber_october_2025.jpg";
-}
-
-const ogImage = getOgImage(frontmatter?.image);
+const imageConfig = getCloudinaryConfig(frontmatter?.image, cloudName, [400, 600, 800]);
+const ogImage = getOgImageUrl(frontmatter?.image, cloudName);
 
 /**
  * @param {string | Date | null | undefined} dateValue
@@ -184,7 +109,7 @@ const relatedPosts = frontmatter?.category
     {imageConfig && (
       <div class="mb-4 relative group">
         {/* Cloudinary images with blur-up effect */}
-        {(imageConfig.type !== 'external') && (
+        {(imageConfig.type === 'cloudinary') && (
           <>
             <!-- Blur-up placeholder -->
             <img 

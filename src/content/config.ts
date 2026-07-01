@@ -19,4 +19,17 @@ const posts = defineCollection({
   })
 });
 
-export const collections = { posts };
+const fieldNotes = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    pubDate: z.coerce.date(),
+    type: z.enum(['link', 'image', 'embed']),
+    url: z.string().url().optional(),
+    image: z.string().optional(),
+    embed: z.string().optional(),
+    draft: z.boolean().default(false),
+  })
+});
+
+export const collections = { posts, 'field-notes': fieldNotes };

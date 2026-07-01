@@ -1,32 +1,19 @@
 ---
 import { getCollection } from 'astro:content';
+import { getImageConfig as getCloudinaryConfig } from '../utils/cloudinary';
+
 const { limit } = Astro.props;
-// Get today's date in local timezone YYYY-MM-DD format
 const now = new Date();
-const today = now.getFullYear() + '-' + 
-  String(now.getMonth() + 1).padStart(2, '0') + '-' + 
+const today = now.getFullYear() + '-' +
+  String(now.getMonth() + 1).padStart(2, '0') + '-' +
   String(now.getDate()).padStart(2, '0');
 
 const allPosts = (await getCollection('posts'))
   .filter(p => {
     if (p.data.draft) return false;
-    
-    // Get post date as string (YYYY-MM-DD)  
-    // Use ISO string extraction to avoid timezone issues
-    let postDateStr;
-    if (typeof p.data.pubDate === 'string') {
-      postDateStr = p.data.pubDate;
-    } else if (p.data.pubDate.toISOString) {
-      // Extract date part from ISO string to avoid timezone conversion
-      postDateStr = p.data.pubDate.toISOString().split('T')[0];
-    } else {
-      // Fallback to local date parsing
-      const pd = new Date(p.data.pubDate);
-      postDateStr = pd.getFullYear() + '-' + 
-        String(pd.getMonth() + 1).padStart(2, '0') + '-' + 
-        String(pd.getDate()).padStart(2, '0');
-    }
-    
+    const postDateStr = p.data.pubDate instanceof Date
+      ? p.data.pubDate.toISOString().split('T')[0]
+      : String(p.data.pubDate);
     return postDateStr <= today;
   })
   .sort((a,b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
@@ -34,52 +21,8 @@ const posts = limit ? allPosts.slice(0, limit) : allPosts;
 
 const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
 
-// Smart image URL logic for post listings
 function getListingImageConfig(imageUrl) {
-  if (!imageUrl) return null;
-  
-  // Case 1: Already a full Cloudinary URL - use as is but optimize
-  if (imageUrl.includes('res.cloudinary.com')) {
-    const cloudinaryPath = imageUrl.replace(/.*\/upload\/[^/]*\//, '');
-    return {
-      type: 'cloudinary-full',
-      blurUrl: `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_20,e_blur:2000/v1761245976/${cloudinaryPath}`,
-      mainUrl: `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_400/v1761245976/${cloudinaryPath}`,
-      srcset: `
-        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_200/v1761245976/${cloudinaryPath} 200w,
-        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_300/v1761245976/${cloudinaryPath} 300w,
-        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_400/v1761245976/${cloudinaryPath} 400w
-      `
-    };
-  }
-  
-  // Case 2: Local assets/images path - fallback to standard lazy loading
-  if (imageUrl.startsWith('assets/images/') || imageUrl.startsWith('/assets/images/')) {
-    return {
-      type: 'external',
-      mainUrl: imageUrl.startsWith('/') ? imageUrl : `/${imageUrl}`
-    };
-  }
-  
-  // Case 3: Direct web_assets path (your new format)
-  if (imageUrl.startsWith('web_assets/')) {
-    return {
-      type: 'cloudinary-web-assets',
-      blurUrl: `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_20,e_blur:2000/v1761245976/${imageUrl}`,
-      mainUrl: `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_400/v1761245976/${imageUrl}`,
-      srcset: `
-        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_200/v1761245976/${imageUrl} 200w,
-        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_300/v1761245976/${imageUrl} 300w,
-        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_400/v1761245976/${imageUrl} 400w
-      `
-    };
-  }
-  
-  // Case 4: Any other URL - just lazy load
-  return {
-    type: 'external',
-    mainUrl: imageUrl
-  };
+  return getCloudinaryConfig(imageUrl, cloudName, [200, 300, 400]);
 }
 
 // Function to create excerpt from post body
@@ -135,7 +78,7 @@ function createExcerpt(body, maxLength = 120) {
             {imageConfig && (
               <a href={`/articles/${p.slug}/`} class="block relative">
                 {/* Cloudinary images with blur-up effect */}
-                {imageConfig.type !== 'external' && (
+                {imageConfig.type === 'cloudinary' && (
                   <>
                     <!-- Blur-up placeholder -->
                     <img 
@@ -196,8 +139,9 @@ function createExcerpt(body, maxLength = 120) {
                 </a>
               </h3>
               <p class="text-gray-700 mb-3 md:mb-4 leading-relaxed text-sm md:text-base line-clamp-2">{p.data.subTitle || createExcerpt(p.body)}</p>
-              <a href={`/articles/${p.slug}/`} class="text-accent hover:underline font-semibold text-xs md:text-sm">
-                READ MORE >
+              <a href={`/articles/${p.slug}/`} class="inline-flex items-center gap-1 text-accent hover:underline font-semibold text-xs md:text-sm">
+                READ MORE
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z"/></svg>
               </a>
             </div>
           </article>

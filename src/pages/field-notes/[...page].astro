@@ -1,0 +1,163 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getImageConfig } from '../../utils/cloudinary';
+
+export async function getStaticPaths({ paginate }) {
+  const now = new Date();
+  const today = now.getFullYear() + '-' +
+    String(now.getMonth() + 1).padStart(2, '0') + '-' +
+    String(now.getDate()).padStart(2, '0');
+
+  const entries = (await getCollection('field-notes'))
+    .filter(e => {
+      if (e.data.draft) return false;
+      const dateStr = e.data.pubDate instanceof Date
+        ? e.data.pubDate.toISOString().split('T')[0]
+        : String(e.data.pubDate);
+      return dateStr <= today;
+    })
+    .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+  return paginate(entries, { pageSize: 10 });
+}
+
+const { page } = Astro.props;
+const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
+
+function formatDate(date: Date) {
+  return new Intl.DateTimeFormat('en-US', {
+    timeZone: 'UTC',
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  }).format(date);
+}
+
+// Render markdown bodies
+const renderedEntries = await Promise.all(
+  page.data.map(async (entry) => {
+    const { Content } = await render(entry);
+    return { entry, Content };
+  })
+);
+---
+
+<BaseLayout
+  title="Field Notes — Reuben Ingber"
+  description="Links, images, and things worth sharing."
+>
+  <div class="max-w-2xl mx-auto px-4">
+    <div class="mb-10 mt-4 flex items-center justify-between">
+      <div>
+        <h1 class="text-3xl font-bold tracking-wide text-primary uppercase mb-2">Field Notes</h1>
+        <p class="text-gray-500 text-sm">Links, images, and things worth sharing.</p>
+      </div>
+      <a
+        href="/field-notes/rss.xml"
+        title="Field Notes RSS feed"
+        class="flex items-center gap-1.5 text-xs font-semibold text-gray-400 hover:text-orange-500 transition-colors no-underline flex-shrink-0"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19.01 7.38 20 6.18 20 4.98 20 4 19.01 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z"/>
+        </svg>
+        RSS
+      </a>
+    </div>
+
+    <div class="space-y-10">
+      {renderedEntries.map(({ entry, Content }, i) => {
+        const { title, pubDate, type, url, image, embed } = entry.data;
+        const imgConfig = getImageConfig(image, cloudName, [400, 600, 800]);
+        const uid = `fn-${i}`;
+
+        return (
+          <article class="border-b border-gray-100 pb-10 last:border-b-0">
+            <div class="text-xs text-gray-400 font-medium mb-3 tracking-wide uppercase">
+              <a href={`/field-notes/${entry.slug}/`} class="hover:text-orange-500 transition-colors no-underline">
+                <time datetime={pubDate.toISOString()}>{formatDate(pubDate)}</time>
+              </a>
+              <span class="mx-2 text-gray-200">·</span>
+              <span class={
+                type === 'link' ? 'text-orange-500' :
+                type === 'image' ? 'text-blue-400' :
+                'text-purple-400'
+              }>{type}</span>
+            </div>
+
+            {/* Title — links out for link type, plain for others */}
+            <h2 class="text-xl font-bold text-primary tracking-wide mb-4 leading-snug">
+              {type === 'link' && url ? (
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-orange-600 transition-colors no-underline"
+                >
+                  {title.toUpperCase()}
+                  <span class="inline-block ml-1 text-orange-400 text-sm font-normal">↗</span>
+                </a>
+              ) : (
+                <span>{title.toUpperCase()}</span>
+              )}
+            </h2>
+
+            {/* Image */}
+            {type === 'image' && imgConfig && (
+              <div class="mb-5 relative overflow-hidden rounded-md bg-gray-100" style="min-height: 200px;">
+                {imgConfig.type === 'cloudinary' ? (
+                  <>
+                    <img
+                      src={imgConfig.blurUrl}
+                      alt={title}
+                      class="w-full object-cover absolute inset-0 transition-opacity duration-300"
+                      id={`blur-${uid}`}
+                    />
+                    <img
+                      src={imgConfig.mainUrl}
+                      srcset={imgConfig.srcset}
+                      sizes="(max-width: 640px) 100vw, 672px"
+                      alt={title}
+                      class="w-full object-cover relative z-10 opacity-0 transition-opacity duration-300"
+                      loading="lazy"
+                      onload={`this.style.opacity='1'; var b=document.getElementById('blur-${uid}'); if(b) b.style.opacity='0';`}
+                    />
+                  </>
+                ) : (
+                  <img src={imgConfig.mainUrl} alt={title} class="w-full object-cover rounded-md" loading="lazy" />
+                )}
+              </div>
+            )}
+
+            {/* Embed */}
+            {type === 'embed' && embed && (
+              <div class="mb-5 overflow-hidden rounded-md" set:html={embed} />
+            )}
+
+            {/* Commentary */}
+            <div class="prose prose-sm max-w-none text-gray-700 leading-relaxed">
+              <Content />
+            </div>
+          </article>
+        );
+      })}
+    </div>
+
+    {/* Pagination */}
+    {(page.url.prev || page.url.next) && (
+      <nav class="flex items-center justify-between py-10 border-t border-gray-100 mt-10">
+        {page.url.prev ? (
+          <a href={page.url.prev} class="text-sm font-semibold text-orange-600 hover:text-orange-700 no-underline">
+            ← Newer
+          </a>
+        ) : <span />}
+        <span class="text-xs text-gray-400">Page {page.currentPage} of {page.lastPage}</span>
+        {page.url.next ? (
+          <a href={page.url.next} class="text-sm font-semibold text-orange-600 hover:text-orange-700 no-underline">
+            Older →
+          </a>
+        ) : <span />}
+      </nav>
+    )}
+  </div>
+</BaseLayout>

@@ -30,7 +30,7 @@ src/
     BaseLayout.astro    # Root HTML shell — <head>, analytics, OG tags, structured data
     PostLayout.astro    # Wraps BaseLayout for article pages; handles image display, post nav
   components/
-    Header.astro        # Site nav (START HERE, ARTICLES, PHOTOS, CONTACT)
+    Header.astro        # Site nav (START HERE, ARTICLES, FIELD NOTES, PHOTOS, CONTACT)
     Footer.astro        # Footer
     PostList.astro      # Renders post cards (top 4) + list (remaining); used on homepage and /articles/
     Plausible.astro     # Conditional Plausible script (only renders if env var set)
@@ -49,9 +49,11 @@ src/
     global.css
 ```
 
-## Content Collection Schema
+## Content Collections
 
-Posts live in `src/content/posts/` as Markdown files. Frontmatter fields (`src/content/config.ts`):
+### Posts (`src/content/posts/`)
+
+Blog articles. Frontmatter fields (`src/content/config.ts`):
 
 | Field | Type | Required | Notes |
 |---|---|---|---|
@@ -74,6 +76,34 @@ Post files are named `YYYY-MM-DD-slug-title.md`. The `pubDate` in frontmatter is
 ### Scheduled posts
 
 Posts with a `pubDate` in the future are hidden automatically — the build filters them out. Set a future date to schedule a post.
+
+### Field Notes (`src/content/field-notes/`)
+
+Short-form entries: links, images, or embeds with optional commentary. Lives at `/field-notes/`. Paginated at 10 per page. Frontmatter fields:
+
+| Field | Type | Required | Notes |
+|---|---|---|---|
+| `title` | string | yes | For `link` type, renders as an external link (↗) to `url` |
+| `pubDate` | date | yes | Controls ordering and scheduling |
+| `type` | `link` \| `image` \| `embed` | yes | Determines how the entry is rendered |
+| `url` | string (URL) | for link | Target URL; title becomes a link opening in new tab |
+| `image` | string | for image | Cloudinary path (e.g. `web_assets/photo.jpg`) or full URL |
+| `embed` | string | for embed | Raw HTML embed code (iframe, etc.) |
+| `draft` | boolean | no | Defaults `false`; drafts hidden in production |
+
+The Markdown body is rendered as commentary below the media. Files follow the same `YYYY-MM-DD-slug.md` naming convention.
+
+**Creating a log entry:**
+```markdown
+---
+title: Some Article Worth Reading
+pubDate: 2026-07-01
+type: link
+url: https://example.com/article
+---
+
+A sentence or two about why this is worth your time.
+```
 
 ## Image Paths
 
@@ -135,6 +165,7 @@ Two analytics tools run in parallel via `BaseLayout.astro`:
 Defined in `Header.astro`:
 - START HERE → `/start-here/`
 - ARTICLES → `/articles/`
+- FIELD NOTES → `/field-notes/`
 - PHOTOS → `https://photos.reubeningber.com` (external)
 - CONTACT → `/contact/`
 

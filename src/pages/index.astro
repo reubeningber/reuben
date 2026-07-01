@@ -1,8 +1,25 @@
 ---
 import Base from "../layouts/BaseLayout.astro";
 import PostList from "../components/PostList.astro";
+import { getCollection } from 'astro:content';
 
 const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
+
+const now = new Date();
+const today = now.getFullYear() + '-' +
+  String(now.getMonth() + 1).padStart(2, '0') + '-' +
+  String(now.getDate()).padStart(2, '0');
+
+const recentNotes = (await getCollection('field-notes'))
+  .filter(e => {
+    if (e.data.draft) return false;
+    const dateStr = e.data.pubDate instanceof Date
+      ? e.data.pubDate.toISOString().split('T')[0]
+      : String(e.data.pubDate);
+    return dateStr <= today;
+  })
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+  .slice(0, 3);
 ---
 
 <Base 
@@ -111,9 +128,54 @@ const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
       <h2 class="text-3xl font-bold mb-4 text-primary tracking-wide">RECENT ARTICLES</h2>
       <hr class="border-gray-200" />
     </div>
-    <PostList limit={4} />
-    <div class="mt-8 pt-6 text-center">
-      <a href="/articles/" class="text-accent hover:underline font-semibold">VIEW ALL ARTICLES ></a>
+    <PostList limit={2} />
+    <div class="mt-8 pt-6 text-right">
+      <a href="/articles/" class="inline-flex items-center gap-1.5 text-accent hover:underline font-semibold text-sm">
+        VIEW ALL ARTICLES
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z"/></svg>
+      </a>
     </div>
   </section>
+
+  {recentNotes.length > 0 && (
+    <section class="mt-16">
+      <div class="mb-8">
+        <h2 class="text-3xl font-bold mb-4 text-primary tracking-wide">RECENTLY NOTED</h2>
+        <hr class="border-gray-200" />
+      </div>
+      <div class="space-y-5">
+        {recentNotes.map(note => {
+          const dateStr = note.data.pubDate.toISOString().split('T')[0];
+          const [year, month, day] = dateStr.split('-');
+          const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+          const formattedDate = `${months[parseInt(month) - 1]} ${parseInt(day)}, ${year}`;
+
+          const isLink = note.data.type === 'link' && note.data.url;
+
+          return (
+            <div class="flex items-baseline gap-4 py-3 border-b border-gray-100 last:border-b-0">
+              <time class="text-xs text-gray-400 font-medium whitespace-nowrap w-24 flex-shrink-0">{formattedDate}</time>
+              <p class="text-gray-800 text-sm leading-relaxed flex-1">
+                <a
+                  href={isLink ? note.data.url : `/field-notes/${note.slug}/`}
+                  target={isLink ? '_blank' : undefined}
+                  rel={isLink ? 'noopener noreferrer' : undefined}
+                  class="font-semibold text-primary hover:text-accent transition-colors no-underline"
+                >
+                  {note.data.title}
+                  {isLink && <span class="text-orange-400 ml-1 font-normal">↗</span>}
+                </a>
+              </p>
+            </div>
+          );
+        })}
+      </div>
+      <div class="mt-6 text-right">
+        <a href="/field-notes/" class="inline-flex items-center gap-1.5 text-accent hover:underline font-semibold text-sm">
+          ALL FIELD NOTES
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z"/></svg>
+        </a>
+      </div>
+    </section>
+  )}
 </Base>
