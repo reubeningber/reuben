@@ -126,17 +126,29 @@ function isActive(href: string, external?: boolean) {
   </ul>
 </nav>
 
+<style>
+  #menu-toggle.is-open .hamburger-bar:nth-child(1) {
+    transform: rotate(45deg) translate(2px, 2px);
+  }
+  #menu-toggle.is-open .hamburger-bar:nth-child(2) {
+    opacity: 0;
+  }
+  #menu-toggle.is-open .hamburger-bar:nth-child(3) {
+    transform: rotate(-45deg) translate(2px, -2px);
+  }
+</style>
+
 <script>
   const toggle = document.getElementById('menu-toggle');
   const close = document.getElementById('menu-close');
   const drawer = document.getElementById('mobile-drawer');
   const backdrop = document.getElementById('drawer-backdrop');
-  const bars = document.querySelectorAll('.hamburger-bar');
 
   function openMenu() {
     drawer.classList.remove('-translate-x-full');
     backdrop.classList.remove('opacity-0', 'pointer-events-none');
     backdrop.classList.add('opacity-100');
+    toggle.classList.add('is-open');
     toggle.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
     close.focus();
@@ -146,6 +158,7 @@ function isActive(href: string, external?: boolean) {
     drawer.classList.add('-translate-x-full');
     backdrop.classList.add('opacity-0', 'pointer-events-none');
     backdrop.classList.remove('opacity-100');
+    toggle.classList.remove('is-open');
     toggle.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
     toggle.focus();

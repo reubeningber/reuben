@@ -30,7 +30,7 @@ src/
     BaseLayout.astro    # Root HTML shell — <head>, analytics, OG tags, structured data
     PostLayout.astro    # Wraps BaseLayout for article pages; handles image display, post nav
   components/
-    Header.astro        # Site nav (START HERE, ARTICLES, PHOTOS, CONTACT)
+    Header.astro        # Site nav (START HERE, ARTICLES, FIELD NOTES, PHOTOS, CONTACT)
     Footer.astro        # Footer
     PostList.astro      # Renders post cards (top 4) + list (remaining); used on homepage and /articles/
     Plausible.astro     # Conditional Plausible script (only renders if env var set)

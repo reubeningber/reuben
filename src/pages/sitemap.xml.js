@@ -1,7 +1,22 @@
 export async function GET() {
   const { getCollection } = await import('astro:content');
+  const now = new Date();
+  const today = now.getFullYear() + '-' +
+    String(now.getMonth() + 1).padStart(2, '0') + '-' +
+    String(now.getDate()).padStart(2, '0');
+
+  function isPublished(pubDate) {
+    const dateStr = pubDate instanceof Date
+      ? pubDate.toISOString().split('T')[0]
+      : String(pubDate);
+    return dateStr <= today;
+  }
+
   const posts = await getCollection('posts');
-  const publishedPosts = posts.filter(post => !post.data.draft);
+  const publishedPosts = posts.filter(p => !p.data.draft && isPublished(p.data.pubDate));
+
+  const fieldNotes = await getCollection('field-notes');
+  const publishedNotes = fieldNotes.filter(e => !e.data.draft && isPublished(e.data.pubDate));
 
   const baseUrl = 'https://reubeningber.com';
 
@@ -9,6 +24,7 @@ export async function GET() {
     '',
     '/start-here/',
     '/articles/',
+    '/field-notes/',
     '/contact/',
   ];
 
@@ -28,6 +44,13 @@ export async function GET() {
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>`).join('')}
+  ${publishedNotes.length > 0 ? `
+  <url>
+    <loc>${baseUrl}/field-notes/</loc>
+    <lastmod>${publishedNotes[0].data.pubDate.toISOString().split('T')[0]}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>` : ''}
 </urlset>`.trim();
 
   return new Response(sitemap, {

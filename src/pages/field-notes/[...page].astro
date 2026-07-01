@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getImageConfig } from '../../utils/cloudinary';
 
 export async function getStaticPaths({ paginate }) {
   const now = new Date();
@@ -24,36 +25,13 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props;
 const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
 
-function getImageUrl(image: string, width = 800) {
-  if (!image) return null;
-  if (image.startsWith('web_assets/')) {
-    return `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_${width}/v1761245976/${image}`;
-  }
-  if (image.includes('res.cloudinary.com')) {
-    const path = image.replace(/.*\/upload\/[^/]*\//, '');
-    return `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_${width}/v1761245976/${path}`;
-  }
-  return image;
-}
-
-function getBlurUrl(image: string) {
-  if (!image) return null;
-  if (image.startsWith('web_assets/')) {
-    return `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_20,e_blur:2000/v1761245976/${image}`;
-  }
-  if (image.includes('res.cloudinary.com')) {
-    const path = image.replace(/.*\/upload\/[^/]*\//, '');
-    return `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_20,e_blur:2000/v1761245976/${path}`;
-  }
-  return null;
-}
-
 function formatDate(date: Date) {
-  const d = date instanceof Date ? date : new Date(date);
-  const dateStr = d.toISOString().split('T')[0];
-  const [year, month, day] = dateStr.split('-');
-  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  return `${months[parseInt(month) - 1]} ${parseInt(day)}, ${year}`;
+  return new Intl.DateTimeFormat('en-US', {
+    timeZone: 'UTC',
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  }).format(date);
 }
 
 // Render markdown bodies
@@ -67,21 +45,31 @@ const renderedEntries = await Promise.all(
 
 <BaseLayout
   title="Field Notes — Reuben Ingber"
-  description="Links, images, and notes — things worth sharing."
+  description="Links, images, and things worth sharing."
 >
   <div class="max-w-2xl mx-auto px-4">
-    <div class="mb-10 mt-4">
-      <h1 class="text-3xl font-bold tracking-wide text-primary uppercase mb-2">Field Notes</h1>
-      <p class="text-gray-500 text-sm">Links, images, and things worth sharing.</p>
+    <div class="mb-10 mt-4 flex items-center justify-between">
+      <div>
+        <h1 class="text-3xl font-bold tracking-wide text-primary uppercase mb-2">Field Notes</h1>
+        <p class="text-gray-500 text-sm">Links, images, and things worth sharing.</p>
+      </div>
+      <a
+        href="/field-notes/rss.xml"
+        title="Field Notes RSS feed"
+        class="flex items-center gap-1.5 text-xs font-semibold text-gray-400 hover:text-orange-500 transition-colors no-underline flex-shrink-0"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19.01 7.38 20 6.18 20 4.98 20 4 19.01 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z"/>
+        </svg>
+        RSS
+      </a>
     </div>
 
     <div class="space-y-10">
       {renderedEntries.map(({ entry, Content }, i) => {
         const { title, pubDate, type, url, image, embed } = entry.data;
-        const mainImageUrl = image ? getImageUrl(image) : null;
-        const blurImageUrl = image ? getBlurUrl(image) : null;
-        const isCloudinary = image && (image.startsWith('web_assets/') || image.includes('res.cloudinary.com'));
-        const uid = `lb-${i}`;
+        const imgConfig = getImageConfig(image, cloudName, [400, 600, 800]);
+        const uid = `fn-${i}`;
 
         return (
           <article class="border-b border-gray-100 pb-10 last:border-b-0">
@@ -113,18 +101,20 @@ const renderedEntries = await Promise.all(
             </h2>
 
             {/* Image */}
-            {type === 'image' && mainImageUrl && (
+            {type === 'image' && imgConfig && (
               <div class="mb-5 relative overflow-hidden rounded-md bg-gray-100" style="min-height: 200px;">
-                {isCloudinary && blurImageUrl ? (
+                {imgConfig.type === 'cloudinary' ? (
                   <>
                     <img
-                      src={blurImageUrl}
+                      src={imgConfig.blurUrl}
                       alt={title}
                       class="w-full object-cover absolute inset-0 transition-opacity duration-300"
                       id={`blur-${uid}`}
                     />
                     <img
-                      src={mainImageUrl}
+                      src={imgConfig.mainUrl}
+                      srcset={imgConfig.srcset}
+                      sizes="(max-width: 640px) 100vw, 672px"
                       alt={title}
                       class="w-full object-cover relative z-10 opacity-0 transition-opacity duration-300"
                       loading="lazy"
@@ -132,7 +122,7 @@ const renderedEntries = await Promise.all(
                     />
                   </>
                 ) : (
-                  <img src={mainImageUrl} alt={title} class="w-full object-cover rounded-md" loading="lazy" />
+                  <img src={imgConfig.mainUrl} alt={title} class="w-full object-cover rounded-md" loading="lazy" />
                 )}
               </div>
             )}
