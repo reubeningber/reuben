@@ -5,6 +5,7 @@ image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.
 imageCredit: "Unsplash"
 imageCreditUrl: "https://unsplash.com/photos/selective-focus-photography-of-assorted-color-balloons-Hli3R6LKibo"
 category: "Life"
+description: "35 hard-won life lessons on turning 35 — from reading every day and prioritizing sleep, to love, parenting, money, and why systems beat goals every time."
 ---
 
 Today I turn 35 years old! Over the past few days I've taken stock and thought about the things I've learned in my albeit short time on this earth so far.

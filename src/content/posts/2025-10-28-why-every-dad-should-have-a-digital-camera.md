@@ -3,6 +3,7 @@ title: "Why Every Dad Should Have a Digital Camera"
 pubDate: "2025-10-28"
 image: "https://res.cloudinary.com/dt3vcpkj6/image/upload/v1761684777/web_assets/IMG_4709.jpg"
 category: "Fatherhood"
+description: "A dedicated digital camera keeps you present with your kids, off your phone, and produces wall-worthy family photos without an expensive professional photoshoot."
 ---
 
 Recently, I dusted off an older mirrorless camera and started taking photos again — and wow, I forgot how good it feels. There’s something about holding a real camera in your hands, lining up a shot, hearing that click — it slows you down just enough to actually see what’s happening in front of you.

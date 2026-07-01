@@ -5,6 +5,7 @@ image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.
 imageCredit: "Unsplash"
 imageCreditUrl: "https://unsplash.com/photos/person-using-macbook-pro-npxXWgQ33ZQ"
 category: "Engineering Management"
+description: "Stop struggling with self-reviews. The Solutions Log is a lightweight Markdown system for engineering managers to capture impact in real time and nail every review."
 ---
 
 If you’ve ever stared at an empty self‑review doc thinking “what did I actually do this year?”, you’re not alone. I was relying on memory (and scattered PRs/threads) to reconstruct impact across code and beyond code — incidents, cross‑team launches, coaching wins, process fixes, random notes in my journal. Recall was noisy, biased, and incomplete.

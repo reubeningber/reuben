@@ -5,6 +5,7 @@ category: "Fatherhood"
 image: "https://images.unsplash.com/photo-1549633030-89d0743bad01?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1480"
 imageCredit: "Unsplash"
 imageCreditUrl: "https://unsplash.com/photos/toddler-looking-at-believe-in-yourself-graffiti-yMg_SMqfoRU"
+description: "Gretchen Rubin's Better Than Before reminded me that habit-building after kids isn't about trying harder — it's about finding small, forgiving loops that fit your life now."
 ---
 
 As the year winds down, I’ve been thinking a lot about habits — how easily they slip, how quietly they shape us, and how much harder they are to rebuild once life gets full. I just finished Better Than Before by Gretchen Rubin, a book about how we form and sustain habits, and it couldn’t have come at a better time.
