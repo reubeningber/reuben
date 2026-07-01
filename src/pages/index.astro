@@ -1,8 +1,25 @@
 ---
 import Base from "../layouts/BaseLayout.astro";
 import PostList from "../components/PostList.astro";
+import { getCollection } from 'astro:content';
 
 const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
+
+const now = new Date();
+const today = now.getFullYear() + '-' +
+  String(now.getMonth() + 1).padStart(2, '0') + '-' +
+  String(now.getDate()).padStart(2, '0');
+
+const recentNotes = (await getCollection('field-notes'))
+  .filter(e => {
+    if (e.data.draft) return false;
+    const dateStr = e.data.pubDate instanceof Date
+      ? e.data.pubDate.toISOString().split('T')[0]
+      : String(e.data.pubDate);
+    return dateStr <= today;
+  })
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+  .slice(0, 3);
 ---
 
 <Base 
@@ -116,4 +133,40 @@ const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
       <a href="/articles/" class="text-accent hover:underline font-semibold">VIEW ALL ARTICLES ></a>
     </div>
   </section>
+
+  {recentNotes.length > 0 && (
+    <section class="mt-16">
+      <div class="mb-8">
+        <h2 class="text-3xl font-bold mb-4 text-primary tracking-wide">RECENTLY NOTED</h2>
+        <hr class="border-gray-200" />
+      </div>
+      <div class="space-y-5">
+        {recentNotes.map(note => {
+          const dateStr = note.data.pubDate.toISOString().split('T')[0];
+          const [year, month, day] = dateStr.split('-');
+          const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+          const formattedDate = `${months[parseInt(month) - 1]} ${parseInt(day)}, ${year}`;
+
+          return (
+            <div class="flex items-baseline gap-4 py-3 border-b border-gray-100 last:border-b-0">
+              <time class="text-xs text-gray-400 font-medium whitespace-nowrap w-24 flex-shrink-0">{formattedDate}</time>
+              <p class="text-gray-800 text-sm leading-relaxed flex-1">
+                {note.data.type === 'link' && note.data.url ? (
+                  <a href={note.data.url} target="_blank" rel="noopener noreferrer" class="font-semibold text-primary hover:text-accent transition-colors no-underline">
+                    {note.data.title}
+                    <span class="text-orange-400 ml-1 font-normal">↗</span>
+                  </a>
+                ) : (
+                  <span class="font-semibold text-primary">{note.data.title}</span>
+                )}
+              </p>
+            </div>
+          );
+        })}
+      </div>
+      <div class="mt-6 text-right">
+        <a href="/field-notes/" class="text-accent hover:underline font-semibold text-sm">ALL FIELD NOTES ></a>
+      </div>
+    </section>
+  )}
 </Base>
