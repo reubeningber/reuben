@@ -1,0 +1,171 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths({ paginate }) {
+  const now = new Date();
+  const today = now.getFullYear() + '-' +
+    String(now.getMonth() + 1).padStart(2, '0') + '-' +
+    String(now.getDate()).padStart(2, '0');
+
+  const entries = (await getCollection('field-notes'))
+    .filter(e => {
+      if (e.data.draft) return false;
+      const dateStr = e.data.pubDate instanceof Date
+        ? e.data.pubDate.toISOString().split('T')[0]
+        : String(e.data.pubDate);
+      return dateStr <= today;
+    })
+    .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+  return paginate(entries, { pageSize: 10 });
+}
+
+const { page } = Astro.props;
+const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
+
+function getImageUrl(image: string, width = 800) {
+  if (!image) return null;
+  if (image.startsWith('web_assets/')) {
+    return `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_${width}/v1761245976/${image}`;
+  }
+  if (image.includes('res.cloudinary.com')) {
+    const path = image.replace(/.*\/upload\/[^/]*\//, '');
+    return `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_${width}/v1761245976/${path}`;
+  }
+  return image;
+}
+
+function getBlurUrl(image: string) {
+  if (!image) return null;
+  if (image.startsWith('web_assets/')) {
+    return `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_20,e_blur:2000/v1761245976/${image}`;
+  }
+  if (image.includes('res.cloudinary.com')) {
+    const path = image.replace(/.*\/upload\/[^/]*\//, '');
+    return `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_20,e_blur:2000/v1761245976/${path}`;
+  }
+  return null;
+}
+
+function formatDate(date: Date) {
+  const d = date instanceof Date ? date : new Date(date);
+  const dateStr = d.toISOString().split('T')[0];
+  const [year, month, day] = dateStr.split('-');
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  return `${months[parseInt(month) - 1]} ${parseInt(day)}, ${year}`;
+}
+
+// Render markdown bodies
+const renderedEntries = await Promise.all(
+  page.data.map(async (entry) => {
+    const { Content } = await render(entry);
+    return { entry, Content };
+  })
+);
+---
+
+<BaseLayout
+  title="Field Notes — Reuben Ingber"
+  description="Links, images, and notes — things worth sharing."
+>
+  <div class="max-w-2xl mx-auto px-4">
+    <div class="mb-10 mt-4">
+      <h1 class="text-3xl font-bold tracking-wide text-primary uppercase mb-2">Field Notes</h1>
+      <p class="text-gray-500 text-sm">Links, images, and things worth sharing.</p>
+    </div>
+
+    <div class="space-y-10">
+      {renderedEntries.map(({ entry, Content }, i) => {
+        const { title, pubDate, type, url, image, embed } = entry.data;
+        const mainImageUrl = image ? getImageUrl(image) : null;
+        const blurImageUrl = image ? getBlurUrl(image) : null;
+        const isCloudinary = image && (image.startsWith('web_assets/') || image.includes('res.cloudinary.com'));
+        const uid = `lb-${i}`;
+
+        return (
+          <article class="border-b border-gray-100 pb-10 last:border-b-0">
+            <div class="text-xs text-gray-400 font-medium mb-3 tracking-wide uppercase">
+              <time datetime={pubDate.toISOString()}>{formatDate(pubDate)}</time>
+              <span class="mx-2 text-gray-200">·</span>
+              <span class={
+                type === 'link' ? 'text-orange-500' :
+                type === 'image' ? 'text-blue-400' :
+                'text-purple-400'
+              }>{type}</span>
+            </div>
+
+            {/* Title — links out for link type, plain for others */}
+            <h2 class="text-xl font-bold text-primary tracking-wide mb-4 leading-snug">
+              {type === 'link' && url ? (
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-orange-600 transition-colors no-underline"
+                >
+                  {title.toUpperCase()}
+                  <span class="inline-block ml-1 text-orange-400 text-sm font-normal">↗</span>
+                </a>
+              ) : (
+                <span>{title.toUpperCase()}</span>
+              )}
+            </h2>
+
+            {/* Image */}
+            {type === 'image' && mainImageUrl && (
+              <div class="mb-5 relative overflow-hidden rounded-md bg-gray-100" style="min-height: 200px;">
+                {isCloudinary && blurImageUrl ? (
+                  <>
+                    <img
+                      src={blurImageUrl}
+                      alt={title}
+                      class="w-full object-cover absolute inset-0 transition-opacity duration-300"
+                      id={`blur-${uid}`}
+                    />
+                    <img
+                      src={mainImageUrl}
+                      alt={title}
+                      class="w-full object-cover relative z-10 opacity-0 transition-opacity duration-300"
+                      loading="lazy"
+                      onload={`this.style.opacity='1'; var b=document.getElementById('blur-${uid}'); if(b) b.style.opacity='0';`}
+                    />
+                  </>
+                ) : (
+                  <img src={mainImageUrl} alt={title} class="w-full object-cover rounded-md" loading="lazy" />
+                )}
+              </div>
+            )}
+
+            {/* Embed */}
+            {type === 'embed' && embed && (
+              <div class="mb-5 overflow-hidden rounded-md" set:html={embed} />
+            )}
+
+            {/* Commentary */}
+            <div class="prose prose-sm max-w-none text-gray-700 leading-relaxed">
+              <Content />
+            </div>
+          </article>
+        );
+      })}
+    </div>
+
+    {/* Pagination */}
+    {(page.url.prev || page.url.next) && (
+      <nav class="flex items-center justify-between py-10 border-t border-gray-100 mt-10">
+        {page.url.prev ? (
+          <a href={page.url.prev} class="text-sm font-semibold text-orange-600 hover:text-orange-700 no-underline">
+            ← Newer
+          </a>
+        ) : <span />}
+        <span class="text-xs text-gray-400">Page {page.currentPage} of {page.lastPage}</span>
+        {page.url.next ? (
+          <a href={page.url.next} class="text-sm font-semibold text-orange-600 hover:text-orange-700 no-underline">
+            Older →
+          </a>
+        ) : <span />}
+      </nav>
+    )}
+  </div>
+</BaseLayout>

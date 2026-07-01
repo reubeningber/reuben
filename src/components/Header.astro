@@ -4,47 +4,158 @@ const { isHomepage = false } = Astro.props;
 const nav = [
   { href: '/start-here/', label: 'START HERE' },
   { href: '/articles/', label: 'ARTICLES' },
+  { href: '/field-notes/', label: 'FIELD NOTES' },
   { href: 'https://photos.reubeningber.com', label: 'PHOTOS', external: true },
   { href: '/contact/', label: 'CONTACT' },
 ];
----
-<header class="bg-white border-b border-gray-200">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col sm:flex-row sm:h-24 sm:items-center sm:justify-between py-4 sm:py-0">
-      <!-- Logo / Branding -->
-      <div class="flex items-center justify-center sm:justify-start mb-4 sm:mb-0">
-        <a href="/" class="flex items-center">
-          {isHomepage ? (
-            <!-- Homepage: Just the name in Rock Salt black -->
-            <span class="font-rock-salt text-2xl sm:text-2xl lg:text-3xl text-black text-center">Reuben Ingber</span>
-          ) : (
-            <!-- Other pages: Rock Salt name + square profile image -->
-            <div class="flex items-center space-x-3 sm:space-x-4">
-              <img 
-                src="https://res.cloudinary.com/dt3vcpkj6/image/upload/f_auto,w_150,h_150,c_thumb,g_face,z_0.8/v1761252984/web_assets/Reuben_Ingber_Square.jpg"
-                alt="Reuben Ingber"
-                class="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-full object-cover"
-                loading="lazy"
-              />
-              <span class="font-rock-salt text-xl sm:text-xl lg:text-3xl text-black">Reuben Ingber</span>
-            </div>
-          )}
-        </a>
-      </div>
 
-      <!-- Navigation -->
-      <nav class="flex justify-center sm:justify-end space-x-3 sm:space-x-6 lg:space-x-8">
+const pathname = Astro.url.pathname;
+function isActive(href: string, external?: boolean) {
+  if (external) return false;
+  return pathname === href || pathname.startsWith(href);
+}
+---
+
+<header class="bg-white border-b border-gray-200 relative z-40">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 sm:h-24 items-center justify-between">
+
+      <!-- Logo / Branding -->
+      <a href="/" class="flex items-center">
+        {isHomepage ? (
+          <span class="font-rock-salt text-xl sm:text-2xl lg:text-3xl text-black">Reuben Ingber</span>
+        ) : (
+          <div class="flex items-center space-x-3 sm:space-x-4">
+            <img
+              src="https://res.cloudinary.com/dt3vcpkj6/image/upload/f_auto,w_150,h_150,c_thumb,g_face,z_0.8/v1761252984/web_assets/Reuben_Ingber_Square.jpg"
+              alt="Reuben Ingber"
+              class="w-10 h-10 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-full object-cover"
+              loading="lazy"
+            />
+            <span class="font-rock-salt text-lg sm:text-xl lg:text-3xl text-black">Reuben Ingber</span>
+          </div>
+        )}
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden sm:flex items-center space-x-3 sm:space-x-6 lg:space-x-8">
         {nav.map((item) => (
           <a
             href={item.href}
             target={item.external ? '_blank' : undefined}
             rel={item.external ? 'noopener noreferrer' : undefined}
-            class="text-gray-900 hover:text-orange-600 px-1 sm:px-3 py-2 text-xs sm:text-sm font-medium transition-colors whitespace-nowrap"
+            class={`px-1 sm:px-3 py-2 text-xs sm:text-sm font-medium transition-colors whitespace-nowrap ${isActive(item.href, item.external) ? 'text-orange-600' : 'text-gray-900 hover:text-orange-600'}`}
           >
             {item.label}
           </a>
         ))}
       </nav>
+
+      <!-- Hamburger button (mobile only) -->
+      <button
+        id="menu-toggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-drawer"
+        class="sm:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+      >
+        <span class="hamburger-bar block w-6 h-0.5 bg-gray-800 transition-all duration-300 origin-center"></span>
+        <span class="hamburger-bar block w-6 h-0.5 bg-gray-800 transition-all duration-300 origin-center"></span>
+        <span class="hamburger-bar block w-6 h-0.5 bg-gray-800 transition-all duration-300 origin-center"></span>
+      </button>
+
     </div>
   </div>
 </header>
+
+<!-- Backdrop -->
+<div
+  id="drawer-backdrop"
+  class="fixed inset-0 bg-black/40 z-40 opacity-0 pointer-events-none transition-opacity duration-300 sm:hidden"
+  aria-hidden="true"
+></div>
+
+<!-- Mobile drawer -->
+<nav
+  id="mobile-drawer"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Navigation menu"
+  class="fixed top-0 left-0 h-full w-80 max-w-[92vw] bg-white z-50 shadow-xl -translate-x-full transition-transform duration-300 ease-in-out sm:hidden flex flex-col"
+>
+  <!-- Drawer header -->
+  <div class="flex items-center justify-between px-6 py-5 border-b border-gray-100">
+    <a href="/" class="flex items-center gap-3">
+      <img
+        src="https://res.cloudinary.com/dt3vcpkj6/image/upload/f_auto,w_150,h_150,c_thumb,g_face,z_0.8/v1761252984/web_assets/Reuben_Ingber_Square.jpg"
+        alt="Reuben Ingber"
+        class="w-10 h-10 rounded-full object-cover"
+      />
+      <span class="font-rock-salt text-lg text-black whitespace-nowrap">Reuben Ingber</span>
+    </a>
+    <button
+      id="menu-close"
+      aria-label="Close navigation menu"
+      class="flex items-center justify-center w-8 h-8 rounded text-gray-500 hover:text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Nav links -->
+  <ul class="flex flex-col px-4 py-6 gap-1">
+    {nav.map((item) => (
+      <li>
+        <a
+          href={item.href}
+          target={item.external ? '_blank' : undefined}
+          rel={item.external ? 'noopener noreferrer' : undefined}
+          class={`flex items-center justify-between px-3 py-3.5 text-sm font-semibold tracking-wide rounded-md transition-colors ${isActive(item.href, item.external) ? 'text-orange-600 bg-orange-50' : 'text-gray-800 hover:text-orange-600 hover:bg-orange-50'}`}
+        >
+          {item.label}
+          {item.external && (
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          )}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const close = document.getElementById('menu-close');
+  const drawer = document.getElementById('mobile-drawer');
+  const backdrop = document.getElementById('drawer-backdrop');
+  const bars = document.querySelectorAll('.hamburger-bar');
+
+  function openMenu() {
+    drawer.classList.remove('-translate-x-full');
+    backdrop.classList.remove('opacity-0', 'pointer-events-none');
+    backdrop.classList.add('opacity-100');
+    toggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    close.focus();
+  }
+
+  function closeMenu() {
+    drawer.classList.add('-translate-x-full');
+    backdrop.classList.add('opacity-0', 'pointer-events-none');
+    backdrop.classList.remove('opacity-100');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    toggle.focus();
+  }
+
+  toggle.addEventListener('click', openMenu);
+  close.addEventListener('click', closeMenu);
+  backdrop.addEventListener('click', closeMenu);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+</script>
