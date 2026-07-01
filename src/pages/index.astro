@@ -151,27 +151,20 @@ const recentNotes = (await getCollection('field-notes'))
           const formattedDate = `${months[parseInt(month) - 1]} ${parseInt(day)}, ${year}`;
 
           const isLink = note.data.type === 'link' && note.data.url;
-          const entryUrl = isLink ? note.data.url : `/field-notes/${note.slug}/`;
-          const isExternal = isLink;
 
           return (
             <div class="flex items-baseline gap-4 py-3 border-b border-gray-100 last:border-b-0">
               <time class="text-xs text-gray-400 font-medium whitespace-nowrap w-24 flex-shrink-0">{formattedDate}</time>
               <p class="text-gray-800 text-sm leading-relaxed flex-1">
                 <a
-                  href={entryUrl}
-                  target={isExternal ? '_blank' : undefined}
-                  rel={isExternal ? 'noopener noreferrer' : undefined}
+                  href={isLink ? note.data.url : `/field-notes/${note.slug}/`}
+                  target={isLink ? '_blank' : undefined}
+                  rel={isLink ? 'noopener noreferrer' : undefined}
                   class="font-semibold text-primary hover:text-accent transition-colors no-underline"
                 >
                   {note.data.title}
                   {isLink && <span class="text-orange-400 ml-1 font-normal">↗</span>}
                 </a>
-                {note.data.type !== 'link' && (
-                  <span class={`ml-2 text-xs font-semibold px-1.5 py-0.5 rounded ${note.data.type === 'image' ? 'text-blue-400 bg-blue-50' : 'text-purple-400 bg-purple-50'}`}>
-                    {note.data.type.toUpperCase()}
-                  </span>
-                )}
               </p>
             </div>
           );
