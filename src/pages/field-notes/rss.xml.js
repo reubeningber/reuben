@@ -1,20 +1,10 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
+import { isPublished } from '../../utils/publish';
 
 export async function GET(context) {
-  const now = new Date();
-  const today = now.getFullYear() + '-' +
-    String(now.getMonth() + 1).padStart(2, '0') + '-' +
-    String(now.getDate()).padStart(2, '0');
-
   const entries = (await getCollection('field-notes'))
-    .filter(e => {
-      if (e.data.draft) return false;
-      const dateStr = e.data.pubDate instanceof Date
-        ? e.data.pubDate.toISOString().split('T')[0]
-        : String(e.data.pubDate);
-      return dateStr <= today;
-    })
+    .filter(e => isPublished(e.data.pubDate, e.data.draft))
     .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 
   return rss({

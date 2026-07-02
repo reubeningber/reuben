@@ -1,137 +1,42 @@
 ---
 import Base from "../../../layouts/BaseLayout.astro";
 import { getCollection } from 'astro:content';
+import { getImageConfig } from '../../../utils/cloudinary';
+import { isPublished } from '../../../utils/publish';
+import { createExcerpt, slugifyCategory } from '../../../utils/content';
 
 const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
 
 export async function getStaticPaths() {
   const allPosts = await getCollection('posts');
-  // Get today's date in local timezone YYYY-MM-DD format
-  const now = new Date();
-  const today = now.getFullYear() + '-' + 
-    String(now.getMonth() + 1).padStart(2, '0') + '-' + 
-    String(now.getDate()).padStart(2, '0');
   const categoriesSet = new Set<string>();
-  
+
   allPosts.forEach(p => {
-    if (p.data.draft) return;
     if (!p.data.category) return;
-    // Get post date as string (YYYY-MM-DD)
-    let postDateStr;
-    if (typeof p.data.pubDate === 'string') {
-      postDateStr = p.data.pubDate;
-    } else {
-      const pd = new Date(p.data.pubDate);
-      postDateStr = pd.getFullYear() + '-' + 
-        String(pd.getMonth() + 1).padStart(2, '0') + '-' + 
-        String(pd.getDate()).padStart(2, '0');
-    }
-    if (postDateStr <= today) {
+    if (isPublished(p.data.pubDate, p.data.draft)) {
       categoriesSet.add(p.data.category);
     }
   });
-  
+
   const categories = Array.from(categoriesSet);
-  
+
   return categories.map(cat => ({
-    params: { category: cat.toLowerCase().replace(/\s+/g, '-') },
+    params: { category: slugifyCategory(cat) },
     props: { category: cat }
   }));
 }
 
 const { category } = Astro.props as { category: string };
 const allPosts = await getCollection('posts');
-// Get today's date in local timezone YYYY-MM-DD format
-const now = new Date();
-const today = now.getFullYear() + '-' + 
-  String(now.getMonth() + 1).padStart(2, '0') + '-' + 
-  String(now.getDate()).padStart(2, '0');
 const categoryPosts = allPosts
   .filter(p => {
-    if (p.data.draft) return false;
     if (p.data.category?.toLowerCase() !== category.toLowerCase()) return false;
-    // Get post date as string (YYYY-MM-DD)
-    let postDateStr;
-    if (typeof p.data.pubDate === 'string') {
-      postDateStr = p.data.pubDate;
-    } else {
-      const pd = new Date(p.data.pubDate);
-      postDateStr = pd.getFullYear() + '-' + 
-        String(pd.getMonth() + 1).padStart(2, '0') + '-' + 
-        String(pd.getDate()).padStart(2, '0');
-    }
-    return postDateStr <= today;
+    return isPublished(p.data.pubDate, p.data.draft);
   })
   .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 
-// Smart image URL logic for category listing
-function getCategoryImageConfig(imageUrl) {
-  if (!imageUrl) return null;
-  
-  // Case 1: Already a full Cloudinary URL - use as is but optimize
-  if (imageUrl.includes('res.cloudinary.com')) {
-    const cloudinaryPath = imageUrl.replace(/.*\/upload\/[^/]*\//, '');
-    return {
-      type: 'cloudinary-full',
-      blurUrl: `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_20,e_blur:2000/v1761245976/${cloudinaryPath}`,
-      mainUrl: `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_400/v1761245976/${cloudinaryPath}`,
-      srcset: `
-        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_200/v1761245976/${cloudinaryPath} 200w,
-        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_300/v1761245976/${cloudinaryPath} 300w,
-        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_400/v1761245976/${cloudinaryPath} 400w
-      `
-    };
-  }
-  
-  // Case 2: Local assets/images path - fallback to standard lazy loading
-  if (imageUrl.startsWith('assets/images/') || imageUrl.startsWith('/assets/images/')) {
-    return {
-      type: 'external',
-      mainUrl: imageUrl.startsWith('/') ? imageUrl : `/${imageUrl}`
-    };
-  }
-  
-  // Case 3: Direct web_assets path (your new format)
-  if (imageUrl.startsWith('web_assets/')) {
-    return {
-      type: 'cloudinary-web-assets',
-      blurUrl: `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_20,e_blur:2000/v1761245976/${imageUrl}`,
-      mainUrl: `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_400/v1761245976/${imageUrl}`,
-      srcset: `
-        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_200/v1761245976/${imageUrl} 200w,
-        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_300/v1761245976/${imageUrl} 300w,
-        https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_400/v1761245976/${imageUrl} 400w
-      `
-    };
-  }
-  
-  // Case 4: Any other URL - just lazy load
-  return {
-    type: 'external',
-    mainUrl: imageUrl
-  };
-}
-
-// Function to create excerpt from post body
-function createExcerpt(body, maxLength = 120) {
-  const plainText = body
-    .replace(/^---[\s\S]*?---/g, '')
-    .replace(/#+\s/g, '')
-    .replace(/\*\*(.*?)\*\*/g, '$1')
-    .replace(/\*(.*?)\*/g, '$1')
-    .replace(/\[(.*?)\]\(.*?\)/g, '$1')
-    .replace(/`(.*?)`/g, '$1')
-    .replace(/\n+/g, ' ')
-    .trim();
-  
-  if (plainText.length <= maxLength) {
-    return plainText;
-  }
-  
-  const truncated = plainText.substring(0, maxLength);
-  const lastSpace = truncated.lastIndexOf(' ');
-  
-  return lastSpace > 0 ? truncated.substring(0, lastSpace) + '...' : truncated + '...';
+function getCategoryImageConfig(imageUrl: string | null | undefined) {
+  return getImageConfig(imageUrl, cloudName, [200, 300, 400]);
 }
 ---
 <Base title={`${category} · Reuben Ingber`} description={`Articles about ${category} by Reuben Ingber.`}>

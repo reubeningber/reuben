@@ -1,21 +1,12 @@
 ---
 import { getCollection } from 'astro:content';
 import { getImageConfig as getCloudinaryConfig } from '../utils/cloudinary';
+import { isPublished } from '../utils/publish';
 
 const { limit } = Astro.props;
-const now = new Date();
-const today = now.getFullYear() + '-' +
-  String(now.getMonth() + 1).padStart(2, '0') + '-' +
-  String(now.getDate()).padStart(2, '0');
 
 const allPosts = (await getCollection('posts'))
-  .filter(p => {
-    if (p.data.draft) return false;
-    const postDateStr = p.data.pubDate instanceof Date
-      ? p.data.pubDate.toISOString().split('T')[0]
-      : String(p.data.pubDate);
-    return postDateStr <= today;
-  })
+  .filter(p => isPublished(p.data.pubDate, p.data.draft))
   .sort((a,b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 const posts = limit ? allPosts.slice(0, limit) : allPosts;
 

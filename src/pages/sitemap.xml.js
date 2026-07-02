@@ -1,22 +1,13 @@
+import { isPublished } from '../utils/publish';
+
 export async function GET() {
   const { getCollection } = await import('astro:content');
-  const now = new Date();
-  const today = now.getFullYear() + '-' +
-    String(now.getMonth() + 1).padStart(2, '0') + '-' +
-    String(now.getDate()).padStart(2, '0');
-
-  function isPublished(pubDate) {
-    const dateStr = pubDate instanceof Date
-      ? pubDate.toISOString().split('T')[0]
-      : String(pubDate);
-    return dateStr <= today;
-  }
 
   const posts = await getCollection('posts');
-  const publishedPosts = posts.filter(p => !p.data.draft && isPublished(p.data.pubDate));
+  const publishedPosts = posts.filter(p => isPublished(p.data.pubDate, p.data.draft));
 
   const fieldNotes = await getCollection('field-notes');
-  const publishedNotes = fieldNotes.filter(e => !e.data.draft && isPublished(e.data.pubDate));
+  const publishedNotes = fieldNotes.filter(e => isPublished(e.data.pubDate, e.data.draft));
 
   const baseUrl = 'https://reubeningber.com';
 
