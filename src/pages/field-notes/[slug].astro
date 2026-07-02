@@ -2,12 +2,11 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getImageConfig } from '../../utils/cloudinary';
-import { isPublished } from '../../utils/publish';
 
 export async function getStaticPaths() {
   const entries = await getCollection('field-notes');
   return entries
-    .filter(e => isPublished(e.data.pubDate, e.data.draft))
+    .filter(e => !e.data.draft)
     .map(e => ({ params: { slug: e.slug }, props: { entry: e } }));
 }
 

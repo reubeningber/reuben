@@ -27,11 +27,16 @@ test('field notes index loads', async ({ page }) => {
   await expect(page.locator('body')).toBeVisible();
 });
 
-test('a field note detail page renders', async ({ page, request }) => {
-  const res = await request.get('/field-notes/rss.xml');
-  const xml = await res.text();
-  expect(res.ok()).toBeTruthy();
-  expect(xml).toContain('<rss');
+test('a field note detail page renders', async ({ page }) => {
+  await page.goto('/field-notes/');
+  const hrefs = await page.locator('a[href^="/field-notes/"]').evaluateAll((links) =>
+    links.map((l) => l.getAttribute('href'))
+  );
+  const detailHref = hrefs.find((h) => h && /^\/field-notes\/[^/]+\/$/.test(h));
+  expect(detailHref).toBeTruthy();
+
+  await page.goto(detailHref!);
+  await expect(page.locator('article')).toBeVisible();
 });
 
 test('rss.xml is valid XML with at least one item', async ({ request }) => {

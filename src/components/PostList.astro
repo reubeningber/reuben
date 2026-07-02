@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import { getImageConfig as getCloudinaryConfig } from '../utils/cloudinary';
 import { isPublished } from '../utils/publish';
+import { createExcerpt, slugifyCategory } from '../utils/content';
 
 const { limit } = Astro.props;
 
@@ -14,30 +15,6 @@ const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
 
 function getListingImageConfig(imageUrl) {
   return getCloudinaryConfig(imageUrl, cloudName, [200, 300, 400]);
-}
-
-// Function to create excerpt from post body
-function createExcerpt(body, maxLength = 120) {
-  // Remove markdown formatting and clean up text
-  const plainText = body
-    .replace(/^---[\s\S]*?---/g, '') // Remove frontmatter
-    .replace(/#+\s/g, '') // Remove headings
-    .replace(/\*\*(.*?)\*\*/g, '$1') // Remove bold
-    .replace(/\*(.*?)\*/g, '$1') // Remove italic
-    .replace(/\[(.*?)\]\(.*?\)/g, '$1') // Remove links
-    .replace(/`(.*?)`/g, '$1') // Remove code
-    .replace(/\n+/g, ' ') // Replace newlines with spaces
-    .trim();
-  
-  if (plainText.length <= maxLength) {
-    return plainText;
-  }
-  
-  // Find the last complete word within the limit
-  const truncated = plainText.substring(0, maxLength);
-  const lastSpace = truncated.lastIndexOf(' ');
-  
-  return lastSpace > 0 ? truncated.substring(0, lastSpace) + '...' : truncated + '...';
 }
 ---
 <style>
@@ -118,7 +95,7 @@ function createExcerpt(body, maxLength = 120) {
               {p.data.category && (
                 <>
                   <span class="text-gray-300">•</span>
-                  <a href={`/articles/category/${p.data.category.toLowerCase().replace(/\s+/g, '-')}/`} class="text-accent hover:underline no-underline whitespace-nowrap">
+                  <a href={`/articles/category/${slugifyCategory(p.data.category)}/`} class="text-accent hover:underline no-underline whitespace-nowrap">
                     {p.data.category.toUpperCase()}
                   </a>
                 </>
@@ -163,7 +140,7 @@ function createExcerpt(body, maxLength = 120) {
                 {p.data.category && (
                   <>
                     <span class="text-gray-300">•</span>
-                    <a href={`/articles/category/${p.data.category.toLowerCase().replace(/\s+/g, '-')}/`} class="text-accent hover:underline no-underline">
+                    <a href={`/articles/category/${slugifyCategory(p.data.category)}/`} class="text-accent hover:underline no-underline">
                       {p.data.category.toUpperCase()}
                     </a>
                   </>
@@ -205,7 +182,7 @@ function createExcerpt(body, maxLength = 120) {
               </div>
               
               {p.data.category && (
-                <a href={`/articles/category/${p.data.category.toLowerCase().replace(/\s+/g, '-')}/`} class="text-xs font-semibold text-accent bg-accent bg-opacity-10 px-2 py-1 rounded whitespace-nowrap flex-shrink-0 hover:bg-opacity-20 transition-colors no-underline">
+                <a href={`/articles/category/${slugifyCategory(p.data.category)}/`} class="text-xs font-semibold text-accent bg-accent bg-opacity-10 px-2 py-1 rounded whitespace-nowrap flex-shrink-0 hover:bg-opacity-20 transition-colors no-underline">
                   {p.data.category.toUpperCase()}
                 </a>
               )}

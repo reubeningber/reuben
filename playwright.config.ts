@@ -8,7 +8,11 @@ export default defineConfig({
     baseURL: 'http://localhost:4321',
   },
   webServer: {
-    command: 'npm run build && npm run preview -- --port 4321',
+    // CI always builds fresh for a prod-accurate check; locally reuse the faster
+    // dev server (and any already-running server) to keep iteration quick.
+    command: process.env.CI
+      ? 'npm run build && npm run preview -- --port 4321'
+      : 'npm run dev -- --port 4321',
     url: 'http://localhost:4321',
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
