@@ -334,6 +334,25 @@ npm run preview      # Preview production build
 npm run astro        # Run Astro CLI commands
 ```
 
+## Testing
+
+The site has a unit test suite (Vitest) covering pure logic like Cloudinary URL building and publish-date filtering, and an end-to-end smoke test suite (Playwright) covering the homepage, articles, field notes, RSS, and sitemap.
+
+```bash
+npm run test          # Run unit tests once
+npm run test:watch    # Run unit tests in watch mode
+npm run test:e2e      # Build the site and run Playwright smoke tests against it
+npm run test:all      # Run unit tests, then e2e tests
+```
+
+Before running e2e tests for the first time, install the Playwright browser:
+
+```bash
+npx playwright install --with-deps chromium
+```
+
+Unit tests live in `tests/unit/`, e2e tests in `tests/e2e/`. Both suites run automatically on push/PR via `.github/workflows/test.yml`.
+
 ## License
 
 Personal project - feel free to use as inspiration for your own site!
