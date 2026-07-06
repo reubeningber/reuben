@@ -8,3 +8,12 @@ test-results/
 playwright-report/
 blob-report/
 playwright/.cache/
+.astro/
+.claude/
+claude-seo/
+reubeningber-audit/
+
+# unpublished drafts - keep these out of git until ready to publish
+src/content/posts/2025-11-04-leaders-don-t-tiptoe-they-jump.md
+src/content/posts/2026-02-09-whats-in-my-camera-bag.md
+src/content/posts/managing-engineers-in-the-face-of-ai.md
