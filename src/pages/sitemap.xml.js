@@ -18,6 +18,7 @@ export async function GET() {
     '/field-notes/',
     '/contact/',
     '/friends/',
+    '/now/',
   ];
 
   // Generate XML sitemap
