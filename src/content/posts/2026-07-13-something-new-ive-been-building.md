@@ -27,7 +27,7 @@ We've done family photo shoots for years now, and those photos are some of the o
 
 Here's the thing that actually motivates me, though: before I picked up photography as a hobby, our family was exactly the family I just described — I had somewhere around 800 photos of my kids eating breakfast on my phone, and almost no actual photographs of them. Not "no pictures" — 800 pictures is a lot of pictures — but no *photographs*, the kind you'd print, the kind that exist because someone intentionally stopped and made one. I want to fix that for as many families as I can — starting with mine, then a few friends this September, then we'll see.
 
-![Pull quote](https://res.cloudinary.com/dt3vcpkj6/image/upload/web_assets/pull-quote-1600x900.png)
+![In a world that generates more images of our kids than any generation in history has ever had, we somehow ended up with fewer photos that actually matter.](https://res.cloudinary.com/dt3vcpkj6/image/upload/web_assets/pull-quote-1600x900.png)
 
 **The practice is just... every day**
 
