@@ -1,0 +1,56 @@
+---
+import Base from "../layouts/BaseLayout.astro";
+---
+<Base
+  title="Colophon | Reuben Ingber"
+  description="How this site is built: the stack, tools, and design behind reubeningber.com."
+>
+  <div class="max-w-3xl">
+    <h1 class="text-4xl font-bold mb-4 text-primary tracking-wide">COLOPHON</h1>
+
+    <p class="text-lg leading-relaxed mb-12 text-secondary">
+      Notes on how this site is built, for the curious.
+    </p>
+
+    <div class="space-y-10">
+      <section>
+        <h2 class="text-2xl font-bold mb-3 text-primary tracking-wide">BUILT WITH</h2>
+        <p class="text-lg leading-relaxed">
+          The site is built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline font-semibold">Astro</a> and styled with <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline font-semibold">Tailwind CSS</a>. It's statically generated — no server, just HTML, CSS, and a little JavaScript. Articles and field notes are written in Markdown using Astro's content collections.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold mb-3 text-primary tracking-wide">HOSTING</h2>
+        <p class="text-lg leading-relaxed">
+          Deployed on <a href="https://pages.cloudflare.com" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline font-semibold">Cloudflare Pages</a>. Images are hosted and optimized through <a href="https://cloudinary.com" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline font-semibold">Cloudinary</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold mb-3 text-primary tracking-wide">DESIGN</h2>
+        <p class="text-lg leading-relaxed">
+          The logo is set in <a href="https://fonts.google.com/specimen/Rock+Salt" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline font-semibold">Rock Salt</a> from Google Fonts; everything else uses the system font stack.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold mb-3 text-primary tracking-wide">ANALYTICS</h2>
+        <p class="text-lg leading-relaxed">
+          I use <a href="https://plausible.io" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline font-semibold">Plausible</a> for privacy-friendly analytics, alongside Google Analytics.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold mb-3 text-primary tracking-wide">SOURCE</h2>
+        <p class="text-lg leading-relaxed">
+          The code is open source and available on <a href="https://github.com/reubeningber/reuben" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline font-semibold">GitHub</a>.
+        </p>
+      </section>
+    </div>
+
+    <div class="mt-16 pt-6 border-t border-gray-200 text-sm text-secondary">
+      <p>Last updated on July 13, 2026</p>
+    </div>
+  </div>
+</Base>
