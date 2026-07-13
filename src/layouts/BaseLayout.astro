@@ -117,9 +117,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     </script>
     <slot name="head" />
   </head>
-  <body class="font-sans antialiased bg-white">
+  <body class="font-sans antialiased bg-white min-h-screen flex flex-col">
     <Header isHomepage={isHomepage} />
-    <main class="container py-6 max-w-4xl">
+    <main class="container py-6 max-w-4xl flex-grow">
       <slot />
     </main>
     <Footer />
