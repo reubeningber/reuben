@@ -37,6 +37,7 @@ I'm not treating this as something I'll get good at once bookings start. I'm out
 
 Three free test sessions in early September, with real families, before any of this opens up for actual bookings. I'd rather find out what's broken — the timing, the delivery, the whole experience — with people who'll give me honest feedback than with someone who paid for it.
 
-If you want to watch the rest of this come together, I'm posting the process at [@photosessionswithreuben](https://instagram.com/photosessionswithreuben). The real launch, with the actual site link, is coming this fall.
+Sign up to get notified when booking opens by [clicking here](https://sessions.reubeningber.com).
 
+If you want to watch the rest of this come together, I'm posting the process at [@photosessionswithreuben](https://instagram.com/photosessionswithreuben). 
 For now: back to deciding whether that green needs to be five percent darker.
