@@ -3,6 +3,7 @@ title: "7 Things I've Learned in 7 Years"
 subTitle: "For Zeke, on his birthday"
 pubDate: "2026-07-22"
 category: "Fatherhood"
+draft: true
 image: "https://res.cloudinary.com/dt3vcpkj6/image/upload/[REPLACE_WITH_IMAGE_PATH]"
 tags: ["fatherhood", "parenting", "family", "personal"]
 description: "Seven years into fatherhood, seven things I've learned — from a DNA experiment I didn't sign up for to why a dropped plate isn't worth the yelling."
