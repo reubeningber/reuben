@@ -20,15 +20,15 @@ I keep stopping what I'm doing just to listen to them work.
 
 I manage an engineering team, and I can't stop thinking about what this crew has that most of my Slack channels don't.
 
-A year or two ago, a project this size — replacing every window in an apartment — would've needed all ten of these guys, all day, coordinating in real time. Today, on my side of the world, a single engineer with the right AI tooling can ship what used to take a team of five. That's not a hypothetical. It's happening on my team right now. And by every measure that matters to the business, it's a win — faster, cheaper, less overhead, less to manage.
+A year or two ago, an engineering project similar in size would've needed all ten of these guys, all day, coordinating in real time. Today, on my side of the world, a single engineer with the right AI tooling can ship what used to take a team of five. That's not a hypothetical. It's happening on my team right now. And by every measure that matters to the business, it's a win — faster, cheaper, less overhead, less to manage.
 
-I believe that. I'm not writing this to argue against it.
+I believe that. I'm not writing this to argue against it. In fact I believe this is a good thing for us in the long term.
 
 But I keep coming back to the ten guys in my living room, and what they have that a single engineer typing into an AI tool at 9pm alone does not.
 
 ---
 
-There's a specific kind of bond that only forms when a group of people are stuck on the same hard thing together. Not adjacent to each other, working on their own tickets in parallel — actually stuck, actually leaning on each other to get unstuck. I remember what that felt like early in my career: three of us around one screen at 11pm, no one leaving because no one wanted to leave the others hanging. That wasn't a team-building exercise. Nobody scheduled it. It just happened, because the work required it.
+There's a specific kind of bond that only forms when a group of people are stuck on the same hard thing together. Not adjacent to each other, working on their own tickets in parallel — actually stuck, actually leaning on each other to get unstuck. I remember what that felt like early in my career: three of us around one screen, no one leaving because no one wanted to leave the others hanging. That wasn't a team-building exercise. Nobody scheduled it. It just happened, because the work required it.
 
 That's the thing AI is quietly making optional. Not the output — the output is often better now, faster, more consistent. What's optional is the part where you needed each other. And when you don't need each other, you stop finding out what it's like to be needed.
 
@@ -44,4 +44,4 @@ If we don't choose it, I don't think it comes back on its own.
 
 ---
 
-The window guys are still out there right now, one of them laughing at something I can't hear from in here. I don't know if they'll remember this apartment specifically. But I'd bet they'll remember each other.
+The window guys are still out there right now, one of them laughing at something I can't hear from in here. I don't know if they'll remember this apartment specifically. But I'd bet they will remember each other.
