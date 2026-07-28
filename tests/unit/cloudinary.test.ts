@@ -70,9 +70,17 @@ describe('getOgImageUrl', () => {
     );
   });
 
-  it('falls back for any other URL shape', () => {
-    expect(getOgImageUrl('https://example.com/photo.jpg', cloudName)).toContain(
-      'reuben_ingber_october_2025.jpg'
+  it('passes through any other external URL as-is', () => {
+    const url = 'https://example.com/photo.jpg';
+    expect(getOgImageUrl(url, cloudName)).toBe(url);
+  });
+
+  it('builds an absolute URL for legacy assets/images/ paths', () => {
+    expect(getOgImageUrl('assets/images/foo.png', cloudName)).toBe(
+      'https://reubeningber.com/assets/images/foo.png'
+    );
+    expect(getOgImageUrl('/assets/images/foo.png', cloudName)).toBe(
+      'https://reubeningber.com/assets/images/foo.png'
     );
   });
 });
