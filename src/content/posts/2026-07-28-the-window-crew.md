@@ -3,7 +3,9 @@ title: "The Window Crew"
 subTitle: "What ten guys installing windows taught me about what AI is quietly taking from engineering teams"
 pubDate: "2026-07-28"
 category: "Engineering"
-image: "https://res.cloudinary.com/dt3vcpkj6/image/upload/[REPLACE_WITH_IMAGE_PATH]"
+image: "https://images.unsplash.com/photo-1519986379742-5bdb7c5ea402?q=80&w=1407&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+imageCredit: "Unsplash"
+imageCreditUrl: "https://unsplash.com/photos/building-with-glass-windows-9A0qAWYIVBI"
 tags: ["engineering-management", "ai", "leadership", "team-dynamics"]
 description: "Ten guys installing windows in my tiny NYC apartment reminded me what gets lost when a single engineer, with AI, can now do what used to take a team."
 ---
