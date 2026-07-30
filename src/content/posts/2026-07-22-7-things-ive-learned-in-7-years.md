@@ -1,10 +1,12 @@
 ---
 title: "7 Things I've Learned in 7 Years"
 subTitle: "For Zeke, on his birthday"
-pubDate: "2026-07-22"
+pubDate: "2026-07-30"
 category: "Fatherhood"
-draft: true
-image: "https://res.cloudinary.com/dt3vcpkj6/image/upload/[REPLACE_WITH_IMAGE_PATH]"
+draft: false
+image: "https://images.unsplash.com/photo-1692447303353-31a86a7204af?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+imageCredit: "Unsplash"
+imageCreditUrl: "https://unsplash.com/photos/a-pool-ball-with-the-number-seven-on-it-996Vc14NJ4Q"
 tags: ["fatherhood", "parenting", "family", "personal"]
 description: "Seven years into fatherhood, seven things I've learned — from a DNA experiment I didn't sign up for to why a dropped plate isn't worth the yelling."
 ---
@@ -45,4 +47,6 @@ I used to bring my own idea of what the game should be. Now I mostly just follow
 
 I took Zeke to the Catskills recently, just the two of us, one night. Hiking, a cookout, the whole thing. On the way out we stopped at a random general store and I bought him a toy too. On the way home he asked if we could do it again next summer. I feel lucky I get to do both.
 
-Seven years of overnights. Same kid, a little taller every time I check.
+Last week, after we finished a book in my bed, Zeke asked me to carry him to his room. It's not far, just across the living room. But when I set him down I did the math without meaning to: there's a good chance that 12 months from now, he'll be too big for me to carry at all. That thought made me sadder than it probably should have.
+
+Seven years of overnights. Same kid, a little taller every time I check. I'm trying to remember that some of these things I've learned won't be true much longer, and to notice them while they still are.
