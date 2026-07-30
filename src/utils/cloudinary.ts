@@ -71,5 +71,15 @@ export function getOgImageUrl(imageUrl: string | null | undefined, cloudName: st
     return makeUrl(cloudName, imageUrl, 'f_auto,w_1200,h_630,c_fill');
   }
 
+  if (imageUrl.startsWith('assets/images/') || imageUrl.startsWith('/assets/images/')) {
+    const path = imageUrl.startsWith('/') ? imageUrl : `/${imageUrl}`;
+    return `https://reubeningber.com${path}`;
+  }
+
+  // External image (e.g. Unsplash) — use as-is so social shares reflect the post's lead image
+  if (imageUrl.startsWith('http://') || imageUrl.startsWith('https://')) {
+    return imageUrl;
+  }
+
   return fallback;
 }

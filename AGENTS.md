@@ -93,6 +93,8 @@ Short-form entries: links, images, or embeds with optional commentary. Lives at 
 
 The Markdown body is rendered as commentary below the media. Files follow the same `YYYY-MM-DD-slug.md` naming convention.
 
+**Same-day ordering:** Sorting (`field-notes/[...page].astro`, `field-notes/rss.xml.js`) compares `pubDate` with a stable sort. If two entries share the same calendar date and `pubDate` has no time component, they tie and fall back to filesystem/collection order — not necessarily posting order. When adding a field note on a day that already has one, include a time on `pubDate` (e.g. `2026-07-24T12:00:00`) that's later than the existing entry's, so newer posts sort above older ones.
+
 **Creating a log entry:**
 ```markdown
 ---
