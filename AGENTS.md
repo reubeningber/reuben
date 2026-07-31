@@ -1,6 +1,6 @@
 # reubeningber.com — AI Agent Guide
 
-Personal blog and portfolio site for Reuben Ingber. Built with Astro 5, Tailwind CSS, and deployed to Cloudflare Pages.
+Personal blog and portfolio site for Reuben Ingber. Built with Astro 5, Tailwind CSS, and deployed to GitHub Pages via GitHub Actions (DNS hosted on Cloudflare).
 
 ## Tech Stack
 
@@ -8,7 +8,7 @@ Personal blog and portfolio site for Reuben Ingber. Built with Astro 5, Tailwind
 - **Styling**: Tailwind CSS v3
 - **Content**: Astro Content Collections (Markdown files)
 - **Images**: Cloudinary (cloud name stored in `PUBLIC_CLOUDINARY_CLOUD_NAME` env var)
-- **Analytics**: Plausible (`PUBLIC_PLAUSIBLE_DOMAIN` env var) + Google Analytics (GA4 tag `G-8DBW26ND7K`, hardcoded in `BaseLayout.astro`)
+- **Analytics**: Google Analytics (GA4 tag `G-8DBW26ND7K`, hardcoded in `BaseLayout.astro`) + Cloudflare Web Analytics (beacon token hardcoded in `CloudflareAnalytics.astro`)
 - **Site URL**: `https://reubeningber.com`
 
 ## Key Commands
@@ -33,7 +33,6 @@ src/
     Header.astro        # Site nav (START HERE, ARTICLES, FIELD NOTES, PHOTOS, CONTACT)
     Footer.astro        # Footer
     PostList.astro      # Renders post cards (top 4) + list (remaining); used on homepage and /articles/
-    Plausible.astro     # Conditional Plausible script (only renders if env var set)
     Breadcrumbs.astro   # Breadcrumb nav component
   pages/
     index.astro                         # Homepage — hero image + bio + PostList (limit 4)
@@ -151,15 +150,14 @@ Post content here.
 ## Analytics
 
 Two analytics tools run in parallel via `BaseLayout.astro`:
-- **Plausible**: privacy-first, rendered conditionally via `Plausible.astro` if `PUBLIC_PLAUSIBLE_DOMAIN` is set
 - **Google Analytics (GA4)**: hardcoded tag `G-8DBW26ND7K`, always active in production
+- **Cloudflare Web Analytics**: privacy-first, hardcoded beacon token in `CloudflareAnalytics.astro`, always active in production
 
 ## Environment Variables
 
 | Variable | Purpose |
 |---|---|
 | `PUBLIC_CLOUDINARY_CLOUD_NAME` | Cloudinary cloud name for image URLs |
-| `PUBLIC_PLAUSIBLE_DOMAIN` | Domain string for Plausible analytics (optional) |
 | `SHOW_DRAFTS` | Set to `"true"` in dev to preview draft posts |
 
 ## Navigation
