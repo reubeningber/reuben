@@ -1,6 +1,6 @@
 # Reuben's Personal Site
 
-A modern static site built with Astro, Tailwind CSS, and Cloudinary. Features a blog with category filtering, photo galleries with lightbox viewing, and a clean, responsive design with an orange accent theme.
+A modern static site built with Astro, Tailwind CSS, and Cloudinary. Features a blog with category filtering, short-form field notes, and a clean, responsive design with an orange accent theme. Photo galleries live on a separate site, [photos.reubeningber.com](https://photos.reubeningber.com), linked from the nav.
 
 ## Quick Start
 
@@ -22,10 +22,9 @@ npm run preview
 
 ## Tech Stack
 
-- **Astro v4.12.0** - Static site framework with content collections
-- **Tailwind CSS v3.4.9** - Utility-first styling with custom orange accent (#ea580c)
+- **Astro v5** - Static site framework with content collections
+- **Tailwind CSS v3** - Utility-first styling with custom orange accent (#ea580c)
 - **Cloudinary** - Responsive image delivery and optimization
-- **PhotoSwipe v5.4.4** - Lightbox gallery for photo albums
 - **Zod** - Type-safe content validation
 
 ## Site Structure
@@ -33,31 +32,42 @@ npm run preview
 ```
 src/
 ├── pages/              # Routes
-│   ├── index.astro           # Homepage
-│   ├── start-here.astro      # About page
-│   ├── contact.astro         # Contact page
-│   ├── articles/             # Blog routes
-│   │   ├── index.astro       # Blog listing
-│   │   ├── [...slug].astro   # Individual posts
-│   │   └── category/         # Category filtering
-│   └── photos/               # Photo galleries
-│       ├── index.astro       # Album listing
-│       └── [album].astro     # Individual albums
-├── components/         # Reusable UI components
-│   ├── Header.astro          # Site header with navigation
-│   ├── Footer.astro          # Site footer with social links
-│   ├── PostList.astro        # Blog post grid
-│   └── PhotoGrid.astro       # Photo gallery grid
-├── layouts/            # Page layouts
-│   ├── BaseLayout.astro      # Base layout with SEO
-│   └── PostLayout.astro      # Blog post layout
-├── content/            # Content collections
-│   ├── config.ts             # Zod schemas
-│   ├── posts/                # Blog posts (Markdown)
-│   └── albums/               # Photo albums (JSON)
-└── styles/             # Global styles
+│   ├── index.astro                 # Homepage
+│   ├── start-here.astro            # About page
+│   ├── contact.astro               # Contact page
+│   ├── now.astro                   # Now page
+│   ├── uses.astro                  # Uses page
+│   ├── friends.astro               # Friends page
+│   ├── colophon.astro              # Colophon page
+│   ├── identity-statement.astro    # Identity statement page
+│   ├── rss.xml.js                  # RSS feed
+│   ├── sitemap.xml.js              # Sitemap
+│   ├── articles/                   # Blog routes
+│   │   ├── index.astro             # Blog listing
+│   │   ├── [...slug].astro         # Individual posts
+│   │   └── category/               # Category filtering
+│   └── field-notes/                # Short-form entries
+│       ├── [...page].astro         # Paginated listing
+│       ├── [slug].astro            # Individual entry
+│       └── rss.xml.js              # Field notes RSS feed
+├── components/          # Reusable UI components
+│   ├── Header.astro             # Site header with navigation
+│   ├── Footer.astro             # Site footer with social links
+│   ├── PostList.astro           # Blog post grid
+│   ├── Breadcrumbs.astro        # Breadcrumb nav
+│   └── CloudflareAnalytics.astro  # Cloudflare Web Analytics beacon
+├── layouts/             # Page layouts
+│   ├── BaseLayout.astro         # Base layout with SEO, analytics
+│   └── PostLayout.astro         # Blog post layout
+├── content/             # Content collections
+│   ├── config.ts                # Zod schemas
+│   ├── posts/                   # Blog posts (Markdown)
+│   └── field-notes/             # Field notes (Markdown)
+└── styles/              # Global styles
     └── global.css
 ```
+
+Photo galleries are not part of this codebase — they live on a separate site at [photos.reubeningber.com](https://photos.reubeningber.com), linked externally from `Header.astro`.
 
 ## Features
 
@@ -68,11 +78,10 @@ src/
 - **RSS feed** at `/rss.xml`
 - **SEO optimized** with meta tags and Open Graph
 
-### Photo Galleries
-- **Cloudinary integration** for responsive images
-- **PhotoSwipe lightbox** for full-screen viewing
-- **Lazy loading** for performance
-- **Album manifests** with JSON metadata
+### Field Notes
+- **Short-form entries** — links, images, or embeds with optional commentary
+- **Paginated listing** at `/field-notes/`
+- **RSS feed** at `/field-notes/rss.xml`
 
 ### Design
 - **Responsive layout** optimized for mobile and desktop
@@ -128,53 +137,13 @@ category: "Fatherhood"
 Your post content here...
 ```
 
-**Available categories:** Fatherhood, Engineering, Books, Life, or create your own.
+**Available categories:** Books, Code, Engineering Management, Favorites, Fatherhood, Journaling, Leadership, Life, Mental Health, Photography, Ramblings, or create your own.
 
 **Optional frontmatter fields:**
 - `image` - Path or URL to post header image
 - `imageCredit` - Credit text for the image (e.g., "Unsplash", "John Doe")
 - `imageCreditUrl` - URL to link the image credit to (e.g., photographer's page)
 - `category` - Post category for filtering and organization
-
-### Creating Photo Albums
-
-**Use the helper script:**
-
-```bash
-./scripts/prepare-photos.sh [input-dir] [output-dir]
-```
-
-The script will:
-1. Ask for album metadata (title, slug, description, date, Cloudinary folder)
-2. Resize and optimize images (max 4000px, 85% quality)
-3. Generate a JSON manifest with Cloudinary public IDs
-4. Create optimized images ready for upload
-
-**Next steps after running the script:**
-1. Review the optimized images in the output directory
-2. Upload images to Cloudinary (keep the original filenames)
-3. Copy the generated `.json` file to `src/content/albums/`
-4. Your album will be live at `/photos/[album-slug]/`
-
-**Manual album creation:**
-
-Create a JSON file in `src/content/albums/`:
-
-```json
-{
-  "title": "Album Title",
-  "slug": "album-slug",
-  "description": "Album description",
-  "pubDate": "2025-10-22",
-  "coverPublicId": "reuben/folder/cover-image",
-  "items": [
-    {
-      "publicId": "reuben/folder/photo-01",
-      "caption": "Photo caption"
-    }
-  ]
-}
-```
 
 ## Helper Scripts
 
@@ -196,42 +165,6 @@ Creates a new blog post with interactive prompts.
 - Checks for existing files
 - Conditional prompts (only asks for image credit if image provided)
 
-### `scripts/prepare-photos.sh`
-
-Prepares photos for Cloudinary and creates album manifest.
-
-**Usage:**
-```bash
-./scripts/prepare-photos.sh [input-dir] [output-dir]
-```
-
-**Features:**
-- Resizes images to max 4000px width
-- Compresses to 85% quality
-- Strips EXIF data
-- Shows before/after file sizes
-- Generates album JSON manifest with Cloudinary public IDs
-- Automatically numbers photos
-- Provides next-step instructions
-
-**Requirements:**
-- ImageMagick: `brew install imagemagick`
-
-**Example workflow:**
-```bash
-# 1. Prepare photos from a folder
-./scripts/prepare-photos.sh ~/Photos/queens-farm ./cloudinary-ready
-
-# 2. Upload the optimized images to Cloudinary
-# (use Cloudinary web interface or CLI)
-
-# 3. Copy the JSON manifest to your content folder
-cp ./cloudinary-ready/queens-farm.json src/content/albums/
-
-# 4. Preview locally
-npm run dev
-```
-
 ## Cloudinary Setup
 
 1. Create a free account at [cloudinary.com](https://cloudinary.com)
@@ -240,8 +173,7 @@ npm run dev
    ```
    PUBLIC_CLOUDINARY_CLOUD_NAME=your-cloud-name
    ```
-4. Upload photos to folders like `reuben/album-name/`
-5. Use the folder path in your album JSON manifests
+4. Upload images to a folder (e.g. `web_assets/`) and reference the path in post frontmatter
 
 **Image URL format:**
 ```
