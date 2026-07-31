@@ -1,8 +1,10 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:
-    branches: [ main ]
+  workflow_run:
+    workflows: ["Test"]
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -16,11 +18,14 @@ concurrency:
 
 jobs:
   build:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
