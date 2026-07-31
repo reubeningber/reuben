@@ -250,6 +250,13 @@ https://res.cloudinary.com/{cloud}/image/upload/f_auto,q_auto,w_{width}/{publicI
 
 The site automatically generates responsive URLs with optimal formats (WebP, AVIF) and quality.
 
+## Analytics
+
+Two analytics tools run in parallel via `BaseLayout.astro`:
+
+- **Google Analytics (GA4)** — hardcoded tag `G-8DBW26ND7K`, always active in production
+- **Cloudflare Web Analytics** — privacy-first, hardcoded beacon token in `CloudflareAnalytics.astro`, always active in production
+
 ## Deployment
 
 ### GitHub Pages with Custom Domain
