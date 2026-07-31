@@ -176,3 +176,10 @@ Defined in `Header.astro`:
 - `PostLayout.astro` adds a `BlogPosting` schema per article
 - Canonical URLs are computed from `Astro.site` + `Astro.url.pathname`
 - OG and Twitter card meta tags are set in `BaseLayout.astro` via props
+
+## Keeping documentation in sync
+
+This repo has a history of docs drifting from reality (README described a removed PhotoSwipe/photo-albums system for months; `colophon.astro` claimed "Cloudflare Pages" hosting and listed only one analytics tool after both had changed). When a change affects the stack, hosting, analytics, deployment, or site structure:
+- Update `README.md` and this file (`AGENTS.md`) in the same PR
+- Update `src/pages/colophon.astro` (the "Last updated" date too) if the change touches anything it describes — stack, hosting, or analytics
+- Check `docs/` for a relevant deep-dive file and update or extend it
