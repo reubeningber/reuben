@@ -3,7 +3,7 @@ title: The Standup Joke
 subTitle: The one part of the day nobody scripted
 pubDate: 2026-08-05
 updatedDate: 2026-08-05
-draft: false
+draft: true
 category: Engineering Management
 tags:
   - engineering management
