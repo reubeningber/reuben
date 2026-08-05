@@ -13,9 +13,9 @@ tags:
 description: "For years now, whoever runs standup on my team has had one extra
   job: tell a joke. It's a small, dumb ritual, and it might be the most
   important five seconds of our day"
-image: https://images.unsplash.com/photo-1580188928585-0ef5c1a5c4dd?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+image: web_assets/laugh.jpg
 imageCredit: Unsplash
-imageCreditUrl: https://unsplash.com/photos/black-microphone-on-red-curtain-DG8kp9B-eRA
+imageCreditUrl: https://unsplash.com/photos/laugh-neon-signage-imlD5dbcLM4
 ---
 It's my day to run standup. We rotate scrum master on my team, sprint to sprint, engineer to engineer. I get through the updates — what shipped, what's blocked, who needs a hand — and I'm about to move on when our designer stops me.
 
