@@ -28,6 +28,7 @@ We've been doing this since we went remote in the pandemic. Whoever's running st
 The jokes are bad. Some might say charmingly bad, but more often then not actually bad. Joke that makes my dad jokes sound like a Netflix special. I grab my trustycopy of *Laugh Out Loud Jokes for Kids*, sitting on my desk stolen from my sons bookshelf for this very purpose.
 
 > Q: Who earns a living driving their customers away?
+> 
 > A: Taxi drivers.
 
 Half the room groans. But a split second after I state the punchline our design says the answer out loud. She finally gets the punchline before anyone else, a first for her! Everyone cheers (aka reacting with an emoji!).
