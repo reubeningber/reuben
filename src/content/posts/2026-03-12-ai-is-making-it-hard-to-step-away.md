@@ -4,7 +4,7 @@ pubDate: "2026-03-12"
 image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 imageCredit: "Unsplash"
 imageCreditUrl: "https://unsplash.com/photos/a-computer-screen-with-a-bunch-of-code-on-it-ieic5Tq8YMk"
-category: "Ramblings"
+category: "Engineering Management"
 description: "I'm not afraid AI will take my job. I'm afraid someone using AI better than me will be seen as more effective. That's a different fear — and a harder one to reason with."
 tags: ["AI", "productivity", "work-life balance", "engineering leadership"]
 ---

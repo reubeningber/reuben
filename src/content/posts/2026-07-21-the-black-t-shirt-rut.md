@@ -2,7 +2,7 @@
 title: "The Black T-Shirt Rut"
 subTitle: "How I got dressed the same way for two years without noticing"
 pubDate: "2026-07-21"
-category: "Engineering"
+category: "Life"
 image: "https://images.unsplash.com/photo-1542060748-10c28b62716f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 imageCredit: "Unsplash"
 imageCreditUrl: "https://unsplash.com/photos/assorted-apparels-5DLBoEX99Cs"

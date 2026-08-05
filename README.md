@@ -137,7 +137,7 @@ category: "Fatherhood"
 Your post content here...
 ```
 
-**Available categories:** Books, Code, Engineering Management, Favorites, Fatherhood, Journaling, Leadership, Life, Mental Health, Photography, Ramblings, or create your own.
+**Available categories:** Books, Code, Engineering Management, Favorites, Fatherhood, Journaling, Life, Mental Health, Photography, or create your own.
 
 **Optional frontmatter fields:**
 - `image` - Path or URL to post header image

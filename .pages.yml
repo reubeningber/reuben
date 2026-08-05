@@ -42,11 +42,9 @@ content:
             - Favorites
             - Fatherhood
             - Journaling
-            - Leadership
             - Life
             - Mental Health
             - Photography
-            - Ramblings
           creatable: true
       - name: tags
         label: Tags

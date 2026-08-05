@@ -3,7 +3,7 @@ title: Favorite Things - May 2026
 subTitle: Things that made me happy!
 pubDate: 2026-06-01
 updatedDate: 2026-06-01
-category: Ramblings
+category: Favorites
 image: 'https://res.cloudinary.com/dt3vcpkj6/image/upload/v1780338178/web_assets/20260517-RAI04171.jpg'
 tags: ["family", "photography", "food", "art", "parenting", "lego"]
 description: A month of small joys and big moments, from Coney Island and Legoland to photography, good food, art, and time with family.
