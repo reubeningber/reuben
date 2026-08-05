@@ -2,7 +2,7 @@
 title: "The 3 Best Things I Purchased in 2022"
 pubDate: "2023-01-13"
 image: "web_assets/whateverpan.jpeg"
-category: "Ramblings"
+category: "Favorites"
 description: "My three most worthwhile purchases in 2022: a grill pan that changed weeknight dinners, a bigger desk with a light bar, and Lego sets as a screen-free hobby."
 ---
 
