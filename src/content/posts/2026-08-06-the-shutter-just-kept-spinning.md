@@ -3,7 +3,7 @@ title: The Shutter Just Kept Spinning
 subTitle: What my first roll on a new rangefinder taught me about slowing down
 pubDate: 2026-08-06
 updatedDate: 2026-08-06
-draft: true
+draft: false
 category: Photography
 tags:
   - film photography
