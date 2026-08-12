@@ -1,0 +1,42 @@
+---
+import Base from "../layouts/BaseLayout.astro";
+import books from "../data/reading.json";
+
+const year = 2026;
+const sorted = [...books].sort((a, b) => b.dateRead.localeCompare(a.dateRead));
+---
+<Base
+  title="Reading | Reuben Ingber"
+  description={`A running record of the books I've read in ${year}.`}
+>
+  <div class="max-w-3xl">
+    <h1 class="text-4xl font-bold mb-4 text-primary tracking-wide">READING</h1>
+
+    <p class="text-lg leading-relaxed mb-8 text-secondary">
+      A running record of the books I've read in {year} — {sorted.length} so far.
+    </p>
+
+    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6">
+      {sorted.map((book) => (
+        <a
+          href={book.amazon}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group block"
+          title={`${book.title} by ${book.author}`}
+        >
+          <img
+            src={book.cover}
+            alt={`${book.title} by ${book.author} book cover`}
+            class="w-full h-auto rounded shadow-sm group-hover:opacity-80 transition-opacity"
+            loading="lazy"
+          />
+        </a>
+      ))}
+    </div>
+
+    <div class="mt-16 pt-6 border-t border-gray-200 text-sm text-secondary">
+      <p>Tracked on <a href="https://www.goodreads.com/user/show/7384813" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Goodreads</a></p>
+    </div>
+  </div>
+</Base>
