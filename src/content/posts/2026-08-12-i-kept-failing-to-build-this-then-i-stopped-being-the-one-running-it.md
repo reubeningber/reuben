@@ -1,8 +1,11 @@
 ---
-title: The Reading Page I Finally Got Right
+title: I Kept Failing to Build This. Then I Stopped Being the One Running It.
 subTitle: Two false starts, a weekend with Claude Code, and 489 books later
 pubDate: 2026-08-12
 category: Engineering
+image: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+imageCredit: "Unsplash"
+imageCreditUrl: "https://unsplash.com/photos/assorted-title-of-books-piled-in-the-shelves-NIJuEQw0RKg"
 tags:
   - ai
   - automation
