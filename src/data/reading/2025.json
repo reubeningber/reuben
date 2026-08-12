@@ -1,0 +1,345 @@
+[
+  {
+    "title": "American Tiger",
+    "author": "Adam Skolnick",
+    "cover": "reading_covers/242287828",
+    "amazon": "https://www.amazon.com/dp/1544549857",
+    "dateRead": "2025-12-25"
+  },
+  {
+    "title": "Notes on Being a Man",
+    "author": "Scott Galloway",
+    "cover": "reading_covers/230895441",
+    "amazon": "https://www.amazon.com/dp/1668084376",
+    "dateRead": "2025-12-04"
+  },
+  {
+    "title": "Better Than Before: Mastering the Habits of Our Everyday Lives",
+    "author": "Gretchen Rubin",
+    "cover": "reading_covers/22889767",
+    "amazon": "https://www.amazon.com/dp/0385348614",
+    "dateRead": "2025-12-02"
+  },
+  {
+    "title": "Hollywood Park",
+    "author": "Mikel Jollett",
+    "cover": "reading_covers/49235526",
+    "amazon": "https://www.amazon.com/dp/1250621569",
+    "dateRead": "2025-11-28"
+  },
+  {
+    "title": "The Running Ground: A Father, a Son, and the Simplest of Sports",
+    "author": "Nicholas Thompson",
+    "cover": "reading_covers/224082829",
+    "amazon": "https://www.amazon.com/dp/0593244133",
+    "dateRead": "2025-11-18"
+  },
+  {
+    "title": "AWOL on the Appalachian Trail",
+    "author": "David Miller",
+    "cover": "reading_covers/34994019",
+    "amazon": "https://www.amazon.com/dp/1612180205",
+    "dateRead": "2025-10-18"
+  },
+  {
+    "title": "The Library Book",
+    "author": "Susan Orlean",
+    "cover": "reading_covers/39507318",
+    "amazon": "https://www.amazon.com/dp/1476740186",
+    "dateRead": "2025-10-08"
+  },
+  {
+    "title": "How to Keep Your Cool: An Ancient Guide to Anger Management (Ancient Wisdom for Modern Readers)",
+    "author": "Seneca",
+    "cover": "reading_covers/41795421",
+    "amazon": "https://www.amazon.com/dp/0691181950",
+    "dateRead": "2025-10-08"
+  },
+  {
+    "title": "Co-Intelligence: Living and Working with AI",
+    "author": "Ethan Mollick",
+    "cover": "reading_covers/201182953",
+    "amazon": "https://www.amazon.com/dp/0593716728",
+    "dateRead": "2025-10-08"
+  },
+  {
+    "title": "The Little Book of Stoic Quotes: Philosophy for a Meaningful and Courageous Life",
+    "author": "Phil Van Treuren",
+    "cover": "reading_covers/213196528",
+    "amazon": "https://www.amazon.com/s?k=The+Little+Book+of+Stoic+Quotes+Phil+Van+Treuren",
+    "dateRead": "2025-10-08"
+  },
+  {
+    "title": "Mailman: My Wild Ride Delivering the Mail in Appalachia and Finally Finding Home",
+    "author": "Stephen Starring Grant",
+    "cover": "reading_covers/220160925",
+    "amazon": "https://www.amazon.com/dp/1668018047",
+    "dateRead": "2025-10-08"
+  },
+  {
+    "title": "The Power of the Dog (Power of the Dog, #1)",
+    "author": "Don Winslow",
+    "cover": "reading_covers/42411230",
+    "amazon": "https://www.amazon.com/s?k=The+Power+of+the+Dog+Don+Winslow",
+    "dateRead": "2025-09-19"
+  },
+  {
+    "title": "Essentialism: The Disciplined Pursuit of Less",
+    "author": "Greg McKeown",
+    "cover": "reading_covers/19776547",
+    "amazon": "https://www.amazon.com/dp/0804137390",
+    "dateRead": "2025-08-21"
+  },
+  {
+    "title": "Wellness",
+    "author": "Nathan Hill",
+    "cover": "reading_covers/60290835",
+    "amazon": "https://www.amazon.com/dp/0593536126",
+    "dateRead": "2025-08-21"
+  },
+  {
+    "title": "This Boy&apos;s Life",
+    "author": "Tobias Wolff",
+    "cover": "reading_covers/11466",
+    "amazon": "https://www.amazon.com/dp/0802136680",
+    "dateRead": "2025-08-12"
+  },
+  {
+    "title": "From Under the Truck: A Decidedly Un-Celebrity Memoir from the Enigmatic Actor",
+    "author": "Josh Brolin",
+    "cover": "reading_covers/209069245",
+    "amazon": "https://www.amazon.com/dp/0063382210",
+    "dateRead": "2025-08-12"
+  },
+  {
+    "title": "Denali's Howl: The Deadliest Climbing Disaster on America's Wildest Peak",
+    "author": "Andy Hall",
+    "cover": "reading_covers/18668022",
+    "amazon": "https://www.amazon.com/dp/0525954066",
+    "dateRead": "2025-07-26"
+  },
+  {
+    "title": "Sierra Six (Gray Man, #11)",
+    "author": "Mark Greaney",
+    "cover": "reading_covers/58122885",
+    "amazon": "https://www.amazon.com/dp/0593099001",
+    "dateRead": "2025-07-26"
+  },
+  {
+    "title": "Meditations for Mortals: Four Weeks to Embrace Your Limitations and Make Time for What Counts",
+    "author": "Oliver Burkeman",
+    "cover": "reading_covers/205363955",
+    "amazon": "https://www.amazon.com/dp/0374611998",
+    "dateRead": "2025-07-26"
+  },
+  {
+    "title": "Zen and the Art of Motorcycle Maintenance",
+    "author": "Robert M. Pirsig",
+    "cover": "reading_covers/37761234",
+    "amazon": "https://www.amazon.com/s?k=Zen+and+the+Art+of+Motorcycle+Maintenance+Robert+M.+Pirsig",
+    "dateRead": "2025-07-19"
+  },
+  {
+    "title": "The Cook",
+    "author": "Maylis de Kerangal",
+    "cover": "reading_covers/42962370",
+    "amazon": "https://www.amazon.com/dp/0374716196",
+    "dateRead": "2025-07-13"
+  },
+  {
+    "title": "A Marriage at Sea: A True Story of Love, Obsession, and Shipwreck",
+    "author": "Sophie Elmhirst",
+    "cover": "reading_covers/220239083",
+    "amazon": "https://www.amazon.com/dp/0593854284",
+    "dateRead": "2025-07-10"
+  },
+  {
+    "title": "The Klansman’s Son: My Journey from White Nationalism to Antiracism",
+    "author": "R. Derek Black",
+    "cover": "reading_covers/195660561",
+    "amazon": "https://www.amazon.com/dp/1419764780",
+    "dateRead": "2025-07-09"
+  },
+  {
+    "title": "A Time to Stand: The Epic of the Alamo",
+    "author": "Walter Lord",
+    "cover": "reading_covers/17561569",
+    "amazon": "https://www.amazon.com/s?k=A+Time+to+Stand+Walter+Lord",
+    "dateRead": "2025-07-08"
+  },
+  {
+    "title": "The Answer Is No",
+    "author": "Fredrik Backman",
+    "cover": "reading_covers/219876684",
+    "amazon": "https://www.amazon.com/dp/1662526520",
+    "dateRead": "2025-06-26"
+  },
+  {
+    "title": "The Old Man",
+    "author": "Thomas Perry",
+    "cover": "reading_covers/59337761",
+    "amazon": "https://www.amazon.com/s?k=The+Old+Man+Thomas+Perry",
+    "dateRead": "2025-06-19"
+  },
+  {
+    "title": "On Character: Choices That Define a Life",
+    "author": "Stanley McChrystal",
+    "cover": "reading_covers/220551965",
+    "amazon": "https://www.amazon.com/dp/0593852966",
+    "dateRead": "2025-06-12"
+  },
+  {
+    "title": "The Long Walk",
+    "author": "Stephen King",
+    "cover": "reading_covers/209080212",
+    "amazon": "https://www.amazon.com/s?k=The+Long+Walk+Stephen+King",
+    "dateRead": "2025-06-04"
+  },
+  {
+    "title": "The Amateurs",
+    "author": "David Halberstam",
+    "cover": "reading_covers/75404",
+    "amazon": "https://www.amazon.com/dp/0449910032",
+    "dateRead": "2025-05-28"
+  },
+  {
+    "title": "Hard Rain Falling (New York Review Books Classics)",
+    "author": "Don Carpenter",
+    "cover": "reading_covers/8527763",
+    "amazon": "https://www.amazon.com/dp/1590173902",
+    "dateRead": "2025-05-19"
+  },
+  {
+    "title": "Reasons Not to Worry: How to Be Stoic in Chaotic Times—A Practical Guide to Stoicism for Self-Improvement and Personal Growth",
+    "author": "Brigid Delaney",
+    "cover": "reading_covers/128578789",
+    "amazon": "https://www.amazon.com/dp/0063314843",
+    "dateRead": "2025-05-10"
+  },
+  {
+    "title": "The DOSE Effect: An Inspiring Self-Healing Guide About the Mind-Body-Hormonal Connection, Achieve Wellness and Happiness with Practical Techniques!",
+    "author": "T.J. Power",
+    "cover": "reading_covers/215120463",
+    "amazon": "https://www.amazon.com/dp/0063421895",
+    "dateRead": "2025-04-21"
+  },
+  {
+    "title": "Secrets of Adulthood: Simple Truths for Our Complex Lives",
+    "author": "Gretchen Rubin",
+    "cover": "reading_covers/215807394",
+    "amazon": "https://www.amazon.com/dp/0593800745",
+    "dateRead": "2025-04-21"
+  },
+  {
+    "title": "The Devil Behind the Badge: The Horrifying Twelve Days of the Border Patrol Serial Killer",
+    "author": "Rick Jervis",
+    "cover": "reading_covers/199531752",
+    "amazon": "https://www.amazon.com/dp/0062962965",
+    "dateRead": "2025-04-09"
+  },
+  {
+    "title": "Everything Is Tuberculosis: The History and Persistence of Our Deadliest Infection",
+    "author": "John Green",
+    "cover": "reading_covers/220341389",
+    "amazon": "https://www.amazon.com/dp/0525556575",
+    "dateRead": "2025-04-07"
+  },
+  {
+    "title": "Careless People: A Cautionary Tale of Power, Greed, and Lost Idealism",
+    "author": "Sarah Wynn-Williams",
+    "cover": "reading_covers/223436601",
+    "amazon": "https://www.amazon.com/dp/1250391237",
+    "dateRead": "2025-04-05"
+  },
+  {
+    "title": "Relentless (Gray Man, #10)",
+    "author": "Mark Greaney",
+    "cover": "reading_covers/53990866",
+    "amazon": "https://www.amazon.com/s?k=Relentless+Mark+Greaney",
+    "dateRead": "2025-03-28"
+  },
+  {
+    "title": "Abundance",
+    "author": "Ezra Klein",
+    "cover": "reading_covers/176530394",
+    "amazon": "https://www.amazon.com/dp/1668023504",
+    "dateRead": "2025-03-28"
+  },
+  {
+    "title": "The 5 Types of Wealth: A Transformative Guide to Design Your Dream Life",
+    "author": "Sahil Bloom",
+    "cover": "reading_covers/212977735",
+    "amazon": "https://www.amazon.com/dp/0593723198",
+    "dateRead": "2025-03-18"
+  },
+  {
+    "title": "2054 (A Novel of Future War)",
+    "author": "Elliot Ackerman",
+    "cover": "reading_covers/177178570",
+    "amazon": "https://www.amazon.com/dp/059348987X",
+    "dateRead": "2025-03-04"
+  },
+  {
+    "title": "Keep Chopping Wood: an ordinary approach to achieving extraordinary success",
+    "author": "Kevin DeShazo",
+    "cover": "reading_covers/53547339",
+    "amazon": "https://www.amazon.com/s?k=Keep+Chopping+Wood+Kevin+DeShazo",
+    "dateRead": "2025-02-18"
+  },
+  {
+    "title": "One Second After (After #1)",
+    "author": "William R. Forstchen",
+    "cover": "reading_covers/40192873",
+    "amazon": "https://www.amazon.com/s?k=One+Second+After+William+R.+Forstchen",
+    "dateRead": "2025-02-17"
+  },
+  {
+    "title": "Uptime: A Practical Guide to Personal Productivity and Wellbeing",
+    "author": "Laura Mae Martin",
+    "cover": "reading_covers/177317620",
+    "amazon": "https://www.amazon.com/dp/006331746X",
+    "dateRead": "2025-02-11"
+  },
+  {
+    "title": "Deliver Me from Nowhere: The Making of Bruce Springsteen's Nebraska",
+    "author": "Warren Zanes",
+    "cover": "reading_covers/61913599",
+    "amazon": "https://www.amazon.com/dp/0593237412",
+    "dateRead": "2025-02-08"
+  },
+  {
+    "title": "The Siege: A Six-Day Hostage Crisis and the Daring Special-Forces Operation That Shocked the World",
+    "author": "Ben Macintyre",
+    "cover": "reading_covers/204076512",
+    "amazon": "https://www.amazon.com/dp/0593728106",
+    "dateRead": "2025-01-29"
+  },
+  {
+    "title": "Cabin: Off the Grid Adventures with a Clueless Craftsman",
+    "author": "Patrick Hutchison",
+    "cover": "reading_covers/203579088",
+    "amazon": "https://www.amazon.com/dp/1250285704",
+    "dateRead": "2025-01-26"
+  },
+  {
+    "title": "The Tiger: A True Story of Vengeance and Survival",
+    "author": "John Vaillant",
+    "cover": "reading_covers/7624594",
+    "amazon": "https://www.amazon.com/dp/0307268934",
+    "dateRead": "2025-01-21"
+  },
+  {
+    "title": "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
+    "author": "James Clear",
+    "cover": "reading_covers/40121378",
+    "amazon": "https://www.amazon.com/s?k=Atomic+Habits+James+Clear",
+    "dateRead": "2025-01-21"
+  },
+  {
+    "title": "The Snakehead: An Epic Tale of the Chinatown Underworld and the American Dream",
+    "author": "Patrick Radden Keefe",
+    "cover": "reading_covers/59228338",
+    "amazon": "https://www.amazon.com/s?k=The+Snakehead+Patrick+Radden+Keefe",
+    "dateRead": "2025-01-05"
+  }
+]

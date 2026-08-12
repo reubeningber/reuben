@@ -38,7 +38,7 @@ src/
 │   ├── now.astro                   # Now page
 │   ├── uses.astro                  # Uses page
 │   ├── friends.astro               # Friends page
-│   ├── reading.astro               # Reading page (running 2026 book log)
+│   ├── reading.astro               # Reading page (tabbed year-by-year book log, 2020-2026)
 │   ├── colophon.astro              # Colophon page
 │   ├── identity-statement.astro    # Identity statement page
 │   ├── rss.xml.js                  # RSS feed

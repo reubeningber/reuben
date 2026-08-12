@@ -1,42 +1,126 @@
 ---
 import Base from "../layouts/BaseLayout.astro";
-import books from "../data/reading.json";
 
-const year = 2026;
-const sorted = [...books].sort((a, b) => (b.dateRead ?? "").localeCompare(a.dateRead ?? ""));
+import books2026 from "../data/reading/2026.json";
+import books2025 from "../data/reading/2025.json";
+import books2024 from "../data/reading/2024.json";
+import books2023 from "../data/reading/2023.json";
+import books2022 from "../data/reading/2022.json";
+import books2021 from "../data/reading/2021.json";
+import books2020 from "../data/reading/2020.json";
+
+const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
+
+const years = [
+  { year: 2026, books: books2026 },
+  { year: 2025, books: books2025 },
+  { year: 2024, books: books2024 },
+  { year: 2023, books: books2023 },
+  { year: 2022, books: books2022 },
+  { year: 2021, books: books2021 },
+  { year: 2020, books: books2020 },
+];
+
+const defaultYear = 2026;
+
+function coverUrl(path: string) {
+  return `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_300/${path}`;
+}
 ---
 <Base
   title="Reading | Reuben Ingber"
-  description={`A running record of the books I've read in ${year}.`}
+  description="A running record of the books I've read each year, going back to 2020."
 >
-  <div class="max-w-3xl">
+  <div class="max-w-4xl">
     <h1 class="text-4xl font-bold mb-4 text-primary tracking-wide">READING</h1>
 
     <p class="text-lg leading-relaxed mb-8 text-secondary">
-      A running record of the books I've read in {year} — {sorted.length} so far.
+      A running record of the books I've read each year.
     </p>
 
-    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6">
-      {sorted.map((book) => (
-        <a
-          href={book.amazon}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group block"
-          title={`${book.title} by ${book.author}`}
+    <div role="tablist" aria-label="Reading year" class="flex flex-wrap gap-2 mb-8 border-b border-gray-200 pb-4">
+      {years.map(({ year, books }) => (
+        <button
+          type="button"
+          role="tab"
+          data-year={year}
+          aria-selected={year === defaultYear ? "true" : "false"}
+          class:list={[
+            "year-tab px-4 py-2 text-sm font-semibold tracking-wide rounded-full transition-colors",
+            year === defaultYear
+              ? "bg-orange-600 text-white"
+              : "bg-gray-100 text-gray-700 hover:bg-gray-200",
+          ]}
         >
-          <img
-            src={book.cover}
-            alt={`${book.title} by ${book.author} book cover`}
-            class="w-full h-auto rounded shadow-sm group-hover:opacity-80 transition-opacity"
-            loading="lazy"
-          />
-        </a>
+          {year} <span class="opacity-70">({books.length})</span>
+        </button>
       ))}
     </div>
+
+    {years.map(({ year, books }) => (
+      <div
+        role="tabpanel"
+        data-year-panel={year}
+        class:list={["year-panel", year !== defaultYear && "hidden"]}
+      >
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6">
+          {books.map((book) => (
+            <a
+              href={book.amazon}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group block"
+              title={`${book.title} by ${book.author}`}
+            >
+              <img
+                data-src={coverUrl(book.cover)}
+                alt={`${book.title} by ${book.author} book cover`}
+                class="cover-img w-full h-auto rounded shadow-sm bg-gray-100 aspect-[2/3] object-cover group-hover:opacity-80 transition-opacity"
+              />
+            </a>
+          ))}
+        </div>
+      </div>
+    ))}
 
     <div class="mt-16 pt-6 border-t border-gray-200 text-sm text-secondary">
       <p>Tracked on <a href="https://www.goodreads.com/user/show/7384813" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Goodreads</a></p>
     </div>
   </div>
 </Base>
+
+<script>
+  function loadPanelImages(panel: Element) {
+    panel.querySelectorAll<HTMLImageElement>('img.cover-img[data-src]').forEach((img) => {
+      img.src = img.dataset.src!;
+      img.removeAttribute('data-src');
+    });
+  }
+
+  const tabs = document.querySelectorAll<HTMLButtonElement>('.year-tab');
+  const panels = document.querySelectorAll<HTMLElement>('.year-panel');
+
+  function activateYear(year: string) {
+    tabs.forEach((tab) => {
+      const active = tab.dataset.year === year;
+      tab.setAttribute('aria-selected', active ? 'true' : 'false');
+      tab.classList.toggle('bg-orange-600', active);
+      tab.classList.toggle('text-white', active);
+      tab.classList.toggle('bg-gray-100', !active);
+      tab.classList.toggle('text-gray-700', !active);
+    });
+    panels.forEach((panel) => {
+      const match = panel.dataset.yearPanel === year;
+      panel.classList.toggle('hidden', !match);
+      if (match) loadPanelImages(panel);
+    });
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => activateYear(tab.dataset.year!));
+  });
+
+  // Load the initially active panel's images on page load.
+  const initialPanel = document.querySelector<HTMLElement>('.year-panel:not(.hidden)');
+  if (initialPanel) loadPanelImages(initialPanel);
+</script>
