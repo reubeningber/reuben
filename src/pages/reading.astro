@@ -26,6 +26,10 @@ const defaultYear = 2026;
 function coverUrl(path: string) {
   return `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_300/${path}`;
 }
+
+function stars(rating: number) {
+  return "★".repeat(rating) + "☆".repeat(5 - rating);
+}
 ---
 <Base
   title="Reading | Reuben Ingber"
@@ -69,7 +73,7 @@ function coverUrl(path: string) {
               href={book.amazon}
               target="_blank"
               rel="noopener noreferrer"
-              class="group block"
+              class="group relative block"
               title={`${book.title} by ${book.author}`}
             >
               <img
@@ -77,6 +81,11 @@ function coverUrl(path: string) {
                 alt={`${book.title} by ${book.author} book cover`}
                 class="cover-img w-full h-auto rounded shadow-sm bg-gray-100 aspect-[2/3] object-cover group-hover:opacity-80 transition-opacity"
               />
+              {book.rating && (
+                <div class="absolute inset-x-0 bottom-0 rounded-b bg-black/75 py-1 text-center text-sm tracking-wide text-yellow-400 opacity-0 transition-opacity group-hover:opacity-100">
+                  {stars(book.rating)}
+                </div>
+              )}
             </a>
           ))}
         </div>

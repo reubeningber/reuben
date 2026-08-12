@@ -44,6 +44,7 @@ async function fetchShelf(params) {
     bookId: field(it, "book_id"),
     dateRead: field(it, "user_read_at") || null,
     dateAdded: field(it, "user_date_added") || null,
+    rating: Number(field(it, "user_rating")) || 0,
   }));
 }
 
@@ -162,6 +163,7 @@ async function main() {
       amazon: amazonLink(c.isbn, c.title, c.author),
     };
     if (c.dateReadIso) entry.dateRead = c.dateReadIso;
+    if (c.rating > 0) entry.rating = c.rating;
     byYear[c.year] = byYear[c.year] ?? [];
     byYear[c.year].push(entry);
     added.push(entry);

@@ -4,28 +4,32 @@
     "author": "Eric Eyre",
     "cover": "reading_covers/49049906",
     "amazon": "https://www.amazon.com/dp/198210533X",
-    "dateRead": "2020-12-30"
+    "dateRead": "2020-12-30",
+    "rating": 5
   },
   {
     "title": "A Promised Land",
     "author": "Barack Obama",
     "cover": "reading_covers/55361205",
     "amazon": "https://www.amazon.com/dp/1524763187",
-    "dateRead": "2020-12-18"
+    "dateRead": "2020-12-18",
+    "rating": 3
   },
   {
     "title": "Bad Blood: Secrets and Lies in a Silicon Valley Startup",
     "author": "John Carreyrou",
     "cover": "reading_covers/38799469",
     "amazon": "https://www.amazon.com/s?k=Bad+Blood+John+Carreyrou",
-    "dateRead": "2020-12-10"
+    "dateRead": "2020-12-10",
+    "rating": 5
   },
   {
     "title": "The Dip: A Little Book That Teaches You When to Quit (and When to Stick)",
     "author": "Seth Godin",
     "cover": "reading_covers/6547148",
     "amazon": "https://www.amazon.com/dp/1101216344",
-    "dateRead": "2020-12-03"
+    "dateRead": "2020-12-03",
+    "rating": 5
   },
   {
     "title": "Don't Go Back to School: A Handbook for Learning Anything",
@@ -46,27 +50,31 @@
     "author": "Tom Clancy",
     "cover": "reading_covers/48723795",
     "amazon": "https://www.amazon.com/s?k=Patriot+Games+Tom+Clancy",
-    "dateRead": "2020-07-01"
+    "dateRead": "2020-07-01",
+    "rating": 3
   },
   {
     "title": "Ready Player One (Ready Player One, #1)",
     "author": "Ernest Cline",
     "cover": "reading_covers/20603758",
     "amazon": "https://www.amazon.com/s?k=Ready+Player+One+Ernest+Cline",
-    "dateRead": "2020-05-22"
+    "dateRead": "2020-05-22",
+    "rating": 5
   },
   {
     "title": "The New New Thing: A Silicon Valley Story",
     "author": "Michael Lewis",
     "cover": "reading_covers/8135219",
     "amazon": "https://www.amazon.com/s?k=The+New+New+Thing+Michael+Lewis",
-    "dateRead": "2020-01-25"
+    "dateRead": "2020-01-25",
+    "rating": 3
   },
   {
     "title": "Shoe Dog",
     "author": "Phil Knight",
     "cover": "reading_covers/4030991",
     "amazon": "https://www.amazon.com/dp/1501135937",
-    "dateRead": "2020-01-22"
+    "dateRead": "2020-01-22",
+    "rating": 3
   }
 ]
