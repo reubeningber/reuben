@@ -3,7 +3,7 @@ import Base from "../layouts/BaseLayout.astro";
 import books from "../data/reading.json";
 
 const year = 2026;
-const sorted = [...books].sort((a, b) => b.dateRead.localeCompare(a.dateRead));
+const sorted = [...books].sort((a, b) => (b.dateRead ?? "").localeCompare(a.dateRead ?? ""));
 ---
 <Base
   title="Reading | Reuben Ingber"

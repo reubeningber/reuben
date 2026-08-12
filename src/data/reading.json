@@ -187,5 +187,29 @@
     "cover": "/assets/images/reading/your-best-year-ever.jpg",
     "amazon": "https://www.amazon.com/dp/1540902692",
     "dateRead": "2026-01-08"
+  },
+  {
+    "title": "John of John",
+    "author": "Douglas Stuart",
+    "cover": "/assets/images/reading/john-of-john.jpg",
+    "amazon": "https://www.amazon.com/dp/0802167276"
+  },
+  {
+    "title": "The Employees",
+    "author": "Olga Ravn",
+    "cover": "/assets/images/reading/the-employees.jpg",
+    "amazon": "https://www.amazon.com/s?k=The+Employees+Olga+Ravn"
+  },
+  {
+    "title": "The Art of Asking Your Boss for a Raise",
+    "author": "Georges Perec",
+    "cover": "/assets/images/reading/the-art-of-asking-your-boss-for-a-raise.jpg",
+    "amazon": "https://www.amazon.com/dp/1784786578"
+  },
+  {
+    "title": "Surf When You Can: Lessons in Life, Loyalty, and Leadership from a Maverick Navy Captain",
+    "author": "Brett Crozier",
+    "cover": "/assets/images/reading/surf-when-you-can.jpg",
+    "amazon": "https://www.amazon.com/dp/1982191023"
   }
 ]
