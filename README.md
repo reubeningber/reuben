@@ -166,6 +166,13 @@ Creates a new blog post with interactive prompts.
 - Checks for existing files
 - Conditional prompts (only asks for image credit if image provided)
 
+### `scripts/update-reading.mjs`
+
+Diffs Reuben's Goodreads "read" shelf against `src/data/reading/{year}.json`, uploads covers for any new books to Cloudinary (`reading_covers/{goodreads_book_id}`), and writes the updated year files. Runs weekly via `.github/workflows/update-reading.yml`, which opens a PR when there's anything new. Requires `CLOUDINARY_API_KEY` and `CLOUDINARY_API_SECRET` (repo secrets in CI, or in local `.env` to run manually):
+```bash
+node scripts/update-reading.mjs
+```
+
 ## Cloudinary Setup
 
 1. Create a free account at [cloudinary.com](https://cloudinary.com)

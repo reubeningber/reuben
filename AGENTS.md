@@ -160,6 +160,7 @@ Two analytics tools run in parallel via `BaseLayout.astro`:
 |---|---|
 | `PUBLIC_CLOUDINARY_CLOUD_NAME` | Cloudinary cloud name for image URLs |
 | `SHOW_DRAFTS` | Set to `"true"` in dev to preview draft posts |
+| `CLOUDINARY_API_KEY` / `CLOUDINARY_API_SECRET` | Signed Cloudinary uploads (repo secrets); only used by `scripts/update-reading.mjs`, not the site build |
 
 ## Navigation
 
@@ -169,6 +170,10 @@ Defined in `Header.astro`:
 - FIELD NOTES → `/field-notes/`
 - PHOTOS → `https://photos.reubeningber.com` (external)
 - CONTACT → `/contact/`
+
+## Automated Reading Sync
+
+`.github/workflows/update-reading.yml` runs `scripts/update-reading.mjs` weekly (Mondays, plus manual `workflow_dispatch`). It diffs Reuben's public Goodreads "read" shelf (via RSS, not the HTML site) against `src/data/reading/{year}.json`, uploads new covers to Cloudinary under `reading_covers/{goodreads_book_id}`, and opens a PR (`peter-evans/create-pull-request`, branch `automated/update-reading`) when it finds anything new. No-ops silently otherwise.
 
 ## SEO & Structured Data
 
