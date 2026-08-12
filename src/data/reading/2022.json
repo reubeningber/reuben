@@ -29,7 +29,8 @@
     "cover": "reading_covers/54998264",
     "amazon": "https://www.amazon.com/dp/0593237110",
     "dateRead": "2022-12-25",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Put Your Ass Where Your Heart Wants to Be",
@@ -45,7 +46,8 @@
     "cover": "reading_covers/58578769",
     "amazon": "https://www.amazon.com/dp/1250279291",
     "dateRead": "2022-12-21",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "The Hero Code: Lessons Learned from Lives Well Lived",
@@ -117,7 +119,8 @@
     "cover": "reading_covers/43570679",
     "amazon": "https://www.amazon.com/dp/1628421185",
     "dateRead": "2022-12-08",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "2034 (A Novel of Future War)",
@@ -325,7 +328,8 @@
     "cover": "reading_covers/35631386",
     "amazon": "https://www.amazon.com/dp/0393354776",
     "dateRead": "2022-09-22",
-    "rating": 2
+    "rating": 2,
+    "audio": true
   },
   {
     "title": "We've Got to Try: How the Fight for Voting Rights Makes Everything Else Possible",
@@ -365,7 +369,8 @@
     "cover": "reading_covers/18154",
     "amazon": "https://www.amazon.com/dp/1416507787",
     "dateRead": "2022-09-16",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Tomorrow, and Tomorrow, and Tomorrow",

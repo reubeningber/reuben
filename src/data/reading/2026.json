@@ -20,7 +20,8 @@
     "cover": "reading_covers/38588764",
     "amazon": "https://www.amazon.com/dp/8845932443",
     "dateRead": "2026-08-04",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Small Game",
@@ -28,7 +29,8 @@
     "cover": "reading_covers/60277011",
     "amazon": "https://www.amazon.com/dp/0063066173",
     "dateRead": "2026-08-04",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "In the Days of My Youth I Was Told What It Means to Be a Man: A Memoir",
@@ -82,14 +84,16 @@
     "author": "Bill Bryson",
     "cover": "reading_covers/9791",
     "amazon": "https://www.amazon.com/dp/0307279464",
-    "dateRead": "2026-05-06"
+    "dateRead": "2026-05-06",
+    "audio": true
   },
   {
     "title": "Burner (Gray Man, #12)",
     "author": "Mark Greaney",
     "cover": "reading_covers/61177813",
     "amazon": "https://www.amazon.com/dp/0593548116",
-    "dateRead": "2026-05-06"
+    "dateRead": "2026-05-06",
+    "audio": true
   },
   {
     "title": "The Colossus of New York",

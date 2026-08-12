@@ -362,7 +362,8 @@
     "cover": "reading_covers/179546787",
     "amazon": "https://www.amazon.com/dp/0593578449",
     "dateRead": "2024-04-05",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Devil Makes Three",
@@ -410,7 +411,8 @@
     "cover": "reading_covers/59028580",
     "amazon": "https://www.amazon.com/dp/0063030241",
     "dateRead": "2024-03-01",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "No Cure for Being Human: And Other Truths I Need to Hear",

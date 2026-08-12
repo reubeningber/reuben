@@ -45,6 +45,7 @@ async function fetchShelf(params) {
     dateRead: field(it, "user_read_at") || null,
     dateAdded: field(it, "user_date_added") || null,
     rating: Number(field(it, "user_rating")) || 0,
+    audio: field(it, "user_shelves").split(",").map((s) => s.trim()).includes("audio"),
   }));
 }
 
@@ -164,6 +165,7 @@ async function main() {
     };
     if (c.dateReadIso) entry.dateRead = c.dateReadIso;
     if (c.rating > 0) entry.rating = c.rating;
+    if (c.audio) entry.audio = true;
     byYear[c.year] = byYear[c.year] ?? [];
     byYear[c.year].push(entry);
     added.push(entry);

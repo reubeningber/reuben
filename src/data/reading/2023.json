@@ -141,7 +141,8 @@
     "cover": "reading_covers/30038862",
     "amazon": "https://www.amazon.com/dp/1632867001",
     "dateRead": "2023-10-21",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Cartoons With My Dad: How Art Drew Us Together",
@@ -197,7 +198,8 @@
     "cover": "reading_covers/33155369",
     "amazon": "https://www.amazon.com/dp/0399562702",
     "dateRead": "2023-10-04",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "The Greatness Mindset: Unlock the Power of Your Mind and Live Your Best Life Today",
@@ -381,7 +383,8 @@
     "cover": "reading_covers/56269138",
     "amazon": "https://www.amazon.com/dp/1250276853",
     "dateRead": "2023-07-11",
-    "rating": 1
+    "rating": 1,
+    "audio": true
   },
   {
     "title": "The Comfort Crisis: Embrace Discomfort to Reclaim Your Wild, Happy, Healthy Self",
@@ -589,7 +592,8 @@
     "cover": "reading_covers/60177466",
     "amazon": "https://www.amazon.com/dp/0593328795",
     "dateRead": "2023-04-19",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "A Libertarian Walks Into a Bear: The Utopian Plot to Liberate an American Town (And Some Bears)",
@@ -605,7 +609,8 @@
     "cover": "reading_covers/6480781",
     "amazon": "https://www.amazon.com/dp/0307268195",
     "dateRead": "2023-04-02",
-    "rating": 5
+    "rating": 5,
+    "audio": true
   },
   {
     "title": "The Hungry Brain: Outsmarting the Instincts That Make Us Overeat",
@@ -749,7 +754,8 @@
     "cover": "reading_covers/43706482",
     "amazon": "https://www.amazon.com/dp/0241341035",
     "dateRead": "2023-02-07",
-    "rating": 2
+    "rating": 2,
+    "audio": true
   },
   {
     "title": "Solito",
