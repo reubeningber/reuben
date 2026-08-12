@@ -1,0 +1,151 @@
+---
+import Base from "../layouts/BaseLayout.astro";
+
+import books2026 from "../data/reading/2026.json";
+import books2025 from "../data/reading/2025.json";
+import books2024 from "../data/reading/2024.json";
+import books2023 from "../data/reading/2023.json";
+import books2022 from "../data/reading/2022.json";
+import books2021 from "../data/reading/2021.json";
+import books2020 from "../data/reading/2020.json";
+
+const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
+
+const years = [
+  { year: 2026, books: books2026 },
+  { year: 2025, books: books2025 },
+  { year: 2024, books: books2024 },
+  { year: 2023, books: books2023 },
+  { year: 2022, books: books2022 },
+  { year: 2021, books: books2021 },
+  { year: 2020, books: books2020 },
+];
+
+const defaultYear = 2026;
+
+function coverUrl(path: string) {
+  return `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_300/${path}`;
+}
+
+const STAR_FILLED = '<path d="M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61493 7.84006L12.0006 0.5L15.3862 7.84006L23.4132 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26Z"></path>';
+const STAR_EMPTY = '<path d="M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61493 7.84006L12.0006 0.5L15.3862 7.84006L23.4132 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26ZM12.0006 15.968L16.2473 18.3451L15.2988 13.5717L18.8719 10.2674L14.039 9.69434L12.0006 5.27502L9.96214 9.69434L5.12921 10.2674L8.70231 13.5717L7.75383 18.3451L12.0006 15.968Z"></path>';
+---
+<Base
+  title="Reading | Reuben Ingber"
+  description="A running record of the books I've read each year, going back to 2020."
+>
+  <div class="max-w-4xl">
+    <h1 class="text-4xl font-bold mb-4 text-primary tracking-wide">READING</h1>
+
+    <p class="text-lg leading-relaxed mb-8 text-secondary">
+      A running record of the books I've read each year.
+    </p>
+
+    <div role="tablist" aria-label="Reading year" class="flex flex-wrap gap-2 mb-8 border-b border-gray-200 pb-4">
+      {years.map(({ year, books }) => (
+        <button
+          type="button"
+          role="tab"
+          data-year={year}
+          aria-selected={year === defaultYear ? "true" : "false"}
+          class:list={[
+            "year-tab px-4 py-2 text-sm font-semibold tracking-wide rounded-full transition-colors",
+            year === defaultYear
+              ? "bg-orange-600 text-white"
+              : "bg-gray-100 text-gray-700 hover:bg-gray-200",
+          ]}
+        >
+          {year} <span class="opacity-70">({books.length})</span>
+        </button>
+      ))}
+    </div>
+
+    {years.map(({ year, books }) => (
+      <div
+        role="tabpanel"
+        data-year-panel={year}
+        class:list={["year-panel", year !== defaultYear && "hidden"]}
+      >
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6">
+          {books.map((book) => (
+            <a
+              href={book.amazon}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group relative block"
+              title={`${book.title} by ${book.author}`}
+            >
+              <img
+                data-src={coverUrl(book.cover)}
+                alt={`${book.title} by ${book.author} book cover`}
+                class="cover-img w-full h-auto rounded shadow-sm bg-gray-100 aspect-[2/3] object-cover group-hover:opacity-80 transition-opacity"
+              />
+              {book.audio && (
+                <div
+                  class="absolute right-1.5 top-1.5 rounded-full bg-black/75 p-1 text-white"
+                  title="Audiobook"
+                  aria-label="Audiobook"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-3.5 w-3.5"><path d="M12 4C7.58172 4 4 7.58172 4 12H7C8.10457 12 9 12.8954 9 14V19C9 20.1046 8.10457 21 7 21H4C2.89543 21 2 20.1046 2 19V12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12V19C22 20.1046 21.1046 21 20 21H17C15.8954 21 15 20.1046 15 19V14C15 12.8954 15.8954 12 17 12H20C20 7.58172 16.4183 4 12 4ZM4 14V19H7V14H4ZM17 14V19H20V14H17Z"></path></svg>
+                </div>
+              )}
+              {book.rating && (
+                <div class="absolute inset-x-0 bottom-0 flex justify-center gap-0.5 rounded-b bg-black/75 py-1.5 opacity-0 transition-opacity group-hover:opacity-100">
+                  {[1, 2, 3, 4, 5].map((n) => (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class:list={["h-3 w-3", n <= book.rating ? "text-accent" : "text-white/40"]}
+                      set:html={n <= book.rating ? STAR_FILLED : STAR_EMPTY}
+                    />
+                  ))}
+                </div>
+              )}
+            </a>
+          ))}
+        </div>
+      </div>
+    ))}
+
+    <div class="mt-16 pt-6 border-t border-gray-200 text-sm text-secondary">
+      <p>Last updated on August 12, 2026 | Tracked on <a href="https://www.goodreads.com/user/show/7384813" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Goodreads</a></p>
+    </div>
+  </div>
+</Base>
+
+<script>
+  function loadPanelImages(panel: Element) {
+    panel.querySelectorAll<HTMLImageElement>('img.cover-img[data-src]').forEach((img) => {
+      img.src = img.dataset.src!;
+      img.removeAttribute('data-src');
+    });
+  }
+
+  const tabs = document.querySelectorAll<HTMLButtonElement>('.year-tab');
+  const panels = document.querySelectorAll<HTMLElement>('.year-panel');
+
+  function activateYear(year: string) {
+    tabs.forEach((tab) => {
+      const active = tab.dataset.year === year;
+      tab.setAttribute('aria-selected', active ? 'true' : 'false');
+      tab.classList.toggle('bg-orange-600', active);
+      tab.classList.toggle('text-white', active);
+      tab.classList.toggle('bg-gray-100', !active);
+      tab.classList.toggle('text-gray-700', !active);
+    });
+    panels.forEach((panel) => {
+      const match = panel.dataset.yearPanel === year;
+      panel.classList.toggle('hidden', !match);
+      if (match) loadPanelImages(panel);
+    });
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => activateYear(tab.dataset.year!));
+  });
+
+  // Load the initially active panel's images on page load.
+  const initialPanel = document.querySelector<HTMLElement>('.year-panel:not(.hidden)');
+  if (initialPanel) loadPanelImages(initialPanel);
+</script>

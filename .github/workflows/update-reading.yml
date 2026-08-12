@@ -1,0 +1,42 @@
+name: Update Reading Page
+
+on:
+  schedule:
+    # Every Monday at 13:00 UTC (9am ET)
+    - cron: '0 13 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Sync books from Goodreads
+        id: sync
+        run: node scripts/update-reading.mjs
+        env:
+          PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
+          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+
+      - name: Create Pull Request
+        if: steps.sync.outputs.count
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Add ${{ steps.sync.outputs.count }} new book(s) from Goodreads"
+          title: "Add ${{ steps.sync.outputs.count }} new book(s) to /reading"
+          body: ${{ steps.sync.outputs.summary }}
+          branch: automated/update-reading
+          delete-branch: true
+          labels: automated

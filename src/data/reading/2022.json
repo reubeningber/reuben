@@ -1,0 +1,975 @@
+[
+  {
+    "title": "The Practicing Mind: Developing Focus and Discipline in Your Life ? Master Any Skill or Challenge by Learning to Love the Process",
+    "author": "Thomas M. Sterner",
+    "cover": "reading_covers/18891286",
+    "amazon": "https://www.amazon.com/dp/1608680916",
+    "dateRead": "2022-12-31",
+    "rating": 3
+  },
+  {
+    "title": "The Inner Game of Tennis: The Classic Guide to the Mental Side of Peak Performance",
+    "author": "W. Timothy Gallwey",
+    "cover": "reading_covers/905",
+    "amazon": "https://www.amazon.com/dp/0679778314",
+    "dateRead": "2022-12-30",
+    "rating": 4
+  },
+  {
+    "title": "The 3 Alarms: A Simple System to Transform Your Health, Wealth, and Relationships Forever",
+    "author": "Eric Partaker",
+    "cover": "reading_covers/55537584",
+    "amazon": "https://www.amazon.com/dp/0990378519",
+    "dateRead": "2022-12-26",
+    "rating": 4
+  },
+  {
+    "title": "The Cult of We: WeWork, Adam Neumann, and the Great Startup Delusion",
+    "author": "Eliot Brown",
+    "cover": "reading_covers/54998264",
+    "amazon": "https://www.amazon.com/dp/0593237110",
+    "dateRead": "2022-12-25",
+    "rating": 4,
+    "audio": true
+  },
+  {
+    "title": "Put Your Ass Where Your Heart Wants to Be",
+    "author": "Steven Pressfield",
+    "cover": "reading_covers/61435726",
+    "amazon": "https://www.amazon.com/s?k=Put+Your+Ass+Where+Your+Heart+Wants+to+Be+Steven+Pressfield",
+    "dateRead": "2022-12-22",
+    "rating": 4
+  },
+  {
+    "title": "Endure: How to Work Hard, Outlast, and Keep Hammering",
+    "author": "Cameron R. Hanes",
+    "cover": "reading_covers/58578769",
+    "amazon": "https://www.amazon.com/dp/1250279291",
+    "dateRead": "2022-12-21",
+    "rating": 4,
+    "audio": true
+  },
+  {
+    "title": "The Hero Code: Lessons Learned from Lives Well Lived",
+    "author": "William H. McRaven",
+    "cover": "reading_covers/56450025",
+    "amazon": "https://www.amazon.com/dp/1538719975",
+    "dateRead": "2022-12-20",
+    "rating": 3
+  },
+  {
+    "title": "Work, Parent, Thrive: 12 Science-Backed Strategies to Ditch Guilt, Manage Overwhelm, and Grow Connection (When Everything Feels Like Too Much)",
+    "author": "Yael Schonbrun",
+    "cover": "reading_covers/61635229",
+    "amazon": "https://www.amazon.com/dp/1611809657",
+    "dateRead": "2022-12-19",
+    "rating": 4
+  },
+  {
+    "title": "The Good Enough Parent: How to raise contented, interesting, and resilient children",
+    "author": "The School of Life",
+    "cover": "reading_covers/61236989",
+    "amazon": "https://www.amazon.com/dp/1912891956",
+    "dateRead": "2022-12-18",
+    "rating": 1
+  },
+  {
+    "title": "The Motivation Myth: How High Achievers Really Set Themselves Up to Win",
+    "author": "Jeff Haden",
+    "cover": "reading_covers/34962304",
+    "amazon": "https://www.amazon.com/dp/0399563768",
+    "dateRead": "2022-12-16",
+    "rating": 4
+  },
+  {
+    "title": "The Candy House",
+    "author": "Jennifer Egan",
+    "cover": "reading_covers/58939642",
+    "amazon": "https://www.amazon.com/dp/1476716781",
+    "dateRead": "2022-12-15",
+    "rating": 2
+  },
+  {
+    "title": "Tracers in the Dark: The Global Hunt for the Crime Lords of Cryptocurrency",
+    "author": "Andy Greenberg",
+    "cover": "reading_covers/60462182",
+    "amazon": "https://www.amazon.com/dp/0385548109",
+    "dateRead": "2022-12-15",
+    "rating": 5
+  },
+  {
+    "title": "Things My Son Needs to Know About the World",
+    "author": "Fredrik Backman",
+    "cover": "reading_covers/42833687",
+    "amazon": "https://www.amazon.com/dp/1501196863",
+    "dateRead": "2022-12-12",
+    "rating": 3
+  },
+  {
+    "title": "Vacationland: True Stories from Painful Beaches",
+    "author": "John Hodgman",
+    "cover": "reading_covers/39391175",
+    "amazon": "https://www.amazon.com/dp/073522482X",
+    "dateRead": "2022-12-09",
+    "rating": 3
+  },
+  {
+    "title": "The Unlikely Thru-Hiker: An Appalachian Trail Journey",
+    "author": "Derick Lugo",
+    "cover": "reading_covers/43570679",
+    "amazon": "https://www.amazon.com/dp/1628421185",
+    "dateRead": "2022-12-08",
+    "rating": 4,
+    "audio": true
+  },
+  {
+    "title": "2034 (A Novel of Future War)",
+    "author": "Elliot Ackerman",
+    "cover": "reading_covers/54761971",
+    "amazon": "https://www.amazon.com/dp/1984881264",
+    "dateRead": "2022-12-03",
+    "rating": 5
+  },
+  {
+    "title": "A River in Darkness: One Man's Escape from North Korea",
+    "author": "Masaji Ishikawa",
+    "cover": "reading_covers/35404398",
+    "amazon": "https://www.amazon.com/dp/1542097193",
+    "dateRead": "2022-12-02",
+    "rating": 4
+  },
+  {
+    "title": "This is Going to Hurt: Secret Diaries of a Junior Doctor",
+    "author": "Adam Kay",
+    "cover": "reading_covers/35510008",
+    "amazon": "https://www.amazon.com/s?k=This+is+Going+to+Hurt+Adam+Kay",
+    "dateRead": "2022-11-30",
+    "rating": 2
+  },
+  {
+    "title": "The Splendid and the Vile: A Saga of Churchill, Family, and Defiance During the Blitz",
+    "author": "Erik Larson",
+    "cover": "reading_covers/51187948",
+    "amazon": "https://www.amazon.com/dp/038534872X",
+    "dateRead": "2022-11-27",
+    "rating": 3
+  },
+  {
+    "title": "The Happiest Man on Earth: The Beautiful Life of an Auschwitz Survivor – A New York Times Bestseller with Timeless Lessons on Gratitude and Hope",
+    "author": "Eddie Jaku",
+    "cover": "reading_covers/57449383",
+    "amazon": "https://www.amazon.com/dp/0063097702",
+    "dateRead": "2022-11-24",
+    "rating": 5
+  },
+  {
+    "title": "Do Hard Things: Why We Get Resilience Wrong and the Surprising Science of Real Toughness",
+    "author": "Steve Magness",
+    "cover": "reading_covers/59088361",
+    "amazon": "https://www.amazon.com/dp/006309861X",
+    "dateRead": "2022-11-21",
+    "rating": 4
+  },
+  {
+    "title": "Say Nothing: A True Story of Murder and Memory in Northern Ireland",
+    "author": "Patrick Radden Keefe",
+    "cover": "reading_covers/49771934",
+    "amazon": "https://www.amazon.com/s?k=Say+Nothing+Patrick+Radden+Keefe",
+    "dateRead": "2022-11-20",
+    "rating": 1
+  },
+  {
+    "title": "She Said: Breaking the Sexual Harassment Story That Helped Ignite a Movement",
+    "author": "Jodi Kantor",
+    "cover": "reading_covers/44767249",
+    "amazon": "https://www.amazon.com/dp/0525560343",
+    "dateRead": "2022-11-18",
+    "rating": 3
+  },
+  {
+    "title": "A Very Punchable Face",
+    "author": "Colin Jost",
+    "cover": "reading_covers/48989372",
+    "amazon": "https://www.amazon.com/dp/1101906324",
+    "dateRead": "2022-11-14",
+    "rating": 3
+  },
+  {
+    "title": "Beartown (Beartown, #1)",
+    "author": "Fredrik Backman",
+    "cover": "reading_covers/33413128",
+    "amazon": "https://www.amazon.com/s?k=Beartown+Fredrik+Backman",
+    "dateRead": "2022-11-12",
+    "rating": 4
+  },
+  {
+    "title": "Falling",
+    "author": "T.J. Newman",
+    "cover": "reading_covers/56614951",
+    "amazon": "https://www.amazon.com/dp/1982177888",
+    "dateRead": "2022-11-04",
+    "rating": 4
+  },
+  {
+    "title": "An Astronaut's Guide to Life on Earth",
+    "author": "Chris Hadfield",
+    "cover": "reading_covers/18170143",
+    "amazon": "https://www.amazon.com/dp/0316253014",
+    "dateRead": "2022-11-01",
+    "rating": 4
+  },
+  {
+    "title": "Grace: President Obama and Ten Days in the Battle for America",
+    "author": "Cody Keenan",
+    "cover": "reading_covers/60012484",
+    "amazon": "https://www.amazon.com/dp/0358651891",
+    "dateRead": "2022-10-28",
+    "rating": 4
+  },
+  {
+    "title": "The Diving Bell and the Butterfly: A Memoir of Life in Death",
+    "author": "Jean-Dominique Bauby",
+    "cover": "reading_covers/193755",
+    "amazon": "https://www.amazon.com/dp/0375701214",
+    "dateRead": "2022-10-25",
+    "rating": 2
+  },
+  {
+    "title": "Red Notice: A True Story of High Finance, Murder, and One Man's Fight for Justice",
+    "author": "Bill Browder",
+    "cover": "reading_covers/22609522",
+    "amazon": "https://www.amazon.com/dp/147675571X",
+    "dateRead": "2022-10-25",
+    "rating": 5
+  },
+  {
+    "title": "Rising Tide: the Great Mississippi Flood of 1927 and How it Changed America",
+    "author": "John M. Barry",
+    "cover": "reading_covers/49376",
+    "amazon": "https://www.amazon.com/dp/0684840022",
+    "dateRead": "2022-10-22",
+    "rating": 4
+  },
+  {
+    "title": "Killing Floor (Jack Reacher #1)",
+    "author": "Lee Child",
+    "cover": "reading_covers/62189620",
+    "amazon": "https://www.amazon.com/s?k=Killing+Floor+Lee+Child",
+    "dateRead": "2022-10-19",
+    "rating": 1
+  },
+  {
+    "title": "Ghost in the Wires: My Adventures as the World's Most Wanted Hacker",
+    "author": "Kevin D. Mitnick",
+    "cover": "reading_covers/10256723",
+    "amazon": "https://www.amazon.com/dp/0316037702",
+    "dateRead": "2022-10-17",
+    "rating": 3
+  },
+  {
+    "title": "Any Given Tuesday: A Political Love Story",
+    "author": "Lis Smith",
+    "cover": "reading_covers/59445998",
+    "amazon": "https://www.amazon.com/dp/0063084392",
+    "dateRead": "2022-10-11",
+    "rating": 3
+  },
+  {
+    "title": "Braving the Wilderness",
+    "author": "Brené Brown",
+    "cover": "reading_covers/34565022",
+    "amazon": "https://www.amazon.com/dp/0812995848",
+    "dateRead": "2022-10-06",
+    "rating": 3
+  },
+  {
+    "title": "Don't Call It Quits: Turn the Job You Have into the Job You Love",
+    "author": "Shana Lebowitz Gaynor",
+    "cover": "reading_covers/60325836",
+    "amazon": "https://www.amazon.com/dp/1264285256",
+    "dateRead": "2022-10-04",
+    "rating": 5
+  },
+  {
+    "title": "The Apollo Murders (Apollo Murders, #1)",
+    "author": "Chris Hadfield",
+    "cover": "reading_covers/57007683",
+    "amazon": "https://www.amazon.com/dp/0316264539",
+    "dateRead": "2022-10-03",
+    "rating": 4
+  },
+  {
+    "title": "Wave",
+    "author": "Sonali Deraniyagala",
+    "cover": "reading_covers/36147578",
+    "amazon": "https://www.amazon.com/s?k=Wave+Sonali+Deraniyagala",
+    "dateRead": "2022-09-29",
+    "rating": 3
+  },
+  {
+    "title": "A Psalm for the Wild-Built (Monk & Robot, #1)",
+    "author": "Becky Chambers",
+    "cover": "reading_covers/40864002",
+    "amazon": "https://www.amazon.com/s?k=A+Psalm+for+the+Wild-Built+Becky+Chambers",
+    "dateRead": "2022-09-26",
+    "rating": 4
+  },
+  {
+    "title": "Mouth to Mouth",
+    "author": "Antoine Wilson",
+    "cover": "reading_covers/58438631",
+    "amazon": "https://www.amazon.com/dp/198218180X",
+    "dateRead": "2022-09-23",
+    "rating": 3
+  },
+  {
+    "title": "The Undoing Project: A Friendship That Changed Our Minds",
+    "author": "Michael Lewis",
+    "cover": "reading_covers/35631386",
+    "amazon": "https://www.amazon.com/dp/0393354776",
+    "dateRead": "2022-09-22",
+    "rating": 2,
+    "audio": true
+  },
+  {
+    "title": "We've Got to Try: How the Fight for Voting Rights Makes Everything Else Possible",
+    "author": "Beto O&apos;Rourke",
+    "cover": "reading_covers/62059734",
+    "amazon": "https://www.amazon.com/dp/1250852471",
+    "dateRead": "2022-09-22",
+    "rating": 2
+  },
+  {
+    "title": "Sellout: The Major-Label Feeding Frenzy That Swept Punk, Emo, and Hardcore (1994–2007)",
+    "author": "Dan Ozzi",
+    "cover": "reading_covers/54738201",
+    "amazon": "https://www.amazon.com/dp/0358239966",
+    "dateRead": "2022-09-18",
+    "rating": 2
+  },
+  {
+    "title": "The Coming Storm",
+    "author": "Michael Lewis",
+    "cover": "reading_covers/41016100",
+    "amazon": "https://www.amazon.com/s?k=The+Coming+Storm+Michael+Lewis",
+    "dateRead": "2022-09-17",
+    "rating": 3
+  },
+  {
+    "title": "The Burnout Generation",
+    "author": "Anne Helen Petersen",
+    "cover": "reading_covers/49744485",
+    "amazon": "https://www.amazon.com/s?k=The+Burnout+Generation+Anne+Helen+Petersen",
+    "dateRead": "2022-09-17",
+    "rating": 3
+  },
+  {
+    "title": "The Cuckoo's Egg: Tracking a Spy Through the Maze of Computer Espionage",
+    "author": "Clifford Stoll",
+    "cover": "reading_covers/18154",
+    "amazon": "https://www.amazon.com/dp/1416507787",
+    "dateRead": "2022-09-16",
+    "rating": 4,
+    "audio": true
+  },
+  {
+    "title": "Tomorrow, and Tomorrow, and Tomorrow",
+    "author": "Gabrielle Zevin",
+    "cover": "reading_covers/58916147",
+    "amazon": "https://www.amazon.com/s?k=Tomorrow%2C+and+Tomorrow%2C+and+Tomorrow+Gabrielle+Zevin",
+    "dateRead": "2022-09-15",
+    "rating": 4
+  },
+  {
+    "title": "Invisible Storm: A Soldier’s Memoir of Politics and PTSD",
+    "author": "Jason Kander",
+    "cover": "reading_covers/58312014",
+    "amazon": "https://www.amazon.com/dp/0358658969",
+    "dateRead": "2022-09-07",
+    "rating": 5
+  },
+  {
+    "title": "North: Finding My Way While Running the Appalachian Trail",
+    "author": "Scott Jurek",
+    "cover": "reading_covers/34219858",
+    "amazon": "https://www.amazon.com/dp/0316433799",
+    "dateRead": "2022-09-03",
+    "rating": 4
+  },
+  {
+    "title": "Call Sign Chaos",
+    "author": "Jim Mattis",
+    "cover": "reading_covers/46038100",
+    "amazon": "https://www.amazon.com/dp/0812996844",
+    "dateRead": "2022-09-01",
+    "rating": 3
+  },
+  {
+    "title": "Digital Minimalism: Choosing a Focused Life in a Noisy World",
+    "author": "Cal Newport",
+    "cover": "reading_covers/40672036",
+    "amazon": "https://www.amazon.com/dp/052553654X",
+    "dateRead": "2022-08-26",
+    "rating": 3
+  },
+  {
+    "title": "The Greatest Beer Run Ever: A Memoir of Friendship, Loyalty, and War",
+    "author": "John &quot;Chick&quot; Donohue",
+    "cover": "reading_covers/51938894",
+    "amazon": "https://www.amazon.com/dp/0062995464",
+    "dateRead": "2022-08-21",
+    "rating": 4
+  },
+  {
+    "title": "Living with the Monks: What Turning Off My Phone Taught Me about Happiness, Gratitude, and Focus",
+    "author": "Jesse Itzler",
+    "cover": "reading_covers/36204857",
+    "amazon": "https://www.amazon.com/dp/1478993421",
+    "dateRead": "2022-08-19",
+    "rating": 3
+  },
+  {
+    "title": "Upgrade",
+    "author": "Blake Crouch",
+    "cover": "reading_covers/59439117",
+    "amazon": "https://www.amazon.com/dp/0593157516",
+    "dateRead": "2022-08-17",
+    "rating": 4
+  },
+  {
+    "title": "A Man Called Ove",
+    "author": "Fredrik Backman",
+    "cover": "reading_covers/18774964",
+    "amazon": "https://www.amazon.com/dp/1476738017",
+    "dateRead": "2022-08-16",
+    "rating": 5
+  },
+  {
+    "title": "Endurance: Shackleton's Incredible Voyage",
+    "author": "Alfred Lansing",
+    "cover": "reading_covers/139069",
+    "amazon": "https://www.amazon.com/s?k=Endurance+Alfred+Lansing",
+    "dateRead": "2022-08-13",
+    "rating": 5
+  },
+  {
+    "title": "In the Blood (Terminal List, #5)",
+    "author": "Jack Carr",
+    "cover": "reading_covers/58438630",
+    "amazon": "https://www.amazon.com/dp/1982181656",
+    "dateRead": "2022-08-09",
+    "rating": 3
+  },
+  {
+    "title": "What I Talk About When I Talk About Running",
+    "author": "Haruki Murakami",
+    "cover": "reading_covers/2195464",
+    "amazon": "https://www.amazon.com/s?k=What+I+Talk+About+When+I+Talk+About+Running+Haruki+Murakami",
+    "dateRead": "2022-08-02",
+    "rating": 4
+  },
+  {
+    "title": "Reasons to Stay Alive",
+    "author": "Matt Haig",
+    "cover": "reading_covers/25733573",
+    "amazon": "https://www.amazon.com/dp/0143128728",
+    "dateRead": "2022-07-31",
+    "rating": 3
+  },
+  {
+    "title": "The Spartan Way: Eat Better. Train Better. Think Better. Be Better.",
+    "author": "Joe De Sena",
+    "cover": "reading_covers/36703410",
+    "amazon": "https://www.amazon.com/dp/1250153212",
+    "dateRead": "2022-07-29",
+    "rating": 2
+  },
+  {
+    "title": "Stop Overthinking: 23 Techniques to Relieve Stress, Stop Negative Spirals, Declutter Your Mind, and Focus on the Present (The Path to Calm Book 1)",
+    "author": "Nick Trenton",
+    "cover": "reading_covers/57280624",
+    "amazon": "https://www.amazon.com/s?k=Stop+Overthinking+Nick+Trenton",
+    "dateRead": "2022-07-29",
+    "rating": 2
+  },
+  {
+    "title": "Run Away",
+    "author": "Harlan Coben",
+    "cover": "reading_covers/44781614",
+    "amazon": "https://www.amazon.com/dp/1780894260",
+    "dateRead": "2022-07-22",
+    "rating": 4
+  },
+  {
+    "title": "Pee Wees: Confessions of a Hockey Parent",
+    "author": "Rich Cohen",
+    "cover": "reading_covers/55981913",
+    "amazon": "https://www.amazon.com/dp/0374720584",
+    "dateRead": "2022-07-22",
+    "rating": 5
+  },
+  {
+    "title": "Outdoor Kids in an Inside World: Getting Your Family Out of the House and Radically Engaged with Nature",
+    "author": "Steven Rinella",
+    "cover": "reading_covers/57816790",
+    "amazon": "https://www.amazon.com/dp/0593129679",
+    "dateRead": "2022-07-20",
+    "rating": 3
+  },
+  {
+    "title": "Rise and Kill First: The Secret History of Israel's Targeted Assassinations",
+    "author": "Ronen Bergman",
+    "cover": "reading_covers/53502012",
+    "amazon": "https://www.amazon.com/s?k=Rise+and+Kill+First+Ronen+Bergman",
+    "dateRead": "2022-07-15",
+    "rating": 4
+  },
+  {
+    "title": "Notes from a Young Black Chef",
+    "author": "Kwame Onwuachi",
+    "cover": "reading_covers/40645634",
+    "amazon": "https://www.amazon.com/dp/1524732621",
+    "dateRead": "2022-07-01",
+    "rating": 3
+  },
+  {
+    "title": "A Better Man: A (Mostly Serious) Letter to My Son",
+    "author": "Michael Ian Black",
+    "cover": "reading_covers/40680478",
+    "amazon": "https://www.amazon.com/dp/1616209119",
+    "dateRead": "2022-06-26",
+    "rating": 4
+  },
+  {
+    "title": "The Lincoln Highway",
+    "author": "Amor Towles",
+    "cover": "reading_covers/57109107",
+    "amazon": "https://www.amazon.com/dp/0735222355",
+    "dateRead": "2022-06-25",
+    "rating": 3
+  },
+  {
+    "title": "The River",
+    "author": "Peter Heller",
+    "cover": "reading_covers/58794688",
+    "amazon": "https://www.amazon.com/s?k=The+River+Peter+Heller",
+    "dateRead": "2022-06-22",
+    "rating": 4
+  },
+  {
+    "title": "Why We&apos;re Polarized",
+    "author": "Ezra Klein",
+    "cover": "reading_covers/52098718",
+    "amazon": "https://www.amazon.com/dp/147670032X",
+    "dateRead": "2022-06-15",
+    "rating": 3
+  },
+  {
+    "title": "One Rough Man (Pike Logan, #1)",
+    "author": "Brad Taylor",
+    "cover": "reading_covers/42419629",
+    "amazon": "https://www.amazon.com/s?k=One+Rough+Man+Brad+Taylor",
+    "dateRead": "2022-06-13",
+    "rating": 4
+  },
+  {
+    "title": "Burn Rate: Launching a Startup and Losing My Mind",
+    "author": "Andy Dunn",
+    "cover": "reading_covers/58784468",
+    "amazon": "https://www.amazon.com/dp/0593238265",
+    "dateRead": "2022-06-06",
+    "rating": 3
+  },
+  {
+    "title": "How to Be Great at Your Job: Get things done. Get the credit. Get ahead. (Graduation Gift, Corporate Survival Guide, Career Handbook)",
+    "author": "Justin Kerr",
+    "cover": "reading_covers/41541537",
+    "amazon": "https://www.amazon.com/dp/1452169799",
+    "dateRead": "2022-06-01",
+    "rating": 3
+  },
+  {
+    "title": "The Devil's Hand (Terminal List, #4)",
+    "author": "Jack Carr",
+    "cover": "reading_covers/54265145",
+    "amazon": "https://www.amazon.com/dp/1982123745",
+    "dateRead": "2022-06-01",
+    "rating": 4
+  },
+  {
+    "title": "Tiny Habits: The Small Changes That Change Everything",
+    "author": "B.J. Fogg",
+    "cover": "reading_covers/43305818",
+    "amazon": "https://www.amazon.com/dp/0358003997",
+    "dateRead": "2022-05-29",
+    "rating": 2
+  },
+  {
+    "title": "Because We Are Bad: OCD and a Girl Lost in Thought",
+    "author": "Lily Bailey",
+    "cover": "reading_covers/35604044",
+    "amazon": "https://www.amazon.com/dp/0062696165",
+    "dateRead": "2022-05-24",
+    "rating": 2
+  },
+  {
+    "title": "Can't Hurt Me: Master Your Mind and Defy the Odds",
+    "author": "David Goggins",
+    "cover": "reading_covers/41721428",
+    "amazon": "https://www.amazon.com/dp/1544512260",
+    "dateRead": "2022-05-24",
+    "rating": 4
+  },
+  {
+    "title": "The President's Man: The Memoirs of Nixon's Trusted Aide – A Historic Journey Through Watergate, China, and the Soviet Union",
+    "author": "Dwight Chapin",
+    "cover": "reading_covers/59089307",
+    "amazon": "https://www.amazon.com/s?k=The+President%27s+Man+Dwight+Chapin",
+    "dateRead": "2022-05-24",
+    "rating": 3
+  },
+  {
+    "title": "The Beauty of What Remains: How Our Greatest Fear Becomes Our Greatest Gift",
+    "author": "Steve Leder",
+    "cover": "reading_covers/54705911",
+    "amazon": "https://www.amazon.com/dp/0593187555",
+    "dateRead": "2022-05-10",
+    "rating": 5
+  },
+  {
+    "title": "Just Mercy: A Story of Justice and Redemption",
+    "author": "Bryan Stevenson",
+    "cover": "reading_covers/59228410",
+    "amazon": "https://www.amazon.com/s?k=Just+Mercy+Bryan+Stevenson",
+    "dateRead": "2022-05-09",
+    "rating": 4
+  },
+  {
+    "title": "The Code Breaker: Jennifer Doudna, Gene Editing, and the Future of the Human Race",
+    "author": "Walter Isaacson",
+    "cover": "reading_covers/54968118",
+    "amazon": "https://www.amazon.com/dp/1982115858",
+    "dateRead": "2022-05-06",
+    "rating": 4
+  },
+  {
+    "title": "The High 5 Habit: Take Control of Your Life with One Simple Habit",
+    "author": "Mel Robbins",
+    "cover": "reading_covers/58581516",
+    "amazon": "https://www.amazon.com/dp/1401962130",
+    "dateRead": "2022-04-27",
+    "rating": 2
+  },
+  {
+    "title": "Dark Matter",
+    "author": "Blake Crouch",
+    "cover": "reading_covers/45697427",
+    "amazon": "https://www.amazon.com/s?k=Dark+Matter+Blake+Crouch",
+    "dateRead": "2022-04-25",
+    "rating": 4
+  },
+  {
+    "title": "The Club: How the English Premier League Became the Wildest, Richest, Most Disruptive Force in Sports",
+    "author": "Joshua Robinson",
+    "cover": "reading_covers/40225612",
+    "amazon": "https://www.amazon.com/dp/1328506452",
+    "dateRead": "2022-04-22",
+    "rating": 3
+  },
+  {
+    "title": "Faster Than Normal: Turbocharge Your Focus, Productivity, and Success with the Secrets of the ADHD Brain",
+    "author": "Peter Shankman",
+    "cover": "reading_covers/33914151",
+    "amazon": "https://www.amazon.com/dp/0143131222",
+    "dateRead": "2022-04-18",
+    "rating": 5
+  },
+  {
+    "title": "Born Standing Up: A Comic's Life",
+    "author": "Steve Martin",
+    "cover": "reading_covers/773858",
+    "amazon": "https://www.amazon.com/dp/1416553649",
+    "dateRead": "2022-04-17",
+    "rating": 3
+  },
+  {
+    "title": "Soundtracks: The Surprising Solution to Overthinking (Overcome Toxic Thought Patterns and Take Control of Your Mindset)",
+    "author": "Jon Acuff",
+    "cover": "reading_covers/54963735",
+    "amazon": "https://www.amazon.com/dp/1493428853",
+    "dateRead": "2022-04-15",
+    "rating": 3
+  },
+  {
+    "title": "The Boys in the Boat: Nine Americans and Their Epic Quest for Gold at the 1936 Berlin Olympics",
+    "author": "Daniel James Brown",
+    "cover": "reading_covers/17404747",
+    "amazon": "https://www.amazon.com/s?k=The+Boys+in+the+Boat+Daniel+James+Brown",
+    "dateRead": "2022-04-14",
+    "rating": 5
+  },
+  {
+    "title": "How to Fight Anti-Semitism",
+    "author": "Bari Weiss",
+    "cover": "reading_covers/44160584",
+    "amazon": "https://www.amazon.com/dp/0593136063",
+    "dateRead": "2022-04-06",
+    "rating": 4
+  },
+  {
+    "title": "The Midnight Library (The Midnight World, #1)",
+    "author": "Matt Haig",
+    "cover": "reading_covers/56241022",
+    "amazon": "https://www.amazon.com/s?k=The+Midnight+Library+Matt+Haig",
+    "dateRead": "2022-04-04",
+    "rating": 5
+  },
+  {
+    "title": "The Match (Wilde, #2)",
+    "author": "Harlan Coben",
+    "cover": "reading_covers/58340968",
+    "amazon": "https://www.amazon.com/s?k=The+Match+Harlan+Coben",
+    "dateRead": "2022-04-01",
+    "rating": 5
+  },
+  {
+    "title": "Run Like a Pro (Even If You're Slow): Elite Tools and Tips for Runners at Every Level",
+    "author": "Matt Fitzgerald",
+    "cover": "reading_covers/60451726",
+    "amazon": "https://www.amazon.com/dp/0593201922",
+    "dateRead": "2022-03-30",
+    "rating": 5
+  },
+  {
+    "title": "Fight Club",
+    "author": "Chuck Palahniuk",
+    "cover": "reading_covers/36236124",
+    "amazon": "https://www.amazon.com/dp/0393355942",
+    "dateRead": "2022-03-29",
+    "rating": 4
+  },
+  {
+    "title": "A Runner’s High: My Life in Motion",
+    "author": "Dean Karnazes",
+    "cover": "reading_covers/55378874",
+    "amazon": "https://www.amazon.com/dp/0062955551",
+    "dateRead": "2022-03-25",
+    "rating": 4
+  },
+  {
+    "title": "Happy People Are Annoying",
+    "author": "Josh Peck",
+    "cover": "reading_covers/57293647",
+    "amazon": "https://www.amazon.com/dp/0063073633",
+    "dateRead": "2022-03-23",
+    "rating": 4
+  },
+  {
+    "title": "Randomize (Forward Collection, #6)",
+    "author": "Andy Weir",
+    "cover": "reading_covers/49661162",
+    "amazon": "https://www.amazon.com/dp/1542044251",
+    "dateRead": "2022-03-21",
+    "rating": 3
+  },
+  {
+    "title": "Inspired: How to Create Tech Products Customers Love (Silicon Valley Product Group)",
+    "author": "Marty Cagan",
+    "cover": "reading_covers/36645100",
+    "amazon": "https://www.amazon.com/dp/1119387566",
+    "dateRead": "2022-03-20",
+    "rating": 4
+  },
+  {
+    "title": "Cathedral of the Wild: An African Journey Home",
+    "author": "Boyd Varty",
+    "cover": "reading_covers/18050185",
+    "amazon": "https://www.amazon.com/dp/1400069858",
+    "dateRead": "2022-03-17",
+    "rating": 4
+  },
+  {
+    "title": "Once a Runner",
+    "author": "John L. Parker Jr.",
+    "cover": "reading_covers/98250",
+    "amazon": "https://www.amazon.com/dp/0915297019",
+    "dateRead": "2022-03-11",
+    "rating": 4
+  },
+  {
+    "title": "Syllabus: Notes From an Accidental Professor (Lynda Barry's Creativity Series)",
+    "author": "Lynda Barry",
+    "cover": "reading_covers/20613619",
+    "amazon": "https://www.amazon.com/dp/1770461612",
+    "dateRead": "2022-03-08",
+    "rating": 5
+  },
+  {
+    "title": "The 5 Second Rule: Transform Your Life, Work, and Confidence with Everyday Courage",
+    "author": "Mel Robbins",
+    "cover": "reading_covers/34189313",
+    "amazon": "https://www.amazon.com/dp/1682612392",
+    "dateRead": "2022-03-05",
+    "rating": 4
+  },
+  {
+    "title": "Address Unknown",
+    "author": "Kathrine Kressmann Taylor",
+    "cover": "reading_covers/54798506",
+    "amazon": "https://www.amazon.com/dp/0063068494",
+    "dateRead": "2022-03-02",
+    "rating": 5
+  },
+  {
+    "title": "Hatching Twitter: A True Story of Money, Power, Friendship, and Betrayal",
+    "author": "Nick Bilton",
+    "cover": "reading_covers/18656827",
+    "amazon": "https://www.amazon.com/dp/1591846013",
+    "dateRead": "2022-03-01",
+    "rating": 5
+  },
+  {
+    "title": "Savage Son (Terminal List #3)",
+    "author": "Jack Carr",
+    "cover": "reading_covers/59336235",
+    "amazon": "https://www.amazon.com/s?k=Savage+Son+Jack+Carr",
+    "dateRead": "2022-03-01",
+    "rating": 5
+  },
+  {
+    "title": "Liar's Poker: Rising Through the Wreckage on Wall Street",
+    "author": "Michael Lewis",
+    "cover": "reading_covers/1171",
+    "amazon": "https://www.amazon.com/dp/0140143459",
+    "dateRead": "2022-02-21",
+    "rating": 4
+  },
+  {
+    "title": "The Coddling of the American Mind: How Good Intentions and Bad Ideas Are Setting up a Generation for Failure",
+    "author": "Jonathan Haidt",
+    "cover": "reading_covers/36556202",
+    "amazon": "https://www.amazon.com/dp/0735224900",
+    "dateRead": "2022-02-21",
+    "rating": 3
+  },
+  {
+    "title": "An Ugly Truth: Inside Facebook's Battle for Domination",
+    "author": "Sheera Frenkel",
+    "cover": "reading_covers/56470423",
+    "amazon": "https://www.amazon.com/dp/0063136740",
+    "dateRead": "2022-02-16",
+    "rating": 4
+  },
+  {
+    "title": "Five Days at Memorial: Life and Death in a Storm-Ravaged Hospital",
+    "author": "Sheri Fink",
+    "cover": "reading_covers/17704902",
+    "amazon": "https://www.amazon.com/dp/0307718964",
+    "dateRead": "2022-02-12",
+    "rating": 5
+  },
+  {
+    "title": "The War of Art",
+    "author": "Steven Pressfield",
+    "cover": "reading_covers/18624273",
+    "amazon": "https://www.amazon.com/s?k=The+War+of+Art+Steven+Pressfield",
+    "dateRead": "2022-02-11",
+    "rating": 1
+  },
+  {
+    "title": "Taste: My Life Through Food",
+    "author": "Stanley Tucci",
+    "cover": "reading_covers/55360283",
+    "amazon": "https://www.amazon.com/dp/198216803X",
+    "dateRead": "2022-02-09",
+    "rating": 4
+  },
+  {
+    "title": "Murder in the Bayou: Who Killed the Women Known as the Jeff Davis 8?",
+    "author": "Ethan Brown",
+    "cover": "reading_covers/28365038",
+    "amazon": "https://www.amazon.com/dp/1476793255",
+    "dateRead": "2022-02-05",
+    "rating": 3
+  },
+  {
+    "title": "The Lost Boys of Montauk: The True Story of the Wind Blown, Four Men Who Vanished at Sea, and the Survivors They Left Behind",
+    "author": "Amanda M. Fairbanks",
+    "cover": "reading_covers/55711528",
+    "amazon": "https://www.amazon.com/dp/198210323X",
+    "dateRead": "2022-02-04",
+    "rating": 3
+  },
+  {
+    "title": "I Will Teach You to Be Rich: No Guilt. No Excuses. No B.S. Just a 6-Week Program That Works.",
+    "author": "Ramit Sethi",
+    "cover": "reading_covers/53776382",
+    "amazon": "https://www.amazon.com/dp/152350787X",
+    "dateRead": "2022-02-02",
+    "rating": 4
+  },
+  {
+    "title": "Under the Banner of Heaven: A Story of Violent Faith",
+    "author": "Jon Krakauer",
+    "cover": "reading_covers/6569709",
+    "amazon": "https://www.amazon.com/s?k=Under+the+Banner+of+Heaven+Jon+Krakauer",
+    "dateRead": "2022-01-27",
+    "rating": 3
+  },
+  {
+    "title": "How to Be Better at Almost Everything: Learn Anything Quickly, Stack Your Skills, Dominate",
+    "author": "Pat Flynn",
+    "cover": "reading_covers/40184559",
+    "amazon": "https://www.amazon.com/dp/194688569X",
+    "dateRead": "2022-01-27",
+    "rating": 3
+  },
+  {
+    "title": "Bourdain: The Definitive Oral Biography",
+    "author": "Laurie Woolever",
+    "cover": "reading_covers/56645907",
+    "amazon": "https://www.amazon.com/dp/006290910X",
+    "dateRead": "2022-01-27",
+    "rating": 4
+  },
+  {
+    "title": "The Secret Life of Groceries: The Dark Miracle of the American Supermarket",
+    "author": "Benjamin Lorr",
+    "cover": "reading_covers/50548165",
+    "amazon": "https://www.amazon.com/dp/0553459392",
+    "dateRead": "2022-01-21",
+    "rating": 3
+  },
+  {
+    "title": "So Good They Can't Ignore You: Why Skills Trump Passion in the Quest for Work You Love",
+    "author": "Cal Newport",
+    "cover": "reading_covers/13525945",
+    "amazon": "https://www.amazon.com/dp/1455509108",
+    "dateRead": "2022-01-17",
+    "rating": 5
+  },
+  {
+    "title": "Yes to Life: In Spite of Everything",
+    "author": "Viktor E. Frankl",
+    "cover": "reading_covers/49276765",
+    "amazon": "https://www.amazon.com/dp/0807005568",
+    "dateRead": "2022-01-10",
+    "rating": 3
+  },
+  {
+    "title": "The Tender Bar",
+    "author": "J.R. Moehringer",
+    "cover": "reading_covers/6602451",
+    "amazon": "https://www.amazon.com/s?k=The+Tender+Bar+J.R.+Moehringer",
+    "dateRead": "2022-01-08",
+    "rating": 4
+  },
+  {
+    "title": "The Choice: Embrace the Possible",
+    "author": "Edith Eger",
+    "cover": "reading_covers/30753738",
+    "amazon": "https://www.amazon.com/dp/1501130781",
+    "dateRead": "2022-01-07",
+    "rating": 5
+  }
+]

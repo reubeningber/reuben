@@ -25,3 +25,5 @@ The scheduled workflow doesn't have an equivalent gate: nothing runs `Test` on a
 ## Secrets
 
 The only build-time secret is `PUBLIC_CLOUDINARY_CLOUD_NAME`, stored in GitHub Actions secrets and passed as an env var to the build step in both workflows. Everything else the site needs (GA4 tag, Cloudflare Analytics beacon token) is hardcoded directly in the components that use them — they're not actually secret, since they ship in the page source to every visitor either way.
+
+A third workflow, `update-reading.yml`, uses two additional secrets (`CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET`) for signed Cloudinary uploads — but only that workflow needs them, not the site build. See [reading-page-sync.md](./reading-page-sync.md).

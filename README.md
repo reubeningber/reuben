@@ -38,6 +38,7 @@ src/
 │   ├── now.astro                   # Now page
 │   ├── uses.astro                  # Uses page
 │   ├── friends.astro               # Friends page
+│   ├── reading.astro               # Reading page (tabbed year-by-year book log, 2020-2026)
 │   ├── colophon.astro              # Colophon page
 │   ├── identity-statement.astro    # Identity statement page
 │   ├── rss.xml.js                  # RSS feed
@@ -164,6 +165,13 @@ Creates a new blog post with interactive prompts.
 - Validates date format
 - Checks for existing files
 - Conditional prompts (only asks for image credit if image provided)
+
+### `scripts/update-reading.mjs`
+
+Diffs Reuben's Goodreads "read" shelf against `src/data/reading/{year}.json`, uploads covers for any new books to Cloudinary (`reading_covers/{goodreads_book_id}`), and writes the updated year files. Runs weekly via `.github/workflows/update-reading.yml`, which opens a PR when there's anything new. Requires `CLOUDINARY_API_KEY` and `CLOUDINARY_API_SECRET` (repo secrets in CI, or in local `.env` to run manually):
+```bash
+node scripts/update-reading.mjs
+```
 
 ## Cloudinary Setup
 
