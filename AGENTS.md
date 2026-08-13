@@ -173,7 +173,7 @@ Defined in `Header.astro`:
 
 ## Automated Reading Sync
 
-`.github/workflows/update-reading.yml` runs `scripts/update-reading.mjs` weekly (Mondays, plus manual `workflow_dispatch`). It diffs Reuben's public Goodreads "read" shelf (via RSS, not the HTML site) against `src/data/reading/{year}.json`, uploads new covers to Cloudinary under `reading_covers/{goodreads_book_id}`, and opens a PR (`peter-evans/create-pull-request`, branch `automated/update-reading`) when it finds anything new. No-ops silently otherwise.
+`.github/workflows/update-reading.yml` runs `scripts/update-reading.mjs` weekly (Mondays, plus manual `workflow_dispatch`). It diffs Reuben's public Goodreads "read" shelf (via RSS, not the HTML site) against `src/data/reading/{year}.json`, uploads new covers to Cloudinary under `reading_covers/{goodreads_book_id}`, and opens a PR (`peter-evans/create-pull-request`, branch `automated/update-reading`) when it finds anything new. The same run also mirrors Goodreads' "currently-reading" shelf to `src/data/reading/currently-reading.json`, which feeds the READING section on `/now` — so both `/reading` and `/now` stay in sync from one script/workflow. No-ops silently otherwise.
 
 ## SEO & Structured Data
 
