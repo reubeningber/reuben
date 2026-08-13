@@ -53,7 +53,7 @@ async function fetchShelf(params) {
 }
 
 function loadExisting() {
-  const files = existsSync(DATA_DIR) ? readdirSync(DATA_DIR).filter((f) => f.endsWith(".json")) : [];
+  const files = existsSync(DATA_DIR) ? readdirSync(DATA_DIR).filter((f) => /^\d{4}\.json$/.test(f)) : [];
   const byYear = {};
   const existingIds = new Set();
   for (const file of files) {

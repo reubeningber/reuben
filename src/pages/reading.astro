@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/BaseLayout.astro";
+import { readingCoverUrl } from "../utils/readingCovers";
 
 import books2026 from "../data/reading/2026.json";
 import books2025 from "../data/reading/2025.json";
@@ -24,7 +25,7 @@ const years = [
 const defaultYear = 2026;
 
 function coverUrl(path: string) {
-  return `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_300/${path}`;
+  return readingCoverUrl(cloudName, path);
 }
 
 const STAR_FILLED = '<path d="M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61493 7.84006L12.0006 0.5L15.3862 7.84006L23.4132 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26Z"></path>';
