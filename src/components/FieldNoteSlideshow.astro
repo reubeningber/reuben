@@ -1,0 +1,116 @@
+---
+import { getImageConfig } from '../utils/cloudinary';
+
+interface Props {
+  images: string[];
+  alt: string;
+}
+
+const { images, alt } = Astro.props;
+const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
+const configs = images
+  .map((image) => getImageConfig(image, cloudName, [400, 600, 800]))
+  .filter((c): c is NonNullable<typeof c> => c !== null);
+---
+
+{configs.length > 0 && (
+  <div class="fn-slideshow relative overflow-hidden rounded-md bg-gray-100 mb-5" style="min-height: 200px;">
+    <div class="fn-slideshow-track flex transition-transform duration-300 ease-out">
+      {configs.map((config, i) => (
+        <div class="w-full flex-shrink-0">
+          <img
+            src={config.mainUrl}
+            srcset={config.srcset}
+            sizes="(max-width: 640px) 100vw, 672px"
+            alt={alt}
+            class="w-full object-cover"
+            loading={i === 0 ? 'eager' : 'lazy'}
+          />
+        </div>
+      ))}
+    </div>
+
+    {configs.length > 1 && (
+      <>
+        <button
+          type="button"
+          class="fn-slideshow-prev absolute left-2 top-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+          aria-label="Previous image"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z"/></svg>
+        </button>
+        <button
+          type="button"
+          class="fn-slideshow-next absolute right-2 top-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+          aria-label="Next image"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M13.171 12l-4.95-4.95 1.415-1.413L16 12l-6.364 6.364-1.414-1.415z"/></svg>
+        </button>
+
+        <div class="fn-slideshow-counter absolute top-2 right-2 text-xs font-medium text-white bg-black/50 px-1.5 py-0.5 rounded">
+          <span class="fn-slideshow-current">1</span> / {configs.length}
+        </div>
+
+        <div class="fn-slideshow-dots absolute bottom-2 inset-x-0 flex justify-center gap-1.5">
+          {configs.map((_, i) => (
+            <button
+              type="button"
+              class="fn-slideshow-dot w-1.5 h-1.5 rounded-full bg-white/60 transition-colors"
+              data-index={i}
+              aria-label={`Go to image ${i + 1}`}
+            />
+          ))}
+        </div>
+      </>
+    )}
+  </div>
+)}
+
+<script>
+  function initSlideshow(root: HTMLElement) {
+    const track = root.querySelector<HTMLElement>('.fn-slideshow-track');
+    const slides = root.querySelectorAll<HTMLElement>('.fn-slideshow-track > div');
+    const prevBtn = root.querySelector<HTMLButtonElement>('.fn-slideshow-prev');
+    const nextBtn = root.querySelector<HTMLButtonElement>('.fn-slideshow-next');
+    const dots = root.querySelectorAll<HTMLButtonElement>('.fn-slideshow-dot');
+    const counter = root.querySelector<HTMLElement>('.fn-slideshow-current');
+    if (!track || slides.length === 0) return;
+
+    let index = 0;
+
+    function goTo(i: number) {
+      index = (i + slides.length) % slides.length;
+      track!.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((dot, di) => dot.classList.toggle('bg-white/60', di !== index));
+      dots.forEach((dot, di) => dot.classList.toggle('bg-white', di === index));
+      if (counter) counter.textContent = String(index + 1);
+    }
+
+    prevBtn?.addEventListener('click', () => goTo(index - 1));
+    nextBtn?.addEventListener('click', () => goTo(index + 1));
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => goTo(Number(dot.dataset.index)));
+    });
+
+    // Touch swipe support
+    let touchStartX = 0;
+    root.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    root.addEventListener('touchend', (e) => {
+      const delta = e.changedTouches[0].screenX - touchStartX;
+      if (Math.abs(delta) > 40) goTo(delta > 0 ? index - 1 : index + 1);
+    }, { passive: true });
+
+    // Keyboard support when the slideshow has focus
+    root.setAttribute('tabindex', '0');
+    root.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') goTo(index - 1);
+      if (e.key === 'ArrowRight') goTo(index + 1);
+    });
+
+    goTo(0);
+  }
+
+  document.querySelectorAll<HTMLElement>('.fn-slideshow').forEach(initSlideshow);
+</script>
