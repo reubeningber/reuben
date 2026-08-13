@@ -14,7 +14,7 @@ There's no client-side framework (no React/Vue/Svelte) and no database. The enti
 `src/content/config.ts` defines two collections:
 
 - **`posts`** — long-form articles. Required: `title`, `pubDate`. Everything else (`category`, `tags`, `image`, `description`, etc.) is optional and feeds into SEO metadata, category filtering, and RSS.
-- **`field-notes`** — short-form entries (a link, an image, or an embed, plus optional commentary). Required: `title`, `pubDate`, `type` (`link` | `image` | `embed`). Field notes were added July 2026 (see below) as a lower-friction way to post than a full article.
+- **`field-notes`** — short-form entries (a link, an image, an embed, or a slideshow, plus optional commentary). Required: `title`, `pubDate`, `type` (`link` | `image` | `embed` | `slideshow`). Field notes were added July 2026 (see below) as a lower-friction way to post than a full article; the `slideshow` type was added August 2026 for posting a set of images (see [content-and-cms.md](./content-and-cms.md)).
 
 Both collections filter out `draft: true` entries and anything with a future `pubDate` at build time — see [deployment.md](./deployment.md) for how future-dated posts actually go live without anyone touching the repo.
 

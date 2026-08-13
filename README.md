@@ -56,6 +56,7 @@ src/
 │   ├── Footer.astro             # Site footer with social links
 │   ├── PostList.astro           # Blog post grid
 │   ├── Breadcrumbs.astro        # Breadcrumb nav
+│   ├── FieldNoteSlideshow.astro   # Interactive image slideshow for field notes
 │   └── CloudflareAnalytics.astro  # Cloudflare Web Analytics beacon
 ├── layouts/             # Page layouts
 │   ├── BaseLayout.astro         # Base layout with SEO, analytics
@@ -80,7 +81,8 @@ Photo galleries are not part of this codebase — they live on a separate site a
 - **SEO optimized** with meta tags and Open Graph
 
 ### Field Notes
-- **Short-form entries** — links, images, or embeds with optional commentary
+- **Short-form entries** — links, images, embeds, or slideshows, with optional commentary
+- **Slideshows** — a set of images with prev/next, dots, swipe, and keyboard navigation (`type: slideshow`, `images: [...]`)
 - **Paginated listing** at `/field-notes/`
 - **RSS feed** at `/field-notes/rss.xml`
 
