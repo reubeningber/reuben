@@ -1,6 +1,6 @@
 # The Reading Page and Its Goodreads Sync
 
-`/reading` (added August 2026) is a tabbed, year-by-year grid of book covers — one tab per year back to 2020, each cover linking out to Amazon. It's kept up to date by a weekly automation, not by hand.
+`/reading` (added August 2026) is a tabbed, year-by-year grid of book covers — one tab per year back to 2020, each cover linking out to Amazon. It's kept up to date by a weekly automation, not by hand. The same automation also keeps the READING section on `/now` (Reuben's "currently reading" books) in sync with Goodreads, so there's a single script and a single source of truth for both pages.
 
 ## Why it isn't a content collection
 
@@ -33,9 +33,10 @@ One quirk worth knowing: `user_read_at` is only populated for books where a fini
 1. Loads every `src/data/reading/{year}.json`, extracting each book's Goodreads `book_id` back out of its stored `reading_covers/{id}` cover path to know what's already tracked.
 2. Re-fetches the RSS feed (dated + default-order, as above) and diffs against that set.
 3. For anything new: downloads the cover (falling back to Open Library by ISBN if Goodreads' own image URL 403s — happened once, for a book with a genuinely broken cover on Goodreads' end), uploads it to Cloudinary via a hand-rolled signed upload (no SDK — just a SHA-1 signature over the sorted params plus the API secret, POSTed as multipart form data), and appends the entry to the right year's file.
-4. Writes a `count` and `summary` as GitHub Actions step outputs.
+4. Fetches the "currently-reading" shelf the same way and regenerates `src/data/reading/currently-reading.json` from scratch (not appended, since books drop off that shelf as they're finished or abandoned) — reusing a cover already in `reading_covers/` when the book_id is already known, uploading a new one otherwise. This file has the same `{ title, author, cover, amazon }` shape as the yearly files and is what `/now`'s READING section renders directly, so there's nothing to hand-maintain there either.
+5. Writes a `count` and `summary` as GitHub Actions step outputs, covering both the newly-read books and any change to the currently-reading list.
 
-If nothing changed, the workflow no-ops — no empty PR. If something did, `peter-evans/create-pull-request` opens one on branch `automated/update-reading` (label `automated`, auto-deleted after merge). There's no separate alerting mechanism; the user already watches this repo, so GitHub's own PR notification is the alert.
+If nothing changed on either shelf, the workflow no-ops — no empty PR. If something did, `peter-evans/create-pull-request` opens one on branch `automated/update-reading` (label `automated`, auto-deleted after merge). There's no separate alerting mechanism; the user already watches this repo, so GitHub's own PR notification is the alert.
 
 Requires two secrets beyond the site's usual `PUBLIC_CLOUDINARY_CLOUD_NAME`: `CLOUDINARY_API_KEY` and `CLOUDINARY_API_SECRET`, for the signed upload. These are scoped to this one workflow — `deploy.yml` and `scheduled-deploy.yml` (see [deployment.md](./deployment.md)) don't need them and don't use them, since the site's *build* just reads whatever JSON and Cloudinary URLs already exist.
 

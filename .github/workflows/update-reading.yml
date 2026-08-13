@@ -34,8 +34,8 @@ jobs:
         if: steps.sync.outputs.count
         uses: peter-evans/create-pull-request@v6
         with:
-          commit-message: "Add ${{ steps.sync.outputs.count }} new book(s) from Goodreads"
-          title: "Add ${{ steps.sync.outputs.count }} new book(s) to /reading"
+          commit-message: "Sync reading data from Goodreads"
+          title: "Update reading data from Goodreads"
           body: ${{ steps.sync.outputs.summary }}
           branch: automated/update-reading
           delete-branch: true

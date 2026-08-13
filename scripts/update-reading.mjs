@@ -1,14 +1,17 @@
 #!/usr/bin/env node
 // Pulls new books from Goodreads and adds them to src/data/reading/{year}.json,
-// uploading covers to Cloudinary. Designed to run unattended (see
-// .github/workflows/update-reading.yml) — writes files but never commits/opens
-// a PR itself; the workflow's create-pull-request step handles that.
+// uploading covers to Cloudinary. Also mirrors the "currently-reading" shelf to
+// src/data/reading/currently-reading.json, which feeds the READING section on
+// /now. Designed to run unattended (see .github/workflows/update-reading.yml) —
+// writes files but never commits/opens a PR itself; the workflow's
+// create-pull-request step handles that.
 
 import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
 import { createHash } from "node:crypto";
 
 const GOODREADS_USER_ID = "7384813";
 const DATA_DIR = new URL("../src/data/reading/", import.meta.url);
+const CURRENTLY_READING_PATH = new URL("../src/data/reading/currently-reading.json", import.meta.url);
 const UNDATED_LOOKBACK_DAYS = 14;
 
 const CLOUD_NAME = requireEnv("PUBLIC_CLOUDINARY_CLOUD_NAME");
@@ -112,6 +115,43 @@ async function tryDownload(url) {
   }
 }
 
+function coverIdOf(book) {
+  return book.cover.match(/reading_covers\/(\w+)/)?.[1];
+}
+
+async function syncCurrentlyReading(knownCoverIds) {
+  const shelf = await fetchShelf("shelf=currently-reading&per_page=100");
+  const existing = existsSync(CURRENTLY_READING_PATH)
+    ? JSON.parse(readFileSync(CURRENTLY_READING_PATH, "utf-8"))
+    : [];
+  const knownIds = new Set([...knownCoverIds, ...existing.map(coverIdOf)]);
+
+  const entries = [];
+  for (const b of shelf) {
+    let cover = `reading_covers/${b.bookId}`;
+    if (!knownIds.has(b.bookId)) {
+      const upload = await uploadCover(b.bookId, b.img, b.isbn);
+      if (!upload.ok) {
+        console.warn(`  skipped currently-reading cover (upload failed): ${b.title}`);
+        continue;
+      }
+      cover = upload.publicId;
+    }
+    entries.push({
+      title: b.title,
+      author: b.author,
+      cover,
+      amazon: amazonLink(b.isbn, b.title, b.author),
+    });
+  }
+
+  const changed = JSON.stringify(entries) !== JSON.stringify(existing);
+  if (changed) {
+    writeFileSync(CURRENTLY_READING_PATH, JSON.stringify(entries, null, 2), "utf-8");
+  }
+  return { changed, entries };
+}
+
 function daysAgo(rfc2822Date) {
   const d = new Date(rfc2822Date);
   return (Date.now() - d.getTime()) / (1000 * 60 * 60 * 24);
@@ -143,11 +183,10 @@ async function main() {
   }
 
   if (candidates.length === 0) {
-    console.log("No new books found.");
-    return;
+    console.log("No new read books found.");
   }
 
-  console.log(`Found ${candidates.length} new book(s):`);
+  console.log(`Found ${candidates.length} new read book(s):`);
   const added = [];
   const changedYears = new Set();
   for (const c of candidates) {
@@ -172,23 +211,40 @@ async function main() {
     changedYears.add(c.year);
   }
 
-  if (added.length === 0) {
-    console.log("No books were successfully added (all cover uploads failed).");
-    return;
-  }
-
   for (const year of changedYears) {
     byYear[year].sort((a, b) => (b.dateRead ?? "").localeCompare(a.dateRead ?? ""));
     const filePath = new URL(`${year}.json`, DATA_DIR);
     writeFileSync(filePath, JSON.stringify(byYear[year], null, 2), "utf-8");
   }
 
-  const summaryLines = added.map((e) => `- ${e.title}`);
-  const summary = `Added ${added.length} book(s):\n${summaryLines.join("\n")}`;
+  console.log("\nSyncing currently-reading shelf for /now...");
+  const currentlyReading = await syncCurrentlyReading(existingIds);
+  if (currentlyReading.changed) {
+    console.log(`  currently-reading list updated (${currentlyReading.entries.length} book(s))`);
+  } else {
+    console.log("  no change");
+  }
+
+  if (added.length === 0 && !currentlyReading.changed) {
+    console.log("\nNo changes to commit.");
+    return;
+  }
+
+  const summaryParts = [];
+  if (added.length > 0) {
+    summaryParts.push(`Added ${added.length} book(s) to /reading:\n${added.map((e) => `- ${e.title}`).join("\n")}`);
+  }
+  if (currentlyReading.changed) {
+    summaryParts.push(
+      `Updated /now's currently-reading list (${currentlyReading.entries.length} book(s)):\n${currentlyReading.entries.map((e) => `- ${e.title}`).join("\n")}`
+    );
+  }
+  const summary = summaryParts.join("\n\n");
   console.log(`\n${summary}`);
 
   if (process.env.GITHUB_OUTPUT) {
-    writeFileSync(process.env.GITHUB_OUTPUT, `count=${added.length}\n`, { flag: "a" });
+    const count = added.length + (currentlyReading.changed ? 1 : 0);
+    writeFileSync(process.env.GITHUB_OUTPUT, `count=${count}\n`, { flag: "a" });
     const body = summary.replace(/%/g, "%25").replace(/\n/g, "%0A").replace(/\r/g, "%0D");
     writeFileSync(process.env.GITHUB_OUTPUT, `summary=${body}\n`, { flag: "a" });
   }
