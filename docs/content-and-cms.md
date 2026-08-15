@@ -14,6 +14,10 @@ Both paths write the same Markdown files with the same frontmatter — Pages CMS
 
 Field notes (added July 2026) exist because not everything is worth the ceremony of a full article: a link with a one-line reaction, a photo, an embed. They're a separate, lighter content collection — see [architecture.md](./architecture.md) — with their own paginated listing at `/field-notes/` and their own RSS feed, but no CMS support yet and no helper script (they're created by hand).
 
+### Slideshow field notes
+
+Added August 2026: a `slideshow` type for posting a set of images together instead of one static image. Set `type: slideshow` and `images:` (a list of Cloudinary paths or URLs, same format as the single-image `image` field) in frontmatter — see `src/content/field-notes/_template.md`. It renders via `src/components/FieldNoteSlideshow.astro`: prev/next buttons, dot indicators, a slide counter, touch swipe, and arrow-key navigation when focused. Same component is used on both the entry page and the paginated `/field-notes/` list.
+
 ## Scheduling
 
 Both collections filter out entries with a future `pubDate` at build time. Nothing publishes itself the moment you hit save — it publishes the next time the site *builds*, which is either the next push to `main` or the next scheduled cron rebuild. See [deployment.md](./deployment.md) for why that scheduled rebuild exists at all.

@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getImageConfig } from '../../utils/cloudinary';
+import FieldNoteSlideshow from '../../components/FieldNoteSlideshow.astro';
 
 export async function getStaticPaths() {
   const entries = await getCollection('field-notes');
@@ -11,7 +12,7 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { title, pubDate, type, url, image, embed } = entry.data;
+const { title, pubDate, type, url, image, images, embed } = entry.data;
 const { Content } = await render(entry);
 
 const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
@@ -44,6 +45,7 @@ function formatDate(date: Date) {
         <span class={
           type === 'link' ? 'text-orange-500' :
           type === 'image' ? 'text-blue-400' :
+          type === 'slideshow' ? 'text-blue-400' :
           'text-purple-400'
         }>{type}</span>
       </div>
@@ -89,6 +91,11 @@ function formatDate(date: Date) {
             <img src={imgConfig.mainUrl} alt={title} class="w-full object-cover rounded-md" loading="lazy" />
           )}
         </div>
+      )}
+
+      {/* Slideshow */}
+      {type === 'slideshow' && images && images.length > 0 && (
+        <FieldNoteSlideshow images={images} alt={title} />
       )}
 
       {/* Embed */}
