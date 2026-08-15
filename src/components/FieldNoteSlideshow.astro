@@ -14,16 +14,16 @@ const configs = images
 ---
 
 {configs.length > 0 && (
-  <div class="fn-slideshow relative overflow-hidden rounded-md bg-gray-100 mb-5" style="min-height: 200px;">
-    <div class="fn-slideshow-track flex transition-transform duration-300 ease-out">
+  <div class="fn-slideshow relative overflow-hidden rounded-md bg-gray-100 mb-5 h-72 sm:h-96 md:h-[420px]">
+    <div class="fn-slideshow-track flex h-full transition-transform duration-300 ease-out">
       {configs.map((config, i) => (
-        <div class="w-full flex-shrink-0">
+        <div class="w-full h-full flex-shrink-0 flex items-center justify-center">
           <img
             src={config.mainUrl}
             srcset={config.srcset}
             sizes="(max-width: 640px) 100vw, 672px"
             alt={alt}
-            class="w-full object-cover"
+            class="max-w-full max-h-full w-auto h-auto object-contain"
             loading={i === 0 ? 'eager' : 'lazy'}
           />
         </div>
