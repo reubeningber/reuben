@@ -34,20 +34,20 @@ const configs = images
       <>
         <button
           type="button"
-          class="fn-slideshow-prev absolute left-2 top-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+          class="fn-slideshow-prev absolute left-2 top-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-orange-700/70 text-white hover:bg-orange-700/90 transition-colors"
           aria-label="Previous image"
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z"/></svg>
         </button>
         <button
           type="button"
-          class="fn-slideshow-next absolute right-2 top-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+          class="fn-slideshow-next absolute right-2 top-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-orange-700/70 text-white hover:bg-orange-700/90 transition-colors"
           aria-label="Next image"
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M13.171 12l-4.95-4.95 1.415-1.413L16 12l-6.364 6.364-1.414-1.415z"/></svg>
         </button>
 
-        <div class="fn-slideshow-counter absolute top-2 right-2 text-xs font-medium text-white bg-black/50 px-1.5 py-0.5 rounded">
+        <div class="fn-slideshow-counter absolute top-2 right-2 text-xs font-medium text-white bg-orange-700/70 px-1.5 py-0.5 rounded">
           <span class="fn-slideshow-current">1</span> / {configs.length}
         </div>
 
@@ -55,7 +55,7 @@ const configs = images
           {configs.map((_, i) => (
             <button
               type="button"
-              class="fn-slideshow-dot w-1.5 h-1.5 rounded-full bg-white/60 transition-colors"
+              class="fn-slideshow-dot w-1.5 h-1.5 rounded-full bg-orange-200/80 transition-colors"
               data-index={i}
               aria-label={`Go to image ${i + 1}`}
             />
@@ -81,8 +81,8 @@ const configs = images
     function goTo(i: number) {
       index = (i + slides.length) % slides.length;
       track!.style.transform = `translateX(-${index * 100}%)`;
-      dots.forEach((dot, di) => dot.classList.toggle('bg-white/60', di !== index));
-      dots.forEach((dot, di) => dot.classList.toggle('bg-white', di === index));
+      dots.forEach((dot, di) => dot.classList.toggle('bg-orange-200/80', di !== index));
+      dots.forEach((dot, di) => dot.classList.toggle('bg-orange-600', di === index));
       if (counter) counter.textContent = String(index + 1);
     }
 
