@@ -28,6 +28,7 @@ const STAR_EMPTY = '<path d="M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.58
   title={`${book.title} by ${book.author}`}
   data-title={book.title.toLowerCase()}
   data-author={book.author.toLowerCase()}
+  data-audio={book.audio ? "true" : "false"}
 >
   <img
     data-src={readingCoverUrl(cloudName, book.cover)}

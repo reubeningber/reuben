@@ -43,3 +43,9 @@ Requires two secrets beyond the site's usual `PUBLIC_CLOUDINARY_CLOUD_NAME`: `CL
 ## Lazy-loaded tabs
 
 With ~490 covers across 7 years, rendering every `<img src>` at page load would mean fetching all of them up front. Instead, every cover starts as `<img data-src="...">` with no `src` attribute at all — so the browser makes zero requests for it — and a small inline script swaps `data-src` → `src` only for the currently active year's panel, the first time it's opened. Switching tabs is what triggers the fetch, not the page load.
+
+## Search and the audio filter
+
+The book-cover card markup lives in `src/components/ReadingCover.astro`, shared between the per-year tab panels and a flat, all-years grid (`#search-results`) that's hidden until needed. Typing in the search box filters that flat grid client-side by `data-title`/`data-author` substring match (case-insensitive, no server round-trip); the same lazy `data-src` → `src` swap from the year tabs applies here too, so only matched covers ever load.
+
+A headphones toggle next to the year tabs filters that same flat grid to books with `audio: true` (sourced from the `audio` shelf on Goodreads — see above) instead of by search text. It's mutually exclusive with year browsing: selecting a year clears the audio filter and any search text, and selecting the audio filter deselects whichever year tab was active, since audiobooks span all years. On narrow viewports the year tabs and audio toggle collapse into a single `<select>` dropdown (`#year-filter-select`) to save space; both controls drive the same `selectYear()` / `setAudioOnly()` functions so they stay in sync regardless of which one the viewport is showing.

@@ -25,6 +25,7 @@ const years = [
 const defaultYear = 2026;
 
 const allBooks = years.flatMap(({ books }) => books);
+const audioCount = allBooks.filter((book) => book.audio).length;
 ---
 <Base
   title="Reading | Reuben Ingber"
@@ -59,7 +60,7 @@ const allBooks = years.flatMap(({ books }) => books);
     </div>
 
     <div id="year-browser">
-      <div role="tablist" aria-label="Reading year" class="flex flex-wrap gap-2 mb-8 border-b border-gray-200 pb-4">
+      <div role="tablist" aria-label="Reading year" class="hidden sm:flex flex-nowrap items-center gap-1.5 mb-8 border-b border-gray-200 pb-4 overflow-x-auto">
         {years.map(({ year, books }) => (
           <button
             type="button"
@@ -67,7 +68,7 @@ const allBooks = years.flatMap(({ books }) => books);
             data-year={year}
             aria-selected={year === defaultYear ? "true" : "false"}
             class:list={[
-              "year-tab px-4 py-2 text-sm font-semibold tracking-wide rounded-full transition-colors",
+              "year-tab shrink-0 px-3 py-2 text-sm font-semibold tracking-wide rounded-full transition-colors",
               year === defaultYear
                 ? "bg-orange-600 text-white"
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200",
@@ -76,21 +77,46 @@ const allBooks = years.flatMap(({ books }) => books);
             {year} <span class="opacity-70">({books.length})</span>
           </button>
         ))}
+        <button
+          type="button"
+          id="audio-filter-toggle"
+          aria-pressed="false"
+          aria-label={`Filter to audiobooks (${audioCount})`}
+          class="audio-filter-toggle shrink-0 flex items-center gap-1.5 px-3 py-2 text-sm font-semibold tracking-wide rounded-full transition-colors bg-gray-100 text-gray-700 hover:bg-gray-200"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4" aria-hidden="true"><path d="M12 4C7.58172 4 4 7.58172 4 12H7C8.10457 12 9 12.8954 9 14V19C9 20.1046 8.10457 21 7 21H4C2.89543 21 2 20.1046 2 19V12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12V19C22 20.1046 21.1046 21 20 21H17C15.8954 21 15 20.1046 15 19V14C15 12.8954 15.8954 12 17 12H20C20 7.58172 16.4183 4 12 4ZM4 14V19H7V14H4ZM17 14V19H20V14H17Z"></path></svg>
+          <span class="opacity-70">({audioCount})</span>
+        </button>
       </div>
 
-      {years.map(({ year, books }) => (
-        <div
-          role="tabpanel"
-          data-year-panel={year}
-          class:list={["year-panel", year !== defaultYear && "hidden"]}
+      <div class="sm:hidden mb-8">
+        <label for="year-filter-select" class="sr-only">Filter by year or format</label>
+        <select
+          id="year-filter-select"
+          class="w-full rounded-full border border-gray-200 py-2.5 px-4 text-sm font-semibold tracking-wide bg-gray-100 text-gray-700 focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
         >
-          <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6">
-            {books.map((book) => (
-              <ReadingCover book={book} cloudName={cloudName} />
-            ))}
+          {years.map(({ year, books }) => (
+            <option value={year} selected={year === defaultYear}>{year} ({books.length})</option>
+          ))}
+          <option value="audio">🎧 Audiobooks ({audioCount})</option>
+        </select>
+      </div>
+
+      <div id="year-panels">
+        {years.map(({ year, books }) => (
+          <div
+            role="tabpanel"
+            data-year-panel={year}
+            class:list={["year-panel", year !== defaultYear && "hidden"]}
+          >
+            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6">
+              {books.map((book) => (
+                <ReadingCover book={book} cloudName={cloudName} />
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
 
     <div id="search-results" class="hidden">
@@ -120,15 +146,23 @@ const allBooks = years.flatMap(({ books }) => books);
   const tabs = document.querySelectorAll<HTMLButtonElement>('.year-tab');
   const panels = document.querySelectorAll<HTMLElement>('.year-panel');
 
-  function activateYear(year: string) {
+  let currentYear = document.querySelector<HTMLButtonElement>('.year-tab[aria-selected="true"]')!.dataset.year!;
+
+  // When a search/audio filter is active, no single year tab is "selected" since results span all years.
+  function updateYearTabHighlight(filtered: boolean) {
     tabs.forEach((tab) => {
-      const active = tab.dataset.year === year;
+      const active = !filtered && tab.dataset.year === currentYear;
       tab.setAttribute('aria-selected', active ? 'true' : 'false');
       tab.classList.toggle('bg-orange-600', active);
       tab.classList.toggle('text-white', active);
       tab.classList.toggle('bg-gray-100', !active);
       tab.classList.toggle('text-gray-700', !active);
     });
+  }
+
+  function activateYear(year: string) {
+    currentYear = year;
+    updateYearTabHighlight(false);
     panels.forEach((panel) => {
       const match = panel.dataset.yearPanel === year;
       panel.classList.toggle('hidden', !match);
@@ -136,20 +170,49 @@ const allBooks = years.flatMap(({ books }) => books);
     });
   }
 
-  tabs.forEach((tab) => {
-    tab.addEventListener('click', () => activateYear(tab.dataset.year!));
-  });
-
   // Load the initially active panel's images on page load.
   const initialPanel = document.querySelector<HTMLElement>('.year-panel:not(.hidden)');
   if (initialPanel) loadPanelImages(initialPanel);
 
   const searchInput = document.getElementById('reading-search') as HTMLInputElement;
-  const yearBrowser = document.getElementById('year-browser')!;
+  const audioToggle = document.getElementById('audio-filter-toggle') as HTMLButtonElement;
+  const yearSelect = document.getElementById('year-filter-select') as HTMLSelectElement;
+  const yearPanels = document.getElementById('year-panels')!;
   const searchResults = document.getElementById('search-results')!;
   const searchResultsCount = document.getElementById('search-results-count')!;
   const searchResultsEmpty = document.getElementById('search-results-empty')!;
   const searchCards = searchResults.querySelectorAll<HTMLAnchorElement>('a[data-title]');
+
+  function setAudioToggleStyle(active: boolean) {
+    audioToggle.setAttribute('aria-pressed', String(active));
+    audioToggle.classList.toggle('bg-orange-600', active);
+    audioToggle.classList.toggle('text-white', active);
+    audioToggle.classList.toggle('bg-gray-100', !active);
+    audioToggle.classList.toggle('text-gray-700', !active);
+  }
+
+  function selectYear(year: string) {
+    // Selecting a year always returns to plain year browsing, clearing any active search/audio filter.
+    searchInput.value = '';
+    audioOnly = false;
+    setAudioToggleStyle(false);
+    searchResults.classList.add('hidden');
+    yearPanels.classList.remove('hidden');
+    activateYear(year);
+    yearSelect.value = year;
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => selectYear(tab.dataset.year!));
+  });
+
+  yearSelect.addEventListener('change', () => {
+    if (yearSelect.value === 'audio') {
+      setAudioOnly(true);
+    } else {
+      selectYear(yearSelect.value);
+    }
+  });
 
   function loadCardImage(card: HTMLElement) {
     const img = card.querySelector<HTMLImageElement>('img[data-src]');
@@ -159,21 +222,28 @@ const allBooks = years.flatMap(({ books }) => books);
     }
   }
 
-  searchInput.addEventListener('input', () => {
+  let audioOnly = false;
+
+  function applyFilters() {
     const query = searchInput.value.trim().toLowerCase();
 
-    if (!query) {
+    const filtered = Boolean(query || audioOnly);
+    updateYearTabHighlight(filtered);
+
+    if (!filtered) {
       searchResults.classList.add('hidden');
-      yearBrowser.classList.remove('hidden');
+      yearPanels.classList.remove('hidden');
       return;
     }
 
-    yearBrowser.classList.add('hidden');
+    yearPanels.classList.add('hidden');
     searchResults.classList.remove('hidden');
 
     let matchCount = 0;
     searchCards.forEach((card) => {
-      const match = card.dataset.title!.includes(query) || card.dataset.author!.includes(query);
+      const match =
+        (!query || card.dataset.title!.includes(query) || card.dataset.author!.includes(query)) &&
+        (!audioOnly || card.dataset.audio === 'true');
       card.classList.toggle('hidden', !match);
       if (match) {
         matchCount++;
@@ -183,5 +253,16 @@ const allBooks = years.flatMap(({ books }) => books);
 
     searchResultsEmpty.classList.toggle('hidden', matchCount > 0);
     searchResultsCount.textContent = matchCount > 0 ? `${matchCount} book${matchCount === 1 ? '' : 's'} found` : '';
-  });
+  }
+
+  searchInput.addEventListener('input', applyFilters);
+
+  function setAudioOnly(value: boolean) {
+    audioOnly = value;
+    setAudioToggleStyle(audioOnly);
+    if (audioOnly) yearSelect.value = 'audio';
+    applyFilters();
+  }
+
+  audioToggle.addEventListener('click', () => setAudioOnly(!audioOnly));
 </script>
