@@ -1,6 +1,7 @@
 ---
 import Base from "../layouts/BaseLayout.astro";
 import ReadingCover from "../components/ReadingCover.astro";
+import { STAR_FILLED, STAR_EMPTY } from "../utils/icons";
 
 import books2026 from "../data/reading/2026.json";
 import books2025 from "../data/reading/2025.json";
@@ -38,25 +39,94 @@ const audioCount = allBooks.filter((book) => book.audio).length;
       A running record of the books I've read each year.
     </p>
 
-    <div class="relative mb-8">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-secondary"
-        aria-hidden="true"
-      >
-        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />
-      </svg>
-      <input
-        type="search"
-        id="reading-search"
-        placeholder="Search by title or author…"
-        aria-label="Search books by title or author"
-        class="w-full rounded-full border border-gray-200 py-2.5 pl-10 pr-4 text-lg leading-relaxed placeholder:text-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
-      />
+    <div class="relative mb-8 flex items-center gap-2">
+      <div class="relative flex-1">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-secondary"
+          aria-hidden="true"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />
+        </svg>
+        <input
+          type="search"
+          id="reading-search"
+          placeholder="Search by title or author…"
+          aria-label="Search books by title or author"
+          class="w-full rounded-full border border-gray-200 py-2.5 pl-10 pr-4 text-lg leading-relaxed placeholder:text-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
+        />
+      </div>
+
+      <div class="relative shrink-0">
+        <button
+          type="button"
+          id="filters-toggle"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-controls="filters-panel"
+          class="relative flex items-center gap-1.5 rounded-full border border-gray-200 px-4 py-2.5 text-sm font-semibold tracking-wide text-gray-700 hover:bg-gray-100 transition-colors"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M7 12h10M10 18h4" />
+          </svg>
+          Filters
+          <span
+            id="filters-count-badge"
+            class="hidden ml-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-orange-600 text-[10px] font-bold text-white"
+          ></span>
+        </button>
+
+        <div
+          id="filters-panel"
+          class="hidden absolute right-0 z-10 mt-2 w-64 rounded-2xl border border-gray-200 bg-white p-4 shadow-lg"
+        >
+          <div class="mb-4">
+            <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-secondary">Format</p>
+            <button
+              type="button"
+              id="audio-filter-toggle"
+              aria-pressed="false"
+              aria-label={`Filter to audiobooks (${audioCount})`}
+              class="audio-filter-toggle flex items-center gap-1.5 px-3 py-2 text-sm font-semibold tracking-wide rounded-full transition-colors bg-gray-100 text-gray-700 hover:bg-gray-200"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4" aria-hidden="true"><path d="M12 4C7.58172 4 4 7.58172 4 12H7C8.10457 12 9 12.8954 9 14V19C9 20.1046 8.10457 21 7 21H4C2.89543 21 2 20.1046 2 19V12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12V19C22 20.1046 21.1046 21 20 21H17C15.8954 21 15 20.1046 15 19V14C15 12.8954 15.8954 12 17 12H20C20 7.58172 16.4183 4 12 4ZM4 14V19H7V14H4ZM17 14V19H20V14H17Z"></path></svg>
+              Audiobooks
+              <span class="opacity-70">({audioCount})</span>
+            </button>
+          </div>
+
+          <div class="mb-4">
+            <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-secondary">Rating</p>
+            <div id="rating-filter" class="flex items-center gap-1" role="group" aria-label="Minimum rating filter">
+              {[1, 2, 3, 4, 5].map((n) => (
+                <button
+                  type="button"
+                  class="rating-star relative block h-5 w-5 p-0.5 text-gray-300 hover:text-accent transition-colors"
+                  data-rating-value={n}
+                  aria-label={`${n} star${n === 1 ? "" : "s"} and up`}
+                  aria-pressed="false"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="star-empty absolute inset-0.5 h-4 w-4" set:html={STAR_EMPTY} />
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="star-filled absolute inset-0.5 hidden h-4 w-4" set:html={STAR_FILLED} />
+                </button>
+              ))}
+            </div>
+            <p id="rating-filter-label" class="mt-1.5 text-xs text-secondary">Any rating</p>
+          </div>
+
+          <button
+            type="button"
+            id="clear-filters"
+            class="w-full rounded-full border border-gray-200 py-1.5 text-sm font-semibold text-gray-700 hover:bg-gray-100 transition-colors"
+          >
+            Clear filters
+          </button>
+        </div>
+      </div>
     </div>
 
     <div id="year-browser">
@@ -77,20 +147,10 @@ const audioCount = allBooks.filter((book) => book.audio).length;
             {year} <span class="opacity-70">({books.length})</span>
           </button>
         ))}
-        <button
-          type="button"
-          id="audio-filter-toggle"
-          aria-pressed="false"
-          aria-label={`Filter to audiobooks (${audioCount})`}
-          class="audio-filter-toggle shrink-0 flex items-center gap-1.5 px-3 py-2 text-sm font-semibold tracking-wide rounded-full transition-colors bg-gray-100 text-gray-700 hover:bg-gray-200"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4" aria-hidden="true"><path d="M12 4C7.58172 4 4 7.58172 4 12H7C8.10457 12 9 12.8954 9 14V19C9 20.1046 8.10457 21 7 21H4C2.89543 21 2 20.1046 2 19V12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12V19C22 20.1046 21.1046 21 20 21H17C15.8954 21 15 20.1046 15 19V14C15 12.8954 15.8954 12 17 12H20C20 7.58172 16.4183 4 12 4ZM4 14V19H7V14H4ZM17 14V19H20V14H17Z"></path></svg>
-          <span class="opacity-70">({audioCount})</span>
-        </button>
       </div>
 
       <div class="sm:hidden mb-8">
-        <label for="year-filter-select" class="sr-only">Filter by year or format</label>
+        <label for="year-filter-select" class="sr-only">Filter by year</label>
         <select
           id="year-filter-select"
           class="w-full rounded-full border border-gray-200 py-2.5 px-4 text-sm font-semibold tracking-wide bg-gray-100 text-gray-700 focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
@@ -98,7 +158,6 @@ const audioCount = allBooks.filter((book) => book.audio).length;
           {years.map(({ year, books }) => (
             <option value={year} selected={year === defaultYear}>{year} ({books.length})</option>
           ))}
-          <option value="audio">🎧 Audiobooks ({audioCount})</option>
         </select>
       </div>
 
@@ -183,6 +242,13 @@ const audioCount = allBooks.filter((book) => book.audio).length;
   const searchResultsEmpty = document.getElementById('search-results-empty')!;
   const searchCards = searchResults.querySelectorAll<HTMLAnchorElement>('a[data-title]');
 
+  const filtersToggle = document.getElementById('filters-toggle') as HTMLButtonElement;
+  const filtersPanel = document.getElementById('filters-panel')!;
+  const filtersCountBadge = document.getElementById('filters-count-badge')!;
+  const clearFiltersButton = document.getElementById('clear-filters') as HTMLButtonElement;
+  const ratingStars = document.querySelectorAll<HTMLButtonElement>('.rating-star');
+  const ratingFilterLabel = document.getElementById('rating-filter-label')!;
+
   function setAudioToggleStyle(active: boolean) {
     audioToggle.setAttribute('aria-pressed', String(active));
     audioToggle.classList.toggle('bg-orange-600', active);
@@ -192,10 +258,11 @@ const audioCount = allBooks.filter((book) => book.audio).length;
   }
 
   function selectYear(year: string) {
-    // Selecting a year always returns to plain year browsing, clearing any active search/audio filter.
+    // Selecting a year always returns to plain year browsing, clearing any active filters.
     searchInput.value = '';
     audioOnly = false;
     setAudioToggleStyle(false);
+    setMinRating(0);
     searchResults.classList.add('hidden');
     yearPanels.classList.remove('hidden');
     activateYear(year);
@@ -206,13 +273,7 @@ const audioCount = allBooks.filter((book) => book.audio).length;
     tab.addEventListener('click', () => selectYear(tab.dataset.year!));
   });
 
-  yearSelect.addEventListener('change', () => {
-    if (yearSelect.value === 'audio') {
-      setAudioOnly(true);
-    } else {
-      selectYear(yearSelect.value);
-    }
-  });
+  yearSelect.addEventListener('change', () => selectYear(yearSelect.value));
 
   function loadCardImage(card: HTMLElement) {
     const img = card.querySelector<HTMLImageElement>('img[data-src]');
@@ -223,11 +284,20 @@ const audioCount = allBooks.filter((book) => book.audio).length;
   }
 
   let audioOnly = false;
+  let minRating = 0;
+
+  function updateFiltersBadge() {
+    const activeCount = [audioOnly, minRating > 0].filter(Boolean).length;
+    filtersCountBadge.textContent = String(activeCount);
+    filtersCountBadge.classList.toggle('hidden', activeCount === 0);
+  }
 
   function applyFilters() {
     const query = searchInput.value.trim().toLowerCase();
 
-    const filtered = Boolean(query || audioOnly);
+    updateFiltersBadge();
+
+    const filtered = Boolean(query || audioOnly || minRating > 0);
     updateYearTabHighlight(filtered);
 
     if (!filtered) {
@@ -243,7 +313,8 @@ const audioCount = allBooks.filter((book) => book.audio).length;
     searchCards.forEach((card) => {
       const match =
         (!query || card.dataset.title!.includes(query) || card.dataset.author!.includes(query)) &&
-        (!audioOnly || card.dataset.audio === 'true');
+        (!audioOnly || card.dataset.audio === 'true') &&
+        Number(card.dataset.rating) >= minRating;
       card.classList.toggle('hidden', !match);
       if (match) {
         matchCount++;
@@ -260,9 +331,67 @@ const audioCount = allBooks.filter((book) => book.audio).length;
   function setAudioOnly(value: boolean) {
     audioOnly = value;
     setAudioToggleStyle(audioOnly);
-    if (audioOnly) yearSelect.value = 'audio';
     applyFilters();
   }
 
   audioToggle.addEventListener('click', () => setAudioOnly(!audioOnly));
+
+  function setRatingStarStyle() {
+    ratingStars.forEach((star) => {
+      const value = Number(star.dataset.ratingValue);
+      const active = value <= minRating;
+      star.classList.toggle('text-accent', active);
+      star.classList.toggle('text-gray-300', !active);
+      star.setAttribute('aria-pressed', String(active));
+      star.querySelector('.star-filled')!.classList.toggle('hidden', !active);
+      star.querySelector('.star-empty')!.classList.toggle('hidden', active);
+    });
+    ratingFilterLabel.textContent = minRating > 0 ? `${minRating}★ & up` : 'Any rating';
+  }
+
+  function setMinRating(value: number) {
+    minRating = value;
+    setRatingStarStyle();
+    applyFilters();
+  }
+
+  ratingStars.forEach((star) => {
+    star.addEventListener('click', () => {
+      const value = Number(star.dataset.ratingValue);
+      setMinRating(value === minRating ? 0 : value);
+    });
+  });
+
+  clearFiltersButton.addEventListener('click', () => {
+    setAudioOnly(false);
+    setMinRating(0);
+  });
+
+  function openFiltersPanel() {
+    filtersPanel.classList.remove('hidden');
+    filtersToggle.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeFiltersPanel() {
+    filtersPanel.classList.add('hidden');
+    filtersToggle.setAttribute('aria-expanded', 'false');
+  }
+
+  filtersToggle.addEventListener('click', () => {
+    if (filtersPanel.classList.contains('hidden')) {
+      openFiltersPanel();
+    } else {
+      closeFiltersPanel();
+    }
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!filtersPanel.contains(event.target as Node) && event.target !== filtersToggle && !filtersToggle.contains(event.target as Node)) {
+      closeFiltersPanel();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeFiltersPanel();
+  });
 </script>
