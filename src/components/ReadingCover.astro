@@ -1,0 +1,60 @@
+---
+import { readingCoverUrl } from "../utils/readingCovers";
+
+interface Book {
+  title: string;
+  author: string;
+  cover: string;
+  amazon: string;
+  audio?: boolean;
+  rating?: number;
+}
+
+interface Props {
+  book: Book;
+  cloudName: string;
+}
+
+const { book, cloudName } = Astro.props;
+
+const STAR_FILLED = '<path d="M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61493 7.84006L12.0006 0.5L15.3862 7.84006L23.4132 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26Z"></path>';
+const STAR_EMPTY = '<path d="M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61493 7.84006L12.0006 0.5L15.3862 7.84006L23.4132 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26ZM12.0006 15.968L16.2473 18.3451L15.2988 13.5717L18.8719 10.2674L14.039 9.69434L12.0006 5.27502L9.96214 9.69434L5.12921 10.2674L8.70231 13.5717L7.75383 18.3451L12.0006 15.968Z"></path>';
+---
+<a
+  href={book.amazon}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="group relative block"
+  title={`${book.title} by ${book.author}`}
+  data-title={book.title.toLowerCase()}
+  data-author={book.author.toLowerCase()}
+  data-audio={book.audio ? "true" : "false"}
+>
+  <img
+    data-src={readingCoverUrl(cloudName, book.cover)}
+    alt={`${book.title} by ${book.author} book cover`}
+    class="cover-img w-full h-auto rounded shadow-sm bg-gray-100 aspect-[2/3] object-cover group-hover:opacity-80 transition-opacity"
+  />
+  {book.audio && (
+    <div
+      class="absolute right-1.5 top-1.5 rounded-full bg-black/75 p-1 text-white"
+      title="Audiobook"
+      aria-label="Audiobook"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-3.5 w-3.5"><path d="M12 4C7.58172 4 4 7.58172 4 12H7C8.10457 12 9 12.8954 9 14V19C9 20.1046 8.10457 21 7 21H4C2.89543 21 2 20.1046 2 19V12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12V19C22 20.1046 21.1046 21 20 21H17C15.8954 21 15 20.1046 15 19V14C15 12.8954 15.8954 12 17 12H20C20 7.58172 16.4183 4 12 4ZM4 14V19H7V14H4ZM17 14V19H20V14H17Z"></path></svg>
+    </div>
+  )}
+  {book.rating && (
+    <div class="absolute inset-x-0 bottom-0 flex justify-center gap-0.5 rounded-b bg-black/75 py-1.5 opacity-0 transition-opacity group-hover:opacity-100">
+      {[1, 2, 3, 4, 5].map((n) => (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class:list={["h-3 w-3", n <= book.rating! ? "text-accent" : "text-white/40"]}
+          set:html={n <= book.rating! ? STAR_FILLED : STAR_EMPTY}
+        />
+      ))}
+    </div>
+  )}
+</a>
