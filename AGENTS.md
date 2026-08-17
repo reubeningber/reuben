@@ -175,6 +175,10 @@ Defined in `Header.astro`:
 
 `.github/workflows/update-reading.yml` runs `scripts/update-reading.mjs` weekly (Mondays, plus manual `workflow_dispatch`). It diffs Reuben's public Goodreads "read" shelf (via RSS, not the HTML site) against `src/data/reading/{year}.json`, uploads new covers to Cloudinary under `reading_covers/{goodreads_book_id}`, and opens a PR (`peter-evans/create-pull-request`, branch `automated/update-reading`) when it finds anything new. The same run also mirrors Goodreads' "currently-reading" shelf to `src/data/reading/currently-reading.json`, which feeds the READING section on `/now` — so both `/reading` and `/now` stay in sync from one script/workflow. No-ops silently otherwise.
 
+## Changelog
+
+`/changelog` (`src/pages/changelog.astro`) is a hand-maintained, reverse-chronological log of *site* changes — new pages, features, redesigns, engineering — sourced from PR/commit history. It's not automated like the reading sync above; there's no script that regenerates it. When you merge a PR that changes the site itself (not routine content like an article, field note, or photo), add an entry to the `entries` array at the top of the file: `{ date, title, url }`, newest first, `url` pointing at that PR (or commit, for pre-PR-era entries) on GitHub. Skip entries for: individual articles/field notes/photos (those have their own archives, linked from the page's intro), and automated PRs like the weekly Goodreads reading sync.
+
 ## SEO & Structured Data
 
 - `BaseLayout.astro` includes a `Person` schema for Reuben site-wide
@@ -189,3 +193,4 @@ This repo has a history of docs drifting from reality (README described a remove
 - Update `README.md` and this file (`AGENTS.md`) in the same PR
 - Update `src/pages/colophon.astro` (the "Last updated" date too) if the change touches anything it describes — stack, hosting, or analytics
 - Check `docs/` for a relevant deep-dive file and update or extend it
+- Add an entry to `src/pages/changelog.astro` if the change is site-facing (see [Changelog](#changelog) above) — not for routine content

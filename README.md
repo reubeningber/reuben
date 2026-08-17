@@ -40,6 +40,7 @@ src/
 │   ├── friends.astro               # Friends page
 │   ├── reading.astro               # Reading page (tabbed year-by-year book log, 2020-2026; search + audio filter)
 │   ├── colophon.astro              # Colophon page
+│   ├── changelog.astro             # Changelog page (hand-maintained log of site changes)
 │   ├── identity-statement.astro    # Identity statement page
 │   ├── rss.xml.js                  # RSS feed
 │   ├── sitemap.xml.js              # Sitemap
