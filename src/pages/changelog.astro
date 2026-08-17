@@ -1,0 +1,99 @@
+---
+import Base from "../layouts/BaseLayout.astro";
+
+const REPO = "https://github.com/reubeningber/reuben";
+
+interface Entry {
+  date: string; // YYYY-MM-DD
+  title: string;
+  url: string;
+}
+
+// Reverse-chronological log of changes to the site itself (pages, features,
+// design, and engineering) — sourced from this repo's PR and commit history.
+// Routine content publishing (articles, field notes, photos) isn't tracked
+// here; see /articles and /field-notes for that.
+const entries: Entry[] = [
+  { date: "2026-08-17", title: "Added a search box and an audiobook filter to /reading, with a responsive dropdown on narrow screens", url: `${REPO}/pull/30` },
+  { date: "2026-08-15", title: "Added a slideshow format for Field Notes", url: `${REPO}/pull/29` },
+  { date: "2026-08-13", title: "Linked the /now READING header to /reading", url: `${REPO}/pull/27` },
+  { date: "2026-08-13", title: "Synced /now's currently-reading list automatically from the weekly Goodreads action", url: `${REPO}/pull/26` },
+  { date: "2026-08-12", title: "Added /reading: a tabbed, year-by-year log of books read, synced weekly from Goodreads", url: `${REPO}/pull/25` },
+  { date: "2026-08-12", title: "Added a family note and a reading section to /now", url: `${REPO}/pull/24` },
+  { date: "2026-08-05", title: "Reclassified articles into more coherent categories", url: `${REPO}/pull/23` },
+  { date: "2026-07-31", title: "Consolidated the scheduled-deploy workflow onto actions/deploy-pages", url: `${REPO}/pull/21` },
+  { date: "2026-07-31", title: "Gated GitHub Pages deploys on the test suite passing", url: `${REPO}/pull/20` },
+  { date: "2026-07-31", title: "Added Cloudflare Web Analytics, removed Plausible", url: `${REPO}/pull/16` },
+  { date: "2026-07-28", title: "Used each post's lead image for social share previews", url: `${REPO}/pull/15` },
+  { date: "2026-07-13", title: "Added /now", url: `${REPO}/pull/7` },
+  { date: "2026-07-13", title: "Added /colophon and /uses", url: `${REPO}/pull/6` },
+  { date: "2026-07-13", title: "Added /friends, and a sticky footer", url: `${REPO}/pull/5` },
+  { date: "2026-07-02", title: "Added a Vitest + Playwright testing suite", url: `${REPO}/pull/3` },
+  { date: "2026-07-01", title: "Added a Field Notes section and a mobile hamburger nav", url: `${REPO}/pull/2` },
+  { date: "2026-06-26", title: "Applied 17 SEO fixes: schema markup, breadcrumbs, descriptions, canonical URLs, and more", url: `${REPO}/pull/1` },
+  { date: "2026-06-16", title: "Published AGENTS.md, a site architecture guide for AI coding agents", url: `${REPO}/commit/bb6c3d5d34eea122fa05e2e3e90772d950f3426f` },
+  { date: "2026-06-16", title: "Added Google Analytics", url: `${REPO}/commit/687f55f95799a9edee488d387ac274d803f097d5` },
+  { date: "2026-05-26", title: "Removed the on-site photo gallery", url: `${REPO}/commit/490f963b34a550e2d5c5b56d6cf09606ec239ab6` },
+  { date: "2026-05-07", title: "Moved photo browsing to an external site (photos.reubeningber.com)", url: `${REPO}/commit/89ec2ab135e6e6a8a8671d5602ff9e46d56acfc9` },
+  { date: "2026-04-29", title: "Added a new image gallery layout", url: `${REPO}/commit/78d67a65d67c07d1ebea654fb3c9a1199052daeb` },
+  { date: "2026-03-20", title: "Moved content authoring to Pages CMS", url: `${REPO}/commit/a303225c92a81972b0d9a389e6d82a8a0ebfe960` },
+  { date: "2026-01-01", title: "Reworked the articles listing page", url: `${REPO}/commit/18c6b3a53214a57d1d9fb9e10cb2cb7086e337d6` },
+  { date: "2025-12-28", title: "Added photo albums", url: `${REPO}/commit/42de19d04d7242108129df318e506d4776b1a02d` },
+  { date: "2025-11-12", title: "Added scheduled deploys, for timed post publishing", url: `${REPO}/commit/f70271e384838da93e2f14ea8fd3910d13097781` },
+  { date: "2025-10-28", title: "Added a featured-photos layout with a lightbox", url: `${REPO}/commit/80d81f01890e0b92618ea2b16772d46687b384cd` },
+  { date: "2025-10-22", title: "Configured GitHub Pages deployment, refreshed the homepage, added a favicon, and ran an SEO pass", url: `${REPO}/commit/93fa3746c6b3be576ab65138d17e9f3cf4aa697e` },
+  { date: "2025-09-18", title: "Site launched", url: `${REPO}/commit/569c13376b2bc16fa0482b1c3d5692322dbac31b` },
+];
+
+function monthLabel(yearMonth: string) {
+  const [year, month] = yearMonth.split("-").map(Number);
+  return new Date(year, month - 1, 1).toLocaleDateString("en-US", { month: "long", year: "numeric" });
+}
+
+const months: { label: string; entries: Entry[] }[] = [];
+for (const entry of entries) {
+  const key = entry.date.slice(0, 7);
+  const current = months.at(-1);
+  if (current && current.label === monthLabel(key)) {
+    current.entries.push(entry);
+  } else {
+    months.push({ label: monthLabel(key), entries: [entry] });
+  }
+}
+---
+<Base
+  title="Changelog | Reuben Ingber"
+  description="A running log of changes to reubeningber.com — new pages, features, and site engineering, going back to launch."
+>
+  <div class="max-w-3xl">
+    <h1 class="text-4xl font-bold mb-4 text-primary tracking-wide">CHANGELOG</h1>
+
+    <p class="text-lg leading-relaxed mb-12 text-secondary">
+      A running log of changes to this site — new pages, features, and engineering — going back to launch. Routine content (articles, field notes) isn't tracked here; see <a href="/articles/" class="text-accent hover:underline">Articles</a> and <a href="/field-notes/" class="text-accent hover:underline">Field Notes</a> for that.
+    </p>
+
+    <div class="space-y-10">
+      {months.map(({ label, entries: monthEntries }) => (
+        <section>
+          <h2 class="text-sm font-bold mb-3 text-secondary tracking-widest uppercase">{label}</h2>
+          <ul class="space-y-3 border-l-2 border-gray-200 pl-5">
+            {monthEntries.map((entry) => (
+              <li class="text-lg leading-relaxed">
+                <a href={entry.url} target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors">
+                  {entry.title}
+                </a>
+                <span class="block text-sm text-secondary">
+                  {new Date(`${entry.date}T00:00:00`).toLocaleDateString("en-US", { month: "short", day: "numeric" })}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+
+    <div class="mt-16 pt-6 border-t border-gray-200 text-sm text-secondary">
+      <p>Sourced from the <a href={`${REPO}/commits/main`} target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">commit history</a> on GitHub.</p>
+    </div>
+  </div>
+</Base>
