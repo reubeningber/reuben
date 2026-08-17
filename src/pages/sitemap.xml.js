@@ -19,8 +19,10 @@ export async function GET() {
     '/contact/',
     '/friends/',
     '/now/',
+    '/reading/',
     '/uses/',
     '/colophon/',
+    '/changelog/',
   ];
 
   // Generate XML sitemap
