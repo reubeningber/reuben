@@ -257,9 +257,12 @@ const audioCount = allBooks.filter((book) => book.audio).length;
   }
 
   function selectYear(year: string) {
-    // Selecting a year returns to year browsing (clearing search, since search spans all years)
-    // but keeps any active audio/rating filters, applying them to the newly selected year.
+    // Selecting a year always returns to plain year browsing, clearing any active filters.
     searchInput.value = '';
+    audioOnly = false;
+    setAudioToggleStyle(false);
+    minRating = 0;
+    setRatingStarStyle();
     activateYear(year);
     yearSelect.value = year;
     render();
@@ -304,49 +307,35 @@ const audioCount = allBooks.filter((book) => book.audio).length;
   function render() {
     const query = searchInput.value.trim().toLowerCase();
     const filtersActive = audioOnly || minRating > 0;
+    const crossYear = Boolean(query || filtersActive);
 
     updateFiltersBadge();
+    updateYearTabHighlight(crossYear);
 
-    if (query) {
-      // Cross-year search: spans every year, combined with any active audio/rating filters.
-      updateYearTabHighlight(true);
-      yearPanels.classList.add('hidden');
-      searchResults.classList.remove('hidden');
-
-      let matchCount = 0;
-      searchCards.forEach((card) => {
-        const match =
-          (card.dataset.title!.includes(query) || card.dataset.author!.includes(query)) &&
-          matchesFilters(card);
-        card.classList.toggle('hidden', !match);
-        if (match) {
-          matchCount++;
-          loadCardImage(card);
-        }
-      });
-
-      showResultsStatus(matchCount, true);
+    if (!crossYear) {
+      searchResults.classList.add('hidden');
+      yearPanels.classList.remove('hidden');
+      showResultsStatus(0, false);
       return;
     }
 
-    // Year browsing: audio/rating filters apply within the currently selected year only.
-    updateYearTabHighlight(false);
-    searchResults.classList.add('hidden');
-    yearPanels.classList.remove('hidden');
+    // Any active search text or audio/rating filter spans every year, not just the selected one.
+    yearPanels.classList.add('hidden');
+    searchResults.classList.remove('hidden');
 
-    let currentYearMatchCount = 0;
-    panels.forEach((panel) => {
-      const cards = panel.querySelectorAll<HTMLAnchorElement>('a[data-title]');
-      let panelMatchCount = 0;
-      cards.forEach((card) => {
-        const match = matchesFilters(card);
-        card.classList.toggle('hidden', !match);
-        if (match) panelMatchCount++;
-      });
-      if (panel.dataset.yearPanel === currentYear) currentYearMatchCount = panelMatchCount;
+    let matchCount = 0;
+    searchCards.forEach((card) => {
+      const match =
+        (!query || card.dataset.title!.includes(query) || card.dataset.author!.includes(query)) &&
+        matchesFilters(card);
+      card.classList.toggle('hidden', !match);
+      if (match) {
+        matchCount++;
+        loadCardImage(card);
+      }
     });
 
-    showResultsStatus(currentYearMatchCount, filtersActive);
+    showResultsStatus(matchCount, true);
   }
 
   searchInput.addEventListener('input', render);

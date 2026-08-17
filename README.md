@@ -38,7 +38,7 @@ src/
 │   ├── now.astro                   # Now page
 │   ├── uses.astro                  # Uses page
 │   ├── friends.astro               # Friends page
-│   ├── reading.astro               # Reading page (tabbed year-by-year book log, 2020-2026; cross-year search + a Filters popover for audiobooks/exact star rating that filters within the current year)
+│   ├── reading.astro               # Reading page (tabbed year-by-year book log, 2020-2026; search + a Filters popover for audiobooks/exact star rating, both spanning every year)
 │   ├── colophon.astro              # Colophon page
 │   ├── identity-statement.astro    # Identity statement page
 │   ├── rss.xml.js                  # RSS feed
