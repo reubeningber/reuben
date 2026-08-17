@@ -116,7 +116,6 @@ const audioCount = allBooks.filter((book) => book.audio).length;
                 </button>
               ))}
             </div>
-            <p id="rating-filter-label" class="mt-1.5 text-xs text-secondary">Any rating</p>
           </div>
 
           <button
@@ -248,7 +247,6 @@ const audioCount = allBooks.filter((book) => book.audio).length;
   const filtersCountBadge = document.getElementById('filters-count-badge')!;
   const clearFiltersButton = document.getElementById('clear-filters') as HTMLButtonElement;
   const ratingStars = document.querySelectorAll<HTMLButtonElement>('.rating-star');
-  const ratingFilterLabel = document.getElementById('rating-filter-label')!;
 
   function setAudioToggleStyle(active: boolean) {
     audioToggle.setAttribute('aria-pressed', String(active));
@@ -364,14 +362,13 @@ const audioCount = allBooks.filter((book) => book.audio).length;
   function setRatingStarStyle() {
     ratingStars.forEach((star) => {
       const value = Number(star.dataset.ratingValue);
-      const active = value === minRating;
-      star.classList.toggle('text-accent', active);
-      star.classList.toggle('text-gray-300', !active);
-      star.setAttribute('aria-pressed', String(active));
-      star.querySelector('.star-filled')!.classList.toggle('hidden', !active);
-      star.querySelector('.star-empty')!.classList.toggle('hidden', active);
+      const filled = value <= minRating;
+      star.classList.toggle('text-accent', filled);
+      star.classList.toggle('text-gray-300', !filled);
+      star.setAttribute('aria-pressed', String(value === minRating));
+      star.querySelector('.star-filled')!.classList.toggle('hidden', !filled);
+      star.querySelector('.star-empty')!.classList.toggle('hidden', filled);
     });
-    ratingFilterLabel.textContent = minRating > 0 ? `${minRating}★` : 'Any rating';
   }
 
   function setMinRating(value: number) {
