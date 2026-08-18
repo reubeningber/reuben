@@ -8,6 +8,7 @@
 
 import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
 import { createHash } from "node:crypto";
+import { lookupGenre } from "./lib/genre.mjs";
 
 const GOODREADS_USER_ID = "7384813";
 const DATA_DIR = new URL("../src/data/reading/", import.meta.url);
@@ -216,6 +217,8 @@ async function main() {
     if (c.dateReadIso) entry.dateRead = c.dateReadIso;
     if (c.rating > 0) entry.rating = c.rating;
     if (c.audio) entry.audio = true;
+    const genre = await lookupGenre({ isbn: c.isbn, title: c.title, author: c.author });
+    if (genre) entry.genre = genre;
     byYear[c.year] = byYear[c.year] ?? [];
     byYear[c.year].push(entry);
     added.push(entry);
