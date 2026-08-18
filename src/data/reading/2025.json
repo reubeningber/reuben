@@ -52,7 +52,8 @@
     "cover": "reading_covers/39507318",
     "amazon": "https://www.amazon.com/dp/1476740186",
     "dateRead": "2025-10-08",
-    "rating": 2
+    "rating": 2,
+    "audio": true
   },
   {
     "title": "How to Keep Your Cool: An Ancient Guide to Anger Management (Ancient Wisdom for Modern Readers)",
@@ -84,7 +85,8 @@
     "cover": "reading_covers/220160925",
     "amazon": "https://www.amazon.com/dp/1668018047",
     "dateRead": "2025-10-08",
-    "rating": 5
+    "rating": 5,
+    "audio": true
   },
   {
     "title": "The Power of the Dog (Power of the Dog, #1)",
@@ -111,12 +113,13 @@
     "rating": 1
   },
   {
-    "title": "This Boy&apos;s Life",
+    "title": "This Boy's Life",
     "author": "Tobias Wolff",
     "cover": "reading_covers/11466",
     "amazon": "https://www.amazon.com/dp/0802136680",
     "dateRead": "2025-08-12",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "From Under the Truck: A Decidedly Un-Celebrity Memoir from the Enigmatic Actor",
@@ -132,7 +135,8 @@
     "cover": "reading_covers/18668022",
     "amazon": "https://www.amazon.com/dp/0525954066",
     "dateRead": "2025-07-26",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Sierra Six (Gray Man, #11)",
@@ -140,7 +144,8 @@
     "cover": "reading_covers/58122885",
     "amazon": "https://www.amazon.com/dp/0593099001",
     "dateRead": "2025-07-26",
-    "rating": 5
+    "rating": 5,
+    "audio": true
   },
   {
     "title": "Meditations for Mortals: Four Weeks to Embrace Your Limitations and Make Time for What Counts",
@@ -172,7 +177,8 @@
     "cover": "reading_covers/220239083",
     "amazon": "https://www.amazon.com/dp/0593854284",
     "dateRead": "2025-07-10",
-    "rating": 5
+    "rating": 5,
+    "audio": true
   },
   {
     "title": "The Klansman’s Son: My Journey from White Nationalism to Antiracism",
@@ -180,7 +186,8 @@
     "cover": "reading_covers/195660561",
     "amazon": "https://www.amazon.com/dp/1419764780",
     "dateRead": "2025-07-09",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "A Time to Stand: The Epic of the Alamo",
@@ -227,7 +234,8 @@
     "cover": "reading_covers/75404",
     "amazon": "https://www.amazon.com/dp/0449910032",
     "dateRead": "2025-05-28",
-    "rating": 1
+    "rating": 1,
+    "audio": true
   },
   {
     "title": "Hard Rain Falling (New York Review Books Classics)",
@@ -275,7 +283,17 @@
     "cover": "reading_covers/220341389",
     "amazon": "https://www.amazon.com/dp/0525556575",
     "dateRead": "2025-04-07",
-    "rating": 4
+    "rating": 4,
+    "audio": true
+  },
+  {
+    "title": "Fahrenheit-182: A Memoir",
+    "author": "Mark Hoppus",
+    "cover": "reading_covers/219129379",
+    "amazon": "https://www.amazon.com/dp/0063318911",
+    "dateRead": "2025-04-06",
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Careless People: A Cautionary Tale of Power, Greed, and Lost Idealism",
@@ -283,7 +301,8 @@
     "cover": "reading_covers/223436601",
     "amazon": "https://www.amazon.com/dp/1250391237",
     "dateRead": "2025-04-05",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "Relentless (Gray Man, #10)",
@@ -291,7 +310,8 @@
     "cover": "reading_covers/53990866",
     "amazon": "https://www.amazon.com/s?k=Relentless+Mark+Greaney",
     "dateRead": "2025-03-28",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Abundance",
@@ -323,7 +343,8 @@
     "cover": "reading_covers/53547339",
     "amazon": "https://www.amazon.com/s?k=Keep+Chopping+Wood+Kevin+DeShazo",
     "dateRead": "2025-02-18",
-    "rating": 5
+    "rating": 5,
+    "audio": true
   },
   {
     "title": "One Second After (After #1)",
@@ -347,7 +368,8 @@
     "cover": "reading_covers/61913599",
     "amazon": "https://www.amazon.com/dp/0593237412",
     "dateRead": "2025-02-08",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "The Siege: A Six-Day Hostage Crisis and the Daring Special-Forces Operation That Shocked the World",
@@ -363,7 +385,8 @@
     "cover": "reading_covers/203579088",
     "amazon": "https://www.amazon.com/dp/1250285704",
     "dateRead": "2025-01-26",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "The Tiger: A True Story of Vengeance and Survival",
@@ -371,7 +394,8 @@
     "cover": "reading_covers/7624594",
     "amazon": "https://www.amazon.com/dp/0307268934",
     "dateRead": "2025-01-21",
-    "rating": 2
+    "rating": 2,
+    "audio": true
   },
   {
     "title": "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",

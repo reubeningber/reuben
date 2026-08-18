@@ -20,7 +20,8 @@
     "author": "Tom Perrotta",
     "cover": "reading_covers/28282",
     "amazon": "https://www.amazon.com/dp/0425167283",
-    "dateRead": "2026-08-04"
+    "dateRead": "2026-08-04",
+    "audio": true
   },
   {
     "title": "Tokyo Express",
@@ -85,7 +86,8 @@
     "cover": "reading_covers/244994176",
     "amazon": "https://www.amazon.com/s?k=Smile%2C+or+You%27re+Doing+it+Wrong+Andy+Glaze",
     "dateRead": "2026-05-08",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "A Walk in the Woods: Rediscovering America on the Appalachian Trail",
@@ -133,7 +135,8 @@
     "cover": "reading_covers/30687200",
     "amazon": "https://www.amazon.com/dp/1101924926",
     "dateRead": "2026-04-14",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Among the Bros: A Fraternity Crime Story-The True Story of a Journalist's Investigation into a Fraternity Drug Ring",
@@ -141,7 +144,8 @@
     "cover": "reading_covers/70240470",
     "amazon": "https://www.amazon.com/dp/0063099551",
     "dateRead": "2026-04-14",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "The Second World",
@@ -173,14 +177,16 @@
     "cover": "reading_covers/203579030",
     "amazon": "https://www.amazon.com/dp/125089770X",
     "dateRead": "2026-02-27",
-    "rating": 5
+    "rating": 5,
+    "audio": true
   },
   {
     "title": "Race Against Terror: Chasing an Al Qaeda Killer at the Dawn of the Forever War",
     "author": "Jake Tapper",
     "cover": "reading_covers/224004727",
     "amazon": "https://www.amazon.com/dp/1668079445",
-    "dateRead": "2026-02-24"
+    "dateRead": "2026-02-24",
+    "audio": true
   },
   {
     "title": "Train Dreams: A Novella",
@@ -196,7 +202,8 @@
     "cover": "reading_covers/219441947",
     "amazon": "https://www.amazon.com/dp/1668095254",
     "dateRead": "2026-01-28",
-    "rating": 2
+    "rating": 2,
+    "audio": true
   },
   {
     "title": "Ghost (Track, #1)",

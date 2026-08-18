@@ -5,7 +5,8 @@
     "cover": "reading_covers/46008456",
     "amazon": "https://www.amazon.com/s?k=One+Minute+Out+Mark+Greaney",
     "dateRead": "2024-12-20",
-    "rating": 5
+    "rating": 5,
+    "audio": true
   },
   {
     "title": "Pirate Hunters: Treasure, Obsession, and the Search for a Legendary Pirate Ship",
@@ -29,7 +30,8 @@
     "cover": "reading_covers/171681821",
     "amazon": "https://www.amazon.com/dp/0593655036",
     "dateRead": "2024-12-12",
-    "rating": 5
+    "rating": 5,
+    "audio": true
   },
   {
     "title": "The Art Thief: A True Story of Love, Crime, and a Dangerous Obsession",
@@ -93,7 +95,8 @@
     "cover": "reading_covers/42872963",
     "amazon": "https://www.amazon.com/dp/0593084195",
     "dateRead": "2024-11-02",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "Never Play It Safe: A Practical Guide to Freedom, Creativity, and a Life You Love",
@@ -101,7 +104,8 @@
     "cover": "reading_covers/199793363",
     "amazon": "https://www.amazon.com/dp/0062879995",
     "dateRead": "2024-10-31",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "Day of Infamy",
@@ -125,7 +129,8 @@
     "cover": "reading_covers/204316858",
     "amazon": "https://www.amazon.com/dp/0593299825",
     "dateRead": "2024-10-10",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "American War",
@@ -141,7 +146,8 @@
     "cover": "reading_covers/182733784",
     "amazon": "https://www.amazon.com/dp/0593476093",
     "dateRead": "2024-09-25",
-    "rating": 5
+    "rating": 5,
+    "audio": true
   },
   {
     "title": "Yellow Bird: Oil, Murder, and a Woman's Search for Justice in Indian Country",
@@ -149,7 +155,8 @@
     "cover": "reading_covers/46180988",
     "amazon": "https://www.amazon.com/dp/0399589155",
     "dateRead": "2024-09-19",
-    "rating": 2
+    "rating": 2,
+    "audio": true
   },
   {
     "title": "The Premonition: A Pandemic Story",
@@ -196,7 +203,8 @@
     "cover": "reading_covers/129356",
     "amazon": "https://www.amazon.com/dp/1550225480",
     "dateRead": "2024-08-13",
-    "rating": 2
+    "rating": 2,
+    "audio": true
   },
   {
     "title": "Firestorm (The Prosecution Force, #5)",
@@ -219,7 +227,8 @@
     "cover": "reading_covers/195791688",
     "amazon": "https://www.amazon.com/dp/1982163895",
     "dateRead": "2024-08-05",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Finding Your Third Place: Building Happier Communities (and Making Great Friends Along the Way)",
@@ -242,7 +251,8 @@
     "cover": "reading_covers/199202138",
     "amazon": "https://www.amazon.com/dp/1405956879",
     "dateRead": "2024-07-26",
-    "rating": 2
+    "rating": 2,
+    "audio": true
   },
   {
     "title": "Red Sky Mourning (Terminal List #7)",
@@ -274,7 +284,8 @@
     "cover": "reading_covers/60879770",
     "amazon": "https://www.amazon.com/dp/0063085526",
     "dateRead": "2024-06-22",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "The Defector",
@@ -290,7 +301,8 @@
     "cover": "reading_covers/180352087",
     "amazon": "https://www.amazon.com/dp/1400338611",
     "dateRead": "2024-06-09",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "The Believer: A Year in the Fly Fishing Life",
@@ -298,7 +310,8 @@
     "cover": "reading_covers/176443117",
     "amazon": "https://www.amazon.com/dp/1668004712",
     "dateRead": "2024-06-05",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "Failed State (The Prosecution Force, #4)",
@@ -330,7 +343,8 @@
     "cover": "reading_covers/13343801",
     "amazon": "https://www.amazon.com/dp/1439189757",
     "dateRead": "2024-04-30",
-    "rating": 5
+    "rating": 5,
+    "audio": true
   },
   {
     "title": "Living with a SEAL: 31 Days Training with the Toughest Man on the Planet",
@@ -395,7 +409,8 @@
     "cover": "reading_covers/128713713",
     "amazon": "https://www.amazon.com/s?k=Building+a+Non-Anxious+Life+John+Delony",
     "dateRead": "2024-03-18",
-    "rating": 2
+    "rating": 2,
+    "audio": true
   },
   {
     "title": "Shadow Divers",
@@ -436,7 +451,8 @@
     "cover": "reading_covers/75289864",
     "amazon": "https://www.amazon.com/dp/006325316X",
     "dateRead": "2024-02-20",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "Brink of War (The Prosecution Force, #1)",
@@ -460,7 +476,8 @@
     "cover": "reading_covers/137959034",
     "amazon": "https://www.amazon.com/s?k=Choose+Strong+Sally+McRae",
     "dateRead": "2024-02-10",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "A Fever in the Heartland: The Ku Klux Klan's Plot to Take Over America, and the Woman Who Stopped Them",
@@ -531,7 +548,8 @@
     "cover": "reading_covers/149105520",
     "amazon": "https://www.amazon.com/dp/1324074337",
     "dateRead": "2024-01-05",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Good Inside: A Guide to Becoming the Parent You Want to Be",

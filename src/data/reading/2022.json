@@ -5,7 +5,8 @@
     "cover": "reading_covers/18891286",
     "amazon": "https://www.amazon.com/dp/1608680916",
     "dateRead": "2022-12-31",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "The Inner Game of Tennis: The Classic Guide to the Mental Side of Peak Performance",
@@ -13,7 +14,8 @@
     "cover": "reading_covers/905",
     "amazon": "https://www.amazon.com/dp/0679778314",
     "dateRead": "2022-12-30",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "The 3 Alarms: A Simple System to Transform Your Health, Wealth, and Relationships Forever",
@@ -79,7 +81,8 @@
     "cover": "reading_covers/34962304",
     "amazon": "https://www.amazon.com/dp/0399563768",
     "dateRead": "2022-12-16",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "The Candy House",
@@ -95,7 +98,8 @@
     "cover": "reading_covers/60462182",
     "amazon": "https://www.amazon.com/dp/0385548109",
     "dateRead": "2022-12-15",
-    "rating": 5
+    "rating": 5,
+    "audio": true
   },
   {
     "title": "Things My Son Needs to Know About the World",
@@ -103,7 +107,8 @@
     "cover": "reading_covers/42833687",
     "amazon": "https://www.amazon.com/dp/1501196863",
     "dateRead": "2022-12-12",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "Vacationland: True Stories from Painful Beaches",
@@ -111,7 +116,8 @@
     "cover": "reading_covers/39391175",
     "amazon": "https://www.amazon.com/dp/073522482X",
     "dateRead": "2022-12-09",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "The Unlikely Thru-Hiker: An Appalachian Trail Journey",
@@ -136,7 +142,8 @@
     "cover": "reading_covers/35404398",
     "amazon": "https://www.amazon.com/dp/1542097193",
     "dateRead": "2022-12-02",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "This is Going to Hurt: Secret Diaries of a Junior Doctor",
@@ -144,7 +151,8 @@
     "cover": "reading_covers/35510008",
     "amazon": "https://www.amazon.com/s?k=This+is+Going+to+Hurt+Adam+Kay",
     "dateRead": "2022-11-30",
-    "rating": 2
+    "rating": 2,
+    "audio": true
   },
   {
     "title": "The Splendid and the Vile: A Saga of Churchill, Family, and Defiance During the Blitz",
@@ -200,7 +208,8 @@
     "cover": "reading_covers/33413128",
     "amazon": "https://www.amazon.com/s?k=Beartown+Fredrik+Backman",
     "dateRead": "2022-11-12",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Falling",
@@ -216,7 +225,8 @@
     "cover": "reading_covers/18170143",
     "amazon": "https://www.amazon.com/dp/0316253014",
     "dateRead": "2022-11-01",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Grace: President Obama and Ten Days in the Battle for America",
@@ -232,7 +242,8 @@
     "cover": "reading_covers/193755",
     "amazon": "https://www.amazon.com/dp/0375701214",
     "dateRead": "2022-10-25",
-    "rating": 2
+    "rating": 2,
+    "audio": true
   },
   {
     "title": "Red Notice: A True Story of High Finance, Murder, and One Man's Fight for Justice",
@@ -240,7 +251,8 @@
     "cover": "reading_covers/22609522",
     "amazon": "https://www.amazon.com/dp/147675571X",
     "dateRead": "2022-10-25",
-    "rating": 5
+    "rating": 5,
+    "audio": true
   },
   {
     "title": "Rising Tide: the Great Mississippi Flood of 1927 and How it Changed America",
@@ -248,7 +260,8 @@
     "cover": "reading_covers/49376",
     "amazon": "https://www.amazon.com/dp/0684840022",
     "dateRead": "2022-10-22",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Killing Floor (Jack Reacher #1)",
@@ -264,7 +277,8 @@
     "cover": "reading_covers/10256723",
     "amazon": "https://www.amazon.com/dp/0316037702",
     "dateRead": "2022-10-17",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "Any Given Tuesday: A Political Love Story",
@@ -272,7 +286,8 @@
     "cover": "reading_covers/59445998",
     "amazon": "https://www.amazon.com/dp/0063084392",
     "dateRead": "2022-10-11",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "Braving the Wilderness",
@@ -312,7 +327,8 @@
     "cover": "reading_covers/40864002",
     "amazon": "https://www.amazon.com/s?k=A+Psalm+for+the+Wild-Built+Becky+Chambers",
     "dateRead": "2022-09-26",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Mouth to Mouth",
@@ -333,7 +349,7 @@
   },
   {
     "title": "We've Got to Try: How the Fight for Voting Rights Makes Everything Else Possible",
-    "author": "Beto O&apos;Rourke",
+    "author": "Beto O'Rourke",
     "cover": "reading_covers/62059734",
     "amazon": "https://www.amazon.com/dp/1250852471",
     "dateRead": "2022-09-22",
@@ -353,7 +369,8 @@
     "cover": "reading_covers/41016100",
     "amazon": "https://www.amazon.com/s?k=The+Coming+Storm+Michael+Lewis",
     "dateRead": "2022-09-17",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "The Burnout Generation",
@@ -361,7 +378,8 @@
     "cover": "reading_covers/49744485",
     "amazon": "https://www.amazon.com/s?k=The+Burnout+Generation+Anne+Helen+Petersen",
     "dateRead": "2022-09-17",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "The Cuckoo's Egg: Tracking a Spy Through the Maze of Computer Espionage",
@@ -386,7 +404,8 @@
     "cover": "reading_covers/58312014",
     "amazon": "https://www.amazon.com/dp/0358658969",
     "dateRead": "2022-09-07",
-    "rating": 5
+    "rating": 5,
+    "audio": true
   },
   {
     "title": "North: Finding My Way While Running the Appalachian Trail",
@@ -394,7 +413,8 @@
     "cover": "reading_covers/34219858",
     "amazon": "https://www.amazon.com/dp/0316433799",
     "dateRead": "2022-09-03",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Call Sign Chaos",
@@ -410,11 +430,12 @@
     "cover": "reading_covers/40672036",
     "amazon": "https://www.amazon.com/dp/052553654X",
     "dateRead": "2022-08-26",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "The Greatest Beer Run Ever: A Memoir of Friendship, Loyalty, and War",
-    "author": "John &quot;Chick&quot; Donohue",
+    "author": "John \"Chick\" Donohue",
     "cover": "reading_covers/51938894",
     "amazon": "https://www.amazon.com/dp/0062995464",
     "dateRead": "2022-08-21",
@@ -426,7 +447,8 @@
     "cover": "reading_covers/36204857",
     "amazon": "https://www.amazon.com/dp/1478993421",
     "dateRead": "2022-08-19",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "Upgrade",
@@ -442,7 +464,8 @@
     "cover": "reading_covers/18774964",
     "amazon": "https://www.amazon.com/dp/1476738017",
     "dateRead": "2022-08-16",
-    "rating": 5
+    "rating": 5,
+    "audio": true
   },
   {
     "title": "Endurance: Shackleton's Incredible Voyage",
@@ -450,7 +473,8 @@
     "cover": "reading_covers/139069",
     "amazon": "https://www.amazon.com/s?k=Endurance+Alfred+Lansing",
     "dateRead": "2022-08-13",
-    "rating": 5
+    "rating": 5,
+    "audio": true
   },
   {
     "title": "In the Blood (Terminal List, #5)",
@@ -466,7 +490,8 @@
     "cover": "reading_covers/2195464",
     "amazon": "https://www.amazon.com/s?k=What+I+Talk+About+When+I+Talk+About+Running+Haruki+Murakami",
     "dateRead": "2022-08-02",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Reasons to Stay Alive",
@@ -474,7 +499,8 @@
     "cover": "reading_covers/25733573",
     "amazon": "https://www.amazon.com/dp/0143128728",
     "dateRead": "2022-07-31",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "The Spartan Way: Eat Better. Train Better. Think Better. Be Better.",
@@ -482,7 +508,8 @@
     "cover": "reading_covers/36703410",
     "amazon": "https://www.amazon.com/dp/1250153212",
     "dateRead": "2022-07-29",
-    "rating": 2
+    "rating": 2,
+    "audio": true
   },
   {
     "title": "Stop Overthinking: 23 Techniques to Relieve Stress, Stop Negative Spirals, Declutter Your Mind, and Focus on the Present (The Path to Calm Book 1)",
@@ -498,7 +525,8 @@
     "cover": "reading_covers/44781614",
     "amazon": "https://www.amazon.com/dp/1780894260",
     "dateRead": "2022-07-22",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Pee Wees: Confessions of a Hockey Parent",
@@ -530,7 +558,8 @@
     "cover": "reading_covers/40645634",
     "amazon": "https://www.amazon.com/dp/1524732621",
     "dateRead": "2022-07-01",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "A Better Man: A (Mostly Serious) Letter to My Son",
@@ -538,7 +567,8 @@
     "cover": "reading_covers/40680478",
     "amazon": "https://www.amazon.com/dp/1616209119",
     "dateRead": "2022-06-26",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "The Lincoln Highway",
@@ -546,7 +576,8 @@
     "cover": "reading_covers/57109107",
     "amazon": "https://www.amazon.com/dp/0735222355",
     "dateRead": "2022-06-25",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "The River",
@@ -557,7 +588,7 @@
     "rating": 4
   },
   {
-    "title": "Why We&apos;re Polarized",
+    "title": "Why We're Polarized",
     "author": "Ezra Klein",
     "cover": "reading_covers/52098718",
     "amazon": "https://www.amazon.com/dp/147670032X",
@@ -578,7 +609,8 @@
     "cover": "reading_covers/58784468",
     "amazon": "https://www.amazon.com/dp/0593238265",
     "dateRead": "2022-06-06",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "How to Be Great at Your Job: Get things done. Get the credit. Get ahead. (Graduation Gift, Corporate Survival Guide, Career Handbook)",
@@ -594,7 +626,8 @@
     "cover": "reading_covers/54265145",
     "amazon": "https://www.amazon.com/dp/1982123745",
     "dateRead": "2022-06-01",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Tiny Habits: The Small Changes That Change Everything",
@@ -610,7 +643,8 @@
     "cover": "reading_covers/35604044",
     "amazon": "https://www.amazon.com/dp/0062696165",
     "dateRead": "2022-05-24",
-    "rating": 2
+    "rating": 2,
+    "audio": true
   },
   {
     "title": "Can't Hurt Me: Master Your Mind and Defy the Odds",
@@ -618,7 +652,8 @@
     "cover": "reading_covers/41721428",
     "amazon": "https://www.amazon.com/dp/1544512260",
     "dateRead": "2022-05-24",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "The President's Man: The Memoirs of Nixon's Trusted Aide – A Historic Journey Through Watergate, China, and the Soviet Union",
@@ -634,7 +669,8 @@
     "cover": "reading_covers/54705911",
     "amazon": "https://www.amazon.com/dp/0593187555",
     "dateRead": "2022-05-10",
-    "rating": 5
+    "rating": 5,
+    "audio": true
   },
   {
     "title": "Just Mercy: A Story of Justice and Redemption",
@@ -650,7 +686,8 @@
     "cover": "reading_covers/54968118",
     "amazon": "https://www.amazon.com/dp/1982115858",
     "dateRead": "2022-05-06",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "The High 5 Habit: Take Control of Your Life with One Simple Habit",
@@ -674,7 +711,8 @@
     "cover": "reading_covers/40225612",
     "amazon": "https://www.amazon.com/dp/1328506452",
     "dateRead": "2022-04-22",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "Faster Than Normal: Turbocharge Your Focus, Productivity, and Success with the Secrets of the ADHD Brain",
@@ -690,7 +728,8 @@
     "cover": "reading_covers/773858",
     "amazon": "https://www.amazon.com/dp/1416553649",
     "dateRead": "2022-04-17",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "Soundtracks: The Surprising Solution to Overthinking (Overcome Toxic Thought Patterns and Take Control of Your Mindset)",
@@ -706,7 +745,8 @@
     "cover": "reading_covers/17404747",
     "amazon": "https://www.amazon.com/s?k=The+Boys+in+the+Boat+Daniel+James+Brown",
     "dateRead": "2022-04-14",
-    "rating": 5
+    "rating": 5,
+    "audio": true
   },
   {
     "title": "How to Fight Anti-Semitism",
@@ -722,7 +762,8 @@
     "cover": "reading_covers/56241022",
     "amazon": "https://www.amazon.com/s?k=The+Midnight+Library+Matt+Haig",
     "dateRead": "2022-04-04",
-    "rating": 5
+    "rating": 5,
+    "audio": true
   },
   {
     "title": "The Match (Wilde, #2)",
@@ -730,7 +771,8 @@
     "cover": "reading_covers/58340968",
     "amazon": "https://www.amazon.com/s?k=The+Match+Harlan+Coben",
     "dateRead": "2022-04-01",
-    "rating": 5
+    "rating": 5,
+    "audio": true
   },
   {
     "title": "Run Like a Pro (Even If You're Slow): Elite Tools and Tips for Runners at Every Level",
@@ -746,7 +788,8 @@
     "cover": "reading_covers/36236124",
     "amazon": "https://www.amazon.com/dp/0393355942",
     "dateRead": "2022-03-29",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "A Runner’s High: My Life in Motion",
@@ -754,7 +797,8 @@
     "cover": "reading_covers/55378874",
     "amazon": "https://www.amazon.com/dp/0062955551",
     "dateRead": "2022-03-25",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Happy People Are Annoying",
@@ -762,7 +806,8 @@
     "cover": "reading_covers/57293647",
     "amazon": "https://www.amazon.com/dp/0063073633",
     "dateRead": "2022-03-23",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Randomize (Forward Collection, #6)",
@@ -786,7 +831,8 @@
     "cover": "reading_covers/18050185",
     "amazon": "https://www.amazon.com/dp/1400069858",
     "dateRead": "2022-03-17",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Once a Runner",
@@ -794,7 +840,8 @@
     "cover": "reading_covers/98250",
     "amazon": "https://www.amazon.com/dp/0915297019",
     "dateRead": "2022-03-11",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Syllabus: Notes From an Accidental Professor (Lynda Barry's Creativity Series)",
@@ -810,7 +857,8 @@
     "cover": "reading_covers/34189313",
     "amazon": "https://www.amazon.com/dp/1682612392",
     "dateRead": "2022-03-05",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Address Unknown",
@@ -826,7 +874,8 @@
     "cover": "reading_covers/18656827",
     "amazon": "https://www.amazon.com/dp/1591846013",
     "dateRead": "2022-03-01",
-    "rating": 5
+    "rating": 5,
+    "audio": true
   },
   {
     "title": "Savage Son (Terminal List #3)",
@@ -842,7 +891,8 @@
     "cover": "reading_covers/1171",
     "amazon": "https://www.amazon.com/dp/0140143459",
     "dateRead": "2022-02-21",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "The Coddling of the American Mind: How Good Intentions and Bad Ideas Are Setting up a Generation for Failure",
@@ -858,7 +908,8 @@
     "cover": "reading_covers/56470423",
     "amazon": "https://www.amazon.com/dp/0063136740",
     "dateRead": "2022-02-16",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Five Days at Memorial: Life and Death in a Storm-Ravaged Hospital",
@@ -866,7 +917,8 @@
     "cover": "reading_covers/17704902",
     "amazon": "https://www.amazon.com/dp/0307718964",
     "dateRead": "2022-02-12",
-    "rating": 5
+    "rating": 5,
+    "audio": true
   },
   {
     "title": "The War of Art",
@@ -890,7 +942,8 @@
     "cover": "reading_covers/28365038",
     "amazon": "https://www.amazon.com/dp/1476793255",
     "dateRead": "2022-02-05",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "The Lost Boys of Montauk: The True Story of the Wind Blown, Four Men Who Vanished at Sea, and the Survivors They Left Behind",
@@ -898,7 +951,8 @@
     "cover": "reading_covers/55711528",
     "amazon": "https://www.amazon.com/dp/198210323X",
     "dateRead": "2022-02-04",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "I Will Teach You to Be Rich: No Guilt. No Excuses. No B.S. Just a 6-Week Program That Works.",
@@ -922,7 +976,8 @@
     "cover": "reading_covers/40184559",
     "amazon": "https://www.amazon.com/dp/194688569X",
     "dateRead": "2022-01-27",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "Bourdain: The Definitive Oral Biography",
@@ -930,7 +985,8 @@
     "cover": "reading_covers/56645907",
     "amazon": "https://www.amazon.com/dp/006290910X",
     "dateRead": "2022-01-27",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "The Secret Life of Groceries: The Dark Miracle of the American Supermarket",
@@ -938,7 +994,8 @@
     "cover": "reading_covers/50548165",
     "amazon": "https://www.amazon.com/dp/0553459392",
     "dateRead": "2022-01-21",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "So Good They Can't Ignore You: Why Skills Trump Passion in the Quest for Work You Love",
@@ -946,7 +1003,8 @@
     "cover": "reading_covers/13525945",
     "amazon": "https://www.amazon.com/dp/1455509108",
     "dateRead": "2022-01-17",
-    "rating": 5
+    "rating": 5,
+    "audio": true
   },
   {
     "title": "Yes to Life: In Spite of Everything",
@@ -970,6 +1028,7 @@
     "cover": "reading_covers/30753738",
     "amazon": "https://www.amazon.com/dp/1501130781",
     "dateRead": "2022-01-07",
-    "rating": 5
+    "rating": 5,
+    "audio": true
   }
 ]

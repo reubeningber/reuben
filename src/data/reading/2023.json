@@ -5,7 +5,8 @@
     "cover": "reading_covers/40202025",
     "amazon": "https://www.amazon.com/s?k=Mission+Critical+Mark+Greaney",
     "dateRead": "2023-12-31",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Scarcity Brain: Fix Your Craving Mindset and Rewire Your Habits to Thrive with Enough",
@@ -21,7 +22,8 @@
     "cover": "reading_covers/20758175",
     "amazon": "https://www.amazon.com/dp/1616149981",
     "dateRead": "2023-12-24",
-    "rating": 5
+    "rating": 5,
+    "audio": true
   },
   {
     "title": "Deep Work: Rules for Focused Success in a Distracted World",
@@ -37,7 +39,8 @@
     "cover": "reading_covers/59364113",
     "amazon": "https://www.amazon.com/dp/1982163321",
     "dateRead": "2023-12-22",
-    "rating": 2
+    "rating": 2,
+    "audio": true
   },
   {
     "title": "Drowning: The Rescue of Flight 1421",
@@ -45,7 +48,8 @@
     "cover": "reading_covers/175427660",
     "amazon": "https://www.amazon.com/s?k=Drowning+T.J.+Newman",
     "dateRead": "2023-12-22",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Five Floors Up: The Heroic Family Story of Four Generations in the FDNY",
@@ -61,7 +65,8 @@
     "cover": "reading_covers/62919386",
     "amazon": "https://www.amazon.com/dp/1668010690",
     "dateRead": "2023-12-06",
-    "rating": 2
+    "rating": 2,
+    "audio": true
   },
   {
     "title": "Barbarian Days: A Surfing Life",
@@ -72,12 +77,22 @@
     "rating": 2
   },
   {
+    "title": "Tough Jews: Fathers, Sons, and Gangster Dreams",
+    "author": "Rich Cohen",
+    "cover": "reading_covers/73370",
+    "amazon": "https://www.amazon.com/dp/0375705473",
+    "dateRead": "2023-11-18",
+    "rating": 3,
+    "audio": true
+  },
+  {
     "title": "Beautiful Boy: A Father's Journey Through His Son's Addiction",
     "author": "David Sheff",
     "cover": "reading_covers/35721089",
     "amazon": "https://www.amazon.com/dp/1328974715",
     "dateRead": "2023-11-13",
-    "rating": 5
+    "rating": 5,
+    "audio": true
   },
   {
     "title": "The Dog Stars",
@@ -93,7 +108,8 @@
     "cover": "reading_covers/61796659",
     "amazon": "https://www.amazon.com/dp/1250827280",
     "dateRead": "2023-11-06",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "Build the Life You Want: The Art and Science of Getting Happier",
@@ -101,7 +117,8 @@
     "cover": "reading_covers/137978862",
     "amazon": "https://www.amazon.com/dp/0593545400",
     "dateRead": "2023-11-05",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Agent in Place (Gray Man, #7)",
@@ -133,7 +150,8 @@
     "cover": "reading_covers/43229556",
     "amazon": "https://www.amazon.com/dp/0062916432",
     "dateRead": "2023-10-24",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Walking to Listen: 4,000 Miles Across America, One Story at a Time",
@@ -154,11 +172,12 @@
   },
   {
     "title": "Empire State of Mind: How Jay-Z Went From Street Corner to Corner Office",
-    "author": "Zack O&apos;Malley Greenburg",
+    "author": "Zack O'Malley Greenburg",
     "cover": "reading_covers/9430007",
     "amazon": "https://www.amazon.com/dp/1591843812",
     "dateRead": "2023-10-14",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "Home: Can we ever run away from who we once were?",
@@ -215,7 +234,8 @@
     "cover": "reading_covers/60613920",
     "amazon": "https://www.amazon.com/dp/1800750544",
     "dateRead": "2023-09-26",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "The Right Stuff",
@@ -223,7 +243,8 @@
     "cover": "reading_covers/8146619",
     "amazon": "https://www.amazon.com/s?k=The+Right+Stuff+Tom+Wolfe",
     "dateRead": "2023-09-20",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Soul Boom: Why We Need a Spiritual Revolution",
@@ -231,7 +252,8 @@
     "cover": "reading_covers/61918539",
     "amazon": "https://www.amazon.com/dp/0306828278",
     "dateRead": "2023-09-20",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "One Way (Frank Kitteridge, #1)",
@@ -247,7 +269,8 @@
     "cover": "reading_covers/13425570",
     "amazon": "https://www.amazon.com/dp/0062102427",
     "dateRead": "2023-09-12",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "Above Ground",
@@ -263,7 +286,8 @@
     "cover": "reading_covers/36722972",
     "amazon": "https://www.amazon.com/dp/0374103119",
     "dateRead": "2023-09-08",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Attention Span: A Groundbreaking Way to Restore Balance, Happiness and Productivity",
@@ -274,12 +298,13 @@
     "rating": 2
   },
   {
-    "title": "When the World Didn&apos;t End",
+    "title": "When the World Didn't End",
     "author": "Guinevere Turner",
     "cover": "reading_covers/62192504",
     "amazon": "https://www.amazon.com/dp/0593237595",
     "dateRead": "2023-09-02",
-    "rating": 2
+    "rating": 2,
+    "audio": true
   },
   {
     "title": "Pines: Wayward Pines: 1 (The Wayward Pines Trilogy)",
@@ -319,7 +344,8 @@
     "cover": "reading_covers/56222237",
     "amazon": "https://www.amazon.com/dp/1541788842",
     "dateRead": "2023-08-15",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "A Night to Remember",
@@ -327,7 +353,8 @@
     "cover": "reading_covers/61834",
     "amazon": "https://www.amazon.com/dp/0805077642",
     "dateRead": "2023-08-11",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "The Lost City of Z: A Tale of Deadly Obsession in the Amazon",
@@ -335,7 +362,8 @@
     "cover": "reading_covers/3398625",
     "amazon": "https://www.amazon.com/dp/0385513534",
     "dateRead": "2023-08-11",
-    "rating": 2
+    "rating": 2,
+    "audio": true
   },
   {
     "title": "Gunmetal Gray (Gray Man, #6)",
@@ -472,7 +500,8 @@
     "cover": "reading_covers/62192506",
     "amazon": "https://www.amazon.com/dp/0593299752",
     "dateRead": "2023-05-31",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "The Book of Charlie: Wisdom from the Remarkable American Life of a 109-Year-Old Man",
@@ -480,7 +509,8 @@
     "cover": "reading_covers/62918681",
     "amazon": "https://www.amazon.com/dp/1476773920",
     "dateRead": "2023-05-28",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Home Game: An Accidental Guide to Fatherhood",
@@ -512,7 +542,8 @@
     "cover": "reading_covers/61271824",
     "amazon": "https://www.amazon.com/dp/1797152610",
     "dateRead": "2023-05-18",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "We Share the Sun: The Incredible Journey of Kenya's Legendary Running Coach Patrick Sang and the Fastest Runners on Earth",
@@ -528,7 +559,8 @@
     "cover": "reading_covers/61349370",
     "amazon": "https://www.amazon.com/dp/0785291814",
     "dateRead": "2023-05-06",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Jesus Land: A Memoir",
@@ -536,7 +568,8 @@
     "cover": "reading_covers/146064",
     "amazon": "https://www.amazon.com/dp/1582433542",
     "dateRead": "2023-05-03",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "12 Notes: Quincy Jones distills a lifetime of musical wisdom into twelve practical creative lessons.",
@@ -544,7 +577,8 @@
     "cover": "reading_covers/56969503",
     "amazon": "https://www.amazon.com/dp/1419752561",
     "dateRead": "2023-05-03",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Who By Fire: War, Atonement, and the Resurrection of Leonard Cohen",
@@ -682,7 +716,8 @@
     "cover": "reading_covers/41104144",
     "amazon": "https://www.amazon.com/dp/1419734628",
     "dateRead": "2023-03-06",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "On Target (Gray Man, #2)",
@@ -722,7 +757,8 @@
     "cover": "reading_covers/53916157",
     "amazon": "https://www.amazon.com/dp/1538748215",
     "dateRead": "2023-02-20",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Less (Arthur Less, #1)",
@@ -771,7 +807,8 @@
     "cover": "reading_covers/58724925",
     "amazon": "https://www.amazon.com/dp/1250824087",
     "dateRead": "2023-02-02",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Molly's Game: From Hollywood's Elite to Wall Street's Billionaire Boys Club, My High-Stakes Adventure in the World of Underground Poker",
@@ -779,7 +816,8 @@
     "cover": "reading_covers/18090048",
     "amazon": "https://www.amazon.com/dp/0062213075",
     "dateRead": "2023-01-30",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "The Volunteer: The True Story of the Resistance Hero who Infiltrated Auschwitz",
@@ -787,7 +825,8 @@
     "cover": "reading_covers/36316835",
     "amazon": "https://www.amazon.com/dp/0753545160",
     "dateRead": "2023-01-27",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "Here All Along: Finding Meaning, Spirituality, and a Deeper Connection to Life--in Judaism (After Finally Choosing to Look There)",
@@ -811,7 +850,8 @@
     "cover": "reading_covers/41795733",
     "amazon": "https://www.amazon.com/dp/0735214484",
     "dateRead": "2023-01-24",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "Without Remorse (John Clark, #1; Jack Ryan Universe, #1)",
@@ -827,7 +867,8 @@
     "cover": "reading_covers/54615879",
     "amazon": "https://www.amazon.com/s?k=The+Original+Brandon+Sanderson",
     "dateRead": "2023-01-21",
-    "rating": 5
+    "rating": 5,
+    "audio": true
   },
   {
     "title": "The Harder They Fall",
@@ -835,7 +876,8 @@
     "cover": "reading_covers/624988",
     "amazon": "https://www.amazon.com/dp/1566631076",
     "dateRead": "2023-01-19",
-    "rating": 4
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "My Year of Running Dangerously: A Dad, a Daughter, and a Ridiculous Plan",
@@ -843,7 +885,8 @@
     "cover": "reading_covers/24612100",
     "amazon": "https://www.amazon.com/dp/0399175474",
     "dateRead": "2023-01-09",
-    "rating": 3
+    "rating": 3,
+    "audio": true
   },
   {
     "title": "Mindset: The New Psychology of Success",

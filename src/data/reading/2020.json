@@ -8,6 +8,15 @@
     "rating": 5
   },
   {
+    "title": "The Ride of a Lifetime: Lessons Learned from 15 Years as CEO of the Walt Disney Company",
+    "author": "Robert Iger",
+    "cover": "reading_covers/44525305",
+    "amazon": "https://www.amazon.com/s?k=The%20Ride%20of%20a%20Lifetime%20Robert%20Iger",
+    "dateRead": "2020-12-22",
+    "rating": 4,
+    "audio": true
+  },
+  {
     "title": "A Promised Land",
     "author": "Barack Obama",
     "cover": "reading_covers/55361205",
@@ -16,12 +25,29 @@
     "rating": 3
   },
   {
+    "title": "The Spy and the Traitor: The Greatest Espionage Story of the Cold War",
+    "author": "Ben Macintyre",
+    "cover": "reading_covers/37542581",
+    "amazon": "https://www.amazon.com/dp/0771060335",
+    "dateRead": "2020-12-11",
+    "rating": 5
+  },
+  {
     "title": "Bad Blood: Secrets and Lies in a Silicon Valley Startup",
     "author": "John Carreyrou",
     "cover": "reading_covers/38799469",
     "amazon": "https://www.amazon.com/s?k=Bad+Blood+John+Carreyrou",
     "dateRead": "2020-12-10",
     "rating": 5
+  },
+  {
+    "title": "Trust: America's Best Chance",
+    "author": "Pete Buttigieg",
+    "cover": "reading_covers/54442229",
+    "amazon": "https://www.amazon.com/dp/1797119214",
+    "dateRead": "2020-12-04",
+    "rating": 4,
+    "audio": true
   },
   {
     "title": "The Dip: A Little Book That Teaches You When to Quit (and When to Stick)",
@@ -46,6 +72,48 @@
     "dateRead": "2020-12-03"
   },
   {
+    "title": "Homeland Elegies",
+    "author": "Ayad Akhtar",
+    "cover": "reading_covers/50358133",
+    "amazon": "https://www.amazon.com/dp/0316496421",
+    "dateRead": "2020-12-01",
+    "rating": 3,
+    "audio": true
+  },
+  {
+    "title": "Educated",
+    "author": "Tara Westover",
+    "cover": "reading_covers/35133922",
+    "amazon": "https://www.amazon.com/dp/0399590501",
+    "dateRead": "2020-11-11",
+    "rating": 5,
+    "audio": true
+  },
+  {
+    "title": "Greenlights",
+    "author": "Matthew McConaughey",
+    "cover": "reading_covers/52838315",
+    "amazon": "https://www.amazon.com/dp/0593139135",
+    "dateRead": "2020-10-26",
+    "rating": 3
+  },
+  {
+    "title": "When Bad Things Happen to Good People",
+    "author": "Harold S. Kushner",
+    "cover": "reading_covers/8122110",
+    "amazon": "https://www.amazon.com/s?k=When%20Bad%20Things%20Happen%20to%20Good%20People%20Harold%20S.%20Kushner",
+    "dateRead": "2020-09-01",
+    "rating": 5
+  },
+  {
+    "title": "Average Is Over: Powering America Beyond the Age of the Great Stagnation",
+    "author": "Tyler Cowen",
+    "cover": "reading_covers/18744904",
+    "amazon": "https://www.amazon.com/dp/0698138163",
+    "dateRead": "2020-09-01",
+    "rating": 3
+  },
+  {
     "title": "Patriot Games (Jack Ryan, #1; Jack Ryan Universe, #2)",
     "author": "Tom Clancy",
     "cover": "reading_covers/48723795",
@@ -54,12 +122,45 @@
     "rating": 3
   },
   {
+    "title": "Quiet: The Power of Introverts in a World That Can't Stop Talking",
+    "author": "Susan Cain",
+    "cover": "reading_covers/36547901",
+    "amazon": "https://www.amazon.com/s?k=Quiet%20Susan%20Cain",
+    "dateRead": "2020-07-01",
+    "rating": 5
+  },
+  {
     "title": "Ready Player One (Ready Player One, #1)",
     "author": "Ernest Cline",
     "cover": "reading_covers/20603758",
     "amazon": "https://www.amazon.com/s?k=Ready+Player+One+Ernest+Cline",
     "dateRead": "2020-05-22",
     "rating": 5
+  },
+  {
+    "title": "Let Your Mind Run: A Memoir of Thinking My Way to Victory",
+    "author": "Deena Kastor",
+    "cover": "reading_covers/35805862",
+    "amazon": "https://www.amazon.com/dp/1524760757",
+    "dateRead": "2020-05-06",
+    "rating": 3,
+    "audio": true
+  },
+  {
+    "title": "Anti-Diet: Reclaim Your Time, Money, Well-Being, and Happiness Through Intuitive Eating",
+    "author": "Christy Harrison",
+    "cover": "reading_covers/45730892",
+    "amazon": "https://www.amazon.com/dp/0316420352",
+    "dateRead": "2020-04-19",
+    "rating": 3
+  },
+  {
+    "title": "Chasing Excellence: A Story About Building the World’s Fittest Athletes",
+    "author": "Ben Bergeron",
+    "cover": "reading_covers/35713474",
+    "amazon": "https://www.amazon.com/dp/1619617293",
+    "dateRead": "2020-02-24",
+    "rating": 3
   },
   {
     "title": "The New New Thing: A Silicon Valley Story",
@@ -76,5 +177,37 @@
     "amazon": "https://www.amazon.com/dp/1501135937",
     "dateRead": "2020-01-22",
     "rating": 3
+  },
+  {
+    "title": "A Fool’s Errand (The John Harvard Library)",
+    "author": "Albion W. Tourgée",
+    "cover": "reading_covers/1132025",
+    "amazon": "https://www.amazon.com/dp/0674307518",
+    "dateRead": "2020-01-01",
+    "rating": 3
+  },
+  {
+    "title": "Running to the Edge: A Band of Misfits and the Guru Who Unlocked the Secrets of Speed",
+    "author": "Matthew Futterman",
+    "cover": "reading_covers/41880041",
+    "amazon": "https://www.amazon.com/dp/0385543743",
+    "dateRead": "2020-01-01",
+    "rating": 4
+  },
+  {
+    "title": "Better Boys, Better Men: The New Masculinity That Creates Greater Courage and Emotional Resiliency",
+    "author": "Andrew Reiner",
+    "cover": "reading_covers/50175231",
+    "amazon": "https://www.amazon.com/dp/0062854941",
+    "dateRead": "2020-01-01",
+    "rating": 4
+  },
+  {
+    "title": "Think Like a Monk: Train Your Mind for Peace and Purpose Everyday",
+    "author": "Jay Shetty",
+    "cover": "reading_covers/50758250",
+    "amazon": "https://www.amazon.com/dp/198213450X",
+    "dateRead": "2020-01-01",
+    "rating": 5
   }
 ]
