@@ -27,10 +27,21 @@ function requireEnv(name) {
   return v;
 }
 
+function decodeEntities(s) {
+  return s
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'")
+    .replace(/&#39;/g, "'")
+    .replace(/&#34;/g, '"')
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&amp;/g, "&");
+}
+
 function field(item, tag) {
   const m = item.match(new RegExp(`<${tag}>(?:<!\\[CDATA\\[(.*?)\\]\\]>|(.*?))</${tag}>`, "s"));
   if (!m) return "";
-  return (m[1] ?? m[2] ?? "").trim();
+  return decodeEntities((m[1] ?? m[2] ?? "").trim());
 }
 
 async function fetchShelf(params) {
