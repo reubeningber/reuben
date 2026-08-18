@@ -10,6 +10,7 @@ import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { lookupGenre } from "./lib/genre.mjs";
 import { field, amazonLink } from "./lib/rss.mjs";
+import { selectCandidates } from "./lib/candidates.mjs";
 
 const GOODREADS_USER_ID = "7384813";
 const DATA_DIR = new URL("../src/data/reading/", import.meta.url);
@@ -142,35 +143,14 @@ async function syncCurrentlyReading(knownCoverIds) {
   return { changed, entries };
 }
 
-function daysAgo(rfc2822Date) {
-  const d = new Date(rfc2822Date);
-  return (Date.now() - d.getTime()) / (1000 * 60 * 60 * 24);
-}
-
-function toIsoDate(rfc2822Date) {
-  return new Date(rfc2822Date).toISOString().slice(0, 10);
-}
-
 async function main() {
   const { byYear, existingIds } = loadExisting();
 
   const dated = await fetchShelf("shelf=read&sort=date_read&order=d&per_page=100");
   const defaultOrder = await fetchShelf("shelf=read&per_page=100");
 
-  const candidates = [];
   const currentYear = new Date().getFullYear();
-
-  for (const b of dated) {
-    if (!b.dateRead || existingIds.has(b.bookId)) continue;
-    candidates.push({ ...b, year: new Date(b.dateRead).getFullYear(), dateReadIso: toIsoDate(b.dateRead) });
-  }
-
-  for (const b of defaultOrder) {
-    if (b.dateRead || existingIds.has(b.bookId)) continue;
-    if (candidates.some((c) => c.bookId === b.bookId)) continue;
-    if (!b.dateAdded || daysAgo(b.dateAdded) > UNDATED_LOOKBACK_DAYS) continue;
-    candidates.push({ ...b, year: currentYear, dateReadIso: null });
-  }
+  const candidates = selectCandidates(dated, defaultOrder, existingIds, currentYear, UNDATED_LOOKBACK_DAYS);
 
   if (candidates.length === 0) {
     console.log("No new read books found.");
