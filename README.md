@@ -38,7 +38,7 @@ src/
 │   ├── now.astro                   # Now page
 │   ├── uses.astro                  # Uses page
 │   ├── friends.astro               # Friends page
-│   ├── reading.astro               # Reading page (tabbed year-by-year book log, 2026 down to 2020 plus a "2019…" tab for older/undated reads; search + a Filters popover for audiobooks/exact star rating, both spanning every year)
+│   ├── reading.astro               # Reading page (tabbed year-by-year book log, 2026 down to 2020 plus a "2019…" tab for older/undated reads; search + a Filters popover for audiobooks/exact star rating/genre, all spanning every year)
 │   ├── colophon.astro              # Colophon page
 │   ├── changelog.astro             # Changelog page (hand-maintained log of site changes)
 │   ├── identity-statement.astro    # Identity statement page
@@ -171,7 +171,7 @@ Creates a new blog post with interactive prompts.
 
 ### `scripts/update-reading.mjs`
 
-Diffs Reuben's Goodreads "read" shelf against `src/data/reading/{year}.json`, uploads covers for any new books to Cloudinary (`reading_covers/{goodreads_book_id}`), and writes the updated year files. Runs weekly via `.github/workflows/update-reading.yml`, which opens a PR when there's anything new. Requires `CLOUDINARY_API_KEY` and `CLOUDINARY_API_SECRET` (repo secrets in CI, or in local `.env` to run manually):
+Diffs Reuben's Goodreads "read" shelf against `src/data/reading/{year}.json`, uploads covers for any new books to Cloudinary (`reading_covers/{goodreads_book_id}`), looks up a genre for each new book via `scripts/lib/genre.mjs` (Open Library, no key required), and writes the updated year files. Runs weekly via `.github/workflows/update-reading.yml`, which opens a PR when there's anything new. Requires `CLOUDINARY_API_KEY` and `CLOUDINARY_API_SECRET` (repo secrets in CI, or in local `.env` to run manually):
 ```bash
 node scripts/update-reading.mjs
 ```
