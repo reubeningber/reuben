@@ -5,7 +5,8 @@
     "cover": "reading_covers/59116250",
     "amazon": "https://www.amazon.com/s?k=Savages%20Don%20Winslow",
     "dateRead": "2026-08-16",
-    "rating": 4
+    "rating": 4,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "Culpability",
@@ -13,7 +14,8 @@
     "cover": "reading_covers/223688289",
     "amazon": "https://www.amazon.com/dp/195411897X",
     "dateRead": "2026-08-07",
-    "rating": 5
+    "rating": 5,
+    "genre": "Fiction"
   },
   {
     "title": "Election",
@@ -21,7 +23,8 @@
     "cover": "reading_covers/28282",
     "amazon": "https://www.amazon.com/dp/0425167283",
     "dateRead": "2026-08-04",
-    "audio": true
+    "audio": true,
+    "genre": "Fiction"
   },
   {
     "title": "Tokyo Express",
@@ -30,7 +33,8 @@
     "amazon": "https://www.amazon.com/dp/8845932443",
     "dateRead": "2026-08-04",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "Small Game",
@@ -39,7 +43,8 @@
     "amazon": "https://www.amazon.com/dp/0063066173",
     "dateRead": "2026-08-04",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Fiction"
   },
   {
     "title": "In the Days of My Youth I Was Told What It Means to Be a Man: A Memoir",
@@ -47,7 +52,8 @@
     "cover": "reading_covers/236155348",
     "amazon": "https://www.amazon.com/dp/0385543220",
     "dateRead": "2026-07-30",
-    "rating": 3
+    "rating": 3,
+    "genre": "Memoir"
   },
   {
     "title": "How to Rule the World: An Education in Power at Stanford University",
@@ -55,14 +61,16 @@
     "cover": "reading_covers/245016108",
     "amazon": "https://www.amazon.com/dp/0593832841",
     "dateRead": "2026-07-05",
-    "rating": 5
+    "rating": 5,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "Hungry: Eating, Road-Tripping, and Risking It All with the Greatest Chef in the World",
     "author": "Jeff Gordinier",
     "cover": "reading_covers/42590641",
     "amazon": "https://www.amazon.com/dp/1524759643",
-    "dateRead": "2026-06-06"
+    "dateRead": "2026-06-06",
+    "genre": "Nonfiction"
   },
   {
     "title": "The Cafe on the Edge of the World: A Story About the Meaning of Life",
@@ -70,7 +78,8 @@
     "cover": "reading_covers/55536485",
     "amazon": "https://www.amazon.com/s?k=The+Cafe+on+the+Edge+of+the+World+John+P.+Strelecky",
     "dateRead": "2026-05-20",
-    "rating": 3
+    "rating": 3,
+    "genre": "Self-Help"
   },
   {
     "title": "King of Ashes",
@@ -78,7 +87,8 @@
     "cover": "reading_covers/219847422",
     "amazon": "https://www.amazon.com/s?k=King+of+Ashes+S.A.+Cosby",
     "dateRead": "2026-05-11",
-    "rating": 5
+    "rating": 5,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "Smile, or You're Doing it Wrong: A Journey from Rock Bottom to Redemption",
@@ -87,7 +97,8 @@
     "amazon": "https://www.amazon.com/s?k=Smile%2C+or+You%27re+Doing+it+Wrong+Andy+Glaze",
     "dateRead": "2026-05-08",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "A Walk in the Woods: Rediscovering America on the Appalachian Trail",
@@ -95,7 +106,8 @@
     "cover": "reading_covers/9791",
     "amazon": "https://www.amazon.com/dp/0307279464",
     "dateRead": "2026-05-06",
-    "audio": true
+    "audio": true,
+    "genre": "Travel"
   },
   {
     "title": "Burner (Gray Man, #12)",
@@ -103,7 +115,8 @@
     "cover": "reading_covers/61177813",
     "amazon": "https://www.amazon.com/dp/0593548116",
     "dateRead": "2026-05-06",
-    "audio": true
+    "audio": true,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "The Colossus of New York",
@@ -111,7 +124,8 @@
     "cover": "reading_covers/6586929",
     "amazon": "https://www.amazon.com/s?k=The+Colossus+of+New+York+Colson+Whitehead",
     "dateRead": "2026-05-01",
-    "rating": 2
+    "rating": 2,
+    "genre": "Essays"
   },
   {
     "title": "Levels of the Game",
@@ -119,7 +133,8 @@
     "cover": "reading_covers/19929257",
     "amazon": "https://www.amazon.com/s?k=Levels+of+the+Game+John+McPhee",
     "dateRead": "2026-04-23",
-    "rating": 4
+    "rating": 4,
+    "genre": "Sports"
   },
   {
     "title": "How to Have Willpower: An Ancient Guide to Not Giving In (Ancient Wisdom for Modern Readers)",
@@ -127,7 +142,8 @@
     "cover": "reading_covers/223735958",
     "amazon": "https://www.amazon.com/dp/0691220352",
     "dateRead": "2026-04-16",
-    "rating": 2
+    "rating": 2,
+    "genre": "Self-Help"
   },
   {
     "title": "The Stranger in the Woods: The Extraordinary Story of the Last True Hermit",
@@ -136,7 +152,8 @@
     "amazon": "https://www.amazon.com/dp/1101924926",
     "dateRead": "2026-04-14",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "Among the Bros: A Fraternity Crime Story-The True Story of a Journalist's Investigation into a Fraternity Drug Ring",
@@ -145,7 +162,8 @@
     "amazon": "https://www.amazon.com/dp/0063099551",
     "dateRead": "2026-04-14",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "True Crime"
   },
   {
     "title": "The Second World",
@@ -161,7 +179,8 @@
     "cover": "reading_covers/240386326",
     "amazon": "https://www.amazon.com/dp/1668231727",
     "dateRead": "2026-03-23",
-    "rating": 4
+    "rating": 4,
+    "genre": "Fiction"
   },
   {
     "title": "All the Sinners Bleed",
@@ -169,7 +188,8 @@
     "cover": "reading_covers/62193738",
     "amazon": "https://www.amazon.com/s?k=All+the+Sinners+Bleed+S.A.+Cosby",
     "dateRead": "2026-03-01",
-    "rating": 4
+    "rating": 4,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "The Sing Sing Files: One Journalist, Six Innocent Men, and a Twenty-Year Fight for Justice",
@@ -178,7 +198,8 @@
     "amazon": "https://www.amazon.com/dp/125089770X",
     "dateRead": "2026-02-27",
     "rating": 5,
-    "audio": true
+    "audio": true,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "Race Against Terror: Chasing an Al Qaeda Killer at the Dawn of the Forever War",
@@ -186,7 +207,8 @@
     "cover": "reading_covers/224004727",
     "amazon": "https://www.amazon.com/dp/1668079445",
     "dateRead": "2026-02-24",
-    "audio": true
+    "audio": true,
+    "genre": "History"
   },
   {
     "title": "Train Dreams: A Novella",
@@ -194,7 +216,8 @@
     "cover": "reading_covers/245408602",
     "amazon": "https://www.amazon.com/s?k=Train+Dreams+Denis+Johnson",
     "dateRead": "2026-02-03",
-    "rating": 2
+    "rating": 2,
+    "genre": "Fiction"
   },
   {
     "title": "Cry Havoc (Tom Reece #1)",
@@ -203,7 +226,8 @@
     "amazon": "https://www.amazon.com/dp/1668095254",
     "dateRead": "2026-01-28",
     "rating": 2,
-    "audio": true
+    "audio": true,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "Ghost (Track, #1)",
@@ -211,7 +235,8 @@
     "cover": "reading_covers/30770805",
     "amazon": "https://www.amazon.com/dp/1481450174",
     "dateRead": "2026-01-17",
-    "rating": 4
+    "rating": 4,
+    "genre": "Young Adult"
   },
   {
     "title": "You Were Never Really Here",
@@ -219,7 +244,8 @@
     "cover": "reading_covers/36681409",
     "amazon": "https://www.amazon.com/dp/0525562907",
     "dateRead": "2026-01-12",
-    "rating": 5
+    "rating": 5,
+    "genre": "Fiction"
   },
   {
     "title": "Your Best Year Ever: A 5-Step Plan for Achieving Your Most Important Goals—Find Success in All Life Domains Including Body, Love, Family, Money, Work, and More",
@@ -227,34 +253,39 @@
     "cover": "reading_covers/102882316",
     "amazon": "https://www.amazon.com/dp/1540902692",
     "dateRead": "2026-01-08",
-    "rating": 2
+    "rating": 2,
+    "genre": "Self-Help"
   },
   {
     "title": "John of John",
     "author": "Douglas Stuart",
     "cover": "reading_covers/235375240",
     "amazon": "https://www.amazon.com/dp/0802167276",
-    "rating": 4
+    "rating": 4,
+    "genre": "Fiction"
   },
   {
     "title": "The Employees",
     "author": "Olga Ravn",
     "cover": "reading_covers/75615791",
     "amazon": "https://www.amazon.com/s?k=The+Employees+Olga+Ravn",
-    "rating": 3
+    "rating": 3,
+    "genre": "Science Fiction"
   },
   {
     "title": "The Art of Asking Your Boss for a Raise",
     "author": "Georges Perec",
     "cover": "reading_covers/33982442",
     "amazon": "https://www.amazon.com/dp/1784786578",
-    "rating": 3
+    "rating": 3,
+    "genre": "Fiction"
   },
   {
     "title": "Surf When You Can: Lessons in Life, Loyalty, and Leadership from a Maverick Navy Captain",
     "author": "Brett Crozier",
     "cover": "reading_covers/74892202",
     "amazon": "https://www.amazon.com/dp/1982191023",
-    "rating": 4
+    "rating": 4,
+    "genre": "Memoir"
   }
 ]

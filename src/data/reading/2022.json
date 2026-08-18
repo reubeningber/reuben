@@ -6,7 +6,8 @@
     "amazon": "https://www.amazon.com/dp/1608680916",
     "dateRead": "2022-12-31",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Self-Help"
   },
   {
     "title": "The Inner Game of Tennis: The Classic Guide to the Mental Side of Peak Performance",
@@ -15,7 +16,8 @@
     "amazon": "https://www.amazon.com/dp/0679778314",
     "dateRead": "2022-12-30",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Sports"
   },
   {
     "title": "The 3 Alarms: A Simple System to Transform Your Health, Wealth, and Relationships Forever",
@@ -23,7 +25,8 @@
     "cover": "reading_covers/55537584",
     "amazon": "https://www.amazon.com/dp/0990378519",
     "dateRead": "2022-12-26",
-    "rating": 4
+    "rating": 4,
+    "genre": "Self-Help"
   },
   {
     "title": "The Cult of We: WeWork, Adam Neumann, and the Great Startup Delusion",
@@ -32,7 +35,8 @@
     "amazon": "https://www.amazon.com/dp/0593237110",
     "dateRead": "2022-12-25",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "Put Your Ass Where Your Heart Wants to Be",
@@ -40,7 +44,8 @@
     "cover": "reading_covers/61435726",
     "amazon": "https://www.amazon.com/s?k=Put+Your+Ass+Where+Your+Heart+Wants+to+Be+Steven+Pressfield",
     "dateRead": "2022-12-22",
-    "rating": 4
+    "rating": 4,
+    "genre": "Self-Help"
   },
   {
     "title": "Endure: How to Work Hard, Outlast, and Keep Hammering",
@@ -49,7 +54,8 @@
     "amazon": "https://www.amazon.com/dp/1250279291",
     "dateRead": "2022-12-21",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Sports"
   },
   {
     "title": "The Hero Code: Lessons Learned from Lives Well Lived",
@@ -57,7 +63,8 @@
     "cover": "reading_covers/56450025",
     "amazon": "https://www.amazon.com/dp/1538719975",
     "dateRead": "2022-12-20",
-    "rating": 3
+    "rating": 3,
+    "genre": "Self-Help"
   },
   {
     "title": "Work, Parent, Thrive: 12 Science-Backed Strategies to Ditch Guilt, Manage Overwhelm, and Grow Connection (When Everything Feels Like Too Much)",
@@ -65,7 +72,8 @@
     "cover": "reading_covers/61635229",
     "amazon": "https://www.amazon.com/dp/1611809657",
     "dateRead": "2022-12-19",
-    "rating": 4
+    "rating": 4,
+    "genre": "Parenting"
   },
   {
     "title": "The Good Enough Parent: How to raise contented, interesting, and resilient children",
@@ -73,7 +81,8 @@
     "cover": "reading_covers/61236989",
     "amazon": "https://www.amazon.com/dp/1912891956",
     "dateRead": "2022-12-18",
-    "rating": 1
+    "rating": 1,
+    "genre": "Parenting"
   },
   {
     "title": "The Motivation Myth: How High Achievers Really Set Themselves Up to Win",
@@ -82,7 +91,8 @@
     "amazon": "https://www.amazon.com/dp/0399563768",
     "dateRead": "2022-12-16",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Self-Help"
   },
   {
     "title": "The Candy House",
@@ -90,7 +100,8 @@
     "cover": "reading_covers/58939642",
     "amazon": "https://www.amazon.com/dp/1476716781",
     "dateRead": "2022-12-15",
-    "rating": 2
+    "rating": 2,
+    "genre": "Fiction"
   },
   {
     "title": "Tracers in the Dark: The Global Hunt for the Crime Lords of Cryptocurrency",
@@ -99,7 +110,8 @@
     "amazon": "https://www.amazon.com/dp/0385548109",
     "dateRead": "2022-12-15",
     "rating": 5,
-    "audio": true
+    "audio": true,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "Things My Son Needs to Know About the World",
@@ -108,7 +120,8 @@
     "amazon": "https://www.amazon.com/dp/1501196863",
     "dateRead": "2022-12-12",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Vacationland: True Stories from Painful Beaches",
@@ -117,7 +130,8 @@
     "amazon": "https://www.amazon.com/dp/073522482X",
     "dateRead": "2022-12-09",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Humor"
   },
   {
     "title": "The Unlikely Thru-Hiker: An Appalachian Trail Journey",
@@ -126,7 +140,8 @@
     "amazon": "https://www.amazon.com/dp/1628421185",
     "dateRead": "2022-12-08",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Travel"
   },
   {
     "title": "2034 (A Novel of Future War)",
@@ -134,7 +149,8 @@
     "cover": "reading_covers/54761971",
     "amazon": "https://www.amazon.com/dp/1984881264",
     "dateRead": "2022-12-03",
-    "rating": 5
+    "rating": 5,
+    "genre": "Science Fiction"
   },
   {
     "title": "A River in Darkness: One Man's Escape from North Korea",
@@ -143,7 +159,8 @@
     "amazon": "https://www.amazon.com/dp/1542097193",
     "dateRead": "2022-12-02",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "This is Going to Hurt: Secret Diaries of a Junior Doctor",
@@ -152,7 +169,8 @@
     "amazon": "https://www.amazon.com/s?k=This+is+Going+to+Hurt+Adam+Kay",
     "dateRead": "2022-11-30",
     "rating": 2,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "The Splendid and the Vile: A Saga of Churchill, Family, and Defiance During the Blitz",
@@ -160,7 +178,8 @@
     "cover": "reading_covers/51187948",
     "amazon": "https://www.amazon.com/dp/038534872X",
     "dateRead": "2022-11-27",
-    "rating": 3
+    "rating": 3,
+    "genre": "History"
   },
   {
     "title": "The Happiest Man on Earth: The Beautiful Life of an Auschwitz Survivor – A New York Times Bestseller with Timeless Lessons on Gratitude and Hope",
@@ -168,7 +187,8 @@
     "cover": "reading_covers/57449383",
     "amazon": "https://www.amazon.com/dp/0063097702",
     "dateRead": "2022-11-24",
-    "rating": 5
+    "rating": 5,
+    "genre": "Memoir"
   },
   {
     "title": "Do Hard Things: Why We Get Resilience Wrong and the Surprising Science of Real Toughness",
@@ -176,7 +196,8 @@
     "cover": "reading_covers/59088361",
     "amazon": "https://www.amazon.com/dp/006309861X",
     "dateRead": "2022-11-21",
-    "rating": 4
+    "rating": 4,
+    "genre": "Self-Help"
   },
   {
     "title": "Say Nothing: A True Story of Murder and Memory in Northern Ireland",
@@ -184,7 +205,8 @@
     "cover": "reading_covers/49771934",
     "amazon": "https://www.amazon.com/s?k=Say+Nothing+Patrick+Radden+Keefe",
     "dateRead": "2022-11-20",
-    "rating": 1
+    "rating": 1,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "She Said: Breaking the Sexual Harassment Story That Helped Ignite a Movement",
@@ -192,7 +214,8 @@
     "cover": "reading_covers/44767249",
     "amazon": "https://www.amazon.com/dp/0525560343",
     "dateRead": "2022-11-18",
-    "rating": 3
+    "rating": 3,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "A Very Punchable Face",
@@ -200,7 +223,8 @@
     "cover": "reading_covers/48989372",
     "amazon": "https://www.amazon.com/dp/1101906324",
     "dateRead": "2022-11-14",
-    "rating": 3
+    "rating": 3,
+    "genre": "Humor"
   },
   {
     "title": "Beartown (Beartown, #1)",
@@ -209,7 +233,8 @@
     "amazon": "https://www.amazon.com/s?k=Beartown+Fredrik+Backman",
     "dateRead": "2022-11-12",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Fiction"
   },
   {
     "title": "Falling",
@@ -217,7 +242,8 @@
     "cover": "reading_covers/56614951",
     "amazon": "https://www.amazon.com/dp/1982177888",
     "dateRead": "2022-11-04",
-    "rating": 4
+    "rating": 4,
+    "genre": "Fiction"
   },
   {
     "title": "An Astronaut's Guide to Life on Earth",
@@ -226,7 +252,8 @@
     "amazon": "https://www.amazon.com/dp/0316253014",
     "dateRead": "2022-11-01",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Grace: President Obama and Ten Days in the Battle for America",
@@ -234,7 +261,8 @@
     "cover": "reading_covers/60012484",
     "amazon": "https://www.amazon.com/dp/0358651891",
     "dateRead": "2022-10-28",
-    "rating": 4
+    "rating": 4,
+    "genre": "Politics"
   },
   {
     "title": "The Diving Bell and the Butterfly: A Memoir of Life in Death",
@@ -243,7 +271,8 @@
     "amazon": "https://www.amazon.com/dp/0375701214",
     "dateRead": "2022-10-25",
     "rating": 2,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Red Notice: A True Story of High Finance, Murder, and One Man's Fight for Justice",
@@ -252,7 +281,8 @@
     "amazon": "https://www.amazon.com/dp/147675571X",
     "dateRead": "2022-10-25",
     "rating": 5,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Rising Tide: the Great Mississippi Flood of 1927 and How it Changed America",
@@ -261,7 +291,8 @@
     "amazon": "https://www.amazon.com/dp/0684840022",
     "dateRead": "2022-10-22",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "History"
   },
   {
     "title": "Killing Floor (Jack Reacher #1)",
@@ -269,7 +300,8 @@
     "cover": "reading_covers/62189620",
     "amazon": "https://www.amazon.com/s?k=Killing+Floor+Lee+Child",
     "dateRead": "2022-10-19",
-    "rating": 1
+    "rating": 1,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "Ghost in the Wires: My Adventures as the World's Most Wanted Hacker",
@@ -278,7 +310,8 @@
     "amazon": "https://www.amazon.com/dp/0316037702",
     "dateRead": "2022-10-17",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Any Given Tuesday: A Political Love Story",
@@ -287,7 +320,8 @@
     "amazon": "https://www.amazon.com/dp/0063084392",
     "dateRead": "2022-10-11",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Braving the Wilderness",
@@ -295,7 +329,8 @@
     "cover": "reading_covers/34565022",
     "amazon": "https://www.amazon.com/dp/0812995848",
     "dateRead": "2022-10-06",
-    "rating": 3
+    "rating": 3,
+    "genre": "Self-Help"
   },
   {
     "title": "Don't Call It Quits: Turn the Job You Have into the Job You Love",
@@ -303,7 +338,8 @@
     "cover": "reading_covers/60325836",
     "amazon": "https://www.amazon.com/dp/1264285256",
     "dateRead": "2022-10-04",
-    "rating": 5
+    "rating": 5,
+    "genre": "Business"
   },
   {
     "title": "The Apollo Murders (Apollo Murders, #1)",
@@ -311,7 +347,8 @@
     "cover": "reading_covers/57007683",
     "amazon": "https://www.amazon.com/dp/0316264539",
     "dateRead": "2022-10-03",
-    "rating": 4
+    "rating": 4,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "Wave",
@@ -319,7 +356,8 @@
     "cover": "reading_covers/36147578",
     "amazon": "https://www.amazon.com/s?k=Wave+Sonali+Deraniyagala",
     "dateRead": "2022-09-29",
-    "rating": 3
+    "rating": 3,
+    "genre": "Memoir"
   },
   {
     "title": "A Psalm for the Wild-Built (Monk & Robot, #1)",
@@ -328,7 +366,8 @@
     "amazon": "https://www.amazon.com/s?k=A+Psalm+for+the+Wild-Built+Becky+Chambers",
     "dateRead": "2022-09-26",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Science Fiction"
   },
   {
     "title": "Mouth to Mouth",
@@ -336,7 +375,8 @@
     "cover": "reading_covers/58438631",
     "amazon": "https://www.amazon.com/dp/198218180X",
     "dateRead": "2022-09-23",
-    "rating": 3
+    "rating": 3,
+    "genre": "Fiction"
   },
   {
     "title": "The Undoing Project: A Friendship That Changed Our Minds",
@@ -345,7 +385,8 @@
     "amazon": "https://www.amazon.com/dp/0393354776",
     "dateRead": "2022-09-22",
     "rating": 2,
-    "audio": true
+    "audio": true,
+    "genre": "Psychology"
   },
   {
     "title": "We've Got to Try: How the Fight for Voting Rights Makes Everything Else Possible",
@@ -353,7 +394,8 @@
     "cover": "reading_covers/62059734",
     "amazon": "https://www.amazon.com/dp/1250852471",
     "dateRead": "2022-09-22",
-    "rating": 2
+    "rating": 2,
+    "genre": "Politics"
   },
   {
     "title": "Sellout: The Major-Label Feeding Frenzy That Swept Punk, Emo, and Hardcore (1994–2007)",
@@ -361,7 +403,8 @@
     "cover": "reading_covers/54738201",
     "amazon": "https://www.amazon.com/dp/0358239966",
     "dateRead": "2022-09-18",
-    "rating": 2
+    "rating": 2,
+    "genre": "Nonfiction"
   },
   {
     "title": "The Coming Storm",
@@ -370,7 +413,8 @@
     "amazon": "https://www.amazon.com/s?k=The+Coming+Storm+Michael+Lewis",
     "dateRead": "2022-09-17",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Nonfiction"
   },
   {
     "title": "The Burnout Generation",
@@ -379,7 +423,8 @@
     "amazon": "https://www.amazon.com/s?k=The+Burnout+Generation+Anne+Helen+Petersen",
     "dateRead": "2022-09-17",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Nonfiction"
   },
   {
     "title": "The Cuckoo's Egg: Tracking a Spy Through the Maze of Computer Espionage",
@@ -388,7 +433,8 @@
     "amazon": "https://www.amazon.com/dp/1416507787",
     "dateRead": "2022-09-16",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Tomorrow, and Tomorrow, and Tomorrow",
@@ -396,7 +442,8 @@
     "cover": "reading_covers/58916147",
     "amazon": "https://www.amazon.com/s?k=Tomorrow%2C+and+Tomorrow%2C+and+Tomorrow+Gabrielle+Zevin",
     "dateRead": "2022-09-15",
-    "rating": 4
+    "rating": 4,
+    "genre": "Fiction"
   },
   {
     "title": "Invisible Storm: A Soldier’s Memoir of Politics and PTSD",
@@ -405,7 +452,8 @@
     "amazon": "https://www.amazon.com/dp/0358658969",
     "dateRead": "2022-09-07",
     "rating": 5,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "North: Finding My Way While Running the Appalachian Trail",
@@ -414,7 +462,8 @@
     "amazon": "https://www.amazon.com/dp/0316433799",
     "dateRead": "2022-09-03",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Call Sign Chaos",
@@ -422,7 +471,8 @@
     "cover": "reading_covers/46038100",
     "amazon": "https://www.amazon.com/dp/0812996844",
     "dateRead": "2022-09-01",
-    "rating": 3
+    "rating": 3,
+    "genre": "Memoir"
   },
   {
     "title": "Digital Minimalism: Choosing a Focused Life in a Noisy World",
@@ -431,7 +481,8 @@
     "amazon": "https://www.amazon.com/dp/052553654X",
     "dateRead": "2022-08-26",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Self-Help"
   },
   {
     "title": "The Greatest Beer Run Ever: A Memoir of Friendship, Loyalty, and War",
@@ -439,7 +490,8 @@
     "cover": "reading_covers/51938894",
     "amazon": "https://www.amazon.com/dp/0062995464",
     "dateRead": "2022-08-21",
-    "rating": 4
+    "rating": 4,
+    "genre": "Memoir"
   },
   {
     "title": "Living with the Monks: What Turning Off My Phone Taught Me about Happiness, Gratitude, and Focus",
@@ -448,7 +500,8 @@
     "amazon": "https://www.amazon.com/dp/1478993421",
     "dateRead": "2022-08-19",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Upgrade",
@@ -456,7 +509,8 @@
     "cover": "reading_covers/59439117",
     "amazon": "https://www.amazon.com/dp/0593157516",
     "dateRead": "2022-08-17",
-    "rating": 4
+    "rating": 4,
+    "genre": "Science Fiction"
   },
   {
     "title": "A Man Called Ove",
@@ -465,7 +519,8 @@
     "amazon": "https://www.amazon.com/dp/1476738017",
     "dateRead": "2022-08-16",
     "rating": 5,
-    "audio": true
+    "audio": true,
+    "genre": "Fiction"
   },
   {
     "title": "Endurance: Shackleton's Incredible Voyage",
@@ -474,7 +529,8 @@
     "amazon": "https://www.amazon.com/s?k=Endurance+Alfred+Lansing",
     "dateRead": "2022-08-13",
     "rating": 5,
-    "audio": true
+    "audio": true,
+    "genre": "History"
   },
   {
     "title": "In the Blood (Terminal List, #5)",
@@ -482,7 +538,8 @@
     "cover": "reading_covers/58438630",
     "amazon": "https://www.amazon.com/dp/1982181656",
     "dateRead": "2022-08-09",
-    "rating": 3
+    "rating": 3,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "What I Talk About When I Talk About Running",
@@ -491,7 +548,8 @@
     "amazon": "https://www.amazon.com/s?k=What+I+Talk+About+When+I+Talk+About+Running+Haruki+Murakami",
     "dateRead": "2022-08-02",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Reasons to Stay Alive",
@@ -500,7 +558,8 @@
     "amazon": "https://www.amazon.com/dp/0143128728",
     "dateRead": "2022-07-31",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "The Spartan Way: Eat Better. Train Better. Think Better. Be Better.",
@@ -509,7 +568,8 @@
     "amazon": "https://www.amazon.com/dp/1250153212",
     "dateRead": "2022-07-29",
     "rating": 2,
-    "audio": true
+    "audio": true,
+    "genre": "Self-Help"
   },
   {
     "title": "Stop Overthinking: 23 Techniques to Relieve Stress, Stop Negative Spirals, Declutter Your Mind, and Focus on the Present (The Path to Calm Book 1)",
@@ -517,7 +577,8 @@
     "cover": "reading_covers/57280624",
     "amazon": "https://www.amazon.com/s?k=Stop+Overthinking+Nick+Trenton",
     "dateRead": "2022-07-29",
-    "rating": 2
+    "rating": 2,
+    "genre": "Self-Help"
   },
   {
     "title": "Run Away",
@@ -526,7 +587,8 @@
     "amazon": "https://www.amazon.com/dp/1780894260",
     "dateRead": "2022-07-22",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "Pee Wees: Confessions of a Hockey Parent",
@@ -534,7 +596,8 @@
     "cover": "reading_covers/55981913",
     "amazon": "https://www.amazon.com/dp/0374720584",
     "dateRead": "2022-07-22",
-    "rating": 5
+    "rating": 5,
+    "genre": "Parenting"
   },
   {
     "title": "Outdoor Kids in an Inside World: Getting Your Family Out of the House and Radically Engaged with Nature",
@@ -542,7 +605,8 @@
     "cover": "reading_covers/57816790",
     "amazon": "https://www.amazon.com/dp/0593129679",
     "dateRead": "2022-07-20",
-    "rating": 3
+    "rating": 3,
+    "genre": "Parenting"
   },
   {
     "title": "Rise and Kill First: The Secret History of Israel's Targeted Assassinations",
@@ -550,7 +614,8 @@
     "cover": "reading_covers/53502012",
     "amazon": "https://www.amazon.com/s?k=Rise+and+Kill+First+Ronen+Bergman",
     "dateRead": "2022-07-15",
-    "rating": 4
+    "rating": 4,
+    "genre": "History"
   },
   {
     "title": "Notes from a Young Black Chef",
@@ -559,7 +624,8 @@
     "amazon": "https://www.amazon.com/dp/1524732621",
     "dateRead": "2022-07-01",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "A Better Man: A (Mostly Serious) Letter to My Son",
@@ -568,7 +634,8 @@
     "amazon": "https://www.amazon.com/dp/1616209119",
     "dateRead": "2022-06-26",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "The Lincoln Highway",
@@ -577,7 +644,8 @@
     "amazon": "https://www.amazon.com/dp/0735222355",
     "dateRead": "2022-06-25",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Fiction"
   },
   {
     "title": "The River",
@@ -585,7 +653,8 @@
     "cover": "reading_covers/58794688",
     "amazon": "https://www.amazon.com/s?k=The+River+Peter+Heller",
     "dateRead": "2022-06-22",
-    "rating": 4
+    "rating": 4,
+    "genre": "Fiction"
   },
   {
     "title": "Why We're Polarized",
@@ -593,7 +662,8 @@
     "cover": "reading_covers/52098718",
     "amazon": "https://www.amazon.com/dp/147670032X",
     "dateRead": "2022-06-15",
-    "rating": 3
+    "rating": 3,
+    "genre": "Politics"
   },
   {
     "title": "One Rough Man (Pike Logan, #1)",
@@ -601,7 +671,8 @@
     "cover": "reading_covers/42419629",
     "amazon": "https://www.amazon.com/s?k=One+Rough+Man+Brad+Taylor",
     "dateRead": "2022-06-13",
-    "rating": 4
+    "rating": 4,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "Burn Rate: Launching a Startup and Losing My Mind",
@@ -610,7 +681,8 @@
     "amazon": "https://www.amazon.com/dp/0593238265",
     "dateRead": "2022-06-06",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "How to Be Great at Your Job: Get things done. Get the credit. Get ahead. (Graduation Gift, Corporate Survival Guide, Career Handbook)",
@@ -618,7 +690,8 @@
     "cover": "reading_covers/41541537",
     "amazon": "https://www.amazon.com/dp/1452169799",
     "dateRead": "2022-06-01",
-    "rating": 3
+    "rating": 3,
+    "genre": "Business"
   },
   {
     "title": "The Devil's Hand (Terminal List, #4)",
@@ -627,7 +700,8 @@
     "amazon": "https://www.amazon.com/dp/1982123745",
     "dateRead": "2022-06-01",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "Tiny Habits: The Small Changes That Change Everything",
@@ -635,7 +709,8 @@
     "cover": "reading_covers/43305818",
     "amazon": "https://www.amazon.com/dp/0358003997",
     "dateRead": "2022-05-29",
-    "rating": 2
+    "rating": 2,
+    "genre": "Self-Help"
   },
   {
     "title": "Because We Are Bad: OCD and a Girl Lost in Thought",
@@ -644,7 +719,8 @@
     "amazon": "https://www.amazon.com/dp/0062696165",
     "dateRead": "2022-05-24",
     "rating": 2,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Can't Hurt Me: Master Your Mind and Defy the Odds",
@@ -653,7 +729,8 @@
     "amazon": "https://www.amazon.com/dp/1544512260",
     "dateRead": "2022-05-24",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "The President's Man: The Memoirs of Nixon's Trusted Aide – A Historic Journey Through Watergate, China, and the Soviet Union",
@@ -661,7 +738,8 @@
     "cover": "reading_covers/59089307",
     "amazon": "https://www.amazon.com/s?k=The+President%27s+Man+Dwight+Chapin",
     "dateRead": "2022-05-24",
-    "rating": 3
+    "rating": 3,
+    "genre": "Memoir"
   },
   {
     "title": "The Beauty of What Remains: How Our Greatest Fear Becomes Our Greatest Gift",
@@ -670,7 +748,8 @@
     "amazon": "https://www.amazon.com/dp/0593187555",
     "dateRead": "2022-05-10",
     "rating": 5,
-    "audio": true
+    "audio": true,
+    "genre": "Religion & Spirituality"
   },
   {
     "title": "Just Mercy: A Story of Justice and Redemption",
@@ -678,7 +757,8 @@
     "cover": "reading_covers/59228410",
     "amazon": "https://www.amazon.com/s?k=Just+Mercy+Bryan+Stevenson",
     "dateRead": "2022-05-09",
-    "rating": 4
+    "rating": 4,
+    "genre": "Politics"
   },
   {
     "title": "The Code Breaker: Jennifer Doudna, Gene Editing, and the Future of the Human Race",
@@ -687,7 +767,8 @@
     "amazon": "https://www.amazon.com/dp/1982115858",
     "dateRead": "2022-05-06",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Biography"
   },
   {
     "title": "The High 5 Habit: Take Control of Your Life with One Simple Habit",
@@ -695,7 +776,8 @@
     "cover": "reading_covers/58581516",
     "amazon": "https://www.amazon.com/dp/1401962130",
     "dateRead": "2022-04-27",
-    "rating": 2
+    "rating": 2,
+    "genre": "Self-Help"
   },
   {
     "title": "Dark Matter",
@@ -703,7 +785,8 @@
     "cover": "reading_covers/45697427",
     "amazon": "https://www.amazon.com/s?k=Dark+Matter+Blake+Crouch",
     "dateRead": "2022-04-25",
-    "rating": 4
+    "rating": 4,
+    "genre": "Science Fiction"
   },
   {
     "title": "The Club: How the English Premier League Became the Wildest, Richest, Most Disruptive Force in Sports",
@@ -712,7 +795,8 @@
     "amazon": "https://www.amazon.com/dp/1328506452",
     "dateRead": "2022-04-22",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Sports"
   },
   {
     "title": "Faster Than Normal: Turbocharge Your Focus, Productivity, and Success with the Secrets of the ADHD Brain",
@@ -720,7 +804,8 @@
     "cover": "reading_covers/33914151",
     "amazon": "https://www.amazon.com/dp/0143131222",
     "dateRead": "2022-04-18",
-    "rating": 5
+    "rating": 5,
+    "genre": "Self-Help"
   },
   {
     "title": "Born Standing Up: A Comic's Life",
@@ -729,7 +814,8 @@
     "amazon": "https://www.amazon.com/dp/1416553649",
     "dateRead": "2022-04-17",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Soundtracks: The Surprising Solution to Overthinking (Overcome Toxic Thought Patterns and Take Control of Your Mindset)",
@@ -737,7 +823,8 @@
     "cover": "reading_covers/54963735",
     "amazon": "https://www.amazon.com/dp/1493428853",
     "dateRead": "2022-04-15",
-    "rating": 3
+    "rating": 3,
+    "genre": "Self-Help"
   },
   {
     "title": "The Boys in the Boat: Nine Americans and Their Epic Quest for Gold at the 1936 Berlin Olympics",
@@ -746,7 +833,8 @@
     "amazon": "https://www.amazon.com/s?k=The+Boys+in+the+Boat+Daniel+James+Brown",
     "dateRead": "2022-04-14",
     "rating": 5,
-    "audio": true
+    "audio": true,
+    "genre": "Sports"
   },
   {
     "title": "How to Fight Anti-Semitism",
@@ -754,7 +842,8 @@
     "cover": "reading_covers/44160584",
     "amazon": "https://www.amazon.com/dp/0593136063",
     "dateRead": "2022-04-06",
-    "rating": 4
+    "rating": 4,
+    "genre": "Politics"
   },
   {
     "title": "The Midnight Library (The Midnight World, #1)",
@@ -763,7 +852,8 @@
     "amazon": "https://www.amazon.com/s?k=The+Midnight+Library+Matt+Haig",
     "dateRead": "2022-04-04",
     "rating": 5,
-    "audio": true
+    "audio": true,
+    "genre": "Fiction"
   },
   {
     "title": "The Match (Wilde, #2)",
@@ -772,7 +862,8 @@
     "amazon": "https://www.amazon.com/s?k=The+Match+Harlan+Coben",
     "dateRead": "2022-04-01",
     "rating": 5,
-    "audio": true
+    "audio": true,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "Run Like a Pro (Even If You're Slow): Elite Tools and Tips for Runners at Every Level",
@@ -780,7 +871,8 @@
     "cover": "reading_covers/60451726",
     "amazon": "https://www.amazon.com/dp/0593201922",
     "dateRead": "2022-03-30",
-    "rating": 5
+    "rating": 5,
+    "genre": "Sports"
   },
   {
     "title": "Fight Club",
@@ -789,7 +881,8 @@
     "amazon": "https://www.amazon.com/dp/0393355942",
     "dateRead": "2022-03-29",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Fiction"
   },
   {
     "title": "A Runner’s High: My Life in Motion",
@@ -798,7 +891,8 @@
     "amazon": "https://www.amazon.com/dp/0062955551",
     "dateRead": "2022-03-25",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Happy People Are Annoying",
@@ -807,7 +901,8 @@
     "amazon": "https://www.amazon.com/dp/0063073633",
     "dateRead": "2022-03-23",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Randomize (Forward Collection, #6)",
@@ -815,7 +910,8 @@
     "cover": "reading_covers/49661162",
     "amazon": "https://www.amazon.com/dp/1542044251",
     "dateRead": "2022-03-21",
-    "rating": 3
+    "rating": 3,
+    "genre": "Science Fiction"
   },
   {
     "title": "Inspired: How to Create Tech Products Customers Love (Silicon Valley Product Group)",
@@ -823,7 +919,8 @@
     "cover": "reading_covers/36645100",
     "amazon": "https://www.amazon.com/dp/1119387566",
     "dateRead": "2022-03-20",
-    "rating": 4
+    "rating": 4,
+    "genre": "Business"
   },
   {
     "title": "Cathedral of the Wild: An African Journey Home",
@@ -832,7 +929,8 @@
     "amazon": "https://www.amazon.com/dp/1400069858",
     "dateRead": "2022-03-17",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Once a Runner",
@@ -841,7 +939,8 @@
     "amazon": "https://www.amazon.com/dp/0915297019",
     "dateRead": "2022-03-11",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Fiction"
   },
   {
     "title": "Syllabus: Notes From an Accidental Professor (Lynda Barry's Creativity Series)",
@@ -849,7 +948,8 @@
     "cover": "reading_covers/20613619",
     "amazon": "https://www.amazon.com/dp/1770461612",
     "dateRead": "2022-03-08",
-    "rating": 5
+    "rating": 5,
+    "genre": "Nonfiction"
   },
   {
     "title": "The 5 Second Rule: Transform Your Life, Work, and Confidence with Everyday Courage",
@@ -858,7 +958,8 @@
     "amazon": "https://www.amazon.com/dp/1682612392",
     "dateRead": "2022-03-05",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Self-Help"
   },
   {
     "title": "Address Unknown",
@@ -866,7 +967,8 @@
     "cover": "reading_covers/54798506",
     "amazon": "https://www.amazon.com/dp/0063068494",
     "dateRead": "2022-03-02",
-    "rating": 5
+    "rating": 5,
+    "genre": "Fiction"
   },
   {
     "title": "Hatching Twitter: A True Story of Money, Power, Friendship, and Betrayal",
@@ -875,7 +977,8 @@
     "amazon": "https://www.amazon.com/dp/1591846013",
     "dateRead": "2022-03-01",
     "rating": 5,
-    "audio": true
+    "audio": true,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "Savage Son (Terminal List #3)",
@@ -883,7 +986,8 @@
     "cover": "reading_covers/59336235",
     "amazon": "https://www.amazon.com/s?k=Savage+Son+Jack+Carr",
     "dateRead": "2022-03-01",
-    "rating": 5
+    "rating": 5,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "Liar's Poker: Rising Through the Wreckage on Wall Street",
@@ -892,7 +996,8 @@
     "amazon": "https://www.amazon.com/dp/0140143459",
     "dateRead": "2022-02-21",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "The Coddling of the American Mind: How Good Intentions and Bad Ideas Are Setting up a Generation for Failure",
@@ -900,7 +1005,8 @@
     "cover": "reading_covers/36556202",
     "amazon": "https://www.amazon.com/dp/0735224900",
     "dateRead": "2022-02-21",
-    "rating": 3
+    "rating": 3,
+    "genre": "Psychology"
   },
   {
     "title": "An Ugly Truth: Inside Facebook's Battle for Domination",
@@ -909,7 +1015,8 @@
     "amazon": "https://www.amazon.com/dp/0063136740",
     "dateRead": "2022-02-16",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "Five Days at Memorial: Life and Death in a Storm-Ravaged Hospital",
@@ -918,7 +1025,8 @@
     "amazon": "https://www.amazon.com/dp/0307718964",
     "dateRead": "2022-02-12",
     "rating": 5,
-    "audio": true
+    "audio": true,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "The War of Art",
@@ -926,7 +1034,8 @@
     "cover": "reading_covers/18624273",
     "amazon": "https://www.amazon.com/s?k=The+War+of+Art+Steven+Pressfield",
     "dateRead": "2022-02-11",
-    "rating": 1
+    "rating": 1,
+    "genre": "Self-Help"
   },
   {
     "title": "Taste: My Life Through Food",
@@ -934,7 +1043,8 @@
     "cover": "reading_covers/55360283",
     "amazon": "https://www.amazon.com/dp/198216803X",
     "dateRead": "2022-02-09",
-    "rating": 4
+    "rating": 4,
+    "genre": "Memoir"
   },
   {
     "title": "Murder in the Bayou: Who Killed the Women Known as the Jeff Davis 8?",
@@ -943,7 +1053,8 @@
     "amazon": "https://www.amazon.com/dp/1476793255",
     "dateRead": "2022-02-05",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "True Crime"
   },
   {
     "title": "The Lost Boys of Montauk: The True Story of the Wind Blown, Four Men Who Vanished at Sea, and the Survivors They Left Behind",
@@ -952,7 +1063,8 @@
     "amazon": "https://www.amazon.com/dp/198210323X",
     "dateRead": "2022-02-04",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "I Will Teach You to Be Rich: No Guilt. No Excuses. No B.S. Just a 6-Week Program That Works.",
@@ -960,7 +1072,8 @@
     "cover": "reading_covers/53776382",
     "amazon": "https://www.amazon.com/dp/152350787X",
     "dateRead": "2022-02-02",
-    "rating": 4
+    "rating": 4,
+    "genre": "Business"
   },
   {
     "title": "Under the Banner of Heaven: A Story of Violent Faith",
@@ -968,7 +1081,8 @@
     "cover": "reading_covers/6569709",
     "amazon": "https://www.amazon.com/s?k=Under+the+Banner+of+Heaven+Jon+Krakauer",
     "dateRead": "2022-01-27",
-    "rating": 3
+    "rating": 3,
+    "genre": "True Crime"
   },
   {
     "title": "How to Be Better at Almost Everything: Learn Anything Quickly, Stack Your Skills, Dominate",
@@ -977,7 +1091,8 @@
     "amazon": "https://www.amazon.com/dp/194688569X",
     "dateRead": "2022-01-27",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Self-Help"
   },
   {
     "title": "Bourdain: The Definitive Oral Biography",
@@ -986,7 +1101,8 @@
     "amazon": "https://www.amazon.com/dp/006290910X",
     "dateRead": "2022-01-27",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Biography"
   },
   {
     "title": "The Secret Life of Groceries: The Dark Miracle of the American Supermarket",
@@ -995,7 +1111,8 @@
     "amazon": "https://www.amazon.com/dp/0553459392",
     "dateRead": "2022-01-21",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "So Good They Can't Ignore You: Why Skills Trump Passion in the Quest for Work You Love",
@@ -1004,7 +1121,8 @@
     "amazon": "https://www.amazon.com/dp/1455509108",
     "dateRead": "2022-01-17",
     "rating": 5,
-    "audio": true
+    "audio": true,
+    "genre": "Business"
   },
   {
     "title": "Yes to Life: In Spite of Everything",
@@ -1012,7 +1130,8 @@
     "cover": "reading_covers/49276765",
     "amazon": "https://www.amazon.com/dp/0807005568",
     "dateRead": "2022-01-10",
-    "rating": 3
+    "rating": 3,
+    "genre": "Psychology"
   },
   {
     "title": "The Tender Bar",
@@ -1020,7 +1139,8 @@
     "cover": "reading_covers/6602451",
     "amazon": "https://www.amazon.com/s?k=The+Tender+Bar+J.R.+Moehringer",
     "dateRead": "2022-01-08",
-    "rating": 4
+    "rating": 4,
+    "genre": "Memoir"
   },
   {
     "title": "The Choice: Embrace the Possible",
@@ -1029,6 +1149,7 @@
     "amazon": "https://www.amazon.com/dp/1501130781",
     "dateRead": "2022-01-07",
     "rating": 5,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   }
 ]

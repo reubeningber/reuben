@@ -6,7 +6,8 @@
     "amazon": "https://www.amazon.com/s?k=Mission+Critical+Mark+Greaney",
     "dateRead": "2023-12-31",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "Scarcity Brain: Fix Your Craving Mindset and Rewire Your Habits to Thrive with Enough",
@@ -14,7 +15,8 @@
     "cover": "reading_covers/93038414",
     "amazon": "https://www.amazon.com/dp/0593236637",
     "dateRead": "2023-12-25",
-    "rating": 4
+    "rating": 4,
+    "genre": "Self-Help"
   },
   {
     "title": "The Life We Bury (Joe Talbert, #1; Detective Max Rupert, #1)",
@@ -23,7 +25,8 @@
     "amazon": "https://www.amazon.com/dp/1616149981",
     "dateRead": "2023-12-24",
     "rating": 5,
-    "audio": true
+    "audio": true,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "Deep Work: Rules for Focused Success in a Distracted World",
@@ -31,7 +34,8 @@
     "cover": "reading_covers/25744928",
     "amazon": "https://www.amazon.com/dp/1455586692",
     "dateRead": "2023-12-22",
-    "rating": 4
+    "rating": 4,
+    "genre": "Self-Help"
   },
   {
     "title": "All the Beauty in the World: The Metropolitan Museum of Art and Me",
@@ -40,7 +44,8 @@
     "amazon": "https://www.amazon.com/dp/1982163321",
     "dateRead": "2023-12-22",
     "rating": 2,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Drowning: The Rescue of Flight 1421",
@@ -49,7 +54,8 @@
     "amazon": "https://www.amazon.com/s?k=Drowning+T.J.+Newman",
     "dateRead": "2023-12-22",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Fiction"
   },
   {
     "title": "Five Floors Up: The Heroic Family Story of Four Generations in the FDNY",
@@ -57,7 +63,8 @@
     "cover": "reading_covers/62125483",
     "amazon": "https://www.amazon.com/dp/1538753197",
     "dateRead": "2023-12-09",
-    "rating": 3
+    "rating": 3,
+    "genre": "Memoir"
   },
   {
     "title": "What the Taliban Told Me",
@@ -66,7 +73,8 @@
     "amazon": "https://www.amazon.com/dp/1668010690",
     "dateRead": "2023-12-06",
     "rating": 2,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Barbarian Days: A Surfing Life",
@@ -74,7 +82,8 @@
     "cover": "reading_covers/25515725",
     "amazon": "https://www.amazon.com/dp/0698163745",
     "dateRead": "2023-11-29",
-    "rating": 2
+    "rating": 2,
+    "genre": "Memoir"
   },
   {
     "title": "Tough Jews: Fathers, Sons, and Gangster Dreams",
@@ -83,7 +92,8 @@
     "amazon": "https://www.amazon.com/dp/0375705473",
     "dateRead": "2023-11-18",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "History"
   },
   {
     "title": "Beautiful Boy: A Father's Journey Through His Son's Addiction",
@@ -92,7 +102,8 @@
     "amazon": "https://www.amazon.com/dp/1328974715",
     "dateRead": "2023-11-13",
     "rating": 5,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "The Dog Stars",
@@ -100,7 +111,8 @@
     "cover": "reading_covers/16124244",
     "amazon": "https://www.amazon.com/s?k=The+Dog+Stars+Peter+Heller",
     "dateRead": "2023-11-11",
-    "rating": 4
+    "rating": 4,
+    "genre": "Science Fiction"
   },
   {
     "title": "Strip Tees: A Memoir of Millennial Los Angeles",
@@ -109,7 +121,8 @@
     "amazon": "https://www.amazon.com/dp/1250827280",
     "dateRead": "2023-11-06",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Build the Life You Want: The Art and Science of Getting Happier",
@@ -118,7 +131,8 @@
     "amazon": "https://www.amazon.com/dp/0593545400",
     "dateRead": "2023-11-05",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Self-Help"
   },
   {
     "title": "Agent in Place (Gray Man, #7)",
@@ -126,7 +140,8 @@
     "cover": "reading_covers/35226533",
     "amazon": "https://www.amazon.com/s?k=Agent+in+Place+Mark+Greaney",
     "dateRead": "2023-11-03",
-    "rating": 3
+    "rating": 3,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "Solving the Procrastination Puzzle: A Concise Guide to Strategies for Change",
@@ -134,7 +149,8 @@
     "cover": "reading_covers/18929644",
     "amazon": "https://www.amazon.com/dp/0698148312",
     "dateRead": "2023-10-31",
-    "rating": 4
+    "rating": 4,
+    "genre": "Self-Help"
   },
   {
     "title": "How the Talmud Can Change Your Life: Surprisingly Modern Advice from a Very Old Book",
@@ -142,7 +158,8 @@
     "cover": "reading_covers/77265019",
     "amazon": "https://www.amazon.com/dp/1324020830",
     "dateRead": "2023-10-26",
-    "rating": 2
+    "rating": 2,
+    "genre": "Religion & Spirituality"
   },
   {
     "title": "Cold Storage",
@@ -151,7 +168,8 @@
     "amazon": "https://www.amazon.com/dp/0062916432",
     "dateRead": "2023-10-24",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "Walking to Listen: 4,000 Miles Across America, One Story at a Time",
@@ -160,7 +178,8 @@
     "amazon": "https://www.amazon.com/dp/1632867001",
     "dateRead": "2023-10-21",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Cartoons With My Dad: How Art Drew Us Together",
@@ -168,7 +187,8 @@
     "cover": "reading_covers/52342729",
     "amazon": "https://www.amazon.com/s?k=Cartoons+With+My+Dad+Brian+Frazer",
     "dateRead": "2023-10-15",
-    "rating": 3
+    "rating": 3,
+    "genre": "Memoir"
   },
   {
     "title": "Empire State of Mind: How Jay-Z Went From Street Corner to Corner Office",
@@ -177,7 +197,8 @@
     "amazon": "https://www.amazon.com/dp/1591843812",
     "dateRead": "2023-10-14",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Biography"
   },
   {
     "title": "Home: Can we ever run away from who we once were?",
@@ -193,7 +214,8 @@
     "cover": "reading_covers/150006686",
     "amazon": "https://www.amazon.com/s?k=Ten+Bullets+Tom+Sachs",
     "dateRead": "2023-10-10",
-    "rating": 5
+    "rating": 5,
+    "genre": "Self-Help"
   },
   {
     "title": "Foster",
@@ -201,7 +223,8 @@
     "cover": "reading_covers/61206869",
     "amazon": "https://www.amazon.com/dp/0802160158",
     "dateRead": "2023-10-09",
-    "rating": 3
+    "rating": 3,
+    "genre": "Fiction"
   },
   {
     "title": "Extra Focus: The Quick Start Guide to Adult ADHD",
@@ -209,7 +232,8 @@
     "cover": "reading_covers/197655262",
     "amazon": "https://www.amazon.com/s?k=Extra+Focus+Jesse+J.+Anderson",
     "dateRead": "2023-10-08",
-    "rating": 2
+    "rating": 2,
+    "genre": "Self-Help"
   },
   {
     "title": "The Push: A Climber's Journey of Endurance, Risk, and Going Beyond Limits",
@@ -218,7 +242,8 @@
     "amazon": "https://www.amazon.com/dp/0399562702",
     "dateRead": "2023-10-04",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "The Greatness Mindset: Unlock the Power of Your Mind and Live Your Best Life Today",
@@ -226,7 +251,8 @@
     "cover": "reading_covers/66054710",
     "amazon": "https://www.amazon.com/dp/1401971997",
     "dateRead": "2023-09-28",
-    "rating": 3
+    "rating": 3,
+    "genre": "Self-Help"
   },
   {
     "title": "Of Boys and Men: Why the Modern Male Is Struggling, Why It Matters, and What to Do About It",
@@ -235,7 +261,8 @@
     "amazon": "https://www.amazon.com/dp/1800750544",
     "dateRead": "2023-09-26",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Nonfiction"
   },
   {
     "title": "The Right Stuff",
@@ -244,7 +271,8 @@
     "amazon": "https://www.amazon.com/s?k=The+Right+Stuff+Tom+Wolfe",
     "dateRead": "2023-09-20",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "History"
   },
   {
     "title": "Soul Boom: Why We Need a Spiritual Revolution",
@@ -253,7 +281,8 @@
     "amazon": "https://www.amazon.com/dp/0306828278",
     "dateRead": "2023-09-20",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Religion & Spirituality"
   },
   {
     "title": "One Way (Frank Kitteridge, #1)",
@@ -261,7 +290,8 @@
     "cover": "reading_covers/39721529",
     "amazon": "https://www.amazon.com/dp/0316522155",
     "dateRead": "2023-09-13",
-    "rating": 4
+    "rating": 4,
+    "genre": "Science Fiction"
   },
   {
     "title": "How Will You Measure Your Life?",
@@ -270,7 +300,8 @@
     "amazon": "https://www.amazon.com/dp/0062102427",
     "dateRead": "2023-09-12",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Business"
   },
   {
     "title": "Above Ground",
@@ -278,7 +309,8 @@
     "cover": "reading_covers/61398927",
     "amazon": "https://www.amazon.com/dp/0316543039",
     "dateRead": "2023-09-12",
-    "rating": 5
+    "rating": 5,
+    "genre": "Poetry"
   },
   {
     "title": "Amity and Prosperity: One Family and the Fracturing of America",
@@ -287,7 +319,8 @@
     "amazon": "https://www.amazon.com/dp/0374103119",
     "dateRead": "2023-09-08",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "Attention Span: A Groundbreaking Way to Restore Balance, Happiness and Productivity",
@@ -295,7 +328,8 @@
     "cover": "reading_covers/60762560",
     "amazon": "https://www.amazon.com/dp/0369733053",
     "dateRead": "2023-09-04",
-    "rating": 2
+    "rating": 2,
+    "genre": "Psychology"
   },
   {
     "title": "When the World Didn't End",
@@ -304,7 +338,8 @@
     "amazon": "https://www.amazon.com/dp/0593237595",
     "dateRead": "2023-09-02",
     "rating": 2,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Pines: Wayward Pines: 1 (The Wayward Pines Trilogy)",
@@ -312,7 +347,8 @@
     "cover": "reading_covers/60759964",
     "amazon": "https://www.amazon.com/dp/0593598334",
     "dateRead": "2023-08-30",
-    "rating": 5
+    "rating": 5,
+    "genre": "Science Fiction"
   },
   {
     "title": "Personality Isn't Permanent: Break Free from Self-Limiting Beliefs and Rewrite Your Story",
@@ -320,7 +356,8 @@
     "cover": "reading_covers/52383212",
     "amazon": "https://www.amazon.com/dp/0593083326",
     "dateRead": "2023-08-23",
-    "rating": 2
+    "rating": 2,
+    "genre": "Self-Help"
   },
   {
     "title": "Objective Secure: The Battle-Tested Guide to Goal Achievement",
@@ -328,7 +365,8 @@
     "cover": "reading_covers/60175582",
     "amazon": "https://www.amazon.com/s?k=Objective+Secure+Nick+Lavery",
     "dateRead": "2023-08-18",
-    "rating": 1
+    "rating": 1,
+    "genre": "Memoir"
   },
   {
     "title": "Anxious People",
@@ -336,7 +374,8 @@
     "cover": "reading_covers/49534036",
     "amazon": "https://www.amazon.com/dp/1501160850",
     "dateRead": "2023-08-15",
-    "rating": 4
+    "rating": 4,
+    "genre": "Fiction"
   },
   {
     "title": "Tunnel 29: The True Story of an Extraordinary Escape Beneath the Berlin Wall",
@@ -345,7 +384,8 @@
     "amazon": "https://www.amazon.com/dp/1541788842",
     "dateRead": "2023-08-15",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "History"
   },
   {
     "title": "A Night to Remember",
@@ -354,7 +394,8 @@
     "amazon": "https://www.amazon.com/dp/0805077642",
     "dateRead": "2023-08-11",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "History"
   },
   {
     "title": "The Lost City of Z: A Tale of Deadly Obsession in the Amazon",
@@ -363,7 +404,8 @@
     "amazon": "https://www.amazon.com/dp/0385513534",
     "dateRead": "2023-08-11",
     "rating": 2,
-    "audio": true
+    "audio": true,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "Gunmetal Gray (Gray Man, #6)",
@@ -371,7 +413,8 @@
     "cover": "reading_covers/75438109",
     "amazon": "https://www.amazon.com/s?k=Gunmetal+Gray+Mark+Greaney",
     "dateRead": "2023-08-02",
-    "rating": 4
+    "rating": 4,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "South and West: From A Notebook",
@@ -379,7 +422,8 @@
     "cover": "reading_covers/34672235",
     "amazon": "https://www.amazon.com/dp/0008257183",
     "dateRead": "2023-08-02",
-    "rating": 2
+    "rating": 2,
+    "genre": "Essays"
   },
   {
     "title": "Outliers: The Story of Success",
@@ -387,7 +431,8 @@
     "cover": "reading_covers/3228917",
     "amazon": "https://www.amazon.com/dp/0316017922",
     "dateRead": "2023-07-21",
-    "rating": 3
+    "rating": 3,
+    "genre": "Psychology"
   },
   {
     "title": "Rucking Gains",
@@ -395,7 +440,8 @@
     "cover": "reading_covers/56573280",
     "amazon": "https://www.amazon.com/s?k=Rucking+Gains+Josh+Bryant",
     "dateRead": "2023-07-19",
-    "rating": 1
+    "rating": 1,
+    "genre": "Health & Fitness"
   },
   {
     "title": "You Can’t Screw This Up: Why Eating Takeout, Enjoying Dessert, and Taking the Stress out of Dieting Leads to Weight Loss That Lasts",
@@ -403,7 +449,8 @@
     "cover": "reading_covers/61319759",
     "amazon": "https://www.amazon.com/dp/0063230593",
     "dateRead": "2023-07-17",
-    "rating": 4
+    "rating": 4,
+    "genre": "Health & Fitness"
   },
   {
     "title": "Final Spin",
@@ -412,7 +459,8 @@
     "amazon": "https://www.amazon.com/dp/1250276853",
     "dateRead": "2023-07-11",
     "rating": 1,
-    "audio": true
+    "audio": true,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "The Comfort Crisis: Embrace Discomfort to Reclaim Your Wild, Happy, Healthy Self",
@@ -420,7 +468,8 @@
     "cover": "reading_covers/56395724",
     "amazon": "https://www.amazon.com/dp/0593138775",
     "dateRead": "2023-07-09",
-    "rating": 5
+    "rating": 5,
+    "genre": "Health & Fitness"
   },
   {
     "title": "Before the Coffee Gets Cold (Before the Coffee Gets Cold, #1)",
@@ -428,7 +477,8 @@
     "cover": "reading_covers/51603444",
     "amazon": "https://www.amazon.com/dp/1488077215",
     "dateRead": "2023-07-07",
-    "rating": 2
+    "rating": 2,
+    "genre": "Fiction"
   },
   {
     "title": "Sixty-One: Life Lessons from Papa, On and Off the Court",
@@ -436,7 +486,8 @@
     "cover": "reading_covers/57055967",
     "amazon": "https://www.amazon.com/dp/1250276713",
     "dateRead": "2023-07-05",
-    "rating": 2
+    "rating": 2,
+    "genre": "Memoir"
   },
   {
     "title": "Waiting for Eden",
@@ -444,7 +495,8 @@
     "cover": "reading_covers/37882298",
     "amazon": "https://www.amazon.com/dp/110194739X",
     "dateRead": "2023-07-01",
-    "rating": 2
+    "rating": 2,
+    "genre": "Fiction"
   },
   {
     "title": "Only the Dead (Terminal List #6)",
@@ -452,7 +504,8 @@
     "cover": "reading_covers/62598580",
     "amazon": "https://www.amazon.com/dp/1982181729",
     "dateRead": "2023-06-21",
-    "rating": 3
+    "rating": 3,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "Mickey 7 (Mickey7 #1)",
@@ -460,7 +513,8 @@
     "cover": "reading_covers/62030429",
     "amazon": "https://www.amazon.com/dp/3641280540",
     "dateRead": "2023-06-16",
-    "rating": 4
+    "rating": 4,
+    "genre": "Science Fiction"
   },
   {
     "title": "True Grit",
@@ -468,7 +522,8 @@
     "cover": "reading_covers/257845",
     "amazon": "https://www.amazon.com/dp/1585673692",
     "dateRead": "2023-06-12",
-    "rating": 4
+    "rating": 4,
+    "genre": "Fiction"
   },
   {
     "title": "The Reason I Jump: the Inner Voice of a Thirteen-Year-Old Boy with Autism",
@@ -476,7 +531,8 @@
     "cover": "reading_covers/16113737",
     "amazon": "https://www.amazon.com/dp/0812994868",
     "dateRead": "2023-06-12",
-    "rating": 3
+    "rating": 3,
+    "genre": "Memoir"
   },
   {
     "title": "Sourdough",
@@ -484,7 +540,8 @@
     "cover": "reading_covers/33916024",
     "amazon": "https://www.amazon.com/dp/0374203105",
     "dateRead": "2023-06-08",
-    "rating": 3
+    "rating": 3,
+    "genre": "Fiction"
   },
   {
     "title": "Uncaged: My Life as a Champion MMA Fighter",
@@ -492,7 +549,8 @@
     "cover": "reading_covers/19101979",
     "amazon": "https://www.amazon.com/dp/1613744676",
     "dateRead": "2023-06-03",
-    "rating": 2
+    "rating": 2,
+    "genre": "Memoir"
   },
   {
     "title": "Traffic: Genius, Rivalry, and Delusion in the Billion-Dollar Race to Go Viral",
@@ -501,7 +559,8 @@
     "amazon": "https://www.amazon.com/dp/0593299752",
     "dateRead": "2023-05-31",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "The Book of Charlie: Wisdom from the Remarkable American Life of a 109-Year-Old Man",
@@ -510,7 +569,8 @@
     "amazon": "https://www.amazon.com/dp/1476773920",
     "dateRead": "2023-05-28",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Biography"
   },
   {
     "title": "Home Game: An Accidental Guide to Fatherhood",
@@ -518,7 +578,8 @@
     "cover": "reading_covers/6514063",
     "amazon": "https://www.amazon.com/s?k=Home+Game+Michael+Lewis",
     "dateRead": "2023-05-23",
-    "rating": 3
+    "rating": 3,
+    "genre": "Memoir"
   },
   {
     "title": "Back Blast (Gray Man, #5)",
@@ -526,7 +587,8 @@
     "cover": "reading_covers/24867351",
     "amazon": "https://www.amazon.com/s?k=Back+Blast+Mark+Greaney",
     "dateRead": "2023-05-18",
-    "rating": 5
+    "rating": 5,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "Life on Delay: Making Peace with a Stutter",
@@ -534,7 +596,8 @@
     "cover": "reading_covers/60564466",
     "amazon": "https://www.amazon.com/dp/0593319133",
     "dateRead": "2023-05-18",
-    "rating": 4
+    "rating": 4,
+    "genre": "Memoir"
   },
   {
     "title": "Waco: David Koresh, the Branch Davidians, and A Legacy of Rage",
@@ -543,7 +606,8 @@
     "amazon": "https://www.amazon.com/dp/1797152610",
     "dateRead": "2023-05-18",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "History"
   },
   {
     "title": "We Share the Sun: The Incredible Journey of Kenya's Legendary Running Coach Patrick Sang and the Fastest Runners on Earth",
@@ -551,7 +615,8 @@
     "cover": "reading_covers/73304362",
     "amazon": "https://www.amazon.com/s?k=We+Share+the+Sun+Sarah+Gearhart",
     "dateRead": "2023-05-08",
-    "rating": 3
+    "rating": 3,
+    "genre": "Sports"
   },
   {
     "title": "Look for Me There: Grieving My Father, Finding Myself",
@@ -560,7 +625,8 @@
     "amazon": "https://www.amazon.com/dp/0785291814",
     "dateRead": "2023-05-06",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Jesus Land: A Memoir",
@@ -569,7 +635,8 @@
     "amazon": "https://www.amazon.com/dp/1582433542",
     "dateRead": "2023-05-03",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "12 Notes: Quincy Jones distills a lifetime of musical wisdom into twelve practical creative lessons.",
@@ -578,7 +645,8 @@
     "amazon": "https://www.amazon.com/dp/1419752561",
     "dateRead": "2023-05-03",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Self-Help"
   },
   {
     "title": "Who By Fire: War, Atonement, and the Resurrection of Leonard Cohen",
@@ -586,7 +654,8 @@
     "cover": "reading_covers/59899078",
     "amazon": "https://www.amazon.com/dp/1954118082",
     "dateRead": "2023-05-03",
-    "rating": 3
+    "rating": 3,
+    "genre": "History"
   },
   {
     "title": "The Practice of Groundedness: A Transformative Path to Success That Feeds--Not Crushes--Your Soul",
@@ -594,7 +663,8 @@
     "cover": "reading_covers/57504944",
     "amazon": "https://www.amazon.com/dp/0593329902",
     "dateRead": "2023-04-29",
-    "rating": 4
+    "rating": 4,
+    "genre": "Self-Help"
   },
   {
     "title": "Dead Eye (Gray Man, #4)",
@@ -602,7 +672,8 @@
     "cover": "reading_covers/18930503",
     "amazon": "https://www.amazon.com/s?k=Dead+Eye+Mark+Greaney",
     "dateRead": "2023-04-28",
-    "rating": 5
+    "rating": 5,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "Make Time: How to Focus on What Matters Every Day",
@@ -610,7 +681,8 @@
     "cover": "reading_covers/39317186",
     "amazon": "https://www.amazon.com/dp/0525572430",
     "dateRead": "2023-04-24",
-    "rating": 4
+    "rating": 4,
+    "genre": "Self-Help"
   },
   {
     "title": "Chasing the Scream: The First and Last Days of the War on Drugs",
@@ -618,7 +690,8 @@
     "cover": "reading_covers/24379960",
     "amazon": "https://www.amazon.com/dp/1620408929",
     "dateRead": "2023-04-19",
-    "rating": 3
+    "rating": 3,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "Age of Vice",
@@ -627,7 +700,8 @@
     "amazon": "https://www.amazon.com/dp/0593328795",
     "dateRead": "2023-04-19",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Fiction"
   },
   {
     "title": "A Libertarian Walks Into a Bear: The Utopian Plot to Liberate an American Town (And Some Bears)",
@@ -635,7 +709,8 @@
     "cover": "reading_covers/51477122",
     "amazon": "https://www.amazon.com/dp/1541788486",
     "dateRead": "2023-04-11",
-    "rating": 2
+    "rating": 2,
+    "genre": "Humor"
   },
   {
     "title": "Open",
@@ -644,7 +719,8 @@
     "amazon": "https://www.amazon.com/dp/0307268195",
     "dateRead": "2023-04-02",
     "rating": 5,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "The Hungry Brain: Outsmarting the Instincts That Make Us Overeat",
@@ -652,7 +728,8 @@
     "cover": "reading_covers/33015349",
     "amazon": "https://www.amazon.com/dp/1250081238",
     "dateRead": "2023-04-01",
-    "rating": 2
+    "rating": 2,
+    "genre": "Science"
   },
   {
     "title": "Discipline Is Destiny: The Power of Self-Control",
@@ -660,7 +737,8 @@
     "cover": "reading_covers/60018575",
     "amazon": "https://www.amazon.com/dp/0593191692",
     "dateRead": "2023-03-27",
-    "rating": 5
+    "rating": 5,
+    "genre": "Self-Help"
   },
   {
     "title": "I Will Find You",
@@ -668,7 +746,8 @@
     "cover": "reading_covers/61392438",
     "amazon": "https://www.amazon.com/s?k=I+Will+Find+You+Harlan+Coben",
     "dateRead": "2023-03-27",
-    "rating": 3
+    "rating": 3,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "The Escape Artist: The Man Who Broke Out of Auschwitz to Warn the World",
@@ -676,7 +755,8 @@
     "cover": "reading_covers/60194141",
     "amazon": "https://www.amazon.com/dp/0063112337",
     "dateRead": "2023-03-24",
-    "rating": 3
+    "rating": 3,
+    "genre": "History"
   },
   {
     "title": "Do Epic Shit",
@@ -684,7 +764,8 @@
     "cover": "reading_covers/59907463",
     "amazon": "https://www.amazon.com/s?k=Do+Epic+Shit+Ankur+Warikoo",
     "dateRead": "2023-03-20",
-    "rating": 1
+    "rating": 1,
+    "genre": "Self-Help"
   },
   {
     "title": "Ballistic (Gray Man, #3)",
@@ -692,7 +773,8 @@
     "cover": "reading_covers/75438098",
     "amazon": "https://www.amazon.com/s?k=Ballistic+Mark+Greaney",
     "dateRead": "2023-03-19",
-    "rating": 4
+    "rating": 4,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "Dark Horse (Orphan X, #7)",
@@ -700,7 +782,8 @@
     "cover": "reading_covers/57693476",
     "amazon": "https://www.amazon.com/dp/125025230X",
     "dateRead": "2023-03-17",
-    "rating": 3
+    "rating": 3,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "Station Eleven",
@@ -708,7 +791,8 @@
     "cover": "reading_covers/59000287",
     "amazon": "https://www.amazon.com/dp/0385353316",
     "dateRead": "2023-03-12",
-    "rating": 4
+    "rating": 4,
+    "genre": "Science Fiction"
   },
   {
     "title": "The Suspect: An Olympic Bombing, the FBI, the Media, and Richard Jewell, the Man Caught in the Middle",
@@ -717,7 +801,8 @@
     "amazon": "https://www.amazon.com/dp/1419734628",
     "dateRead": "2023-03-06",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "True Crime"
   },
   {
     "title": "On Target (Gray Man, #2)",
@@ -725,7 +810,8 @@
     "cover": "reading_covers/58258235",
     "amazon": "https://www.amazon.com/s?k=On+Target+Mark+Greaney",
     "dateRead": "2023-03-02",
-    "rating": 5
+    "rating": 5,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "The Storyteller: Tales of Life and Music",
@@ -733,7 +819,8 @@
     "cover": "reading_covers/57648017",
     "amazon": "https://www.amazon.com/dp/0063076098",
     "dateRead": "2023-02-28",
-    "rating": 5
+    "rating": 5,
+    "genre": "Memoir"
   },
   {
     "title": "And Every Morning the Way Home Gets Longer and Longer",
@@ -741,7 +828,8 @@
     "cover": "reading_covers/31373633",
     "amazon": "https://www.amazon.com/dp/1501160575",
     "dateRead": "2023-02-26",
-    "rating": 4
+    "rating": 4,
+    "genre": "Fiction"
   },
   {
     "title": "The Gray Man (Gray Man, #1)",
@@ -749,7 +837,8 @@
     "cover": "reading_covers/75438084",
     "amazon": "https://www.amazon.com/s?k=The+Gray+Man+Mark+Greaney",
     "dateRead": "2023-02-24",
-    "rating": 5
+    "rating": 5,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "Win (Windsor Horne Lockwood III, #1)",
@@ -758,7 +847,8 @@
     "amazon": "https://www.amazon.com/dp/1538748215",
     "dateRead": "2023-02-20",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "Less (Arthur Less, #1)",
@@ -766,7 +856,8 @@
     "cover": "reading_covers/39927096",
     "amazon": "https://www.amazon.com/s?k=Less+Andrew+Sean+Greer",
     "dateRead": "2023-02-16",
-    "rating": 3
+    "rating": 3,
+    "genre": "Fiction"
   },
   {
     "title": "The Feather Thief: Beauty, Obsession, and the Natural History Heist of the Century",
@@ -774,7 +865,8 @@
     "cover": "reading_covers/44153387",
     "amazon": "https://www.amazon.com/dp/1101981636",
     "dateRead": "2023-02-15",
-    "rating": 4
+    "rating": 4,
+    "genre": "True Crime"
   },
   {
     "title": "Chasing Shadows: A Special Agent's Lifelong Hunt to Bring a Cold War Assassin to Justice",
@@ -782,7 +874,8 @@
     "cover": "reading_covers/8733442",
     "amazon": "https://www.amazon.com/dp/0230620558",
     "dateRead": "2023-02-09",
-    "rating": 3
+    "rating": 3,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "Everything is Figureoutable",
@@ -791,7 +884,8 @@
     "amazon": "https://www.amazon.com/dp/0241341035",
     "dateRead": "2023-02-07",
     "rating": 2,
-    "audio": true
+    "audio": true,
+    "genre": "Self-Help"
   },
   {
     "title": "Solito",
@@ -799,7 +893,8 @@
     "cover": "reading_covers/62208466",
     "amazon": "https://www.amazon.com/s?k=Solito+Javier+Zamora",
     "dateRead": "2023-02-05",
-    "rating": 5
+    "rating": 5,
+    "genre": "Memoir"
   },
   {
     "title": "Bad City: Peril and Power in the City of Angels",
@@ -808,7 +903,8 @@
     "amazon": "https://www.amazon.com/dp/1250824087",
     "dateRead": "2023-02-02",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "Molly's Game: From Hollywood's Elite to Wall Street's Billionaire Boys Club, My High-Stakes Adventure in the World of Underground Poker",
@@ -817,7 +913,8 @@
     "amazon": "https://www.amazon.com/dp/0062213075",
     "dateRead": "2023-01-30",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "The Volunteer: The True Story of the Resistance Hero who Infiltrated Auschwitz",
@@ -826,7 +923,8 @@
     "amazon": "https://www.amazon.com/dp/0753545160",
     "dateRead": "2023-01-27",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "History"
   },
   {
     "title": "Here All Along: Finding Meaning, Spirituality, and a Deeper Connection to Life--in Judaism (After Finally Choosing to Look There)",
@@ -834,7 +932,8 @@
     "cover": "reading_covers/49464787",
     "amazon": "https://www.amazon.com/dp/0525510729",
     "dateRead": "2023-01-26",
-    "rating": 2
+    "rating": 2,
+    "genre": "Religion & Spirituality"
   },
   {
     "title": "Show Your Work!: 10 Ways to Share Your Creativity and Get Discovered",
@@ -842,7 +941,8 @@
     "cover": "reading_covers/18290401",
     "amazon": "https://www.amazon.com/dp/076117897X",
     "dateRead": "2023-01-25",
-    "rating": 5
+    "rating": 5,
+    "genre": "Self-Help"
   },
   {
     "title": "Range: Why Generalists Triumph in a Specialized World",
@@ -851,7 +951,8 @@
     "amazon": "https://www.amazon.com/dp/0735214484",
     "dateRead": "2023-01-24",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Psychology"
   },
   {
     "title": "Without Remorse (John Clark, #1; Jack Ryan Universe, #1)",
@@ -859,7 +960,8 @@
     "cover": "reading_covers/50654913",
     "amazon": "https://www.amazon.com/s?k=Without+Remorse+Tom+Clancy",
     "dateRead": "2023-01-22",
-    "rating": 5
+    "rating": 5,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "The Original",
@@ -868,7 +970,8 @@
     "amazon": "https://www.amazon.com/s?k=The+Original+Brandon+Sanderson",
     "dateRead": "2023-01-21",
     "rating": 5,
-    "audio": true
+    "audio": true,
+    "genre": "Science Fiction"
   },
   {
     "title": "The Harder They Fall",
@@ -877,7 +980,8 @@
     "amazon": "https://www.amazon.com/dp/1566631076",
     "dateRead": "2023-01-19",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Fiction"
   },
   {
     "title": "My Year of Running Dangerously: A Dad, a Daughter, and a Ridiculous Plan",
@@ -886,7 +990,8 @@
     "amazon": "https://www.amazon.com/dp/0399175474",
     "dateRead": "2023-01-09",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Mindset: The New Psychology of Success",
@@ -894,6 +999,7 @@
     "cover": "reading_covers/5494321",
     "amazon": "https://www.amazon.com/dp/1588365239",
     "dateRead": "2023-01-06",
-    "rating": 4
+    "rating": 4,
+    "genre": "Psychology"
   }
 ]

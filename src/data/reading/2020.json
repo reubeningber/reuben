@@ -5,7 +5,8 @@
     "cover": "reading_covers/49049906",
     "amazon": "https://www.amazon.com/dp/198210533X",
     "dateRead": "2020-12-30",
-    "rating": 5
+    "rating": 5,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "The Ride of a Lifetime: Lessons Learned from 15 Years as CEO of the Walt Disney Company",
@@ -14,7 +15,8 @@
     "amazon": "https://www.amazon.com/s?k=The%20Ride%20of%20a%20Lifetime%20Robert%20Iger",
     "dateRead": "2020-12-22",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Business"
   },
   {
     "title": "A Promised Land",
@@ -22,7 +24,8 @@
     "cover": "reading_covers/55361205",
     "amazon": "https://www.amazon.com/dp/1524763187",
     "dateRead": "2020-12-18",
-    "rating": 3
+    "rating": 3,
+    "genre": "Memoir"
   },
   {
     "title": "The Spy and the Traitor: The Greatest Espionage Story of the Cold War",
@@ -30,7 +33,8 @@
     "cover": "reading_covers/37542581",
     "amazon": "https://www.amazon.com/dp/0771060335",
     "dateRead": "2020-12-11",
-    "rating": 5
+    "rating": 5,
+    "genre": "History"
   },
   {
     "title": "Bad Blood: Secrets and Lies in a Silicon Valley Startup",
@@ -38,7 +42,8 @@
     "cover": "reading_covers/38799469",
     "amazon": "https://www.amazon.com/s?k=Bad+Blood+John+Carreyrou",
     "dateRead": "2020-12-10",
-    "rating": 5
+    "rating": 5,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "Trust: America's Best Chance",
@@ -47,7 +52,8 @@
     "amazon": "https://www.amazon.com/dp/1797119214",
     "dateRead": "2020-12-04",
     "rating": 4,
-    "audio": true
+    "audio": true,
+    "genre": "Politics"
   },
   {
     "title": "The Dip: A Little Book That Teaches You When to Quit (and When to Stick)",
@@ -55,21 +61,24 @@
     "cover": "reading_covers/6547148",
     "amazon": "https://www.amazon.com/dp/1101216344",
     "dateRead": "2020-12-03",
-    "rating": 5
+    "rating": 5,
+    "genre": "Business"
   },
   {
     "title": "Don't Go Back to School: A Handbook for Learning Anything",
     "author": "Kio Stark",
     "cover": "reading_covers/18329706",
     "amazon": "https://www.amazon.com/dp/0988949016",
-    "dateRead": "2020-12-03"
+    "dateRead": "2020-12-03",
+    "genre": "Self-Help"
   },
   {
     "title": "Them: Why We Hate Each Other - and How to Heal",
     "author": "Ben Sasse",
     "cover": "reading_covers/38714379",
     "amazon": "https://www.amazon.com/dp/1250193680",
-    "dateRead": "2020-12-03"
+    "dateRead": "2020-12-03",
+    "genre": "Politics"
   },
   {
     "title": "Homeland Elegies",
@@ -78,7 +87,8 @@
     "amazon": "https://www.amazon.com/dp/0316496421",
     "dateRead": "2020-12-01",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Fiction"
   },
   {
     "title": "Educated",
@@ -87,7 +97,8 @@
     "amazon": "https://www.amazon.com/dp/0399590501",
     "dateRead": "2020-11-11",
     "rating": 5,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Greenlights",
@@ -95,7 +106,8 @@
     "cover": "reading_covers/52838315",
     "amazon": "https://www.amazon.com/dp/0593139135",
     "dateRead": "2020-10-26",
-    "rating": 3
+    "rating": 3,
+    "genre": "Memoir"
   },
   {
     "title": "When Bad Things Happen to Good People",
@@ -103,7 +115,8 @@
     "cover": "reading_covers/8122110",
     "amazon": "https://www.amazon.com/s?k=When%20Bad%20Things%20Happen%20to%20Good%20People%20Harold%20S.%20Kushner",
     "dateRead": "2020-09-01",
-    "rating": 5
+    "rating": 5,
+    "genre": "Religion & Spirituality"
   },
   {
     "title": "Average Is Over: Powering America Beyond the Age of the Great Stagnation",
@@ -111,7 +124,8 @@
     "cover": "reading_covers/18744904",
     "amazon": "https://www.amazon.com/dp/0698138163",
     "dateRead": "2020-09-01",
-    "rating": 3
+    "rating": 3,
+    "genre": "Business"
   },
   {
     "title": "Patriot Games (Jack Ryan, #1; Jack Ryan Universe, #2)",
@@ -119,7 +133,8 @@
     "cover": "reading_covers/48723795",
     "amazon": "https://www.amazon.com/s?k=Patriot+Games+Tom+Clancy",
     "dateRead": "2020-07-01",
-    "rating": 3
+    "rating": 3,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "Quiet: The Power of Introverts in a World That Can't Stop Talking",
@@ -127,7 +142,8 @@
     "cover": "reading_covers/36547901",
     "amazon": "https://www.amazon.com/s?k=Quiet%20Susan%20Cain",
     "dateRead": "2020-07-01",
-    "rating": 5
+    "rating": 5,
+    "genre": "Psychology"
   },
   {
     "title": "Ready Player One (Ready Player One, #1)",
@@ -135,7 +151,8 @@
     "cover": "reading_covers/20603758",
     "amazon": "https://www.amazon.com/s?k=Ready+Player+One+Ernest+Cline",
     "dateRead": "2020-05-22",
-    "rating": 5
+    "rating": 5,
+    "genre": "Science Fiction"
   },
   {
     "title": "Let Your Mind Run: A Memoir of Thinking My Way to Victory",
@@ -144,7 +161,8 @@
     "amazon": "https://www.amazon.com/dp/1524760757",
     "dateRead": "2020-05-06",
     "rating": 3,
-    "audio": true
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Anti-Diet: Reclaim Your Time, Money, Well-Being, and Happiness Through Intuitive Eating",
@@ -152,7 +170,8 @@
     "cover": "reading_covers/45730892",
     "amazon": "https://www.amazon.com/dp/0316420352",
     "dateRead": "2020-04-19",
-    "rating": 3
+    "rating": 3,
+    "genre": "Health & Fitness"
   },
   {
     "title": "Chasing Excellence: A Story About Building the World’s Fittest Athletes",
@@ -160,7 +179,8 @@
     "cover": "reading_covers/35713474",
     "amazon": "https://www.amazon.com/dp/1619617293",
     "dateRead": "2020-02-24",
-    "rating": 3
+    "rating": 3,
+    "genre": "Sports"
   },
   {
     "title": "The New New Thing: A Silicon Valley Story",
@@ -168,7 +188,8 @@
     "cover": "reading_covers/8135219",
     "amazon": "https://www.amazon.com/s?k=The+New+New+Thing+Michael+Lewis",
     "dateRead": "2020-01-25",
-    "rating": 3
+    "rating": 3,
+    "genre": "Business"
   },
   {
     "title": "Shoe Dog",
@@ -176,7 +197,8 @@
     "cover": "reading_covers/4030991",
     "amazon": "https://www.amazon.com/dp/1501135937",
     "dateRead": "2020-01-22",
-    "rating": 3
+    "rating": 3,
+    "genre": "Memoir"
   },
   {
     "title": "A Fool’s Errand (The John Harvard Library)",
@@ -184,7 +206,8 @@
     "cover": "reading_covers/1132025",
     "amazon": "https://www.amazon.com/dp/0674307518",
     "dateRead": "2020-01-01",
-    "rating": 3
+    "rating": 3,
+    "genre": "History"
   },
   {
     "title": "Running to the Edge: A Band of Misfits and the Guru Who Unlocked the Secrets of Speed",
@@ -192,7 +215,8 @@
     "cover": "reading_covers/41880041",
     "amazon": "https://www.amazon.com/dp/0385543743",
     "dateRead": "2020-01-01",
-    "rating": 4
+    "rating": 4,
+    "genre": "Sports"
   },
   {
     "title": "Better Boys, Better Men: The New Masculinity That Creates Greater Courage and Emotional Resiliency",
@@ -200,7 +224,8 @@
     "cover": "reading_covers/50175231",
     "amazon": "https://www.amazon.com/dp/0062854941",
     "dateRead": "2020-01-01",
-    "rating": 4
+    "rating": 4,
+    "genre": "Psychology"
   },
   {
     "title": "Think Like a Monk: Train Your Mind for Peace and Purpose Everyday",
@@ -208,6 +233,7 @@
     "cover": "reading_covers/50758250",
     "amazon": "https://www.amazon.com/dp/198213450X",
     "dateRead": "2020-01-01",
-    "rating": 5
+    "rating": 5,
+    "genre": "Self-Help"
   }
 ]
