@@ -9,6 +9,7 @@ interface Book {
   amazon: string;
   audio?: boolean;
   rating?: number;
+  genre?: string;
 }
 
 interface Props {
@@ -28,12 +29,18 @@ const { book, cloudName } = Astro.props;
   data-author={book.author.toLowerCase()}
   data-audio={book.audio ? "true" : "false"}
   data-rating={book.rating ?? 0}
+  data-genre={book.genre ?? ""}
 >
   <img
     data-src={readingCoverUrl(cloudName, book.cover)}
     alt={`${book.title} by ${book.author} book cover`}
     class="cover-img w-full h-auto rounded shadow-sm bg-gray-100 aspect-[2/3] object-cover group-hover:opacity-80 transition-opacity"
   />
+  {book.genre && (
+    <div class="absolute left-1.5 top-1.5 max-w-[calc(100%-0.75rem)] truncate rounded-full bg-black/75 px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-white opacity-0 transition-opacity group-hover:opacity-100">
+      {book.genre}
+    </div>
+  )}
   {book.audio && (
     <div
       class="absolute right-1.5 top-1.5 rounded-full bg-black/75 p-1 text-white"

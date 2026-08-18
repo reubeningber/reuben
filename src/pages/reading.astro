@@ -29,6 +29,12 @@ const defaultYear = 2026;
 
 const allBooks = years.flatMap(({ books }) => books);
 const audioCount = allBooks.filter((book) => book.audio).length;
+
+const genreCounts = new Map<string, number>();
+for (const book of allBooks) {
+  if (book.genre) genreCounts.set(book.genre, (genreCounts.get(book.genre) ?? 0) + 1);
+}
+const genres = [...genreCounts.entries()].sort((a, b) => b[1] - a[1]);
 ---
 <Base
   title="Reading | Reuben Ingber"
@@ -100,6 +106,19 @@ const audioCount = allBooks.filter((book) => book.audio).length;
               Audiobooks
               <span class="opacity-70">({audioCount})</span>
             </button>
+          </div>
+
+          <div class="mb-4">
+            <label for="genre-filter-select" class="mb-2 block text-xs font-semibold uppercase tracking-wide text-secondary">Genre</label>
+            <select
+              id="genre-filter-select"
+              class="w-full rounded-full border border-gray-200 py-1.5 px-3 text-sm font-semibold tracking-wide bg-gray-100 text-gray-700 focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
+            >
+              <option value="">All genres</option>
+              {genres.map(([genre, count]) => (
+                <option value={genre}>{genre} ({count})</option>
+              ))}
+            </select>
           </div>
 
           <div class="mb-4">
@@ -249,6 +268,7 @@ const audioCount = allBooks.filter((book) => book.audio).length;
   const filtersCountBadge = document.getElementById('filters-count-badge')!;
   const clearFiltersButton = document.getElementById('clear-filters') as HTMLButtonElement;
   const ratingStars = document.querySelectorAll<HTMLButtonElement>('.rating-star');
+  const genreSelect = document.getElementById('genre-filter-select') as HTMLSelectElement;
 
   function setAudioToggleStyle(active: boolean) {
     audioToggle.setAttribute('aria-pressed', String(active));
@@ -265,6 +285,8 @@ const audioCount = allBooks.filter((book) => book.audio).length;
     setAudioToggleStyle(false);
     minRating = 0;
     setRatingStarStyle();
+    genreFilter = '';
+    genreSelect.value = '';
     activateYear(year);
     yearSelect.value = year;
     render();
@@ -286,9 +308,10 @@ const audioCount = allBooks.filter((book) => book.audio).length;
 
   let audioOnly = false;
   let minRating = 0;
+  let genreFilter = '';
 
   function updateFiltersBadge() {
-    const activeCount = [audioOnly, minRating > 0].filter(Boolean).length;
+    const activeCount = [audioOnly, minRating > 0, genreFilter !== ''].filter(Boolean).length;
     filtersCountBadge.textContent = String(activeCount);
     filtersCountBadge.classList.toggle('hidden', activeCount === 0);
   }
@@ -296,7 +319,8 @@ const audioCount = allBooks.filter((book) => book.audio).length;
   function matchesFilters(card: HTMLAnchorElement) {
     return (
       (!audioOnly || card.dataset.audio === 'true') &&
-      (minRating === 0 || Number(card.dataset.rating) === minRating)
+      (minRating === 0 || Number(card.dataset.rating) === minRating) &&
+      (genreFilter === '' || card.dataset.genre === genreFilter)
     );
   }
 
@@ -308,7 +332,7 @@ const audioCount = allBooks.filter((book) => book.audio).length;
 
   function render() {
     const query = searchInput.value.trim().toLowerCase();
-    const filtersActive = audioOnly || minRating > 0;
+    const filtersActive = audioOnly || minRating > 0 || genreFilter !== '';
     const crossYear = Boolean(query || filtersActive);
 
     updateFiltersBadge();
@@ -375,9 +399,18 @@ const audioCount = allBooks.filter((book) => book.audio).length;
     });
   });
 
+  function setGenreFilter(value: string) {
+    genreFilter = value;
+    render();
+  }
+
+  genreSelect.addEventListener('change', () => setGenreFilter(genreSelect.value));
+
   clearFiltersButton.addEventListener('click', () => {
     setAudioOnly(false);
     setMinRating(0);
+    genreSelect.value = '';
+    setGenreFilter('');
   });
 
   function openFiltersPanel() {
