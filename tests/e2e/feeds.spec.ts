@@ -34,10 +34,11 @@ function slugOf(file: string): string {
   return file.replace(/\.md$/, '');
 }
 
-function isFuture(pubDate: string | null): boolean {
-  if (!pubDate) return false;
-  return new Date(pubDate) > new Date();
-}
+// Real drafts live outside git (see .gitignore's "unpublished drafts"
+// section), so they don't exist in CI. _test-fixture-draft.md is a
+// permanent, committed draft post kept specifically so these tests have a
+// stable draft to check against — mirrors field-notes/_template.md.
+const DRAFT_FIXTURE = '_test-fixture-draft.md';
 
 // The rss() helper XML-escapes item titles, so a raw frontmatter title like
 // "Why Some Dad Don't have friends" appears in the feed as "...Don&apos;t...".
@@ -59,21 +60,13 @@ function findRssItem(xml: string, title: string): string | undefined {
 }
 
 test.describe('sitemap.xml', () => {
-  test('excludes draft and future-dated posts', async ({ request }) => {
-    const files = readdirSync(POSTS_DIR).filter((f) => f.endsWith('.md'));
-    const excludedSlugs = files
-      .filter((f) => {
-        const fm = frontmatter(path.join(POSTS_DIR, f));
-        return isDraft(fm) || isFuture(field(fm, 'pubDate'));
-      })
-      .map(slugOf);
-    expect(excludedSlugs.length).toBeGreaterThan(0); // sanity: repo has at least one draft to check against
+  test('excludes the draft fixture post', async ({ request }) => {
+    const fm = frontmatter(path.join(POSTS_DIR, DRAFT_FIXTURE));
+    expect(isDraft(fm)).toBe(true); // sanity: the fixture we're relying on is still a draft
 
     const res = await request.get('/sitemap.xml');
     const xml = await res.text();
-    for (const slug of excludedSlugs) {
-      expect(xml).not.toContain(`/articles/${slug}/`);
-    }
+    expect(xml).not.toContain(`/articles/${slugOf(DRAFT_FIXTURE)}/`);
   });
 
   test('lists every static page', async ({ request }) => {
@@ -96,19 +89,14 @@ test.describe('sitemap.xml', () => {
 });
 
 test.describe('rss.xml', () => {
-  test('excludes draft and future-dated posts', async ({ request }) => {
-    const files = readdirSync(POSTS_DIR).filter((f) => f.endsWith('.md'));
-    const draftTitles = files
-      .filter((f) => isDraft(frontmatter(path.join(POSTS_DIR, f))))
-      .map((f) => field(frontmatter(path.join(POSTS_DIR, f)), 'title'))
-      .filter((t): t is string => Boolean(t));
-    expect(draftTitles.length).toBeGreaterThan(0);
+  test('excludes the draft fixture post', async ({ request }) => {
+    const fm = frontmatter(path.join(POSTS_DIR, DRAFT_FIXTURE));
+    expect(isDraft(fm)).toBe(true); // sanity: the fixture we're relying on is still a draft
+    const title = field(fm, 'title')!;
 
     const res = await request.get('/rss.xml');
     const xml = await res.text();
-    for (const title of draftTitles) {
-      expect(xml).not.toContain(`<title>${xmlEscape(title)}</title>`);
-    }
+    expect(xml).not.toContain(`<title>${xmlEscape(title)}</title>`);
   });
 
   test('orders items newest-first by pubDate', async ({ request }) => {
