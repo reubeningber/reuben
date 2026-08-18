@@ -10,17 +10,19 @@ import books2023 from "../data/reading/2023.json";
 import books2022 from "../data/reading/2022.json";
 import books2021 from "../data/reading/2021.json";
 import books2020 from "../data/reading/2020.json";
+import booksPre2020 from "../data/reading/2019-and-earlier.json";
 
 const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
 
 const years = [
-  { year: 2026, books: books2026 },
-  { year: 2025, books: books2025 },
-  { year: 2024, books: books2024 },
-  { year: 2023, books: books2023 },
-  { year: 2022, books: books2022 },
-  { year: 2021, books: books2021 },
-  { year: 2020, books: books2020 },
+  { year: 2026, label: "2026", books: books2026 },
+  { year: 2025, label: "2025", books: books2025 },
+  { year: 2024, label: "2024", books: books2024 },
+  { year: 2023, label: "2023", books: books2023 },
+  { year: 2022, label: "2022", books: books2022 },
+  { year: 2021, label: "2021", books: books2021 },
+  { year: 2020, label: "2020", books: books2020 },
+  { year: "2019-and-earlier", label: "2019…", books: booksPre2020 },
 ];
 
 const defaultYear = 2026;
@@ -30,7 +32,7 @@ const audioCount = allBooks.filter((book) => book.audio).length;
 ---
 <Base
   title="Reading | Reuben Ingber"
-  description="A running record of the books I've read each year, going back to 2020."
+  description="A running record of the books I've read each year, going back to 2020 (plus older favorites without a logged date)."
 >
   <div class="max-w-4xl">
     <h1 class="text-4xl font-bold mb-4 text-primary tracking-wide">READING</h1>
@@ -134,7 +136,7 @@ const audioCount = allBooks.filter((book) => book.audio).length;
 
     <div id="year-browser">
       <div role="tablist" aria-label="Reading year" class="hidden sm:flex flex-nowrap items-center gap-1.5 mb-8 border-b border-gray-200 pb-4 overflow-x-auto">
-        {years.map(({ year, books }) => (
+        {years.map(({ year, label, books }) => (
           <button
             type="button"
             role="tab"
@@ -147,7 +149,7 @@ const audioCount = allBooks.filter((book) => book.audio).length;
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200",
             ]}
           >
-            {year} <span class="opacity-70">({books.length})</span>
+            {label} <span class="opacity-70">({books.length})</span>
           </button>
         ))}
       </div>
@@ -158,8 +160,8 @@ const audioCount = allBooks.filter((book) => book.audio).length;
           id="year-filter-select"
           class="w-full rounded-full border border-gray-200 py-2.5 px-4 text-sm font-semibold tracking-wide bg-gray-100 text-gray-700 focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
         >
-          {years.map(({ year, books }) => (
-            <option value={year} selected={year === defaultYear}>{year} ({books.length})</option>
+          {years.map(({ year, label, books }) => (
+            <option value={year} selected={year === defaultYear}>{label} ({books.length})</option>
           ))}
         </select>
       </div>
@@ -190,7 +192,7 @@ const audioCount = allBooks.filter((book) => book.audio).length;
     </div>
 
     <div class="mt-16 pt-6 border-t border-gray-200 text-sm text-secondary">
-      <p>Last updated on August 12, 2026 | Tracked on <a href="https://www.goodreads.com/user/show/7384813" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Goodreads</a></p>
+      <p>Last updated on August 18, 2026 | Tracked on <a href="https://www.goodreads.com/user/show/7384813" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Goodreads</a></p>
     </div>
   </div>
 </Base>
