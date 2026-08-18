@@ -9,6 +9,7 @@
 import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { lookupGenre } from "./lib/genre.mjs";
+import { field, amazonLink } from "./lib/rss.mjs";
 
 const GOODREADS_USER_ID = "7384813";
 const DATA_DIR = new URL("../src/data/reading/", import.meta.url);
@@ -26,23 +27,6 @@ function requireEnv(name) {
     process.exit(1);
   }
   return v;
-}
-
-function decodeEntities(s) {
-  return s
-    .replace(/&quot;/g, '"')
-    .replace(/&apos;/g, "'")
-    .replace(/&#39;/g, "'")
-    .replace(/&#34;/g, '"')
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&amp;/g, "&");
-}
-
-function field(item, tag) {
-  const m = item.match(new RegExp(`<${tag}>(?:<!\\[CDATA\\[(.*?)\\]\\]>|(.*?))</${tag}>`, "s"));
-  if (!m) return "";
-  return decodeEntities((m[1] ?? m[2] ?? "").trim());
 }
 
 async function fetchShelf(params) {
@@ -79,12 +63,6 @@ function loadExisting() {
     }
   }
   return { byYear, existingIds };
-}
-
-function amazonLink(isbn, title, author) {
-  if (isbn && isbn.length === 10) return `https://www.amazon.com/dp/${isbn}`;
-  const q = encodeURIComponent(`${title.split(":")[0].split("(")[0].trim()} ${author}`);
-  return `https://www.amazon.com/s?k=${q}`;
 }
 
 async function uploadCover(bookId, imgUrl, isbn) {
