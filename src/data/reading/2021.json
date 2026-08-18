@@ -5,7 +5,8 @@
     "cover": "reading_covers/29093292",
     "amazon": "https://www.amazon.com/s?k=The+Daily+Stoic+Ryan+Holiday",
     "dateRead": "2021-12-31",
-    "rating": 5
+    "rating": 5,
+    "genre": "Self-Help"
   },
   {
     "title": "Chaos Monkeys: Obscene Fortune and Random Failure in Silicon Valley",
@@ -13,7 +14,8 @@
     "cover": "reading_covers/40941455",
     "amazon": "https://www.amazon.com/dp/0062884484",
     "dateRead": "2021-12-25",
-    "rating": 2
+    "rating": 2,
+    "genre": "Memoir"
   },
   {
     "title": "War on Peace: The End of Diplomacy and the Decline of American Influence",
@@ -21,7 +23,9 @@
     "cover": "reading_covers/37564532",
     "amazon": "https://www.amazon.com/dp/0393652106",
     "dateRead": "2021-12-23",
-    "rating": 4
+    "rating": 4,
+    "audio": true,
+    "genre": "Politics"
   },
   {
     "title": "Notes on Grief",
@@ -29,7 +33,8 @@
     "cover": "reading_covers/57089176",
     "amazon": "https://www.amazon.com/s?k=Notes+on+Grief+Chimamanda+Ngozi+Adichie",
     "dateRead": "2021-12-21",
-    "rating": 3
+    "rating": 3,
+    "genre": "Memoir"
   },
   {
     "title": "Robin",
@@ -37,7 +42,9 @@
     "cover": "reading_covers/36609155",
     "amazon": "https://www.amazon.com/dp/1627794255",
     "dateRead": "2021-12-14",
-    "rating": 4
+    "rating": 4,
+    "audio": true,
+    "genre": "Biography"
   },
   {
     "title": "Keep Going: 10 Ways to Stay Creative in Good Times and Bad (Austin Kleon)",
@@ -45,7 +52,8 @@
     "cover": "reading_covers/40591677",
     "amazon": "https://www.amazon.com/dp/1523506644",
     "dateRead": "2021-12-14",
-    "rating": 5
+    "rating": 5,
+    "genre": "Self-Help"
   },
   {
     "title": "Bubble",
@@ -53,7 +61,8 @@
     "cover": "reading_covers/55284969",
     "amazon": "https://www.amazon.com/dp/1250245567",
     "dateRead": "2021-12-09",
-    "rating": 4
+    "rating": 4,
+    "genre": "Graphic Novel"
   },
   {
     "title": "Attempting Normal",
@@ -61,7 +70,9 @@
     "cover": "reading_covers/15798363",
     "amazon": "https://www.amazon.com/dp/0812992873",
     "dateRead": "2021-12-06",
-    "rating": 4
+    "rating": 4,
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Make Your Bed: Little Things That Can Change Your Life...And Maybe the World",
@@ -69,7 +80,8 @@
     "cover": "reading_covers/40195495",
     "amazon": "https://www.amazon.com/s?k=Make+Your+Bed+William+H.+McRaven",
     "dateRead": "2021-12-06",
-    "rating": 5
+    "rating": 5,
+    "genre": "Self-Help"
   },
   {
     "title": "The Pale-Faced Lie",
@@ -77,7 +89,9 @@
     "cover": "reading_covers/44167792",
     "amazon": "https://www.amazon.com/dp/0997487178",
     "dateRead": "2021-12-02",
-    "rating": 4
+    "rating": 4,
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Constance (Constance, #1)",
@@ -85,7 +99,8 @@
     "cover": "reading_covers/56326737",
     "amazon": "https://www.amazon.com/dp/154201428X",
     "dateRead": "2021-12-02",
-    "rating": 4
+    "rating": 4,
+    "genre": "Science Fiction"
   },
   {
     "title": "My Morning Routine: How Successful People Start Every Day Inspired",
@@ -93,15 +108,17 @@
     "cover": "reading_covers/36026834",
     "amazon": "https://www.amazon.com/dp/0735220271",
     "dateRead": "2021-11-29",
-    "rating": 4
+    "rating": 4,
+    "genre": "Self-Help"
   },
   {
-    "title": "It&apos;s All in Your Head",
+    "title": "It's All in Your Head",
     "author": "Russ",
     "cover": "reading_covers/45730525",
     "amazon": "https://www.amazon.com/dp/0062962434",
     "dateRead": "2021-11-24",
-    "rating": 3
+    "rating": 3,
+    "genre": "Self-Help"
   },
   {
     "title": "10% Happier",
@@ -109,7 +126,8 @@
     "cover": "reading_covers/18505796",
     "amazon": "https://www.amazon.com/dp/0062265423",
     "dateRead": "2021-11-23",
-    "rating": 3
+    "rating": 3,
+    "genre": "Self-Help"
   },
   {
     "title": "Will",
@@ -117,7 +135,9 @@
     "cover": "reading_covers/58375739",
     "amazon": "https://www.amazon.com/dp/1984877925",
     "dateRead": "2021-11-19",
-    "rating": 4
+    "rating": 4,
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "The Adventures of Johnny Bunko: The Last Career Guide You'll Ever Need",
@@ -125,7 +145,8 @@
     "cover": "reading_covers/1595177",
     "amazon": "https://www.amazon.com/dp/1594482918",
     "dateRead": "2021-11-16",
-    "rating": 5
+    "rating": 5,
+    "genre": "Business"
   },
   {
     "title": "How Bad Do You Want It? Mastering the Psychology of Mind over Muscle",
@@ -133,7 +154,8 @@
     "cover": "reading_covers/26047703",
     "amazon": "https://www.amazon.com/dp/1937715418",
     "dateRead": "2021-11-15",
-    "rating": 3
+    "rating": 3,
+    "genre": "Sports"
   },
   {
     "title": "The Steal Like an Artist Audio Trilogy",
@@ -141,7 +163,8 @@
     "cover": "reading_covers/56040338",
     "amazon": "https://www.amazon.com/dp/1649040547",
     "dateRead": "2021-11-12",
-    "rating": 5
+    "rating": 5,
+    "genre": "Self-Help"
   },
   {
     "title": "The Secret Race: Inside the Hidden World of the Tour de France: Doping, Cover-ups, and Winning at All Costs",
@@ -149,7 +172,9 @@
     "cover": "reading_covers/15823426",
     "amazon": "https://www.amazon.com/dp/0345530411",
     "dateRead": "2021-11-09",
-    "rating": 5
+    "rating": 5,
+    "audio": true,
+    "genre": "Sports"
   },
   {
     "title": "It Works: The Famous Little Red Book That Makes Your Dreams Come True!",
@@ -157,7 +182,8 @@
     "cover": "reading_covers/18975560",
     "amazon": "https://www.amazon.com/s?k=It+Works+R.H.J.",
     "dateRead": "2021-11-08",
-    "rating": 3
+    "rating": 3,
+    "genre": "Self-Help"
   },
   {
     "title": "Uncanny Valley",
@@ -165,7 +191,8 @@
     "cover": "reading_covers/46136224",
     "amazon": "https://www.amazon.com/dp/0374719764",
     "dateRead": "2021-11-07",
-    "rating": 3
+    "rating": 3,
+    "genre": "Memoir"
   },
   {
     "title": "Nomadland: Surviving America in the Twenty-First Century",
@@ -173,7 +200,9 @@
     "cover": "reading_covers/38212124",
     "amazon": "https://www.amazon.com/s?k=Nomadland+Jessica+Bruder",
     "dateRead": "2021-11-04",
-    "rating": 3
+    "rating": 3,
+    "audio": true,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "Bringing Down the House: The Inside Story of Six M.I.T. Students Who Took Vegas for Millions",
@@ -181,7 +210,8 @@
     "cover": "reading_covers/6478287",
     "amazon": "https://www.amazon.com/s?k=Bringing+Down+the+House+Ben+Mezrich",
     "dateRead": "2021-10-29",
-    "rating": 5
+    "rating": 5,
+    "genre": "Nonfiction"
   },
   {
     "title": "Think Again: The Power of Knowing What You Don't Know",
@@ -189,7 +219,8 @@
     "cover": "reading_covers/55539565",
     "amazon": "https://www.amazon.com/dp/1984878107",
     "dateRead": "2021-10-29",
-    "rating": 4
+    "rating": 4,
+    "genre": "Psychology"
   },
   {
     "title": "Dopesick: Dealers, Doctors, and the Drug Company that Addicted America",
@@ -197,7 +228,8 @@
     "cover": "reading_covers/38217645",
     "amazon": "https://www.amazon.com/dp/0316551287",
     "dateRead": "2021-10-24",
-    "rating": 4
+    "rating": 4,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "The Road",
@@ -205,7 +237,8 @@
     "cover": "reading_covers/53368275",
     "amazon": "https://www.amazon.com/s?k=The+Road+Cormac+McCarthy",
     "dateRead": "2021-10-15",
-    "rating": 5
+    "rating": 5,
+    "genre": "Science Fiction"
   },
   {
     "title": "Empire of Pain: The Secret History of the Sackler Dynasty",
@@ -213,7 +246,9 @@
     "cover": "reading_covers/43868109",
     "amazon": "https://www.amazon.com/dp/0385545681",
     "dateRead": "2021-10-15",
-    "rating": 5
+    "rating": 5,
+    "audio": true,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "Courage Is Calling: Fortune Favors the Brave (The Stoic Virtues Series)",
@@ -221,7 +256,8 @@
     "cover": "reading_covers/58211174",
     "amazon": "https://www.amazon.com/dp/0593191684",
     "dateRead": "2021-10-15",
-    "rating": 4
+    "rating": 4,
+    "genre": "Self-Help"
   },
   {
     "title": "Conspiracy: Peter Thiel, Hulk Hogan, Gawker, and the Anatomy of Intrigue",
@@ -229,7 +265,9 @@
     "cover": "reading_covers/36681909",
     "amazon": "https://www.amazon.com/dp/0735217661",
     "dateRead": "2021-10-01",
-    "rating": 5
+    "rating": 5,
+    "audio": true,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "Four Thousand Weeks: Time Management for Mortals",
@@ -237,7 +275,8 @@
     "cover": "reading_covers/55742688",
     "amazon": "https://www.amazon.com/dp/0374715246",
     "dateRead": "2021-10-01",
-    "rating": 3
+    "rating": 3,
+    "genre": "Self-Help"
   },
   {
     "title": "The Monk Who Sold His Ferrari: A Fable About Fulfilling Your Dreams and Reaching Your Destiny",
@@ -245,7 +284,9 @@
     "cover": "reading_covers/43877",
     "amazon": "https://www.amazon.com/dp/0062515675",
     "dateRead": "2021-09-27",
-    "rating": 5
+    "rating": 5,
+    "audio": true,
+    "genre": "Self-Help"
   },
   {
     "title": "Window Seat on the World",
@@ -253,7 +294,8 @@
     "cover": "reading_covers/51093640",
     "amazon": "https://www.amazon.com/dp/1633310418",
     "dateRead": "2021-09-27",
-    "rating": 4
+    "rating": 4,
+    "genre": "Travel"
   },
   {
     "title": "Argo: How the CIA & Hollywood Pulled Off the Most Audacious Rescue in History",
@@ -261,7 +303,9 @@
     "cover": "reading_covers/13588425",
     "amazon": "https://www.amazon.com/dp/0670026220",
     "dateRead": "2021-09-20",
-    "rating": 4
+    "rating": 4,
+    "audio": true,
+    "genre": "History"
   },
   {
     "title": "Win at All Costs: Inside Nike Running and Its Culture of Deception – An Explosive Corporate Exposé of Alberto Salazar and Olympic Doping",
@@ -269,7 +313,9 @@
     "cover": "reading_covers/48929864",
     "amazon": "https://www.amazon.com/dp/0062917773",
     "dateRead": "2021-09-17",
-    "rating": 4
+    "rating": 4,
+    "audio": true,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "Get Out of My Head: Inspiration for Overthinkers in an Anxious World",
@@ -277,7 +323,8 @@
     "cover": "reading_covers/48708624",
     "amazon": "https://www.amazon.com/dp/076249767X",
     "dateRead": "2021-09-16",
-    "rating": 2
+    "rating": 2,
+    "genre": "Self-Help"
   },
   {
     "title": "True Believer (Terminal List, #2)",
@@ -285,7 +332,8 @@
     "cover": "reading_covers/51812465",
     "amazon": "https://www.amazon.com/s?k=True+Believer+Jack+Carr",
     "dateRead": "2021-09-14",
-    "rating": 3
+    "rating": 3,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "Tough Shit: Life Advice from a Fat, Lazy Slob Who Did Good",
@@ -293,14 +341,18 @@
     "cover": "reading_covers/12405612",
     "amazon": "https://www.amazon.com/dp/1592406890",
     "dateRead": "2021-09-11",
-    "rating": 2
+    "rating": 2,
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Operation Paperclip: The Secret Intelligence Program that Brought Nazi Scientists to America",
     "author": "Annie Jacobsen",
     "cover": "reading_covers/17333289",
     "amazon": "https://www.amazon.com/dp/031622104X",
-    "dateRead": "2021-09-09"
+    "dateRead": "2021-09-09",
+    "audio": true,
+    "genre": "History"
   },
   {
     "title": "Freedom Ride",
@@ -308,7 +360,8 @@
     "cover": "reading_covers/31566991",
     "amazon": "https://www.amazon.com/s?k=Freedom+Ride+James+Peck",
     "dateRead": "2021-08-30",
-    "rating": 3
+    "rating": 3,
+    "genre": "History"
   },
   {
     "title": "Super Pumped: The Battle for Uber",
@@ -316,7 +369,9 @@
     "cover": "reading_covers/44573628",
     "amazon": "https://www.amazon.com/dp/0393652246",
     "dateRead": "2021-08-27",
-    "rating": 4
+    "rating": 4,
+    "audio": true,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "Bravey: Chasing Dreams, Befriending Pain, and Other Big Ideas",
@@ -324,7 +379,8 @@
     "cover": "reading_covers/51806260",
     "amazon": "https://www.amazon.com/dp/1984801139",
     "dateRead": "2021-08-26",
-    "rating": 4
+    "rating": 4,
+    "genre": "Memoir"
   },
   {
     "title": "The Boy from the Woods (Wilde, #1)",
@@ -332,7 +388,9 @@
     "cover": "reading_covers/51204046",
     "amazon": "https://www.amazon.com/dp/1538748142",
     "dateRead": "2021-08-21",
-    "rating": 5
+    "rating": 5,
+    "audio": true,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future",
@@ -340,7 +398,8 @@
     "cover": "reading_covers/36147818",
     "amazon": "https://www.amazon.com/s?k=Elon+Musk+Ashlee+Vance",
     "dateRead": "2021-08-20",
-    "rating": 3
+    "rating": 3,
+    "genre": "Biography"
   },
   {
     "title": "Memoirs and Misinformation",
@@ -348,7 +407,9 @@
     "cover": "reading_covers/52914416",
     "amazon": "https://www.amazon.com/dp/0525655972",
     "dateRead": "2021-08-17",
-    "rating": 1
+    "rating": 1,
+    "audio": true,
+    "genre": "Fiction"
   },
   {
     "title": "No Filter: The Inside Story of Instagram",
@@ -356,7 +417,9 @@
     "cover": "reading_covers/50772888",
     "amazon": "https://www.amazon.com/dp/1982126809",
     "dateRead": "2021-08-14",
-    "rating": 4
+    "rating": 4,
+    "audio": true,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "Born a Crime: Stories from a South African Childhood",
@@ -364,7 +427,9 @@
     "cover": "reading_covers/29780253",
     "amazon": "https://www.amazon.com/dp/0385689225",
     "dateRead": "2021-08-09",
-    "rating": 4
+    "rating": 4,
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "The Subtle Art of Not Giving a F*ck: A Counterintuitive Approach to Living a Good Life",
@@ -372,7 +437,8 @@
     "cover": "reading_covers/28257707",
     "amazon": "https://www.amazon.com/s?k=The+Subtle+Art+of+Not+Giving+a+F%2Ack+Mark+Manson",
     "dateRead": "2021-08-03",
-    "rating": 3
+    "rating": 3,
+    "genre": "Self-Help"
   },
   {
     "title": "The Anthropocene Reviewed: Essays on a Human-Centered Planet",
@@ -380,7 +446,9 @@
     "cover": "reading_covers/55145261",
     "amazon": "https://www.amazon.com/dp/0525555218",
     "dateRead": "2021-07-31",
-    "rating": 3
+    "rating": 3,
+    "audio": true,
+    "genre": "Essays"
   },
   {
     "title": "I Alone Can Fix It: Donald J. Trump's Catastrophic Final Year",
@@ -388,7 +456,8 @@
     "cover": "reading_covers/58412441",
     "amazon": "https://www.amazon.com/s?k=I+Alone+Can+Fix+It+Carol+Leonnig",
     "dateRead": "2021-07-27",
-    "rating": 3
+    "rating": 3,
+    "genre": "Politics"
   },
   {
     "title": "Travels With Charley: In Search of America",
@@ -396,7 +465,8 @@
     "cover": "reading_covers/8135136",
     "amazon": "https://www.amazon.com/dp/1440638888",
     "dateRead": "2021-07-25",
-    "rating": 3
+    "rating": 3,
+    "genre": "Travel"
   },
   {
     "title": "Into the Magic Shop: A Neurosurgeon's Quest to Discover the Mysteries of the Brain and the Secrets of the Heart",
@@ -404,7 +474,9 @@
     "cover": "reading_covers/25733658",
     "amazon": "https://www.amazon.com/dp/1594632987",
     "dateRead": "2021-07-23",
-    "rating": 3
+    "rating": 3,
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "The Terminal List (Terminal List, #1)",
@@ -412,7 +484,8 @@
     "cover": "reading_covers/35297106",
     "amazon": "https://www.amazon.com/dp/1501180819",
     "dateRead": "2021-07-11",
-    "rating": 5
+    "rating": 5,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "The Sabbath (FSG Classics)",
@@ -420,7 +493,8 @@
     "cover": "reading_covers/13074823",
     "amazon": "https://www.amazon.com/dp/1466800097",
     "dateRead": "2021-07-05",
-    "rating": 3
+    "rating": 3,
+    "genre": "Religion & Spirituality"
   },
   {
     "title": "Artemis",
@@ -428,7 +502,9 @@
     "cover": "reading_covers/34928122",
     "amazon": "https://www.amazon.com/dp/0553448129",
     "dateRead": "2021-07-01",
-    "rating": 3
+    "rating": 3,
+    "audio": true,
+    "genre": "Science Fiction"
   },
   {
     "title": "Battle for the Soul: Inside the Democrats' Campaigns to Defeat Trump",
@@ -436,7 +512,8 @@
     "cover": "reading_covers/57322640",
     "amazon": "https://www.amazon.com/dp/1984878085",
     "dateRead": "2021-07-01",
-    "rating": 4
+    "rating": 4,
+    "genre": "Politics"
   },
   {
     "title": "Yearbook",
@@ -444,7 +521,9 @@
     "cover": "reading_covers/44678031",
     "amazon": "https://www.amazon.com/dp/1984825402",
     "dateRead": "2021-06-26",
-    "rating": 4
+    "rating": 4,
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Anything You Want: 40 Lessons for a New Kind of Entrepreneur",
@@ -452,7 +531,8 @@
     "cover": "reading_covers/24611973",
     "amazon": "https://www.amazon.com/dp/1591848261",
     "dateRead": "2021-06-25",
-    "rating": 5
+    "rating": 5,
+    "genre": "Business"
   },
   {
     "title": "My Father, the Pornographer",
@@ -460,7 +540,9 @@
     "cover": "reading_covers/25814236",
     "amazon": "https://www.amazon.com/dp/1501112465",
     "dateRead": "2021-06-24",
-    "rating": 2
+    "rating": 2,
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Tribe: On Homecoming and Belonging",
@@ -468,7 +550,8 @@
     "cover": "reading_covers/40940205",
     "amazon": "https://www.amazon.com/s?k=Tribe+Sebastian+Junger",
     "dateRead": "2021-06-21",
-    "rating": 4
+    "rating": 4,
+    "genre": "Nonfiction"
   },
   {
     "title": "Agent Sonya: Moscow's Most Daring Wartime Spy",
@@ -476,7 +559,9 @@
     "cover": "reading_covers/52578861",
     "amazon": "https://www.amazon.com/dp/0593136306",
     "dateRead": "2021-06-18",
-    "rating": 3
+    "rating": 3,
+    "audio": true,
+    "genre": "History"
   },
   {
     "title": "Deep Work: Rules for Focused Success in a Distracted World",
@@ -484,7 +569,8 @@
     "cover": "reading_covers/25980294",
     "amazon": "https://www.amazon.com/dp/1455586668",
     "dateRead": "2021-06-16",
-    "rating": 3
+    "rating": 3,
+    "genre": "Self-Help"
   },
   {
     "title": "Billion Dollar Loser: The Epic Rise and Spectacular Fall of Adam Neumann and WeWork",
@@ -492,7 +578,8 @@
     "cover": "reading_covers/55447811",
     "amazon": "https://www.amazon.com/dp/0316461342",
     "dateRead": "2021-06-03",
-    "rating": 3
+    "rating": 3,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "Project Hail Mary",
@@ -500,7 +587,9 @@
     "cover": "reading_covers/54493401",
     "amazon": "https://www.amazon.com/dp/0593135202",
     "dateRead": "2021-06-01",
-    "rating": 5
+    "rating": 5,
+    "audio": true,
+    "genre": "Science Fiction"
   },
   {
     "title": "The Incomplete Book of Running",
@@ -508,7 +597,9 @@
     "cover": "reading_covers/38530946",
     "amazon": "https://www.amazon.com/dp/1451696248",
     "dateRead": "2021-05-26",
-    "rating": 4
+    "rating": 4,
+    "audio": true,
+    "genre": "Sports"
   },
   {
     "title": "The Lion Tracker's Guide to Life",
@@ -516,7 +607,8 @@
     "cover": "reading_covers/51066531",
     "amazon": "https://www.amazon.com/dp/0358100496",
     "dateRead": "2021-05-26",
-    "rating": 3
+    "rating": 3,
+    "genre": "Self-Help"
   },
   {
     "title": "An Absolutely Remarkable Thing (The Carls, #1)",
@@ -524,7 +616,9 @@
     "cover": "reading_covers/24233708",
     "amazon": "https://www.amazon.com/dp/1524743453",
     "dateRead": "2021-05-24",
-    "rating": 5
+    "rating": 5,
+    "audio": true,
+    "genre": "Science Fiction"
   },
   {
     "title": "A Gentleman in Moscow",
@@ -532,15 +626,17 @@
     "cover": "reading_covers/45695810",
     "amazon": "https://www.amazon.com/s?k=A+Gentleman+in+Moscow+Amor+Towles",
     "dateRead": "2021-05-22",
-    "rating": 2
+    "rating": 2,
+    "genre": "Fiction"
   },
   {
-    "title": "Jews Don&apos;t Count",
+    "title": "Jews Don't Count",
     "author": "David Baddiel",
     "cover": "reading_covers/56925393",
     "amazon": "https://www.amazon.com/dp/0008399492",
     "dateRead": "2021-05-21",
-    "rating": 4
+    "rating": 4,
+    "genre": "Nonfiction"
   },
   {
     "title": "Into the Wild",
@@ -548,7 +644,9 @@
     "cover": "reading_covers/1845",
     "amazon": "https://www.amazon.com/dp/0385486804",
     "dateRead": "2021-05-20",
-    "rating": 4
+    "rating": 4,
+    "audio": true,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "When Breath Becomes Air",
@@ -556,14 +654,19 @@
     "cover": "reading_covers/25899336",
     "amazon": "https://www.amazon.com/dp/0812988418",
     "dateRead": "2021-05-14",
-    "rating": 5
+    "rating": 5,
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "The Sum of Us: What Racism Costs Everyone and How We Can Prosper Together",
     "author": "Heather McGhee",
     "cover": "reading_covers/53231851",
     "amazon": "https://www.amazon.com/dp/0525509569",
-    "dateRead": "2021-05-13"
+    "dateRead": "2021-05-13",
+    "rating": 3,
+    "audio": true,
+    "genre": "Politics"
   },
   {
     "title": "Billion Dollar Whale: The Man Who Fooled Wall Street, Hollywood, and the World",
@@ -571,7 +674,9 @@
     "cover": "reading_covers/38743564",
     "amazon": "https://www.amazon.com/dp/031643650X",
     "dateRead": "2021-05-05",
-    "rating": 4
+    "rating": 4,
+    "audio": true,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "The Miracle of Morning Pages: Everything You Always Wanted to Know About the Most Important Artist's Way Tool",
@@ -579,7 +684,8 @@
     "cover": "reading_covers/19067465",
     "amazon": "https://www.amazon.com/dp/0698140400",
     "dateRead": "2021-05-01",
-    "rating": 4
+    "rating": 4,
+    "genre": "Self-Help"
   },
   {
     "title": "Finding Ultra: Rejecting Middle Age, Becoming One of the World's Fittest Men, and Discovering Myself",
@@ -587,7 +693,9 @@
     "cover": "reading_covers/39665673",
     "amazon": "https://www.amazon.com/dp/0307952207",
     "dateRead": "2021-04-28",
-    "rating": 4
+    "rating": 4,
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Arbitrary Stupid Goal",
@@ -595,15 +703,18 @@
     "cover": "reading_covers/31574742",
     "amazon": "https://www.amazon.com/dp/0374105863",
     "dateRead": "2021-04-26",
-    "rating": 4
+    "rating": 4,
+    "audio": true,
+    "genre": "Memoir"
   },
   {
-    "title": "Man&apos;s Search for Meaning",
+    "title": "Man's Search for Meaning",
     "author": "Viktor E. Frankl",
     "cover": "reading_covers/17204679",
     "amazon": "https://www.amazon.com/s?k=Man%26apos%3Bs+Search+for+Meaning+Viktor+E.+Frankl",
     "dateRead": "2021-04-25",
-    "rating": 4
+    "rating": 4,
+    "genre": "Psychology"
   },
   {
     "title": "Turtles All the Way Down",
@@ -611,7 +722,9 @@
     "cover": "reading_covers/35504431",
     "amazon": "https://www.amazon.com/dp/0525555366",
     "dateRead": "2021-04-24",
-    "rating": 3
+    "rating": 3,
+    "audio": true,
+    "genre": "Young Adult"
   },
   {
     "title": "Bitcoin Billionaires: A True Story of Genius, Betrayal, and Redemption",
@@ -619,7 +732,8 @@
     "cover": "reading_covers/41703776",
     "amazon": "https://www.amazon.com/dp/125021775X",
     "dateRead": "2021-04-22",
-    "rating": 4
+    "rating": 4,
+    "genre": "Nonfiction"
   },
   {
     "title": "Unwinding Anxiety: New Science Shows How to Break the Cycles of Worry and Fear to Heal Your Mind",
@@ -627,14 +741,18 @@
     "cover": "reading_covers/56441894",
     "amazon": "https://www.amazon.com/dp/0593330455",
     "dateRead": "2021-04-16",
-    "rating": 3
+    "rating": 3,
+    "genre": "Psychology"
   },
   {
     "title": "Klara and the Sun",
     "author": "Kazuo Ishiguro",
     "cover": "reading_covers/54120408",
     "amazon": "https://www.amazon.com/dp/059331817X",
-    "dateRead": "2021-04-14"
+    "dateRead": "2021-04-14",
+    "rating": 4,
+    "audio": true,
+    "genre": "Science Fiction"
   },
   {
     "title": "Bag Man: The Wild Crimes, Audacious Cover-Up & Spectacular Downfall of a Brazen Crook in the White House",
@@ -642,7 +760,8 @@
     "cover": "reading_covers/48593586",
     "amazon": "https://www.amazon.com/dp/0593136691",
     "dateRead": "2021-04-10",
-    "rating": 4
+    "rating": 4,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "Managing Oneself (Harvard Business Review Classics)",
@@ -650,21 +769,25 @@
     "cover": "reading_covers/25018903",
     "amazon": "https://www.amazon.com/dp/1633691012",
     "dateRead": "2021-04-06",
-    "rating": 5
+    "rating": 5,
+    "genre": "Business"
   },
   {
     "title": "Start with Why: How Great Leaders Inspire Everyone to Take Action",
     "author": "Simon Sinek",
     "cover": "reading_covers/7108725",
     "amazon": "https://www.amazon.com/dp/1591842808",
-    "dateRead": "2021-04-06"
+    "dateRead": "2021-04-06",
+    "audio": true,
+    "genre": "Business"
   },
   {
     "title": "Chatter: The Voice in Our Head, Why It Matters, and How to Harness It",
     "author": "Ethan Kross",
     "cover": "reading_covers/56342438",
     "amazon": "https://www.amazon.com/s?k=Chatter+Ethan+Kross",
-    "dateRead": "2021-04-04"
+    "dateRead": "2021-04-04",
+    "genre": "Psychology"
   },
   {
     "title": "Between Two Kingdoms: A Memoir of a Life Interrupted",
@@ -672,7 +795,9 @@
     "cover": "reading_covers/50743767",
     "amazon": "https://www.amazon.com/dp/0399588582",
     "dateRead": "2021-04-02",
-    "rating": 5
+    "rating": 5,
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "A Long Way Gone",
@@ -680,14 +805,18 @@
     "cover": "reading_covers/8315374",
     "amazon": "https://www.amazon.com/s?k=A+Long+Way+Gone+Ishmael+Beah",
     "dateRead": "2021-03-26",
-    "rating": 5
+    "rating": 5,
+    "genre": "Memoir"
   },
   {
     "title": "The Rosie Project (Don Tillman, #1)",
     "author": "Graeme Simsion",
     "cover": "reading_covers/16181775",
     "amazon": "https://www.amazon.com/dp/1476729085",
-    "dateRead": "2021-03-26"
+    "dateRead": "2021-03-26",
+    "rating": 5,
+    "audio": true,
+    "genre": "Fiction"
   },
   {
     "title": "Eat a Peach",
@@ -695,28 +824,36 @@
     "cover": "reading_covers/51700803",
     "amazon": "https://www.amazon.com/dp/152475921X",
     "dateRead": "2021-03-24",
-    "rating": 3
+    "rating": 3,
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Pappyland: A Story of Family, Fine Bourbon, and the Things That Last",
     "author": "Wright Thompson",
     "cover": "reading_covers/53715817",
     "amazon": "https://www.amazon.com/dp/073522126X",
-    "dateRead": "2021-03-22"
+    "dateRead": "2021-03-22",
+    "genre": "Business"
   },
   {
     "title": "The World As It Is: Inside the Obama White House",
     "author": "Ben Rhodes",
     "cover": "reading_covers/38458392",
     "amazon": "https://www.amazon.com/dp/1847925170",
-    "dateRead": "2021-03-20"
+    "dateRead": "2021-03-20",
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "Chaos: Charles Manson, the CIA, and the Secret History of the Sixties",
-    "author": "Tom O&apos;Neill",
+    "author": "Tom O'Neill",
     "cover": "reading_covers/43015073",
     "amazon": "https://www.amazon.com/dp/0316477575",
-    "dateRead": "2021-03-17"
+    "dateRead": "2021-03-17",
+    "rating": 3,
+    "audio": true,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "Boom Town: The Fantastical Saga of Oklahoma City, Its Chaotic Founding, Its Apocalyptic Weather, Its Purloined Basketball Team, and the Dream of Becoming a World-class Metropolis",
@@ -724,28 +861,37 @@
     "cover": "reading_covers/39098329",
     "amazon": "https://www.amazon.com/dp/0804137323",
     "dateRead": "2021-03-16",
-    "rating": 4
+    "rating": 4,
+    "genre": "History"
   },
   {
     "title": "The Undocumented Americans",
     "author": "Karla Cornejo Villavicencio",
     "cover": "reading_covers/41880092",
     "amazon": "https://www.amazon.com/dp/0399592687",
-    "dateRead": "2021-03-14"
+    "dateRead": "2021-03-14",
+    "audio": true,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "The Nickel Boys",
     "author": "Colson Whitehead",
     "cover": "reading_covers/42270835",
     "amazon": "https://www.amazon.com/s?k=The+Nickel+Boys+Colson+Whitehead",
-    "dateRead": "2021-03-10"
+    "dateRead": "2021-03-10",
+    "rating": 5,
+    "audio": true,
+    "genre": "Fiction"
   },
   {
     "title": "A Most Beautiful Thing",
     "author": "Arshay Cooper",
     "cover": "reading_covers/56750085",
     "amazon": "https://www.amazon.com/s?k=A+Most+Beautiful+Thing+Arshay+Cooper",
-    "dateRead": "2021-02-28"
+    "dateRead": "2021-02-28",
+    "rating": 4,
+    "audio": true,
+    "genre": "Memoir"
   },
   {
     "title": "The Tattooist of Auschwitz (The Tattooist of Auschwitz, #1)",
@@ -753,14 +899,16 @@
     "cover": "reading_covers/37540594",
     "amazon": "https://www.amazon.com/s?k=The+Tattooist+of+Auschwitz+Heather+Morris",
     "dateRead": "2021-02-23",
-    "rating": 5
+    "rating": 5,
+    "genre": "Fiction"
   },
   {
     "title": "The Great Gatsby",
     "author": "F. Scott Fitzgerald",
     "cover": "reading_covers/4671",
     "amazon": "https://www.amazon.com/dp/0743273567",
-    "dateRead": "2021-02-20"
+    "dateRead": "2021-02-20",
+    "genre": "Fiction"
   },
   {
     "title": "Dune (Dune, #1)",
@@ -768,7 +916,8 @@
     "cover": "reading_covers/44767458",
     "amazon": "https://www.amazon.com/dp/059309932X",
     "dateRead": "2021-02-20",
-    "rating": 3
+    "rating": 3,
+    "genre": "Science Fiction"
   },
   {
     "title": "American Kingpin: The Epic Hunt for the Criminal Mastermind Behind the Silk Road",
@@ -776,7 +925,8 @@
     "cover": "reading_covers/33390368",
     "amazon": "https://www.amazon.com/dp/0698405730",
     "dateRead": "2021-02-19",
-    "rating": 5
+    "rating": 5,
+    "genre": "Investigative Journalism"
   },
   {
     "title": "The Cardinal of the Kremlin (Jack Ryan, #4; Jack Ryan Universe, #5)",
@@ -784,7 +934,8 @@
     "cover": "reading_covers/6463498",
     "amazon": "https://www.amazon.com/s?k=The+Cardinal+of+the+Kremlin+Tom+Clancy",
     "dateRead": "2021-02-07",
-    "rating": 3
+    "rating": 3,
+    "genre": "Mystery & Thriller"
   },
   {
     "title": "His Truth Is Marching On: John Lewis and the Power of Hope",
@@ -792,7 +943,9 @@
     "cover": "reading_covers/53431510",
     "amazon": "https://www.amazon.com/dp/1984855026",
     "dateRead": "2021-01-17",
-    "rating": 4
+    "rating": 4,
+    "audio": true,
+    "genre": "Biography"
   },
   {
     "title": "No Rules Rules: Netflix and the Culture of Reinvention",
@@ -800,7 +953,8 @@
     "cover": "reading_covers/49195924",
     "amazon": "https://www.amazon.com/dp/1984877879",
     "dateRead": "2021-01-16",
-    "rating": 3
+    "rating": 3,
+    "genre": "Business"
   },
   {
     "title": "Hidden Valley Road: Inside the Mind of an American Family",
@@ -808,7 +962,9 @@
     "cover": "reading_covers/50088631",
     "amazon": "https://www.amazon.com/dp/038554376X",
     "dateRead": "2021-01-08",
-    "rating": 4
+    "rating": 4,
+    "audio": true,
+    "genre": "Nonfiction"
   },
   {
     "title": "Caste: The Origins of Our Discontents",
@@ -816,6 +972,7 @@
     "cover": "reading_covers/53595348",
     "amazon": "https://www.amazon.com/dp/0593230264",
     "dateRead": "2021-01-07",
-    "rating": 4
+    "rating": 4,
+    "genre": "History"
   }
 ]

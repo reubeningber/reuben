@@ -1,0 +1,482 @@
+[
+  {
+    "title": "Grit: The Power of Passion and Perseverance",
+    "author": "Angela Duckworth",
+    "cover": "reading_covers/27213329",
+    "amazon": "https://www.amazon.com/dp/1443442313",
+    "rating": 4,
+    "dateRead": "2019-02-01",
+    "genre": "Psychology"
+  },
+  {
+    "title": "Inside a Marathon: An All Access Pass to a Top-10 Finish at NYC",
+    "author": "Scott Fauble",
+    "cover": "reading_covers/43625536",
+    "amazon": "https://www.amazon.com/dp/1730975615",
+    "rating": 5,
+    "dateRead": "2019-01-30",
+    "genre": "Sports"
+  },
+  {
+    "title": "Here is New York",
+    "author": "E.B. White",
+    "cover": "reading_covers/11451026",
+    "amazon": "https://www.amazon.com/dp/1590174798",
+    "rating": 3,
+    "dateRead": "2012-04-18",
+    "genre": "Essays"
+  },
+  {
+    "title": "Start Something That Matters",
+    "author": "Blake Mycoskie",
+    "cover": "reading_covers/36067229",
+    "amazon": "https://www.amazon.com/s?k=Start%20Something%20That%20Matters%20Blake%20Mycoskie",
+    "rating": 4,
+    "dateRead": "2012-03-01",
+    "genre": "Business"
+  },
+  {
+    "title": "The Idea Factory: Bell Labs and the Great Age of American Innovation",
+    "author": "Jon Gertner",
+    "cover": "reading_covers/11797471",
+    "amazon": "https://www.amazon.com/dp/1594203288",
+    "rating": 4,
+    "dateRead": "2012-03-01",
+    "genre": "History"
+  },
+  {
+    "title": "Gutenberg the Geek",
+    "author": "Jeff Jarvis",
+    "cover": "reading_covers/13506217",
+    "amazon": "https://www.amazon.com/s?k=Gutenberg%20the%20Geek%20Jeff%20Jarvis",
+    "rating": 3,
+    "dateRead": "2012-02-28",
+    "genre": "Business"
+  },
+  {
+    "title": "Steve Jobs",
+    "author": "Walter Isaacson",
+    "cover": "reading_covers/11297044",
+    "amazon": "https://www.amazon.com/s?k=Steve%20Jobs%20Walter%20Isaacson",
+    "rating": 4,
+    "dateRead": "2011-10-31",
+    "genre": "Biography"
+  },
+  {
+    "title": "Bowling Alone: The Collapse and Revival of American Community",
+    "author": "Robert D. Putnam",
+    "cover": "reading_covers/478",
+    "amazon": "https://www.amazon.com/dp/0743203046",
+    "rating": 4,
+    "genre": "Politics"
+  },
+  {
+    "title": "Coach: Lessons on the Game of Life",
+    "author": "Michael Lewis",
+    "cover": "reading_covers/6570856",
+    "amazon": "https://www.amazon.com/s?k=Coach%20Michael%20Lewis",
+    "rating": 3,
+    "genre": "Sports"
+  },
+  {
+    "title": "Once a Runner",
+    "author": "John L. Parker Jr.",
+    "cover": "reading_covers/6949301",
+    "amazon": "https://www.amazon.com/dp/1416597891",
+    "rating": 3,
+    "audio": true,
+    "genre": "Fiction"
+  },
+  {
+    "title": "I'm Proud of You",
+    "author": "Tim Madigan",
+    "cover": "reading_covers/18857045",
+    "amazon": "https://www.amazon.com/s?k=I%26apos%3Bm%20Proud%20of%20You%20Tim%20Madigan",
+    "rating": 5,
+    "genre": "Memoir"
+  },
+  {
+    "title": "All Too Human: A Political Education",
+    "author": "George Stephanopoulos",
+    "cover": "reading_covers/209171",
+    "amazon": "https://www.amazon.com/dp/0316929190",
+    "rating": 4,
+    "genre": "Memoir"
+  },
+  {
+    "title": "How to Think Like a Great Graphic Designer",
+    "author": "Debbie Millman",
+    "cover": "reading_covers/19282420",
+    "amazon": "https://www.amazon.com/dp/1581157991",
+    "rating": 3,
+    "genre": "Business"
+  },
+  {
+    "title": "Diplomacy",
+    "author": "Henry Kissinger",
+    "cover": "reading_covers/1411743",
+    "amazon": "https://www.amazon.com/dp/067165991X",
+    "rating": 4,
+    "genre": "History"
+  },
+  {
+    "title": "Friday Night Lights: A Town, A Team, And A Dream",
+    "author": "H.G. Bissinger",
+    "cover": "reading_covers/8684477",
+    "amazon": "https://www.amazon.com/dp/0306815974",
+    "rating": 3,
+    "genre": "Sports"
+  },
+  {
+    "title": "The 12 Week Triathlete, 2nd Edition-Revised and Updated: Everything You Need to Know to Train and Succeed in Any Triathlon in Just Three Months - No Matter Your Skill Level",
+    "author": "Tom Holland",
+    "cover": "reading_covers/12350275",
+    "amazon": "https://www.amazon.com/dp/1610581105",
+    "rating": 5,
+    "genre": "Health & Fitness"
+  },
+  {
+    "title": "Leaving Microsoft to Change the World: An Entrepreneur's Odyssey to Educate the World's Children",
+    "author": "John Wood",
+    "cover": "reading_covers/95429",
+    "amazon": "https://www.amazon.com/dp/006112107X",
+    "rating": 5,
+    "genre": "Memoir"
+  },
+  {
+    "title": "The Hunt for Red October (Jack Ryan, #3)",
+    "author": "Tom Clancy",
+    "cover": "reading_covers/48720201",
+    "amazon": "https://www.amazon.com/s?k=The%20Hunt%20for%20Red%20October%20Tom%20Clancy",
+    "rating": 5,
+    "genre": "Mystery & Thriller"
+  },
+  {
+    "title": "The Road Ahead",
+    "author": "Bill Gates",
+    "cover": "reading_covers/22556002",
+    "amazon": "https://www.amazon.com/dp/0453009212",
+    "rating": 4,
+    "genre": "Business"
+  },
+  {
+    "title": "Life's a Campaign: What Politics Has Taught Me About Friendship, Rivalry, Reputation, and Success",
+    "author": "Chris Matthews",
+    "cover": "reading_covers/1928383",
+    "amazon": "https://www.amazon.com/dp/1400065283",
+    "rating": 3,
+    "genre": "Politics"
+  },
+  {
+    "title": "The Expectant Father: The Ultimate Guide for Dads-to-Be (The New Father, 12)",
+    "author": "Armin A. Brott",
+    "cover": "reading_covers/22750114",
+    "amazon": "https://www.amazon.com/dp/0789212137",
+    "rating": 5,
+    "genre": "Parenting"
+  },
+  {
+    "title": "Team of Rivals: The Political Genius of Abraham Lincoln",
+    "author": "Doris Kearns Goodwin",
+    "cover": "reading_covers/19987557",
+    "amazon": "https://www.amazon.com/dp/0739469762",
+    "rating": 5,
+    "genre": "History"
+  },
+  {
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "cover": "reading_covers/2654",
+    "amazon": "https://www.amazon.com/s?k=To%20Kill%20a%20Mockingbird%20Harper%20Lee",
+    "rating": 5,
+    "genre": "Fiction"
+  },
+  {
+    "title": "How to Break a Terrorist: The U.S. Interrogators Who Used Brains, Not Brutality, to Take Down the Deadliest Man in Iraq",
+    "author": "Matthew Alexander",
+    "cover": "reading_covers/4377271",
+    "amazon": "https://www.amazon.com/dp/1416573151",
+    "rating": 3,
+    "genre": "Memoir"
+  },
+  {
+    "title": "The Gamble: General David Petraeus and the American Military Adventure in Iraq, 2006-2008",
+    "author": "Thomas E. Ricks",
+    "cover": "reading_covers/4580836",
+    "amazon": "https://www.amazon.com/dp/1594201978",
+    "rating": 4,
+    "genre": "History"
+  },
+  {
+    "title": "The Last Best Hope: Restoring Conservatism and America's Promise",
+    "author": "Joe Scarborough",
+    "cover": "reading_covers/6061967",
+    "amazon": "https://www.amazon.com/dp/0307463699",
+    "rating": 3,
+    "genre": "Politics"
+  },
+  {
+    "title": "Dispatches from the War Room: In the Trenches with Five Extraordinary Leaders",
+    "author": "Stanley B. Greenberg",
+    "cover": "reading_covers/6112037",
+    "amazon": "https://www.amazon.com/dp/0312351526",
+    "rating": 3,
+    "genre": "Politics"
+  },
+  {
+    "title": "Born to Run: A Hidden Tribe, Superathletes, and the Greatest Race the World Has Never Seen",
+    "author": "Christopher McDougall",
+    "cover": "reading_covers/6565082",
+    "amazon": "https://www.amazon.com/dp/0307271919",
+    "rating": 4,
+    "genre": "Sports"
+  },
+  {
+    "title": "Renegade: The Making of a President",
+    "author": "Richard Wolffe",
+    "cover": "reading_covers/6314734",
+    "amazon": "https://www.amazon.com/dp/0307463125",
+    "rating": 4,
+    "genre": "Politics"
+  },
+  {
+    "title": "Too Big to Fail: The Inside Story of How Wall Street and Washington Fought to Save the Financial System from Crisis — and Themselves",
+    "author": "Andrew Ross Sorkin",
+    "cover": "reading_covers/6687247",
+    "amazon": "https://www.amazon.com/dp/0670021253",
+    "rating": 4,
+    "genre": "Business"
+  },
+  {
+    "title": "Game Change: Obama and the Clintons, McCain and Palin, and the Race of a Lifetime",
+    "author": "John Heilemann",
+    "cover": "reading_covers/6694937",
+    "amazon": "https://www.amazon.com/dp/0061733636",
+    "rating": 4,
+    "genre": "Politics"
+  },
+  {
+    "title": "Hamlet's BlackBerry: A Practical Philosophy for Building a Good Life in the Digital Age",
+    "author": "William Powers",
+    "cover": "reading_covers/7547497",
+    "amazon": "https://www.amazon.com/dp/0061687162",
+    "rating": 2,
+    "genre": "Nonfiction"
+  },
+  {
+    "title": "Whiter Shades of Pale: The Stuff White People Like, Coast to Coast, from Seattle's Sweaters to Maine's Microbrews",
+    "author": "Christian Lander",
+    "cover": "reading_covers/8562524",
+    "amazon": "https://www.amazon.com/dp/0812982061",
+    "rating": 5,
+    "genre": "Humor"
+  },
+  {
+    "title": "The thank you economy",
+    "author": "Gary Vaynerchuk",
+    "cover": "reading_covers/9203287",
+    "amazon": "https://www.amazon.com/dp/0061914185",
+    "rating": 3,
+    "genre": "Business"
+  },
+  {
+    "title": "You Are an Ironman: How Six Weekend Warriors Chased Their Dream of Finishing the World's Toughest Triathlon",
+    "author": "Jacques Steinberg",
+    "cover": "reading_covers/12693856",
+    "amazon": "https://www.amazon.com/dp/1101544317",
+    "rating": 5,
+    "genre": "Sports"
+  },
+  {
+    "title": "The Education of Millionaires: Everything You Won't Learn in College About How to Be Successful",
+    "author": "Michael Ellsberg",
+    "cover": "reading_covers/18922355",
+    "amazon": "https://www.amazon.com/dp/110154449X",
+    "rating": 4,
+    "genre": "Business"
+  },
+  {
+    "title": "Weekday Vegetarian",
+    "author": "Graham Hill",
+    "cover": "reading_covers/11348693",
+    "amazon": "https://www.amazon.com/dp/1937382044",
+    "rating": 2,
+    "genre": "Health & Fitness"
+  },
+  {
+    "title": "The Martian",
+    "author": "Andy Weir",
+    "cover": "reading_covers/18401393",
+    "amazon": "https://www.amazon.com/s?k=The%20Martian%20Andy%20Weir",
+    "rating": 5,
+    "genre": "Science Fiction"
+  },
+  {
+    "title": "Manage Your Day-To-Day: Build Your Routine, Find Your Focus, and Sharpen Your Creative Mind",
+    "author": "Jocelyn K. Glei",
+    "cover": "reading_covers/37712563",
+    "amazon": "https://www.amazon.com/s?k=Manage%20Your%20Day-To-Day%20Jocelyn%20K.%20Glei",
+    "rating": 4,
+    "genre": "Self-Help"
+  },
+  {
+    "title": "Double Down: Game Change 2012",
+    "author": "Mark Halperin",
+    "cover": "reading_covers/18834760",
+    "amazon": "https://www.amazon.com/dp/1101638702",
+    "rating": 3,
+    "genre": "Politics"
+  },
+  {
+    "title": "Slimed!: An Oral History of Nickelodeon's Golden Age",
+    "author": "Mathew Klickstein",
+    "cover": "reading_covers/18953642",
+    "amazon": "https://www.amazon.com/dp/1101614099",
+    "rating": 4,
+    "genre": "Nonfiction"
+  },
+  {
+    "title": "The Circle",
+    "author": "Dave Eggers",
+    "cover": "reading_covers/18659415",
+    "amazon": "https://www.amazon.com/dp/0385351402",
+    "rating": 5,
+    "genre": "Fiction"
+  },
+  {
+    "title": "Can I Say: Living Large, Cheating Death, and Drums, Drums, Drums",
+    "author": "Travis Barker",
+    "cover": "reading_covers/24906140",
+    "amazon": "https://www.amazon.com/s?k=Can%20I%20Say%20Travis%20Barker",
+    "rating": 5,
+    "genre": "Memoir"
+  },
+  {
+    "title": "The Obstacle Is the Way: The Timeless Art of Turning Trials into Triumph",
+    "author": "Ryan Holiday",
+    "cover": "reading_covers/20554127",
+    "amazon": "https://www.amazon.com/dp/1101620595",
+    "rating": 4,
+    "genre": "Self-Help"
+  },
+  {
+    "title": "Moms on Call Next Steps Baby Care 6-15 Months - Baby Sleep Schedules, Feeding & Milestones: Help Baby Sleep Through the Night - 20th Anniversary Edition (Book 2 of 3)",
+    "author": "Laura Hunter",
+    "cover": "reading_covers/28427324",
+    "amazon": "https://www.amazon.com/dp/0985411406",
+    "rating": 5,
+    "genre": "Parenting"
+  },
+  {
+    "title": "Nicely Said: Writing for the Web with Style and Purpose (Voices That Matter)",
+    "author": "Fenton Nicole",
+    "cover": "reading_covers/22301509",
+    "amazon": "https://www.amazon.com/s?k=Nicely%20Said%20Fenton%20Nicole",
+    "rating": 3,
+    "genre": "Business"
+  },
+  {
+    "title": "Moms on Call Basic Baby Care 0-6 Months - Newborn Routine, Sleep & Feeding Schedule Book for First-Time Moms - 20th Anniversary Edition (Book 1 of 3)",
+    "author": "Laura Hunter",
+    "cover": "reading_covers/26181698",
+    "amazon": "https://www.amazon.com/dp/0985411422",
+    "rating": 5,
+    "genre": "Parenting"
+  },
+  {
+    "title": "If This Is a Man / The Truce",
+    "author": "Primo Levi",
+    "cover": "reading_covers/6181",
+    "amazon": "https://www.amazon.com/dp/0349100136",
+    "rating": 4,
+    "genre": "Memoir"
+  },
+  {
+    "title": "Between the World and Me (One World Essentials)",
+    "author": "Ta-Nehisi Coates",
+    "cover": "reading_covers/25360188",
+    "amazon": "https://www.amazon.com/dp/0679645985",
+    "rating": 3,
+    "genre": "Memoir"
+  },
+  {
+    "title": "The Culture Code: The Secrets of Highly Successful Groups",
+    "author": "Daniel Coyle",
+    "cover": "reading_covers/25870385",
+    "amazon": "https://www.amazon.com/dp/1847941265",
+    "rating": 4,
+    "genre": "Business"
+  },
+  {
+    "title": "How Bad Do You Want It?: Mastering the Psychology of Mind over Muscle",
+    "author": "Matt Fitzgerald",
+    "cover": "reading_covers/27597915",
+    "amazon": "https://www.amazon.com/dp/1937716716",
+    "rating": 4,
+    "genre": "Sports"
+  },
+  {
+    "title": "Ego Is the Enemy",
+    "author": "Ryan Holiday",
+    "cover": "reading_covers/29428533",
+    "amazon": "https://www.amazon.com/dp/069819215X",
+    "rating": 5,
+    "genre": "Self-Help"
+  },
+  {
+    "title": "Hillbilly Elegy: A Memoir of a Family and Culture in Crisis",
+    "author": "J.D. Vance",
+    "cover": "reading_covers/29890212",
+    "amazon": "https://www.amazon.com/s?k=Hillbilly%20Elegy%20J.D.%20Vance",
+    "rating": 4,
+    "genre": "Memoir"
+  },
+  {
+    "title": "Option B",
+    "author": "Sheryl Sandberg",
+    "cover": "reading_covers/33295822",
+    "amazon": "https://www.amazon.com/dp/1524732699",
+    "rating": 3,
+    "genre": "Self-Help"
+  },
+  {
+    "title": "Tribe of Mentors",
+    "author": "Timothy Ferriss",
+    "cover": "reading_covers/35443314",
+    "amazon": "https://www.amazon.com/dp/1328994961",
+    "rating": 3,
+    "genre": "Self-Help"
+  },
+  {
+    "title": "Cribsheet: A Data-Driven Guide to Better, More Relaxed Parenting, from Birth to Preschool",
+    "author": "Emily Oster",
+    "cover": "reading_covers/40121328",
+    "amazon": "https://www.amazon.com/dp/0525559256",
+    "rating": 5,
+    "genre": "Parenting"
+  },
+  {
+    "title": "Stillness is the Key",
+    "author": "Ryan Holiday",
+    "cover": "reading_covers/50278376",
+    "amazon": "https://www.amazon.com/s?k=Stillness%20is%20the%20Key%20Ryan%20Holiday",
+    "rating": 5,
+    "genre": "Self-Help"
+  },
+  {
+    "title": "Running the Dream: One Summer Living, Training, and Racing with a Team of World-Class Runners Half My Age",
+    "author": "Matt Fitzgerald",
+    "cover": "reading_covers/53509108",
+    "amazon": "https://www.amazon.com/s?k=Running%20the%20Dream%20Matt%20Fitzgerald",
+    "rating": 5,
+    "genre": "Sports"
+  },
+  {
+    "title": "Hoax: Donald Trump, Fox News, and the Dangerous Distortion of Truth",
+    "author": "Brian Stelter",
+    "cover": "reading_covers/53345186",
+    "amazon": "https://www.amazon.com/dp/1982142464",
+    "rating": 4,
+    "genre": "Politics"
+  }
+]
