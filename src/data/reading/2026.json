@@ -1,5 +1,14 @@
 [
   {
+    "title": "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
+    "author": "James Clear",
+    "cover": "reading_covers/40121378",
+    "amazon": "https://www.amazon.com/s?k=Atomic%20Habits%20James%20Clear",
+    "dateRead": "2026-08-24",
+    "rating": 5,
+    "genre": "Self-Help"
+  },
+  {
     "title": "Savages (Savages, #2)",
     "author": "Don Winslow",
     "cover": "reading_covers/59116250",
@@ -174,6 +183,15 @@
     "rating": 4
   },
   {
+    "title": "The Employees",
+    "author": "Olga Ravn",
+    "cover": "reading_covers/75615791",
+    "amazon": "https://www.amazon.com/s?k=The%20Employees%20Olga%20Ravn",
+    "dateRead": "2026-04-01",
+    "rating": 3,
+    "genre": "Fiction"
+  },
+  {
     "title": "Seascraper",
     "author": "Benjamin Wood",
     "cover": "reading_covers/240386326",
@@ -255,6 +273,15 @@
     "dateRead": "2026-01-08",
     "rating": 2,
     "genre": "Self-Help"
+  },
+  {
+    "title": "Surf When You Can: Lessons in Life, Loyalty, and Leadership from a Maverick Navy Captain",
+    "author": "Brett Crozier",
+    "cover": "reading_covers/74892202",
+    "amazon": "https://www.amazon.com/dp/1982191023",
+    "dateRead": "2026-01-01",
+    "rating": 4,
+    "genre": "Memoir"
   },
   {
     "title": "John of John",
