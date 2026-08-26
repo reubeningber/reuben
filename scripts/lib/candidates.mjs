@@ -23,18 +23,23 @@ export function toIsoDate(rfc2822Date) {
 // Books already present in `existingIds` (already in a data file) are always
 // skipped in the undated pass, and a book present in both shelves is only
 // added once (the dated pass takes priority). The dated pass instead dedupes
-// on `existingDatedReads`, a set of `bookId|dateReadIso` keys — keyed on
-// bookId alone, a re-read (same book, new finish date after a re-read on
-// Goodreads) would never show up a second time.
+// on `existingDatedReads`, a set of `bookId|dateReadIso` keys, so a genuine
+// re-read (same book, new finish date after finishing it again on Goodreads)
+// still gets added — but only if some *other* dated entry already exists for
+// that bookId (`existingIdsWithDate`). Without that check, a book that was
+// filed undated (no dateRead) and later got a date set on Goodreads for that
+// same read would look exactly like a re-read and get double-added instead
+// of just having its one entry backfilled with a date by hand.
 export const UNDATED_YEAR = "2019-and-earlier";
 
-export function selectCandidates(dated, defaultOrder, existingIds, existingDatedReads, lookbackDays, now = Date.now()) {
+export function selectCandidates(dated, defaultOrder, existingIds, existingDatedReads, existingIdsWithDate, lookbackDays, now = Date.now()) {
   const candidates = [];
 
   for (const b of dated) {
     if (!b.dateRead) continue;
     const dateReadIso = toIsoDate(b.dateRead);
     if (existingDatedReads.has(`${b.bookId}|${dateReadIso}`)) continue;
+    if (existingIds.has(b.bookId) && !existingIdsWithDate.has(b.bookId)) continue;
     candidates.push({ ...b, year: new Date(b.dateRead).getFullYear(), dateReadIso });
   }
 

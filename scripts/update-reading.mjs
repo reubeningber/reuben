@@ -56,6 +56,7 @@ function loadExisting() {
   const byYear = {};
   const existingIds = new Set();
   const existingDatedReads = new Set();
+  const existingIdsWithDate = new Set();
   for (const file of files) {
     const year = file === `${UNDATED_YEAR}.json` ? UNDATED_YEAR : Number(file.replace(".json", ""));
     const filePath = new URL(file, DATA_DIR);
@@ -64,10 +65,13 @@ function loadExisting() {
     for (const b of books) {
       const m = b.cover.match(/reading_covers\/(\w+)/);
       if (m) existingIds.add(m[1]);
-      if (m && b.dateRead) existingDatedReads.add(`${m[1]}|${b.dateRead}`);
+      if (m && b.dateRead) {
+        existingDatedReads.add(`${m[1]}|${b.dateRead}`);
+        existingIdsWithDate.add(m[1]);
+      }
     }
   }
-  return { byYear, existingIds, existingDatedReads };
+  return { byYear, existingIds, existingDatedReads, existingIdsWithDate };
 }
 
 async function uploadCover(bookId, imgUrl, isbn) {
@@ -148,12 +152,12 @@ async function syncCurrentlyReading(knownCoverIds) {
 }
 
 async function main() {
-  const { byYear, existingIds, existingDatedReads } = loadExisting();
+  const { byYear, existingIds, existingDatedReads, existingIdsWithDate } = loadExisting();
 
   const dated = await fetchShelf("shelf=read&sort=date_read&order=d&per_page=100");
   const defaultOrder = await fetchShelf("shelf=read&per_page=100");
 
-  const candidates = selectCandidates(dated, defaultOrder, existingIds, existingDatedReads, UNDATED_LOOKBACK_DAYS);
+  const candidates = selectCandidates(dated, defaultOrder, existingIds, existingDatedReads, existingIdsWithDate, UNDATED_LOOKBACK_DAYS);
 
   if (candidates.length === 0) {
     console.log("No new read books found.");
