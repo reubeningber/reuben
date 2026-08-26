@@ -287,5 +287,46 @@
     "amazon": "https://www.amazon.com/dp/1982191023",
     "rating": 4,
     "genre": "Memoir"
+  },
+  {
+    "title": "100-Word Writing Habit: A Small Action With Big Results (Short Read) (100 Word Writing Habit)",
+    "author": "David Kadavy",
+    "cover": "reading_covers/223628219",
+    "amazon": "https://www.amazon.com/s?k=100-Word%20Writing%20Habit%20David%20Kadavy",
+    "rating": 4,
+    "genre": "Self-Help"
+  },
+  {
+    "title": "Bowling Alone: The Collapse and Revival of American Community",
+    "author": "Robert D. Putnam",
+    "cover": "reading_covers/478",
+    "amazon": "https://www.amazon.com/dp/0743203046",
+    "rating": 4,
+    "genre": "Politics"
+  },
+  {
+    "title": "Diplomacy",
+    "author": "Henry Kissinger",
+    "cover": "reading_covers/1411743",
+    "amazon": "https://www.amazon.com/dp/067165991X",
+    "rating": 4,
+    "genre": "Politics"
+  },
+  {
+    "title": "Friday Night Lights: A Town, A Team, And A Dream",
+    "author": "H.G. Bissinger",
+    "cover": "reading_covers/8684477",
+    "amazon": "https://www.amazon.com/dp/0306815974",
+    "rating": 3,
+    "genre": "Sports"
+  },
+  {
+    "title": "Once a Runner",
+    "author": "John L. Parker Jr.",
+    "cover": "reading_covers/6949301",
+    "amazon": "https://www.amazon.com/dp/1416597891",
+    "rating": 3,
+    "audio": true,
+    "genre": "Fiction"
   }
 ]
