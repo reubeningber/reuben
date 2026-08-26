@@ -21,16 +21,21 @@ export function toIsoDate(rfc2822Date) {
 // marked read/rated on Goodreads (recent dateAdded) long after it was
 // actually finished, and guessing the current year for those misfiles them.
 // Books already present in `existingIds` (already in a data file) are always
-// skipped, and a book present in both shelves is only added once (the dated
-// pass takes priority).
+// skipped in the undated pass, and a book present in both shelves is only
+// added once (the dated pass takes priority). The dated pass instead dedupes
+// on `existingDatedReads`, a set of `bookId|dateReadIso` keys — keyed on
+// bookId alone, a re-read (same book, new finish date after a re-read on
+// Goodreads) would never show up a second time.
 export const UNDATED_YEAR = "2019-and-earlier";
 
-export function selectCandidates(dated, defaultOrder, existingIds, lookbackDays, now = Date.now()) {
+export function selectCandidates(dated, defaultOrder, existingIds, existingDatedReads, lookbackDays, now = Date.now()) {
   const candidates = [];
 
   for (const b of dated) {
-    if (!b.dateRead || existingIds.has(b.bookId)) continue;
-    candidates.push({ ...b, year: new Date(b.dateRead).getFullYear(), dateReadIso: toIsoDate(b.dateRead) });
+    if (!b.dateRead) continue;
+    const dateReadIso = toIsoDate(b.dateRead);
+    if (existingDatedReads.has(`${b.bookId}|${dateReadIso}`)) continue;
+    candidates.push({ ...b, year: new Date(b.dateRead).getFullYear(), dateReadIso });
   }
 
   for (const b of defaultOrder) {
