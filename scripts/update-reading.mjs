@@ -10,7 +10,7 @@ import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { lookupGenre } from "./lib/genre.mjs";
 import { field, amazonLink } from "./lib/rss.mjs";
-import { selectCandidates } from "./lib/candidates.mjs";
+import { selectCandidates, UNDATED_YEAR } from "./lib/candidates.mjs";
 
 const GOODREADS_USER_ID = "7384813";
 const DATA_DIR = new URL("../src/data/reading/", import.meta.url);
@@ -50,11 +50,13 @@ async function fetchShelf(params) {
 }
 
 function loadExisting() {
-  const files = existsSync(DATA_DIR) ? readdirSync(DATA_DIR).filter((f) => /^\d{4}\.json$/.test(f)) : [];
+  const files = existsSync(DATA_DIR)
+    ? readdirSync(DATA_DIR).filter((f) => /^\d{4}\.json$/.test(f) || f === `${UNDATED_YEAR}.json`)
+    : [];
   const byYear = {};
   const existingIds = new Set();
   for (const file of files) {
-    const year = Number(file.replace(".json", ""));
+    const year = file === `${UNDATED_YEAR}.json` ? UNDATED_YEAR : Number(file.replace(".json", ""));
     const filePath = new URL(file, DATA_DIR);
     const books = JSON.parse(readFileSync(filePath, "utf-8"));
     byYear[year] = books;
@@ -149,8 +151,7 @@ async function main() {
   const dated = await fetchShelf("shelf=read&sort=date_read&order=d&per_page=100");
   const defaultOrder = await fetchShelf("shelf=read&per_page=100");
 
-  const currentYear = new Date().getFullYear();
-  const candidates = selectCandidates(dated, defaultOrder, existingIds, currentYear, UNDATED_LOOKBACK_DAYS);
+  const candidates = selectCandidates(dated, defaultOrder, existingIds, UNDATED_LOOKBACK_DAYS);
 
   if (candidates.length === 0) {
     console.log("No new read books found.");

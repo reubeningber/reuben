@@ -16,10 +16,16 @@ export function toIsoDate(rfc2822Date) {
 // order undated entries show up in reliably. A book with no dateRead is only
 // picked up if it was added to Goodreads within `lookbackDays` of `now` —
 // otherwise old undated backlog entries would flood in as "new" on every
-// run. Books already present in `existingIds` (already in a data file) are
-// always skipped, and a book present in both shelves is only added once
-// (the dated pass takes priority).
-export function selectCandidates(dated, defaultOrder, existingIds, currentYear, lookbackDays, now = Date.now()) {
+// run. Since there's no real date to go on, undated books always land in the
+// UNDATED_YEAR bucket rather than guessing the current year — a book can be
+// marked read/rated on Goodreads (recent dateAdded) long after it was
+// actually finished, and guessing the current year for those misfiles them.
+// Books already present in `existingIds` (already in a data file) are always
+// skipped, and a book present in both shelves is only added once (the dated
+// pass takes priority).
+export const UNDATED_YEAR = "2019-and-earlier";
+
+export function selectCandidates(dated, defaultOrder, existingIds, lookbackDays, now = Date.now()) {
   const candidates = [];
 
   for (const b of dated) {
@@ -31,7 +37,7 @@ export function selectCandidates(dated, defaultOrder, existingIds, currentYear, 
     if (b.dateRead || existingIds.has(b.bookId)) continue;
     if (candidates.some((c) => c.bookId === b.bookId)) continue;
     if (!b.dateAdded || daysAgo(b.dateAdded, now) > lookbackDays) continue;
-    candidates.push({ ...b, year: currentYear, dateReadIso: null });
+    candidates.push({ ...b, year: UNDATED_YEAR, dateReadIso: null });
   }
 
   return candidates;

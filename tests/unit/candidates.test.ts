@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { daysAgo, toIsoDate, selectCandidates } from '../../scripts/lib/candidates.mjs';
+import { daysAgo, toIsoDate, selectCandidates, UNDATED_YEAR } from '../../scripts/lib/candidates.mjs';
 
 describe('daysAgo', () => {
   it('returns ~0 for the reference time itself', () => {
@@ -40,7 +40,7 @@ describe('selectCandidates', () => {
 
   it('adds a dated book not already known, using its dateRead year', () => {
     const dated = [book({ bookId: 'a', dateRead: 'Tue, 18 Aug 2020 00:00:00 +0000' })];
-    const result = selectCandidates(dated, [], new Set(), 2026, 14, now);
+    const result = selectCandidates(dated, [], new Set(), 14, now);
     expect(result).toHaveLength(1);
     expect(result[0].bookId).toBe('a');
     expect(result[0].dateReadIso).toBe('2020-08-18');
@@ -48,42 +48,42 @@ describe('selectCandidates', () => {
 
   it('skips a dated book that is already known', () => {
     const dated = [book({ bookId: 'a', dateRead: 'Tue, 18 Aug 2020 00:00:00 +0000' })];
-    const result = selectCandidates(dated, [], new Set(['a']), 2026, 14, now);
+    const result = selectCandidates(dated, [], new Set(['a']), 14, now);
     expect(result).toHaveLength(0);
   });
 
   it('skips a shelf entry with no dateRead in the dated pass', () => {
     const dated = [book({ bookId: 'a', dateRead: null })];
-    const result = selectCandidates(dated, [], new Set(), 2026, 14, now);
+    const result = selectCandidates(dated, [], new Set(), 14, now);
     expect(result).toHaveLength(0);
   });
 
-  it('adds an undated book only if added within the lookback window', () => {
+  it('adds an undated book only if added within the lookback window, filed under the undated bucket', () => {
     const withinWindow = book({ bookId: 'b', dateAdded: 'Sat, 15 Aug 2026 00:00:00 +0000' }); // 3 days ago
     const outsideWindow = book({ bookId: 'c', dateAdded: 'Sun, 1 Feb 2026 00:00:00 +0000' }); // way over 14 days
-    const result = selectCandidates([], [withinWindow, outsideWindow], new Set(), 2026, 14, now);
+    const result = selectCandidates([], [withinWindow, outsideWindow], new Set(), 14, now);
     expect(result.map((c) => c.bookId)).toEqual(['b']);
-    expect(result[0].year).toBe(2026);
+    expect(result[0].year).toBe(UNDATED_YEAR);
     expect(result[0].dateReadIso).toBeNull();
   });
 
   it('drops an undated book with no dateAdded at all', () => {
     const noDateAdded = book({ bookId: 'd', dateAdded: null });
-    const result = selectCandidates([], [noDateAdded], new Set(), 2026, 14, now);
+    const result = selectCandidates([], [noDateAdded], new Set(), 14, now);
     expect(result).toHaveLength(0);
   });
 
   it('does not double-add a book present in both shelves', () => {
     const dated = [book({ bookId: 'e', dateRead: 'Tue, 18 Aug 2020 00:00:00 +0000' })];
     const defaultOrder = [book({ bookId: 'e', dateRead: null, dateAdded: 'Sat, 15 Aug 2026 00:00:00 +0000' })];
-    const result = selectCandidates(dated, defaultOrder, new Set(), 2026, 14, now);
+    const result = selectCandidates(dated, defaultOrder, new Set(), 14, now);
     expect(result).toHaveLength(1);
     expect(result[0].dateReadIso).toBe('2020-08-18'); // the dated pass wins
   });
 
   it('skips an already-known book in the undated pass too', () => {
     const undated = book({ bookId: 'f', dateAdded: 'Sat, 15 Aug 2026 00:00:00 +0000' });
-    const result = selectCandidates([], [undated], new Set(['f']), 2026, 14, now);
+    const result = selectCandidates([], [undated], new Set(['f']), 14, now);
     expect(result).toHaveLength(0);
   });
 });
