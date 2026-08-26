@@ -478,5 +478,13 @@
     "amazon": "https://www.amazon.com/dp/1982142464",
     "rating": 4,
     "genre": "Politics"
+  },
+  {
+    "title": "100-Word Writing Habit: A Small Action With Big Results (Short Read) (100 Word Writing Habit)",
+    "author": "David Kadavy",
+    "cover": "reading_covers/223628219",
+    "amazon": "https://www.amazon.com/s?k=100-Word%20Writing%20Habit%20David%20Kadavy",
+    "rating": 4,
+    "genre": "Self-Help"
   }
 ]
