@@ -18,9 +18,9 @@ This year I didn't do any of that. I handed the PDFs to Claude instead.
 
 Somewhere online, under a post like this one, someone always says it: why not just hang the calendars on the fridge?
 
-Because it's not one calendar. It's at least four. And a fridge doesn't help me when I'm at the grocery store and a friend asks if the kids want to hang out, and what I actually need in that moment is to know that on the second Sunday in October, Zeke has Hebrew school and Judi has soccer. For better or worse, a family runs on its calendar now. Mine needed to live in my pocket, merged, not scattered across four pieces of paper stuck to an appliance.
+Because I've got four calendars, not one. A fridge doesn't help me when I'm at the grocery store and a friend asks if the kids want to hang out, and what I actually need in that moment is to know that on the second Sunday in October, Zeke has Hebrew school and Judi has soccer. For better or worse, a family runs on its calendar now. Mine needed to live in my pocket, merged, not scattered across four pieces of paper stuck to an appliance.
 
-**The setup.** We have one shared Google calendar — "Z & J Mania" — that both of us check. The trick wasn't the calendar. It was getting a year's worth of scattered, differently-formatted school dates into it without losing an afternoon.
+**The setup.** We have one shared Google calendar — "Z & J Mania" — that both of us check. The calendar itself was the easy part. What took real effort was cramming a year of scattered, differently-formatted school dates into it without losing an afternoon.
 
 Here's roughly what I did, in order:
 
@@ -40,7 +40,7 @@ That last part was its own pass, days later:
 
 > "Review the calendar from now through June. Find events that could be combined — like Yom Kippur, where we've got separate Z and J entries for the same closure. Also flag anything that's now a duplicate."
 
-It came back with exactly that: a list of mergeable pairs, and a separate list of things that looked like duplicates but weren't — one kid's "early pickup" wasn't the same time as the other's, so those stayed apart. I hadn't have caught that distinction if I'd just eyeballed a year of dates myself.
+It came back with exactly that: a list of mergeable pairs, and a separate list of things that looked like duplicates but weren't — one kid's "early pickup" wasn't the same time as the other's, so those stayed apart. I don't think I'd have caught that distinction if I'd just eyeballed a year of dates myself.
 
 ---
 
