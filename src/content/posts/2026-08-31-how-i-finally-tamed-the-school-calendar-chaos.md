@@ -10,7 +10,7 @@ tags: ["fatherhood", "parenting", "ai", "family", "productivity"]
 description: "I used Claude to turn four different school PDFs into one shared family calendar. Here's exactly how, with the prompts I used."
 ---
 
-It's late late August. I've got four PDFs open in four tabs — Zeke's DOE calendar, his after-school program, his Hebrew school, and Judi's preschool. Every one of them formatted differently. Every one of them a wall of dates I need to somehow get into my head, and more importantly, onto a calendar my wife and I actually share.
+It's the end of August. I've got four PDFs open in four tabs — Zeke's school calendar, his after-school program, his Hebrew school, and Judi's preschool. Every one of them poorly formatted. Every one of them a wall of dates I need to somehow get into my head, and more importantly, onto a calendar my wife and I actually share.
 
 I used to do this by hand. Squint at a grid, cross-reference against another grid, type it in, get something wrong, find out in October when a kid shows up to a building that's closed.
 
@@ -18,17 +18,17 @@ This year I didn't do any of that. I handed the PDFs to Claude instead.
 
 ---
 
-Somewhere online, under a post like this one, someone always says it: why not just hang the calendars on the fridge?
+Somewhere online, under a post like this one, someone always says it: _why not just hang the calendars on the fridge?_
 
-Because I've got four calendars, not one. A fridge doesn't help me when I'm at the grocery store and a friend asks if the kids want to hang out, and what I actually need in that moment is to know that on the second Sunday in October, Zeke has Hebrew school and Judi has soccer. For better or worse, a family runs on its calendar now. Mine needed to live in my pocket, merged, not scattered across four pieces of paper stuck to an appliance.
+Because I've got four calendars, not one. A fridge doesn't help me when I'm at the grocery store and a friend asks if the kids want to hang out, and what I actually need in that moment is to know that on the second Sunday in October, Zeke has Hebrew school and Judi has soccer. For better or worse, our family runs on a calendar. Mine needed to live in my pocket, merged, not scattered across four pieces of paper stuck to an appliance.
 
-**The setup.** We have one shared Google calendar — "Z & J Mania" — that both of us check. The calendar itself was the easy part. What took real effort was cramming a year of scattered, differently-formatted school dates into it without losing an afternoon.
+**The setup.** My wife and I have one shared Google calendar — "Z & J Mania" — that both of us check. The calendar itself was the easy part. What took real effort was cramming a year of scattered, differently-formatted school dates into it without losing an afternoon.
 
-Here's roughly what I did, in order:
+Here's roughly how I did it using Claude, in order:
 
 > "Here's a link to the NYC DOE calendar. Review it and come up with a list of dates relevant to a parent of a kid going into 2nd grade. Be conservative about what you flag."
 
-That last line matters. Left alone, it'll flag everything — every clerical day, every conference week. Telling it to be conservative kept the first pass usable instead of a wall of noise I'd have to prune myself.
+That last line matters. The NYC school calendar has dates for kids from Pre-K to Seniors in High School. Left alone, it'll flag everything — every clerical day, every conference week. Telling it to be conservative kept the first pass usable instead of a wall of noise I'd have to prune myself.
 
 Once I had a list I liked:
 
