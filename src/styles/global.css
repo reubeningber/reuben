@@ -106,9 +106,32 @@ code {
 }
 
 .prose pre {
-  @apply bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto my-6;
+  @apply relative bg-gray-900 text-gray-100 rounded-lg p-4 pr-14 my-6 text-sm leading-relaxed whitespace-pre-wrap break-words;
 }
 
 .prose code {
   @apply bg-gray-100 text-gray-900 px-2 py-1 rounded text-sm font-mono;
+}
+
+/* Fenced code blocks (Shiki-rendered <pre><code>) shouldn't inherit the inline-code chip styling above */
+.prose pre code {
+  @apply bg-transparent text-inherit p-0 rounded-none font-mono;
+}
+
+/* Copy-to-clipboard button injected by the client-side script in PostLayout.astro */
+.prose pre .copy-code-button {
+  @apply absolute top-2 right-2 flex items-center justify-center w-8 h-8 rounded-md text-gray-400 bg-gray-800 border border-gray-700 opacity-0 transition-opacity duration-150;
+}
+
+.prose pre:hover .copy-code-button,
+.prose pre .copy-code-button:focus-visible {
+  @apply opacity-100;
+}
+
+.prose pre .copy-code-button:hover {
+  @apply text-gray-100 bg-gray-700;
+}
+
+.prose pre .copy-code-button svg {
+  @apply w-4 h-4;
 }
