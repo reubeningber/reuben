@@ -2,7 +2,7 @@
 title: "How I Finally Tamed the School Calendar Chaos"
 subTitle: "Two kids, four calendars, one PDF at a time"
 pubDate: "2026-08-31"
-category: "Ramblings"
+category: "Fatherhood"
 image: "https://plus.unsplash.com/premium_photo-1705178702953-a3048924f209?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 tags: ["fatherhood", "parenting", "ai", "family", "productivity"]
 description: "I used Claude to turn four different school PDFs into one shared family calendar. Here's exactly how, with the prompts I used."
