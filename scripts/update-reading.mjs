@@ -2,9 +2,10 @@
 // Pulls new books from Goodreads and adds them to src/data/reading/{year}.json,
 // uploading covers to Cloudinary. Also mirrors the "currently-reading" shelf to
 // src/data/reading/currently-reading.json, which feeds the READING section on
-// /now. Designed to run unattended (see .github/workflows/update-reading.yml) —
-// writes files but never commits/opens a PR itself; the workflow's
-// create-pull-request step handles that.
+// /now. Bumps the "Last updated on ..." text on /reading and /now whenever
+// their respective data changes. Designed to run unattended (see
+// .github/workflows/update-reading.yml) — writes files but never commits/opens
+// a PR itself; the workflow's create-pull-request step handles that.
 
 import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
 import { createHash } from "node:crypto";
@@ -15,7 +16,10 @@ import { selectCandidates, UNDATED_YEAR } from "./lib/candidates.mjs";
 const GOODREADS_USER_ID = "7384813";
 const DATA_DIR = new URL("../src/data/reading/", import.meta.url);
 const CURRENTLY_READING_PATH = new URL("../src/data/reading/currently-reading.json", import.meta.url);
+const NOW_PAGE_PATH = new URL("../src/pages/now.astro", import.meta.url);
+const READING_PAGE_PATH = new URL("../src/pages/reading.astro", import.meta.url);
 const UNDATED_LOOKBACK_DAYS = 14;
+const LAST_UPDATED_RE = /Last updated on [A-Za-z]+ \d{1,2}, \d{4}/;
 
 const CLOUD_NAME = requireEnv("PUBLIC_CLOUDINARY_CLOUD_NAME");
 const API_KEY = requireEnv("CLOUDINARY_API_KEY");
@@ -118,6 +122,16 @@ function coverIdOf(book) {
   return book.cover.match(/reading_covers\/(\w+)/)?.[1];
 }
 
+function todayFormatted() {
+  return new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+}
+
+function bumpLastUpdated(pagePath) {
+  const html = readFileSync(pagePath, "utf-8");
+  const updated = html.replace(LAST_UPDATED_RE, `Last updated on ${todayFormatted()}`);
+  if (updated !== html) writeFileSync(pagePath, updated, "utf-8");
+}
+
 async function syncCurrentlyReading(knownCoverIds) {
   const shelf = await fetchShelf("shelf=currently-reading&per_page=100");
   const existing = existsSync(CURRENTLY_READING_PATH)
@@ -195,11 +209,13 @@ async function main() {
     const filePath = new URL(`${year}.json`, DATA_DIR);
     writeFileSync(filePath, JSON.stringify(byYear[year], null, 2), "utf-8");
   }
+  if (added.length > 0) bumpLastUpdated(READING_PAGE_PATH);
 
   console.log("\nSyncing currently-reading shelf for /now...");
   const currentlyReading = await syncCurrentlyReading(existingIds);
   if (currentlyReading.changed) {
     console.log(`  currently-reading list updated (${currentlyReading.entries.length} book(s))`);
+    bumpLastUpdated(NOW_PAGE_PATH);
   } else {
     console.log("  no change");
   }
