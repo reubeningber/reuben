@@ -26,13 +26,17 @@ Because I've got four calendars, not one. A fridge doesn't help me when I'm at t
 
 Here's roughly how I did it using Claude, in order:
 
-> "Here's a link to the NYC DOE calendar. Review it and come up with a list of dates relevant to a parent of a kid going into 2nd grade. Be conservative about what you flag."
+```text
+Here's a link to the NYC DOE calendar. Review it and come up with a list of dates relevant to a parent of a kid going into 2nd grade. Be conservative about what you flag.
+```
 
 That last line matters. The NYC school calendar has dates for kids from Pre-K to Seniors in High School. Left alone, it'll flag everything — every clerical day, every conference week. Telling it to be conservative kept the first pass usable instead of a wall of noise I'd have to prune myself.
 
 Once I had a list I liked:
 
-> "Add these to the ZJ Mania calendar as all-day events. If school is closed, title it 'Z - No School (Reason)'."
+```text
+Add these to the ZJ Mania calendar as all-day events. If school is closed, title it 'Z - No School (Reason)'.
+```
 
 Same move for Judi's preschool calendar, then Zeke's after-school program, then Zeke's Hebrew school — one PDF at a time, one review-then-approve loop each time. I never let it write to the calendar without showing me the list first. A wrong entry on a shared calendar is worse than no entry at all.
 
@@ -40,7 +44,9 @@ The naming convention did more work than I expected. Every event starts with "Z 
 
 That last part was its own pass, days later:
 
-> "Review the calendar from now through June. Find events that could be combined — like Yom Kippur, where we've got separate Z and J entries for the same closure. Also flag anything that's now a duplicate."
+```text
+Review the calendar from now through June. Find events that could be combined — like Yom Kippur, where we've got separate Z and J entries for the same closure. Also flag anything that's now a duplicate.
+```
 
 It came back with exactly that: a list of mergeable pairs, and a separate list of things that looked like duplicates but weren't — one kid's "early pickup" wasn't the same time as the other's, so those stayed apart. I don't think I'd have caught that distinction if I'd just eyeballed a year of dates myself.
 
@@ -56,14 +62,20 @@ I still made the calls. Which category a date belonged in, whether an ambiguous 
 
 Then something like this, filled in for your own family:
 
-> "Here's a link to [SCHOOL NAME]'s calendar for the [YEAR] school year: [LINK OR UPLOAD THE PDF]. My kid is going into [GRADE]. Review it and come up with a conservative list of dates I actually need to know about — closures, half days, first/last day of school, anything unusual. Don't include anything routine like a normal Tuesday. Give me the list first so I can approve it before you add anything."
+```text
+Here's a link to [SCHOOL NAME]'s calendar for the [YEAR] school year: [LINK OR UPLOAD THE PDF]. My kid is going into [GRADE]. Review it and come up with a conservative list of dates I actually need to know about — closures, half days, first/last day of school, anything unusual. Don't include anything routine like a normal Tuesday. Give me the list first so I can approve it before you add anything.
+```
 
 Once you've looked it over:
 
-> "Add these to my [CALENDAR NAME] calendar as all-day events. Use [KID INITIAL] - [Description] as the title, and for anything the school is closed, use [KID INITIAL] - No School ([Reason])."
+```text
+Add these to my [CALENDAR NAME] calendar as all-day events. Use [KID INITIAL] - [Description] as the title, and for anything the school is closed, use [KID INITIAL] - No School ([Reason]).
+```
 
 If more than one kid's calendar ends up in the same place, that last step is worth repeating for each kid, then asking Claude to do one more pass:
 
-> "Look at everything on the calendar between now and [END DATE]. Find any events for different kids that are actually the same closure, and suggest combining them. Also flag anything that looks like a duplicate."
+```text
+Look at everything on the calendar between now and [END DATE]. Find any events for different kids that are actually the same closure, and suggest combining them. Also flag anything that looks like a duplicate.
+```
 
 That's it. The prompts do the tedious part. You still have to be the one who knows your kid isn't in extended care yet, or that the "break" week everyone's calling closed actually isn't for your specific program. No PDF replaces that. It just stops eating your Sunday night.

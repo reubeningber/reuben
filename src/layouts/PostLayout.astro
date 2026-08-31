@@ -254,4 +254,35 @@ const relatedPosts = frontmatter?.category
       </nav>
     )}
   </article>
+
+  <script>
+    const COPY_ICON = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" stroke-linecap="round" stroke-linejoin="round"></rect><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
+    const CHECK_ICON = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
+
+    document.querySelectorAll<HTMLPreElement>('.prose pre').forEach((pre) => {
+      const code = pre.querySelector('code');
+      if (!code) return;
+
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'copy-code-button';
+      button.setAttribute('aria-label', 'Copy code to clipboard');
+      button.innerHTML = COPY_ICON;
+      pre.appendChild(button);
+
+      button.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(code.textContent || '');
+          button.innerHTML = CHECK_ICON;
+          button.setAttribute('aria-label', 'Copied!');
+          setTimeout(() => {
+            button.innerHTML = COPY_ICON;
+            button.setAttribute('aria-label', 'Copy code to clipboard');
+          }, 1500);
+        } catch {
+          // Clipboard API unavailable (e.g. insecure context) — fail silently.
+        }
+      });
+    });
+  </script>
 </Base>
