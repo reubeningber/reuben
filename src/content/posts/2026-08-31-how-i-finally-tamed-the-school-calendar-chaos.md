@@ -3,12 +3,12 @@ title: "How I Finally Tamed the School Calendar Chaos"
 subTitle: "Two kids, four calendars, one PDF at a time"
 pubDate: "2026-08-31"
 category: "Ramblings"
-image: "https://res.cloudinary.com/dt3vcpkj6/image/upload/[REPLACE_WITH_IMAGE_PATH]"
+image: "https://plus.unsplash.com/premium_photo-1705178702953-a3048924f209?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 tags: ["fatherhood", "parenting", "ai", "family", "productivity"]
 description: "I used Claude to turn four different school PDFs into one shared family calendar. Here's exactly how, with the prompts I used."
 ---
 
-Late August. I've got four PDFs open in four tabs — Zeke's DOE calendar, his after-school program, his Hebrew school, and Judi's preschool. Every one of them formatted differently. Every one of them a wall of dates I need to somehow get into my head, and more importantly, onto a calendar my wife and I actually share.
+It's late late August. I've got four PDFs open in four tabs — Zeke's DOE calendar, his after-school program, his Hebrew school, and Judi's preschool. Every one of them formatted differently. Every one of them a wall of dates I need to somehow get into my head, and more importantly, onto a calendar my wife and I actually share.
 
 I used to do this by hand. Squint at a grid, cross-reference against another grid, type it in, get something wrong, find out in October when a kid shows up to a building that's closed.
 
