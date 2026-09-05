@@ -1,13 +1,9 @@
 ---
 import Base from "../layouts/BaseLayout.astro";
-import { readingCoverUrl } from "../utils/readingCovers";
+import ReadingCover from "../components/ReadingCover.astro";
 import currentlyReading from "../data/reading/currently-reading.json";
 
 const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
-
-function coverUrl(path: string) {
-  return readingCoverUrl(cloudName, path);
-}
 ---
 <Base
   title="Now | Reuben Ingber"
@@ -52,13 +48,9 @@ function coverUrl(path: string) {
         </h2>
         <div class="flex gap-6 items-start flex-wrap">
           {currentlyReading.map((book) => (
-            <a href={book.amazon} target="_blank" rel="noopener noreferrer">
-              <img
-                src={coverUrl(book.cover)}
-                alt={`${book.title} by ${book.author} book cover`}
-                class="w-24 h-auto rounded shadow-sm hover:opacity-80 transition-opacity"
-              />
-            </a>
+            <div class="w-24 shrink-0">
+              <ReadingCover book={book} cloudName={cloudName} eager />
+            </div>
           ))}
         </div>
       </section>
