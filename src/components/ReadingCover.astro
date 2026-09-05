@@ -15,9 +15,15 @@ interface Book {
 interface Props {
   book: Book;
   cloudName: string;
+  // Year panels and search results on /reading lazy-load covers (data-src,
+  // swapped to src by that page's own script) since there are ~490 of them.
+  // Pages with just a couple of covers (e.g. /now) have no such script, so
+  // they set eager to render a real src up front.
+  eager?: boolean;
 }
 
-const { book, cloudName } = Astro.props;
+const { book, cloudName, eager = false } = Astro.props;
+const coverUrl = readingCoverUrl(cloudName, book.cover);
 ---
 <a
   href={book.amazon}
@@ -32,7 +38,8 @@ const { book, cloudName } = Astro.props;
   data-genre={book.genre ?? ""}
 >
   <img
-    data-src={readingCoverUrl(cloudName, book.cover)}
+    src={eager ? coverUrl : undefined}
+    data-src={eager ? undefined : coverUrl}
     alt={`${book.title} by ${book.author} book cover`}
     class="cover-img w-full h-auto rounded shadow-sm bg-gray-100 aspect-[2/3] object-cover group-hover:opacity-80 transition-opacity"
   />

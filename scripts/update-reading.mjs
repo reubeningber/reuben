@@ -137,7 +137,8 @@ async function syncCurrentlyReading(knownCoverIds) {
   const existing = existsSync(CURRENTLY_READING_PATH)
     ? JSON.parse(readFileSync(CURRENTLY_READING_PATH, "utf-8"))
     : [];
-  const knownIds = new Set([...knownCoverIds, ...existing.map(coverIdOf)]);
+  const existingByBookId = new Map(existing.map((e) => [coverIdOf(e), e]));
+  const knownIds = new Set([...knownCoverIds, ...existingByBookId.keys()]);
 
   const entries = [];
   for (const b of shelf) {
@@ -150,12 +151,28 @@ async function syncCurrentlyReading(knownCoverIds) {
       }
       cover = upload.publicId;
     }
-    entries.push({
+
+    const entry = {
       title: b.title,
       author: b.author,
       cover,
       amazon: amazonLink(b.isbn, b.title, b.author),
-    });
+    };
+    if (b.audio) entry.audio = true;
+
+    // Genre classification (a Claude lookup, or an Open Library subjects
+    // heuristic as fallback — see lib/genre.mjs) is only worth re-running
+    // when we don't already have an answer for this book, since currently-
+    // reading entries are rebuilt from the live shelf every sync.
+    const existingEntry = existingByBookId.get(b.bookId);
+    if (existingEntry?.genre) {
+      entry.genre = existingEntry.genre;
+    } else {
+      const genre = await lookupGenre({ isbn: b.isbn, title: b.title, author: b.author });
+      if (genre) entry.genre = genre;
+    }
+
+    entries.push(entry);
   }
 
   const changed = JSON.stringify(entries) !== JSON.stringify(existing);
