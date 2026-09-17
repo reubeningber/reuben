@@ -16,11 +16,11 @@ We keep kosher. Zeke's school lunch only works on certain days — the days the 
 
 Neither of us ever remembered the login. Neither of us ever bookmarked it in the right spot. We'd dig it up, squint at a grid of abbreviations, cross-reference it against what we already knew Zeke wouldn't touch, and write it on the list. Every week. Same friction. Same sigh.
 
-[After I wrote about taming the school calendar chaos](/articles/2026-08-31-how-i-finally-tamed-the-school-calendar-chaos/), the four separate calendars — Zeke's school, his after-school program, Hebrew school, Judi's preschool — were finally merged into one shared "Z & J Mania" calendar. That problem was solved.
+[After I wrote about taming the school calendar chaos](/articles/2026-08-31-how-i-finally-tamed-the-school-calendar-chaos/), the four separate calendars (Zeke's school, his after-school program, Hebrew school, Judi's preschool) finally merged into one shared "Z & J Mania" calendar. That fixed the logistics.
 
-Solving it just made the next one more obvious. The calendar told us where the kids needed to be. It never told us what was for lunch.
+It didn't fix lunch. The calendar told us where the kids needed to be. It never told us what to feed them once they got there.
 
-This year, with school back in full swing and my own AI habits a lot more developed than they were six months ago, I noticed Claude had started offering scheduled tasks. I remember the exact moment — an idle afternoon, scrolling past the feature — and thinking: that's it, that's the lunch menu problem solved.
+This year, with school back in full swing and me a lot more comfortable leaning on Claude than I was six months ago, I noticed it had started offering scheduled tasks. I remember exactly where I was: scrolling through the feature list on some random afternoon, thinking, that's the lunch menu. That's solved.
 
 ## What I built
 
