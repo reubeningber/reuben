@@ -14,7 +14,7 @@ And then, most weeks, the same line: "Ugh, do you remember the site with the lun
 
 We keep kosher. Zeke's school lunch only works on certain days — the days the menu actually lines up with what he can eat. The rest of the time, we're packing a bag. Which days are which lives on the NYC DOE website, a place that seems built to be forgotten and rediscovered every single Sunday.
 
-Neither of us ever remembered the login. Neither of us ever bookmarked it in the right spot. We'd dig it up, squint at a grid of abbreviations, cross-reference it against what we already knew Zeke wouldn't touch, and write it on the list. Every week. Same friction. Same sigh.
+Neither of us ever bookmarked it in the right spot. We'd dig it up, squint at a grid of abbreviations, cross-reference it against what we already knew Zeke wouldn't touch, and write it on the list. Every week. Same friction. Same sigh.
 
 [After I wrote about taming the school calendar chaos](/articles/2026-08-31-how-i-finally-tamed-the-school-calendar-chaos/), the four separate calendars (Zeke's school, his after-school program, Hebrew school, Judi's preschool) finally merged into one shared "Z & J Mania" calendar. That fixed the logistics.
 
@@ -37,11 +37,11 @@ The weekly itself hasn't gone away. We still do coffee and the notepad Sunday mo
 
 ## The part I'm still working on
 
-Kosher is a floor, not the whole answer. Zeke can eat grilled cheese. He just doesn't want to. A day where grilled cheese is on the menu still needs a bagged lunch, even though nothing about it breaks the rule we're actually working around.
+Kosher is a floor, not the whole answer. Zeke can eat grilled cheese. He just doesn't like it. A day where grilled cheese is on the menu still needs a bagged lunch, even though nothing about it breaks the rule we're actually working around.
 
 Right now the briefing doesn't know that. It knows what he can eat, not what he'll eat. Some weeks it still gets corrected by hand.
 
-The next version logs what Zeke actually likes and doesn't — not just what's permitted — so "he can eat it" and "he'll eat it" stop being two different questions I have to answer myself every Friday.
+The next version will have a log of what Zeke actually likes and doesn't — not just what's permitted — so "he can eat it" and "he'll eat it" stop being two different questions I have to answer myself every Friday.
 
 ## If you want to try this
 
@@ -55,4 +55,4 @@ Something close to what I'm running:
 
 > Every Friday at 3pm, check [school]'s lunch menu for next week. Flag any day where [dietary constraint] means we need to pack a lunch instead. Then check the Z & J Mania calendar for anything coming up for Zeke or Judi in the next seven days. Email the flagged lunch days and the week's events to [wife] and me, flagged days first.
 
-It won't be exactly right on the first pass. Mine still isn't. But it's already better than two adults trying to remember a website's login every Sunday morning.
+It won't be exactly right on the first pass. Mine still isn't. But it's already better than two adults trying to remember a random website every Sunday morning.
