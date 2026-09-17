@@ -2,7 +2,7 @@
 title: "The Zeke & Judi Weekly Briefing"
 subTitle: "Solving the part of our Sunday ritual we both dreaded"
 pubDate: "2026-09-16"
-category: "Ramblings"
+category: "Fatherhood"
 image: "https://www.worthingtondirect.com/media/wysiwyg/cafeteria-table-lunch-room.jpg"
 tags: ["fatherhood", "family", "ai", "automation", "parenting"]
 description: "How a Claude scheduled task now scrapes our school's lunch menu, flags the days Zeke needs a bagged lunch, and briefs my wife and me every Friday afternoon."
