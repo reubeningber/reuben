@@ -8,12 +8,21 @@ interface Entry {
   title: string;
   url: string;
 }
-
+  
 // Reverse-chronological log of changes to the site itself (pages, features,
 // design, and engineering) — sourced from this repo's PR and commit history.
 // Routine content publishing (articles, field notes, photos) isn't tracked
 // here; see /articles and /field-notes for that.
 const entries: Entry[] = [
+  { date: "2026-09-05", title: "Added genre and audio badges to /now's currently-reading list", url: `${REPO}/pull/51` },
+  { date: "2026-08-31", title: "Made prompt blockquotes in posts copyable code blocks", url: `${REPO}/pull/47` },
+  { date: "2026-08-31", title: "Synced the \"Last updated\" dates on /now and /reading", url: `${REPO}/pull/46` },
+  { date: "2026-08-26", title: "Fixed the Goodreads reading sync to stop miscounting re-reads as new and file undated books correctly", url: `${REPO}/commit/7569a72fbabf70990593c919dbbf7ebc983bf4ef` },
+  { date: "2026-08-18", title: "Expanded end-to-end test coverage to the mobile nav, field-note slideshow, category pages, and feeds", url: `${REPO}/pull/36` },
+  { date: "2026-08-18", title: "Added test coverage for /reading and the Goodreads sync", url: `${REPO}/pull/35` },
+  { date: "2026-08-18", title: "Added genre classification to /reading, with a genre filter and a catch-all tab for undated/older reads", url: `${REPO}/pull/34` },
+  { date: "2026-08-17", title: "Added a Filters popover to /reading with an audiobook toggle and a minimum-star-rating filter", url: `${REPO}/pull/33` },
+  { date: "2026-08-17", title: "Added this /changelog page, tracking site changes back to launch", url: `${REPO}/pull/32` },
   { date: "2026-08-17", title: "Added a search box and an audiobook filter to /reading, with a responsive dropdown on narrow screens", url: `${REPO}/pull/30` },
   { date: "2026-08-15", title: "Added a slideshow format for Field Notes", url: `${REPO}/pull/29` },
   { date: "2026-08-13", title: "Linked the /now READING header to /reading", url: `${REPO}/pull/27` },
