@@ -42,6 +42,8 @@ src/
 │   ├── colophon.astro              # Colophon page
 │   ├── changelog.astro             # Changelog page (hand-maintained log of site changes)
 │   ├── identity-statement.astro    # Identity statement page
+│   ├── parenting.astro             # Pillar page (series defined in src/data/series.ts)
+│   ├── adhd-and-motivation.astro   # Pillar page
 │   ├── rss.xml.js                  # RSS feed
 │   ├── sitemap.xml.js              # Sitemap (sole source; no @astrojs/sitemap)
 │   ├── articles/                   # Blog routes

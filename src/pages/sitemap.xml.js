@@ -1,5 +1,6 @@
 import { isPublished } from '../utils/publish';
 import { slugifyCategory } from '../utils/content';
+import { series } from '../data/series';
 
 // The single source of truth for the sitemap. @astrojs/sitemap was removed
 // because it listed every built route, including draft posts.
@@ -32,6 +33,7 @@ export async function GET() {
     '/colophon/',
     '/changelog/',
     '/identity-statement/',
+    ...series.map(s => `/${s.slug}/`),
   ];
 
   const url = (loc, { lastmod, changefreq, priority }) => `

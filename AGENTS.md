@@ -43,6 +43,8 @@ src/
     contact.astro
     start-here.astro
     identity-statement.astro
+    parenting.astro                     # Pillar page — see "Series (pillar pages)" below
+    adhd-and-motivation.astro           # Pillar page
     reading.astro                       # Tabbed year-by-year book log (2026 down to 2020, plus a trailing "2019…" tab for older/undated reads) — covers link out to Amazon; search by title/author and a "Filters" popover (icon-only on mobile, audiobooks toggle + exact-star-rating picker + genre dropdown) all span every year, switching to a cross-year results grid; selecting a year tab clears all filters and returns to plain browsing
     rss.xml.js                          # RSS feed
     sitemap.xml.js                      # Sitemap — the only one; @astrojs/sitemap was removed because it listed draft posts
@@ -186,6 +188,14 @@ Defined in `Header.astro`:
 `scripts/lib/genre.mjs` classifies each book into one fixed genre (see `GENRES` in that file). Primary path: asks Claude (`claude-haiku-4-5` via the Messages API, `ANTHROPIC_API_KEY`) to pick a genre from the list, since it recognizes most books directly rather than relying on a subject tag. Fallback (no key configured): scores the book's Open Library subject tags against keyword rules — the most specific/longest keyword match per subject wins, so e.g. "science fiction" doesn't get misclassified as "Science", and word-boundary matching keeps "nonfiction" from false-positiving as "Fiction". Both paths are best-effort: the Open Library subject data is crowd-tagged/BISAC noise (a "BUSINESS & ECONOMICS" tag doesn't mean a book is about business — it tanked *Nomadland* and *Dopesick* to "Business" before this was caught), so the keyword heuristic is meaningfully weaker than asking Claude. Either way, a book with no confident match gets no `genre` field rather than a guessed one — same optional-field treatment as `rating`/`audio`. The initial ~567-book backlog (2026-08-18) wasn't run through the API at all — Claude classified it directly from its own knowledge of the books in-session, which is why it's noticeably more accurate than the Open Library heuristic; going forward, new books picked up by the weekly sync go through `lookupGenre`'s API path (or the heuristic fallback if `ANTHROPIC_API_KEY` isn't set as a repo secret).
 
 `src/data/reading/2019-and-earlier.json` holds reads from before the automation's 2020 cutoff plus older reads Goodreads has no finish date for — it's hand-maintained (the automation script only writes `{year}.json` files) and only includes books with a star rating, since undated entries have no other way to signal they're worth surfacing. It feeds the "2019…" tab on `/reading`.
+
+## Series (pillar pages)
+
+`/parenting/` and `/adhd-and-motivation/` are hand-curated hub pages that group related posts into sections. The groupings, intro copy and section headings live in `src/data/series.ts`. Post titles and summaries come from each post's frontmatter (`subTitle`, then `description`, then an excerpt), and `SeriesLayout.astro` renders the page with `CollectionPage`/`ItemList` schema. Any post listed in a series gets a "This post is part of …" link at the end (`PostLayout.astro`). Series pages are added to `sitemap.xml` automatically.
+
+- **Adding a post to a series:** add its filename (without `.md`) to the right section in `src/data/series.ts`.
+- **Adding a new series:** add an entry to `series`, then create `src/pages/{slug}.astro` (copy `parenting.astro`).
+- `tests/unit/series.test.ts` fails if a listed post is missing or is a draft, or if a series has no page route.
 
 ## Changelog
 

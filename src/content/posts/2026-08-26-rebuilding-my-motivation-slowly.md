@@ -18,15 +18,15 @@ It started with parental leave, after my daughter was born. Then going back to w
 
 > Normal never came back.
 
-That led to a vicious cycle. I was unhappy because I wasn't doing the things that I thought made me, me. Then when I went back to those things, they'd changed, or gotten harder, and that made me unhappy too.
+That led to a vicious cycle. I was unhappy because I wasn't doing the [things that I thought made me, me](/articles/2025-11-20-going-all-in/). Then when I went back to those things, they'd changed, or gotten harder, and that made me unhappy too.
 
 I hadn't stepped on a scale in months. But I'd started buying clothes in sizes I hadn't worn in years. A little over two weeks ago, I finally decided to put data to my current self and get on the scale.
 
-I went for a run. I did three strength sessions. I [reread](articles/2023-01-20-take-your-reading-to-a-new-level-and-reread-a-book-this-year/) *Atomic Habits* by James Clear — my *seventh time* through that book. The motivation is slowly building again, and it feels great.
+I went for a run. I did three strength sessions. I [reread](/articles/2023-01-20-take-your-reading-to-a-new-level-and-reread-a-book-this-year/) [*Atomic Habits*](https://jamesclear.com/atomic-habits) by James Clear — my *seventh time* through that book. The motivation is slowly building again, and it feels great.
 
 I used to think I could just go back to being the person I was a few years ago — just go out and run ten miles. That's not how it works.
 
-I'm starting over. Run-walk intervals, like the Couch to 5K program that got me started in running. Rereading Atomic Habits for the seventh time, there's not really anything specific that hit different — more just getting back to basics on how to build a habit. How to make it small. How to adjust so you don't log a zero for the day. If I can't get the full workout in, ten push-ups and I check the box.
+I'm starting over. Run-walk intervals, like the [Couch to 5K](https://www.nhs.uk/better-health/get-active/get-running-with-couch-to-5k/) program that got me started in running. Rereading [Atomic Habits](/articles/2026-01-13-three-books-to-read-when-your-new-year-s-resolutions-have-already-fallen-apart/) for the seventh time, there's not really anything specific that hit different — more just getting back to basics on [how to build a habit](/articles/2025-11-07-better-than-before-and-the-season-of-starting-over/). How to make it small. How to adjust so you don't log a zero for the day. If I can't get the full workout in, ten push-ups and I check the box.
 
 The hardest part used to be missing a workout and then trying to make up for it — cramming yesterday's missed session in on top of today's. Now if I miss one, I miss it. I do today's and keep moving forward.
 
