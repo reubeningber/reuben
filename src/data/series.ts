@@ -38,7 +38,6 @@ export const series: Series[] = [
         heading: 'Kids, screens, and making things together',
         posts: [
           '2026-01-05-dads-should-read-the-anxious-generation',
-          '2025-10-01-read-the-anxious-generation',
           '2025-11-10-building-something-real',
           '2026-03-07-we-built-a-bookcase',
           '2025-10-28-why-every-dad-should-have-a-digital-camera',
