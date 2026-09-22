@@ -28,7 +28,7 @@ function isActive(href: string, external?: boolean) {
           <div class="flex items-center space-x-3 sm:space-x-4">
             <img
               src="https://res.cloudinary.com/dt3vcpkj6/image/upload/f_auto,w_150,h_150,c_thumb,g_face,z_0.8/v1761252984/web_assets/Reuben_Ingber_Square.jpg"
-              alt="Reuben Ingber"
+              alt=""
               class="w-10 h-10 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-full object-cover"
               width="80"
               height="80"
@@ -39,13 +39,13 @@ function isActive(href: string, external?: boolean) {
       </a>
 
       <!-- Desktop nav -->
-      <nav class="hidden sm:flex items-center space-x-3 sm:space-x-6 lg:space-x-8">
+      <nav aria-label="Main" class="hidden sm:flex items-center space-x-3 sm:space-x-6 lg:space-x-8">
         {nav.map((item) => (
           <a
             href={item.href}
             target={item.external ? '_blank' : undefined}
             rel={item.external ? 'noopener noreferrer' : undefined}
-            class={`px-1 sm:px-3 py-2 text-xs sm:text-sm font-medium transition-colors whitespace-nowrap ${isActive(item.href, item.external) ? 'text-orange-600' : 'text-gray-900 hover:text-orange-600'}`}
+            class={`px-1 sm:px-3 py-2 text-xs sm:text-sm font-medium transition-colors whitespace-nowrap ${isActive(item.href, item.external) ? 'text-accent' : 'text-gray-900 hover:text-accent'}`}
           >
             {item.label}
           </a>
@@ -69,12 +69,14 @@ function isActive(href: string, external?: boolean) {
   </div>
 </header>
 
-<!-- Mobile drawer — full screen -->
-<nav
+<!-- Mobile drawer — full screen. `inert` keeps it out of the tab order and the
+     accessibility tree while it's off-screen; the script removes it on open. -->
+<div
   id="mobile-drawer"
   role="dialog"
   aria-modal="true"
   aria-label="Navigation menu"
+  inert
   class="fixed inset-0 bg-white z-50 -translate-x-full transition-transform duration-300 ease-in-out sm:hidden flex flex-col"
 >
   <!-- Drawer header -->
@@ -82,7 +84,7 @@ function isActive(href: string, external?: boolean) {
     <a href="/" class="flex items-center gap-3">
       <img
         src="https://res.cloudinary.com/dt3vcpkj6/image/upload/f_auto,w_150,h_150,c_thumb,g_face,z_0.8/v1761252984/web_assets/Reuben_Ingber_Square.jpg"
-        alt="Reuben Ingber"
+        alt=""
         class="w-10 h-10 rounded-full object-cover"
         width="40"
         height="40"
@@ -102,6 +104,7 @@ function isActive(href: string, external?: boolean) {
   </div>
 
   <!-- Nav links -->
+  <nav aria-label="Mobile">
   <ul class="flex flex-col px-4 py-6 gap-1">
     {nav.map((item) => (
       <li>
@@ -109,7 +112,7 @@ function isActive(href: string, external?: boolean) {
           href={item.href}
           target={item.external ? '_blank' : undefined}
           rel={item.external ? 'noopener noreferrer' : undefined}
-          class={`flex items-center justify-between px-3 py-4 text-base font-semibold tracking-wide rounded-md transition-colors ${isActive(item.href, item.external) ? 'text-orange-600 bg-orange-50' : 'text-gray-800 hover:text-orange-600 hover:bg-orange-50'}`}
+          class={`flex items-center justify-between px-3 py-4 text-base font-semibold tracking-wide rounded-md transition-colors ${isActive(item.href, item.external) ? 'text-accent bg-orange-50' : 'text-gray-800 hover:text-accent hover:bg-orange-50'}`}
         >
           {item.label}
           {item.external && (
@@ -121,17 +124,18 @@ function isActive(href: string, external?: boolean) {
       </li>
     ))}
   </ul>
+  </nav>
 
   <!-- About + Connect -->
   <div class="mt-auto px-6 py-8 border-t border-gray-100 space-y-6">
     <div>
-      <p class="text-xs font-bold tracking-widest text-gray-400 uppercase mb-2">Reuben Ingber</p>
+      <p class="text-xs font-bold tracking-widest text-secondary uppercase mb-2">Reuben Ingber</p>
       <p class="text-sm text-gray-500 leading-relaxed">
         Father of two in Queens, NY, runner, and photo-taker. Engineering Manager at Business Insider.
       </p>
     </div>
     <div>
-      <p class="text-xs font-bold tracking-widest text-gray-400 uppercase mb-3">Let's Connect</p>
+      <p class="text-xs font-bold tracking-widest text-secondary uppercase mb-3">Let's Connect</p>
       <ul class="flex gap-5">
         <li>
           <a href="https://instagram.com/reubeningber" target="_blank" rel="noopener noreferrer" class="text-orange-500 hover:text-gray-900 transition-colors" aria-label="Instagram">
@@ -164,7 +168,7 @@ function isActive(href: string, external?: boolean) {
       </ul>
     </div>
   </div>
-</nav>
+</div>
 
 <script>
   const toggle = document.getElementById('menu-toggle');
@@ -172,12 +176,15 @@ function isActive(href: string, external?: boolean) {
   const drawer = document.getElementById('mobile-drawer');
 
   function openMenu() {
+    drawer.inert = false;
     drawer.classList.remove('-translate-x-full');
     toggle.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
+    close.focus();
   }
 
   function closeMenu() {
+    drawer.inert = true;
     drawer.classList.add('-translate-x-full');
     toggle.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
@@ -188,6 +195,6 @@ function isActive(href: string, external?: boolean) {
   close.addEventListener('click', closeMenu);
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeMenu();
+    if (e.key === 'Escape' && !drawer.inert) closeMenu();
   });
 </script>

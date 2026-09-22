@@ -15,7 +15,7 @@ describe('getImageConfig', () => {
     const config = getImageConfig(url, cloudName, widths);
     expect(config?.type).toBe('cloudinary');
     expect(config?.mainUrl).toBe(
-      'https://res.cloudinary.com/demo-cloud/image/upload/f_auto,w_800/v1761245976/web_assets/photo.jpg'
+      'https://res.cloudinary.com/demo-cloud/image/upload/f_auto,q_auto,w_800/v1761245976/web_assets/photo.jpg'
     );
     expect(config?.blurUrl).toContain('e_blur:2000');
     expect(config?.srcset?.split(', ')).toHaveLength(3);
@@ -42,7 +42,7 @@ describe('getImageConfig', () => {
     const config = getImageConfig('web_assets/foo.jpg', cloudName, widths);
     expect(config?.type).toBe('cloudinary');
     expect(config?.mainUrl).toBe(
-      'https://res.cloudinary.com/demo-cloud/image/upload/f_auto,w_800/v1761245976/web_assets/foo.jpg'
+      'https://res.cloudinary.com/demo-cloud/image/upload/f_auto,q_auto,w_800/v1761245976/web_assets/foo.jpg'
     );
   });
 

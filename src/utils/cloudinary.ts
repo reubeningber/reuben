@@ -35,8 +35,8 @@ export function getImageConfig(
     return {
       type: 'cloudinary',
       blurUrl: makeUrl(cloudName, path, 'f_auto,w_20,e_blur:2000'),
-      mainUrl: makeUrl(cloudName, path, `f_auto,w_${largest}`),
-      srcset: widths.map(w => `${makeUrl(cloudName, path, `f_auto,w_${w}`)} ${w}w`).join(', '),
+      mainUrl: makeUrl(cloudName, path, `f_auto,q_auto,w_${largest}`),
+      srcset: widths.map(w => `${makeUrl(cloudName, path, `f_auto,q_auto,w_${w}`)} ${w}w`).join(', '),
     };
   }
 
@@ -48,8 +48,8 @@ export function getImageConfig(
     return {
       type: 'cloudinary',
       blurUrl: makeUrl(cloudName, imageUrl, 'f_auto,w_20,e_blur:2000'),
-      mainUrl: makeUrl(cloudName, imageUrl, `f_auto,w_${largest}`),
-      srcset: widths.map(w => `${makeUrl(cloudName, imageUrl, `f_auto,w_${w}`)} ${w}w`).join(', '),
+      mainUrl: makeUrl(cloudName, imageUrl, `f_auto,q_auto,w_${largest}`),
+      srcset: widths.map(w => `${makeUrl(cloudName, imageUrl, `f_auto,q_auto,w_${w}`)} ${w}w`).join(', '),
     };
   }
 

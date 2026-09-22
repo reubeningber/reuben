@@ -11,16 +11,21 @@ test('the mobile nav drawer opens, closes on Escape, and returns focus', async (
   await expect(toggle).toBeVisible();
   await expect(drawer).toHaveClass(/-translate-x-full/);
   await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+  // Closed drawer is off-screen, so it must be out of the tab order / a11y tree
+  await expect(drawer).toHaveJSProperty('inert', true);
 
   await toggle.click();
   await expect(drawer).not.toHaveClass(/-translate-x-full/);
   await expect(toggle).toHaveAttribute('aria-expanded', 'true');
-  await expect(drawer.locator('a[href="/articles/"]')).toBeVisible();
+  await expect(drawer).toHaveJSProperty('inert', false);
+  await expect(page.locator('#menu-close')).toBeFocused();
+  await expect(drawer.getByRole('navigation', { name: 'Mobile' }).locator('a[href="/articles/"]')).toBeVisible();
 
   await page.keyboard.press('Escape');
   await expect(drawer).toHaveClass(/-translate-x-full/);
   await expect(toggle).toHaveAttribute('aria-expanded', 'false');
   await expect(toggle).toBeFocused();
+  await expect(drawer).toHaveJSProperty('inert', true);
 });
 
 test('the mobile nav drawer closes via its close button', async ({ page }) => {
