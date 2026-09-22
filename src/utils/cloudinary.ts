@@ -53,7 +53,24 @@ export function getImageConfig(
     };
   }
 
+  // Unsplash's image CDN resizes via query params, so external Unsplash images
+  // can still get a responsive srcset (Cloudinary fetch isn't enabled).
+  if (/^https:\/\/(images|plus)\.unsplash\.com\//.test(imageUrl)) {
+    return {
+      type: 'external',
+      mainUrl: unsplashUrl(imageUrl, largest),
+      srcset: widths.map(w => `${unsplashUrl(imageUrl, w)} ${w}w`).join(', '),
+    };
+  }
+
   return { type: 'external', mainUrl: imageUrl };
+}
+
+function unsplashUrl(imageUrl: string, width: number): string {
+  const url = new URL(imageUrl);
+  url.searchParams.set('w', String(width));
+  url.searchParams.set('auto', 'format');
+  return url.toString();
 }
 
 export function getOgImageUrl(imageUrl: string | null | undefined, cloudName: string): string {

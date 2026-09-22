@@ -118,7 +118,11 @@ All images go through Cloudinary. The `getImageConfig()` logic in `PostLayout.as
 2. **`web_assets/` path** (e.g. `web_assets/my-photo.jpg`) — preferred new format; resolves to `https://res.cloudinary.com/{cloudName}/image/upload/.../v1761245976/{path}`
 3. **`assets/images/` path** — legacy local path, served as-is from `/public`
 
-All Cloudinary images use a blur-up loading pattern (tiny blurred placeholder swapped for the full image on load).
+All Cloudinary images use a blur-up loading pattern (tiny blurred placeholder behind the full image). Below-the-fold images fade in on load and use `loading="lazy"`; the LCP image (the homepage hero, an article's lead image) is visible immediately with `fetchpriority="high"` and no lazy loading, because an `opacity: 0` image doesn't count as painted and was pushing mobile LCP to ~5 s.
+
+External Unsplash images (`images.unsplash.com`/`plus.unsplash.com`) get a width-based `srcset` through Unsplash's own `w=` query param (Cloudinary fetch isn't enabled on the account). Other external hosts are served as-is, so prefer uploading those to Cloudinary.
+
+Performance notes: `astro.config.mjs` sets `build.inlineStylesheets: 'always'` so the Tailwind CSS doesn't block render, and the Rock Salt font is loaded non-blocking and subset to the glyphs in "Reuben Ingber" (`&text=`) in `BaseLayout.astro`. If you use Rock Salt for other text, update that subset.
 
 The Cloudinary version token used throughout is `v1761245976`.
 

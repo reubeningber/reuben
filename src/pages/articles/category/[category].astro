@@ -105,6 +105,8 @@ function getCategoryImageConfig(imageUrl: string | null | undefined) {
               {imageConfig.type === 'external' && (
                 <img 
                   src={imageConfig.mainUrl}
+                  srcset={imageConfig.srcset}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   alt={p.data.title}
                   class="w-full h-48 object-cover"
                   loading="lazy"

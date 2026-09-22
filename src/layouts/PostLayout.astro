@@ -126,21 +126,26 @@ const relatedPosts = frontmatter?.category
               srcset={imageConfig.srcset}
               sizes="(max-width: 768px) 100vw, 800px"
               alt={frontmatter.imageAlt || frontmatter.title || 'Blog post image'}
-              class="w-full h-64 md:h-80 object-cover rounded-lg shadow-sm relative z-10 opacity-0 transition-opacity duration-300"
-              loading="lazy"
+              class="w-full h-64 md:h-80 object-cover rounded-lg shadow-sm relative z-10"
+              width="800"
+              height="320"
+              fetchpriority="high"
               title={frontmatter?.imageCredit || ''}
-              onload={`this.style.opacity='1'; this.previousElementSibling.style.opacity='0';`}
             />
           </>
         )}
         
-        {/* External images - simple lazy loading */}
+        {/* External images (Unsplash gets a srcset; see utils/cloudinary.ts) */}
         {imageConfig.type === 'external' && (
           <img 
             src={imageConfig.mainUrl}
+            srcset={imageConfig.srcset}
+            sizes="(max-width: 768px) 100vw, 800px"
             alt={frontmatter.imageAlt || frontmatter.title || 'Blog post image'}
             class="w-full h-64 md:h-80 object-cover rounded-lg shadow-sm"
-            loading="lazy"
+            width="800"
+            height="320"
+            fetchpriority="high"
             title={frontmatter?.imageCredit || ''}
           />
         )}

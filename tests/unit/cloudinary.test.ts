@@ -46,6 +46,17 @@ describe('getImageConfig', () => {
     );
   });
 
+  it('builds a width-based srcset for Unsplash images', () => {
+    const url = 'https://images.unsplash.com/photo-123?q=80&w=1740&auto=format&fit=crop';
+    const config = getImageConfig(url, cloudName, [400, 800]);
+    expect(config?.type).toBe('external');
+    expect(config?.mainUrl).toBe('https://images.unsplash.com/photo-123?q=80&w=800&auto=format&fit=crop');
+    expect(config?.srcset).toBe(
+      'https://images.unsplash.com/photo-123?q=80&w=400&auto=format&fit=crop 400w, ' +
+      'https://images.unsplash.com/photo-123?q=80&w=800&auto=format&fit=crop 800w'
+    );
+  });
+
   it('passes through any other URL as external', () => {
     const url = 'https://example.com/photo.jpg';
     expect(getImageConfig(url, cloudName, widths)).toEqual({ type: 'external', mainUrl: url });

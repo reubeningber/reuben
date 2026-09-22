@@ -6,4 +6,8 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   site: 'https://reubeningber.com',
   integrations: [tailwind()],
+  // Inline the (small) Tailwind CSS into each page so it doesn't block first paint.
+  build: {
+    inlineStylesheets: 'always',
+  },
 });

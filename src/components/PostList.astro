@@ -54,6 +54,7 @@ function getListingImageConfig(imageUrl) {
                       alt={p.data.title}
                       class="w-full h-40 md:h-48 object-cover absolute inset-0 transition-opacity duration-300"
                       id={`blur-${uniqueId}`}
+                      loading="lazy"
                     />
                     
                     <!-- Main optimized image -->
@@ -73,6 +74,8 @@ function getListingImageConfig(imageUrl) {
                 {imageConfig.type === 'external' && (
                   <img 
                     src={imageConfig.mainUrl}
+                    srcset={imageConfig.srcset}
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     alt={p.data.title}
                     class="w-full h-40 md:h-48 object-cover"
                     loading="lazy"
