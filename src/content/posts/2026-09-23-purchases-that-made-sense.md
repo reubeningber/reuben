@@ -2,14 +2,14 @@
 title: "Purchases That Made Sense"
 subTitle: "Nine things from the past few months that actually earned their spot"
 pubDate: "2026-09-23"
-category: "Ramblings"
+category: "Favorites"
 tags: ["personal", "family", "gear", "fitness", "film-photography"]
 description: "A watch box, a lighter kettlebell, a pencil sharpener, and a few other things I bought over the past few months that fixed real, small problems."
 ---
 
 Most of what I buy doesn't change much. It shows up, it gets used a few times, and it finds a shelf.
 
-But every so often a handful of things land at the same time and actually make the day a little better. The past few months have been one of those stretches. Here's what stuck.
+But every so often a handful of things land at the same time and actually make the day a little better. (I did a version of this [back in 2022](/articles/2023-01-13-the-3-best-things-i-purchased-in-2022/).) The past few months have been one of those stretches. Here's what stuck.
 
 ## A watch box
 
@@ -27,7 +27,7 @@ I picked up a few new ones, plus a couple of silicone bands. Same watches. They 
 
 ## A 25lb kettlebell
 
-I'm trying hard to get back into fitness. Part of that has been admitting where I actually am, not where I was.
+I'm trying hard to [get back into fitness](/articles/2026-08-26-rebuilding-my-motivation-slowly/). Part of that has been admitting where I actually am, not where I was.
 
 My 35lb kettlebell was just too heavy for me right now. Every workout felt like a fight I was losing before I started. So I bought a 25.
 
@@ -37,7 +37,7 @@ Having the right weight makes working out enjoyable again. I'd rather show up fo
 
 Same theme. I've gained some weight, and none of my clothes really fit well anymore.
 
-For a while I handled that by squeezing into things that were uncomfortable, or by wearing black t-shirts every day. Neither one felt good.
+For a while I handled that by squeezing into things that were uncomfortable, or by wearing [black t-shirts every day](/articles/2026-07-21-the-black-t-shirt-rut/). Neither one felt good.
 
 So this fall I've been buying clothes that fit the body I have now. Not a someday size. They're comfortable, and I feel good in them, which turns out to matter more than I wanted to admit.
 
@@ -69,9 +69,9 @@ I also had a bunch of strips lying around from random places with the kids — s
 
 So I bought an album made specifically for photo strips. They're all in one place now, and flipping through it is a lot more fun than I expected.
 
-## An Olympus 35 RC
+## An Olympus 35RC
 
-My Nikon point-and-shoot broke. That same day, I saw an Olympus 35 RC for sale in a Facebook group.
+My Nikon point-and-shoot broke. That same day, I saw an Olympus 35RC for sale in a Facebook group. I wrote about [the first roll I shot on it](/articles/2026-08-06-the-shutter-just-kept-spinning/).
 
 It's a rangefinder, so it asks more of me than a point-and-shoot did. That's part of the fun. I may still grab a "new" point-and-shoot when the right one shows up, but this little camera takes great pictures.
 
