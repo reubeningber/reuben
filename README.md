@@ -256,30 +256,22 @@ Update `src/layouts/BaseLayout.astro` for default SEO values.
 
 ### Favicons
 
-The site includes a simple SVG favicon (`public/favicon.svg`) with an orange "R" that matches the site's accent color.
+Every icon is made from `public/favicon.svg` (an orange "R" in the site's accent color). The favicon links, the `apple-mobile-web-app-title` tag, and the manifest link are in `BaseLayout.astro`. The manifest is `public/site.webmanifest`.
 
-**To customize your favicon:**
+If you change the SVG, regenerate the PNG and ICO files from it with ImageMagick:
 
-1. **Option 1: Use the SVG** (simplest)
-   - Edit `public/favicon.svg` to change the letter or design
-   - Modern browsers will use this automatically
+```bash
+cd public
+magick -background none -density 1200 favicon.svg -resize 512x512 web-app-manifest-512x512.png
+magick web-app-manifest-512x512.png -resize 192x192 web-app-manifest-192x192.png
+magick web-app-manifest-512x512.png -resize 180x180 apple-touch-icon.png
+magick web-app-manifest-512x512.png -resize 96x96 favicon-96x96.png
+magick web-app-manifest-512x512.png -resize 32x32 favicon-32x32.png
+magick web-app-manifest-512x512.png -resize 16x16 favicon-16x16.png
+magick web-app-manifest-512x512.png -define icon:auto-resize=48,32,16 favicon.ico
+```
 
-2. **Option 2: Generate PNG versions** (better compatibility)
-   - Create your favicon design (recommended: 512x512px)
-   - Generate multiple sizes using a tool like:
-     - [RealFaviconGenerator](https://realfavicongenerator.net/)
-     - [Favicon.io](https://favicon.io/)
-   - Replace files in `public/`:
-     - `favicon.ico` (16x16, 32x32, 48x48)
-     - `favicon-16x16.png`
-     - `favicon-32x32.png`
-     - `favicon-96x96.png`
-     - `apple-touch-icon.png` (180x180)
-     - `web-app-manifest-192x192.png`, `web-app-manifest-512x512.png`, and `web-app-manifest-maskable-512x512.png` (full-bleed, for Android adaptive icons)
-
-The web app manifest lives at `public/site.webmanifest`; the home-screen title comes from the `apple-mobile-web-app-title` meta tag in `BaseLayout.astro`.
-
-The layout includes proper favicon links for all major browsers and devices.
+`web-app-manifest-maskable-512x512.png` is a square version with no rounded corners and a smaller "R", so Android can crop it into circles and other shapes without cutting off the letter. Make it from a copy of the SVG without `rx="20"` and with the text shrunk.
 
 ## Development
 
