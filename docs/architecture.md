@@ -22,7 +22,7 @@ There used to be a third collection, `albums` (JSON files describing photo galle
 
 ## Layouts and pages
 
-- `BaseLayout.astro` is the root `<html>` shell: meta tags, Open Graph, JSON-LD structured data, the two analytics beacons, favicon links. Every page wraps it.
+- `BaseLayout.astro` is the root `<html>` shell: meta tags, Open Graph, JSON-LD structured data, the two analytics beacons, favicon links, and the web app manifest link (`public/site.webmanifest`). Every page wraps it.
 - `PostLayout.astro` wraps `BaseLayout` for article pages — header image, post navigation (prev/next), category tag.
 - Everything else in `src/pages/` is a standalone route: `start-here.astro`, `now.astro`, `uses.astro`, `friends.astro`, `colophon.astro`, `identity-statement.astro`, `contact.astro`.
 

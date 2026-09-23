@@ -270,10 +270,14 @@ The site includes a simple SVG favicon (`public/favicon.svg`) with an orange "R"
      - [RealFaviconGenerator](https://realfavicongenerator.net/)
      - [Favicon.io](https://favicon.io/)
    - Replace files in `public/`:
-     - `favicon.ico` (16x16, 32x32)
+     - `favicon.ico` (16x16, 32x32, 48x48)
      - `favicon-16x16.png`
      - `favicon-32x32.png`
+     - `favicon-96x96.png`
      - `apple-touch-icon.png` (180x180)
+     - `web-app-manifest-192x192.png`, `web-app-manifest-512x512.png`, and `web-app-manifest-maskable-512x512.png` (full-bleed, for Android adaptive icons)
+
+The web app manifest lives at `public/site.webmanifest`; the home-screen title comes from the `apple-mobile-web-app-title` meta tag in `BaseLayout.astro`.
 
 The layout includes proper favicon links for all major browsers and devices.
 
