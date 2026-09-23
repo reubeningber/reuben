@@ -10,13 +10,19 @@ const recentNotes = (await getCollection('field-notes'))
   .filter(e => isPublished(e.data.pubDate, e.data.draft))
   .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
   .slice(0, 3);
+
+// Hero image. .container is max-w-4xl with px-6, so the image never renders wider than 848px.
+const heroUrl = (w) => `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto,w_${w}/v1761245976/web_assets/reuben_ingber_october_2025.jpg`;
+const heroSrcset = [480, 640, 848, 1200, 1696].map(w => `${heroUrl(w)} ${w}w`).join(', ');
+const heroSizes = '(max-width: 896px) calc(100vw - 3rem), 848px';
 ---
 
 <Base 
-  title="Reuben Ingber | Engineering Manager, Photographer, Father & Runner"
-  description="Father of two in Queens, New York. Engineering Manager at Business Insider. Runner, photographer, and writer sharing thoughts on parenting, engineering, and life."
+  title="Reuben Ingber | Engineering Manager, Photographer, Dad"
+  description="Father of two in Queens, New York. Engineering Manager at Business Insider. Runner, photographer, and writer on parenting, engineering, and life."
   isHomepage={true}
 >
+  <link rel="preload" as="image" slot="head" imagesrcset={heroSrcset} imagesizes={heroSizes} fetchpriority="high" />
   <!-- Homepage Structured Data -->
   <script type="application/ld+json" slot="head">
     [
@@ -49,37 +55,33 @@ const recentNotes = (await getCollection('field-notes'))
   </script>
   <section class="mb-16">
     <div class="mb-8 relative">
-      <!-- Blur-up placeholder -->
+      <!-- Blur-up placeholder (sits behind the hero until it paints) -->
       <img 
         src={`https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_20,e_blur:2000/v1761245976/web_assets/reuben_ingber_october_2025.jpg`}
-        alt="Reuben Ingber"
-        class="w-full h-auto rounded-lg object-cover shadow-sm absolute inset-0 transition-opacity duration-300"
-        id="hero-placeholder"
+        alt=""
+        aria-hidden="true"
+        class="w-full h-auto rounded-lg object-cover shadow-sm absolute inset-0"
         width="1600"
         height="1067"
       />
       
-      <!-- Main responsive image -->
+      <!-- Main responsive image: the LCP element, so it's visible immediately rather than faded in on load -->
       <img 
-        src={`https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_1600/v1761245976/web_assets/reuben_ingber_october_2025.jpg`}
-        srcset={`
-          https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_768/v1761245976/web_assets/reuben_ingber_october_2025.jpg 768w,
-          https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_1200/v1761245976/web_assets/reuben_ingber_october_2025.jpg 1200w,
-          https://res.cloudinary.com/${cloudName}/image/upload/f_auto,w_1600/v1761245976/web_assets/reuben_ingber_october_2025.jpg 1600w
-        `}
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1600px"
+        src={heroUrl(1200)}
+        srcset={heroSrcset}
+        sizes={heroSizes}
         alt="Reuben Ingber" 
-        class="w-full h-auto rounded-lg object-cover shadow-sm relative z-10 opacity-0 transition-opacity duration-300"
+        class="w-full h-auto rounded-lg object-cover shadow-sm relative z-10"
         width="1600"
         height="1067"
         fetchpriority="high"
-        onload="this.style.opacity='1'; document.getElementById('hero-placeholder').style.opacity='0';"
+        decoding="async"
       />
     </div>
     
     <div class="prose-lg text-xl max-w-none">
       <p class="text-gray-800 leading-relaxed mb-4">
-        Father of two and Queens native, I am a runner, a taker of <a href="https://photos.reubeningber.com" class="text-accent hover:underline">photos</a> and an Engineering Manager at <a href="/start-here/" class="text-accent hover:underline">Business Insider</a>. 
+        Father of two and Queens native, I am a runner, a taker of <a href="https://photos.reubeningber.com" class="text-accent underline underline-offset-2">photos</a> and an Engineering Manager at <a href="/start-here/" class="text-accent underline underline-offset-2">Business Insider</a>. 
       </p>
 
       <p class="text-gray-800 leading-relaxed mb-4">
@@ -95,11 +97,11 @@ const recentNotes = (await getCollection('field-notes'))
       </p>
 
       <p class="text-gray-800 leading-relaxed mb-4">
-        Here you'll find my <a href="/articles/" class="text-accent hover:underline">thoughts</a> on <a href="/articles/category/fatherhood/" class="text-accent hover:underline">parenting</a>, <a href="/articles/category/engineering/" class="text-accent hover:underline">engineering</a>, the occasional race report, and other musings. You can also check out some of my latest <a href="https://photos.reubeningber.com" class="text-accent hover:underline">photography</a>.
+        Here you'll find my <a href="/articles/" class="text-accent underline underline-offset-2">thoughts</a> on <a href="/articles/category/fatherhood/" class="text-accent underline underline-offset-2">parenting</a>, <a href="/articles/category/engineering-management/" class="text-accent underline underline-offset-2">engineering</a>, the occasional race report, and other musings. You can also check out some of my latest <a href="https://photos.reubeningber.com" class="text-accent underline underline-offset-2">photography</a>.
       </p>
 
       <p class="text-gray-800 leading-relaxed mb-4">
-        I love meeting interesting people and hearing their stories. Whether you're a fellow parent, engineer, runner, photographer, or just someone doing meaningful work, I'd love to <a href="/contact/" class="text-accent hover:underline">connect</a>.
+        I love meeting interesting people and hearing their stories. Whether you're a fellow parent, engineer, runner, photographer, or just someone doing meaningful work, I'd love to <a href="/contact/" class="text-accent underline underline-offset-2">connect</a>.
       </p>
       
     </div>
@@ -144,7 +146,7 @@ const recentNotes = (await getCollection('field-notes'))
 
           return (
             <div class="flex items-baseline gap-4 py-3 border-b border-gray-100 last:border-b-0">
-              <time class="text-xs text-gray-400 font-medium whitespace-nowrap w-24 flex-shrink-0">{formattedDate}</time>
+              <time class="text-xs text-secondary font-medium whitespace-nowrap w-24 flex-shrink-0">{formattedDate}</time>
               <p class="text-gray-800 text-sm leading-relaxed flex-1">
                 <a
                   href={isLink ? note.data.url : `/field-notes/${note.slug}/`}

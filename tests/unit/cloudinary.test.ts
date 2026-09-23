@@ -15,7 +15,7 @@ describe('getImageConfig', () => {
     const config = getImageConfig(url, cloudName, widths);
     expect(config?.type).toBe('cloudinary');
     expect(config?.mainUrl).toBe(
-      'https://res.cloudinary.com/demo-cloud/image/upload/f_auto,w_800/v1761245976/web_assets/photo.jpg'
+      'https://res.cloudinary.com/demo-cloud/image/upload/f_auto,q_auto,w_800/v1761245976/web_assets/photo.jpg'
     );
     expect(config?.blurUrl).toContain('e_blur:2000');
     expect(config?.srcset?.split(', ')).toHaveLength(3);
@@ -42,7 +42,18 @@ describe('getImageConfig', () => {
     const config = getImageConfig('web_assets/foo.jpg', cloudName, widths);
     expect(config?.type).toBe('cloudinary');
     expect(config?.mainUrl).toBe(
-      'https://res.cloudinary.com/demo-cloud/image/upload/f_auto,w_800/v1761245976/web_assets/foo.jpg'
+      'https://res.cloudinary.com/demo-cloud/image/upload/f_auto,q_auto,w_800/v1761245976/web_assets/foo.jpg'
+    );
+  });
+
+  it('builds a width-based srcset for Unsplash images', () => {
+    const url = 'https://images.unsplash.com/photo-123?q=80&w=1740&auto=format&fit=crop';
+    const config = getImageConfig(url, cloudName, [400, 800]);
+    expect(config?.type).toBe('external');
+    expect(config?.mainUrl).toBe('https://images.unsplash.com/photo-123?q=80&w=800&auto=format&fit=crop');
+    expect(config?.srcset).toBe(
+      'https://images.unsplash.com/photo-123?q=80&w=400&auto=format&fit=crop 400w, ' +
+      'https://images.unsplash.com/photo-123?q=80&w=800&auto=format&fit=crop 800w'
     );
   });
 

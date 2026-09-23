@@ -23,7 +23,7 @@ npm run preview
 ## Tech Stack
 
 - **Astro v5** - Static site framework with content collections
-- **Tailwind CSS v3** - Utility-first styling with custom orange accent (#ea580c)
+- **Tailwind CSS v3** - Utility-first styling with custom orange accent (#c2410c)
 - **Cloudinary** - Responsive image delivery and optimization
 - **Zod** - Type-safe content validation
 
@@ -42,8 +42,10 @@ src/
 │   ├── colophon.astro              # Colophon page
 │   ├── changelog.astro             # Changelog page (hand-maintained log of site changes)
 │   ├── identity-statement.astro    # Identity statement page
+│   ├── parenting.astro             # Pillar page (series defined in src/data/series.ts)
+│   ├── adhd-and-motivation.astro   # Pillar page
 │   ├── rss.xml.js                  # RSS feed
-│   ├── sitemap.xml.js              # Sitemap
+│   ├── sitemap.xml.js              # Sitemap (sole source; no @astrojs/sitemap)
 │   ├── articles/                   # Blog routes
 │   │   ├── index.astro             # Blog listing
 │   │   ├── [...slug].astro         # Individual posts
@@ -89,7 +91,7 @@ Photo galleries are not part of this codebase — they live on a separate site a
 
 ### Design
 - **Responsive layout** optimized for mobile and desktop
-- **Custom orange accent** (#ea580c) throughout
+- **Custom orange accent** (#c2410c) throughout
 - **Clean typography** with proper spacing
 - **Accessible navigation** with semantic HTML
 
@@ -231,7 +233,7 @@ Edit `tailwind.config.cjs` to change the accent color:
 
 ```js
 colors: {
-  accent: '#ea580c', // Orange accent
+  accent: '#c2410c', // Orange accent (orange-700, WCAG AA on white)
 }
 ```
 

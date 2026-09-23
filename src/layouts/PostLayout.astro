@@ -3,10 +3,12 @@ import Base from "./BaseLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import { getCollection } from 'astro:content';
 import { getImageConfig as getCloudinaryConfig, getOgImageUrl } from '../utils/cloudinary';
+import { seriesForPost } from '../data/series';
 
 const { frontmatter, currentPost } = Astro.props;
 
 const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
+const postSeries = currentPost ? seriesForPost(currentPost.slug) : [];
 
 const imageConfig = getCloudinaryConfig(frontmatter?.image, cloudName, [400, 600, 800]);
 const ogImage = getOgImageUrl(frontmatter?.image, cloudName);
@@ -126,21 +128,26 @@ const relatedPosts = frontmatter?.category
               srcset={imageConfig.srcset}
               sizes="(max-width: 768px) 100vw, 800px"
               alt={frontmatter.imageAlt || frontmatter.title || 'Blog post image'}
-              class="w-full h-64 md:h-80 object-cover rounded-lg shadow-sm relative z-10 opacity-0 transition-opacity duration-300"
-              loading="lazy"
+              class="w-full h-64 md:h-80 object-cover rounded-lg shadow-sm relative z-10"
+              width="800"
+              height="320"
+              fetchpriority="high"
               title={frontmatter?.imageCredit || ''}
-              onload={`this.style.opacity='1'; this.previousElementSibling.style.opacity='0';`}
             />
           </>
         )}
         
-        {/* External images - simple lazy loading */}
+        {/* External images (Unsplash gets a srcset; see utils/cloudinary.ts) */}
         {imageConfig.type === 'external' && (
           <img 
             src={imageConfig.mainUrl}
+            srcset={imageConfig.srcset}
+            sizes="(max-width: 768px) 100vw, 800px"
             alt={frontmatter.imageAlt || frontmatter.title || 'Blog post image'}
             class="w-full h-64 md:h-80 object-cover rounded-lg shadow-sm"
-            loading="lazy"
+            width="800"
+            height="320"
+            fetchpriority="high"
             title={frontmatter?.imageCredit || ''}
           />
         )}
@@ -176,13 +183,25 @@ const relatedPosts = frontmatter?.category
       </div>
       <h1 class="text-3xl font-bold mt-2 text-primary tracking-wide">{(frontmatter?.title || 'Blog Post').toUpperCase()}</h1>
       {frontmatter?.subTitle && (
-        <p class="text-lg text-orange-600 mt-3 font-medium leading-relaxed">{frontmatter.subTitle}</p>
+        <p class="text-lg text-accent mt-3 font-medium leading-relaxed">{frontmatter.subTitle}</p>
       )}
     </header>
     
     <div class="prose prose-lg prose-neutral max-w-none prose-headings:text-primary prose-headings:font-bold prose-headings:tracking-wide prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4 prose-p:text-gray-800 prose-p:leading-relaxed prose-p:mb-6 prose-strong:text-primary prose-strong:font-semibold prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-hr:border-gray-200 prose-hr:my-12 prose-ul:my-6 prose-ul:pl-6 prose-ol:my-6 prose-ol:pl-6 prose-li:text-gray-800 prose-li:leading-relaxed prose-li:mb-2 prose-li:marker:text-accent">
       <slot />
     </div>
+
+    <!-- Series (pillar page) links -->
+    {postSeries.map(s => (
+      <p class="mt-12 text-lg text-gray-800">
+        This post is part of <a href={`/${s.slug}/`} class="text-accent font-semibold underline underline-offset-2">{s.title}</a>, a collection of everything I've written on the topic.
+      </p>
+    ))}
+
+    <!-- Start Here CTA -->
+    <p class={`${postSeries.length ? 'mt-4' : 'mt-12'} text-lg text-gray-800`}>
+      New here? <a href="/start-here/" class="text-accent font-semibold underline underline-offset-2">Start here →</a>
+    </p>
 
     <!-- Related Posts -->
     {relatedPosts.length > 0 && (

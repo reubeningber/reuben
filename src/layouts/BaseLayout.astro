@@ -5,7 +5,7 @@ import Footer from "../components/Footer.astro";
 import CloudflareAnalytics from "../components/CloudflareAnalytics.astro";
 
 const { 
-  title = "Reuben Ingber | Engineering Manager, Photographer, Father & Runner",
+  title = "Reuben Ingber | Engineering Manager, Photographer, Dad",
   description = "Father of two in Queens, NY. Engineering Manager at Business Insider. Runner, photographer, and writer sharing thoughts on parenting, engineering, and life.",
   ogImage = "https://res.cloudinary.com/dt3vcpkj6/image/upload/f_auto,w_1200,h_630,c_fill,g_face/v1761245976/web_assets/reuben_ingber_october_2025.jpg",
   keywords,
@@ -13,6 +13,7 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const rockSaltUrl = "https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap&text=Reuben%20Ingber";
 ---
 <html lang="en">
   <head>
@@ -28,7 +29,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://res.cloudinary.com">
+    <!-- Rock Salt is only used for the name in the header: subset it to those glyphs and load it without blocking render -->
+    <link rel="preload" as="style" href={rockSaltUrl} onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href={rockSaltUrl}></noscript>
     
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

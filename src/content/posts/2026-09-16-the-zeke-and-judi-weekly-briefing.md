@@ -3,16 +3,16 @@ title: "The Zeke & Judi Weekly Briefing"
 subTitle: "Solving the part of our Sunday ritual we both dreaded"
 pubDate: "2026-09-16"
 category: "Fatherhood"
-image: "https://www.worthingtondirect.com/media/wysiwyg/cafeteria-table-lunch-room.jpg"
+image: "web_assets/zeke-judi-weekly-briefing-lunch-table.jpg"
 tags: ["fatherhood", "family", "ai", "automation", "parenting"]
 description: "How a Claude scheduled task now scrapes our school's lunch menu, flags the days Zeke needs a bagged lunch, and briefs my wife and me every Friday afternoon."
 ---
 
-It's Sunday morning, sometime last year. My wife and I are at the kitchen table doing what we've started calling "the weekly." Coffee, a notepad, the calendar open on someone's phone. What's coming up this week. What's for dinner. What we need at the store.
+It's Sunday morning, sometime last year. My wife and I are at the kitchen table doing what we've started calling ["the weekly."](/articles/2026-04-27-the-summer-planning-session-is-one-of-my-favorite-nights-of-the-year/) Coffee, a notepad, the calendar open on someone's phone. What's coming up this week. What's for dinner. What we need at the store.
 
 And then, most weeks, the same line: "Ugh, do you remember the site with the lunch menu?"
 
-We keep kosher. Zeke's school lunch only works on certain days — the days the menu actually lines up with what he can eat. The rest of the time, we're packing a bag. Which days are which lives on the NYC DOE website, a place that seems built to be forgotten and rediscovered every single Sunday.
+We keep kosher. Zeke's school lunch only works on certain days — the days the menu actually lines up with what he can eat. The rest of the time, we're packing a bag. Which days are which lives on the [NYC DOE website](https://www.schools.nyc.gov/school-life/school-meals/menus), a place that seems built to be forgotten and rediscovered every single Sunday.
 
 Neither of us ever bookmarked it in the right spot. We'd dig it up, squint at a grid of abbreviations, cross-reference it against what we already knew Zeke wouldn't touch, and write it on the list. Every week. Same friction. Same sigh.
 
@@ -20,7 +20,7 @@ Neither of us ever bookmarked it in the right spot. We'd dig it up, squint at a 
 
 It didn't fix lunch. The calendar told us where the kids needed to be. It never told us what to feed them once they got there.
 
-This year, with school back in full swing and me a lot more comfortable leaning on Claude than I was six months ago, I noticed it had started offering scheduled tasks. I remember exactly where I was: scrolling through the feature list on some random afternoon, thinking, that's the lunch menu. That's solved.
+This year, with school back in full swing and me a lot more comfortable [leaning on Claude](/articles/2026-03-12-ai-is-making-it-hard-to-step-away/) than I was six months ago, I noticed it had started offering scheduled tasks. I remember exactly where I was: scrolling through the feature list on some random afternoon, thinking, that's the lunch menu. That's solved.
 
 ## What I built
 

@@ -1,0 +1,85 @@
+---
+import Base from "./BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import { getCollection } from 'astro:content';
+import { isPublished } from '../utils/publish';
+import { createExcerpt } from '../utils/content';
+import type { Series } from '../data/series';
+
+const { series } = Astro.props as { series: Series };
+
+const posts = new Map(
+  (await getCollection('posts'))
+    .filter(p => isPublished(p.data.pubDate, p.data.draft))
+    .map(p => [p.slug, p])
+);
+
+// Drop any post that is missing or unpublished rather than rendering a dead link.
+const sections = series.sections
+  .map(sec => ({ heading: sec.heading, posts: sec.posts.map(slug => posts.get(slug)).filter(p => p !== undefined) }))
+  .filter(sec => sec.posts.length > 0);
+
+const url = `https://reubeningber.com/${series.slug}/`;
+
+function formatDate(date: Date) {
+  return new Intl.DateTimeFormat('en-US', { timeZone: 'UTC', year: 'numeric', month: 'short', day: 'numeric' }).format(date);
+}
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${url}#webpage`,
+  "url": url,
+  "name": series.title,
+  "description": series.description,
+  "isPartOf": { "@id": "https://reubeningber.com/#website" },
+  "author": { "@id": "https://reubeningber.com/#person" },
+  "inLanguage": "en-US",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": sections.flatMap(sec => sec.posts).map((p, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "url": `https://reubeningber.com/articles/${p.slug}/`,
+      "name": p.data.title,
+    })),
+  },
+};
+---
+<Base title={series.metaTitle} description={series.description}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(schema)}></script>
+  <Breadcrumbs items={[
+    { name: "Home", item: "https://reubeningber.com/" },
+    { name: series.title, item: url }
+  ]} />
+  <div class="max-w-3xl">
+    <h1 class="text-4xl font-bold mb-6 text-primary tracking-wide">{series.title.toUpperCase()}</h1>
+    <p class="text-xl text-gray-700 leading-relaxed mb-12">{series.intro}</p>
+
+    {sections.map(sec => (
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-primary tracking-wide mb-2">{sec.heading.toUpperCase()}</h2>
+        <hr class="border-gray-200 mb-6" />
+        <ul class="space-y-6">
+          {sec.posts.map(p => (
+            <li>
+              <time datetime={p.data.pubDate.toISOString()} class="text-xs text-secondary font-semibold tracking-wide">
+                {formatDate(p.data.pubDate).toUpperCase()}
+              </time>
+              <h3 class="text-lg font-bold text-primary leading-snug mt-1">
+                <a href={`/articles/${p.slug}/`} class="hover:text-accent no-underline">{p.data.title}</a>
+              </h3>
+              <p class="text-gray-700 leading-relaxed mt-1">
+                {p.data.subTitle || p.data.description || createExcerpt(p.body)}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+
+    <p class="text-lg text-gray-800">
+      New here? <a href="/start-here/" class="text-accent font-semibold underline underline-offset-2">Start here →</a>
+    </p>
+  </div>
+</Base>

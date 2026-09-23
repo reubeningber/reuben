@@ -73,7 +73,7 @@ test.describe('sitemap.xml', () => {
     const res = await request.get('/sitemap.xml');
     const xml = await res.text();
     const staticPages = [
-      '', '/start-here/', '/articles/', '/field-notes/', '/contact/',
+      '/', '/start-here/', '/articles/', '/field-notes/', '/contact/',
       '/friends/', '/now/', '/reading/', '/uses/', '/colophon/', '/changelog/',
     ];
     for (const page of staticPages) {

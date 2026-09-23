@@ -3,7 +3,7 @@
 ## The stack
 
 - **[Astro 5](https://astro.build)** — static site generation, no server at runtime. Every route in `src/pages/` is either an `.astro` file rendered to static HTML at build time, or a `.js` file that generates a feed (`rss.xml.js`, `sitemap.xml.js`).
-- **Tailwind CSS v3** — utility classes, one custom accent color (`#ea580c`, orange) defined in `tailwind.config.cjs`.
+- **Tailwind CSS v3** — utility classes, one custom accent color (`#c2410c`, orange-700) defined in `tailwind.config.cjs`.
 - **Cloudinary** — every image on the site (post headers, the homepage portrait) is a Cloudinary URL built with transform params (`f_auto,q_auto,w_{width}`), not a locally hosted asset. `PUBLIC_CLOUDINARY_CLOUD_NAME` is the only build-time secret the site needs.
 - **Zod**, via Astro's content collections, validates post/field-note frontmatter at build time — a malformed date or missing required field fails the build instead of shipping broken content.
 

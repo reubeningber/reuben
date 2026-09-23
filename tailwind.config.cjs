@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        accent: '#ea580c',
+        accent: '#c2410c', // orange-700: 5.2:1 on white (orange-600 was 3.55:1, fails WCAG AA)
         primary: '#1f2937',
         secondary: '#6b7280'
       },

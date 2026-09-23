@@ -1,0 +1,7 @@
+---
+import SeriesLayout from "../layouts/SeriesLayout.astro";
+import { series } from "../data/series";
+
+const current = series.find(s => s.slug === 'parenting')!;
+---
+<SeriesLayout series={current} />
