@@ -105,6 +105,13 @@ code {
   color: var(--accent);
 }
 
+/* YouTube embeds: full content width at 16:9, overriding the iframe's fixed width/height attributes */
+.prose iframe[src*="youtube.com/embed"],
+.prose iframe[src*="youtube-nocookie.com/embed"] {
+  @apply block w-full h-auto my-6 rounded-lg;
+  aspect-ratio: 16 / 9;
+}
+
 .prose pre {
   @apply relative bg-gray-900 text-gray-100 rounded-lg p-4 pr-14 my-6 text-sm leading-relaxed whitespace-pre-wrap break-words;
 }
