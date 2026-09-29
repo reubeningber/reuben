@@ -5,6 +5,9 @@ A modern static site built with Astro, Tailwind CSS, and Cloudinary. Features a 
 ## Quick Start
 
 ```bash
+# 0) Switch to the project's Node version (pinned in .nvmrc, also used by CI)
+nvm use
+
 # 1) Install dependencies
 npm install
 
