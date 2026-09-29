@@ -12,6 +12,13 @@ test('articles index lists at least one post', async ({ page }) => {
   expect(await links.count()).toBeGreaterThan(0);
 });
 
+test('articles index links to every series pillar page', async ({ page }) => {
+  await page.goto('/articles/');
+  for (const slug of ['parenting', 'adhd-and-motivation']) {
+    await expect(page.locator(`section[aria-labelledby="topics-heading"] a[href="/${slug}/"]`)).toBeVisible();
+  }
+});
+
 test('an individual article page renders', async ({ page, request }) => {
   const res = await request.get('/rss.xml');
   const xml = await res.text();

@@ -1,6 +1,20 @@
 ---
 import Base from "../../layouts/BaseLayout.astro";
 import PostList from "../../components/PostList.astro";
+import { getCollection } from 'astro:content';
+import { isPublished } from '../../utils/publish';
+import { series } from '../../data/series';
+
+// Count only published posts, matching what SeriesLayout actually renders.
+const published = new Set(
+  (await getCollection('posts'))
+    .filter(p => isPublished(p.data.pubDate, p.data.draft))
+    .map(p => p.slug)
+);
+const topics = series.map(s => ({
+  ...s,
+  count: s.sections.flatMap(sec => sec.posts).filter(slug => published.has(slug)).length,
+}));
 ---
 <Base
   title="Articles by Reuben Ingber: Fatherhood, Engineering, Running, Life"
@@ -20,5 +34,19 @@ import PostList from "../../components/PostList.astro";
       "inLanguage": "en-US"
     }
   </script>
+  <section aria-labelledby="topics-heading" class="mb-8 md:mb-12">
+    <h2 id="topics-heading" class="text-xs font-semibold text-secondary tracking-widest mb-3">START WITH A TOPIC</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {topics.map(t => (
+        <a href={`/${t.slug}/`} class="group block bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow no-underline">
+          <div class="flex items-baseline justify-between gap-3 mb-1">
+            <span class="text-lg font-bold text-primary tracking-wide group-hover:text-accent">{t.title}</span>
+            <span class="text-xs font-semibold text-accent whitespace-nowrap">{t.count} POSTS →</span>
+          </div>
+          <p class="text-sm text-gray-700 leading-relaxed">{t.description}</p>
+        </a>
+      ))}
+    </div>
+  </section>
   <PostList />
 </Base>
