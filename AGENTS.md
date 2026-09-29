@@ -13,7 +13,10 @@ Personal blog and portfolio site for Reuben Ingber. Built with Astro 5, Tailwind
 
 ## Key Commands
 
+Node is pinned to 26 in `.nvmrc`. Every GitHub workflow reads it via `node-version-file: .nvmrc`, so bump the version there and nowhere else.
+
 ```bash
+nvm use          # switch to the Node version in .nvmrc
 npm run dev      # local dev server
 npm run build    # production build to /dist
 npm run preview  # preview the build
