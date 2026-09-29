@@ -26,7 +26,7 @@ So this week I started a little experiment: what if my iPad Pro could be that se
 
 A few clicks in Sidecar on Monday and it was working, propped up next to my monitor in its stand case. It worked nicely. Today I added a small [mount](https://www.amazon.com/dp/B0BZ3QDY9H?th=1) to my desk, and the iPad now lives there. Slack, Spotify, iMessage, Claude, and ChatGPT all have a home on it.
 
-It's not perfect. Sidecar only works in landscape, so I don't get the tall vertical screen from the video. But it's good enough to find out how much I actually like having a second display before I commit to anything more.
+It's not perfect. Sidecar only works in landscape, so I don't get the tall vertical screen from the video. But it's good enough to find out how much I actually like having a second display before I commit to anything more. I am looking into an app called [Duet Display](https://www.duetdisplay.com/) which will allow me to use the display in portrait mode. If I ended up liking the set up I may make that my next investment, but I really don't want another subscription.
 
 It's a small change. About $20, and I'm using something I already owned. Maybe one day I'll upgrade to one of those [portable monitors](https://www.amazon.com/Espresso-Lite-Portable-Monitor-Black/dp/B0G76H94SY).
 
