@@ -121,6 +121,9 @@ function getListingImageConfig(imageUrl) {
     </div>
   </section>
 
+  <!-- Optional content between the recent cards and the rest (e.g. /articles topic links) -->
+  <slot name="after-recent" />
+
   <!-- All Articles List -->
   {posts.length > 4 && (
     <section>
