@@ -4,7 +4,11 @@ import { getImageConfig as getCloudinaryConfig } from '../utils/cloudinary';
 import { isPublished } from '../utils/publish';
 import { createExcerpt, slugifyCategory } from '../utils/content';
 
-const { limit } = Astro.props;
+// featured: how many posts get image cards before the compact list.
+// recentHeading / moreHeading are optional section labels (used on /articles;
+// the homepage supplies its own heading).
+const { limit, featured = 4, recentHeading, moreHeading } = Astro.props;
+const sectionHeadingClass = "text-xs font-semibold text-secondary tracking-widest mb-3";
 
 const allPosts = (await getCollection('posts'))
   .filter(p => isPublished(p.data.pubDate, p.data.draft))
@@ -35,9 +39,10 @@ function getListingImageConfig(imageUrl) {
 </style>
 <div class="space-y-8 md:space-y-12">
   <!-- Recent Posts Cards -->
-  <section>
+  <section aria-labelledby={recentHeading ? 'recent-heading' : undefined}>
+    {recentHeading && <h2 id="recent-heading" class={sectionHeadingClass}>{recentHeading.toUpperCase()}</h2>}
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-      {posts.slice(0, 4).map((p, index) => {
+      {posts.slice(0, featured).map((p, index) => {
         const imageConfig = getListingImageConfig(p.data.image);
         const uniqueId = `listing-${index}`;
         
@@ -121,14 +126,15 @@ function getListingImageConfig(imageUrl) {
     </div>
   </section>
 
-  <!-- Optional content between the recent cards and the rest (e.g. /articles topic links) -->
+  <!-- Optional content between the featured cards and the rest (e.g. /articles topic links) -->
   <slot name="after-recent" />
 
   <!-- All Articles List -->
-  {posts.length > 4 && (
-    <section>
+  {posts.length > featured && (
+    <section aria-labelledby={moreHeading ? 'more-heading' : undefined}>
+      {moreHeading && <h2 id="more-heading" class={sectionHeadingClass}>{moreHeading.toUpperCase()}</h2>}
       <div class="space-y-4 md:space-y-3">
-        {posts.slice(4).map((p) => (
+        {posts.slice(featured).map((p) => (
           <article class="py-4 md:py-3 border-b border-gray-100 last:border-b-0 hover:bg-gray-50 transition-colors rounded px-2">
             
             {/* Mobile: Stacked Layout */}
