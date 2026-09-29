@@ -10,8 +10,6 @@ description: "After years on a single monitor, I turned the iPad Pro I already o
 
 Claude, ChatGPT, and Slack are open on my screen all day now. And all day, I'm hopping between them.
 
-<!-- TODO: add one specific moment here, e.g. the last time a chat window got buried mid-meeting -->
-
 So when I came across a [YouTube video](https://www.youtube.com/watch?v=K7gWmNFYoYg&t=931s) where someone added a secondary vertical display just for chat windows, it stuck with me.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/K7gWmNFYoYg?si=VESM64667-ppHSQO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
