@@ -1,9 +1,9 @@
 ---
 title: "Adding a Secondary Display"
 subTitle: "Giving my chat windows their own screen, for about $20"
-pubDate: "2026-09-29"
-category: "Engineering Management"
-image: "https://res.cloudinary.com/dt3vcpkj6/image/upload/[REPLACE_WITH_IMAGE_PATH]"
+pubDate: "2026-09-30"
+category: "Favorites"
+image: "web_assets/20260930-RAI00618.jpg"
 tags: ["ai", "gear", "productivity", "personal"]
 description: "After years on a single monitor, I turned the iPad Pro I already owned into a second screen for Slack, Claude, and ChatGPT."
 ---
