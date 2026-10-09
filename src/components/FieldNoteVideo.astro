@@ -1,0 +1,28 @@
+---
+import { getVideoConfig } from '../utils/cloudinary';
+
+interface Props {
+  video: string;
+  alt: string;
+}
+
+const { video, alt } = Astro.props;
+const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
+const config = getVideoConfig(video, cloudName);
+---
+
+{config && (
+  <div class="fn-video mb-5 flex justify-center">
+    <video
+      src={config.src}
+      poster={config.poster}
+      aria-label={alt}
+      class="block w-auto h-auto max-w-full max-h-[640px] rounded-md bg-black"
+      controls
+      playsinline
+      muted
+      loop
+      preload="metadata"
+    ></video>
+  </div>
+)}

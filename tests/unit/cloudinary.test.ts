@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { getImageConfig, getOgImageUrl } from '../../src/utils/cloudinary';
+import { getImageConfig, getOgImageUrl, getVideoConfig } from '../../src/utils/cloudinary';
 
 const cloudName = 'demo-cloud';
 const widths = [200, 400, 800];
@@ -93,5 +93,38 @@ describe('getOgImageUrl', () => {
     expect(getOgImageUrl('/assets/images/foo.png', cloudName)).toBe(
       'https://reubeningber.com/assets/images/foo.png'
     );
+  });
+});
+
+describe('getVideoConfig', () => {
+  it('returns null for missing input', () => {
+    expect(getVideoConfig(null, cloudName)).toBeNull();
+    expect(getVideoConfig(undefined, cloudName)).toBeNull();
+  });
+
+  it('builds src and poster urls for a web_assets path', () => {
+    expect(getVideoConfig('web_assets/clip.mp4', cloudName)).toEqual({
+      type: 'cloudinary',
+      src: 'https://res.cloudinary.com/demo-cloud/video/upload/q_auto/v1761245976/web_assets/clip.mp4',
+      poster: 'https://res.cloudinary.com/demo-cloud/video/upload/so_0,f_auto,q_auto,w_800/v1761245976/web_assets/clip.jpg',
+    });
+  });
+
+  it('adds the .mp4 extension when the path has none', () => {
+    expect(getVideoConfig('web_assets/clip', cloudName)?.src).toBe(
+      'https://res.cloudinary.com/demo-cloud/video/upload/q_auto/v1761245976/web_assets/clip.mp4'
+    );
+  });
+
+  it('re-derives src and poster from a full cloudinary video URL', () => {
+    const url = 'https://res.cloudinary.com/demo-cloud/video/upload/v1791584141/web_assets/clip.mov';
+    const config = getVideoConfig(url, cloudName);
+    expect(config?.src).toBe('https://res.cloudinary.com/demo-cloud/video/upload/q_auto/v1761245976/web_assets/clip.mp4');
+    expect(config?.poster).toContain('so_0');
+  });
+
+  it('passes other URLs through without a poster', () => {
+    const url = 'https://example.com/clip.mp4';
+    expect(getVideoConfig(url, cloudName)).toEqual({ type: 'external', src: url });
   });
 });

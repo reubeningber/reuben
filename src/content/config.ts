@@ -24,11 +24,12 @@ const fieldNotes = defineCollection({
   schema: z.object({
     title: z.string(),
     pubDate: z.coerce.date(),
-    type: z.enum(['link', 'image', 'embed', 'slideshow']),
+    type: z.enum(['link', 'image', 'embed', 'slideshow', 'video']),
     url: z.string().url().optional(),
     image: z.string().optional(),
     images: z.array(z.string()).optional(),
     embed: z.string().optional(),
+    video: z.string().optional(),
     draft: z.boolean().default(false),
   })
 });

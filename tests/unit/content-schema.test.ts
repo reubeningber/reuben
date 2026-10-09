@@ -64,12 +64,12 @@ describe('field-notes collection schema', () => {
   });
 
   it('rejects an invalid type', () => {
-    const result = fieldNotesSchema.safeParse({ title: 'X', pubDate: '2026-01-01', type: 'video' });
+    const result = fieldNotesSchema.safeParse({ title: 'X', pubDate: '2026-01-01', type: 'gif' });
     expect(result.success).toBe(false);
   });
 
   it('accepts each valid type without requiring type-specific fields', () => {
-    for (const type of ['link', 'image', 'embed', 'slideshow']) {
+    for (const type of ['link', 'image', 'embed', 'slideshow', 'video']) {
       const result = fieldNotesSchema.safeParse({ title: 'X', pubDate: '2026-01-01', type });
       expect(result.success).toBe(true);
     }
@@ -91,6 +91,16 @@ describe('field-notes collection schema', () => {
       pubDate: '2026-01-01',
       type: 'slideshow',
       images: ['web_assets/a.jpg', 'web_assets/b.jpg'],
+    });
+    expect(result.success).toBe(true);
+  });
+
+  it('accepts a video entry with a video path', () => {
+    const result = fieldNotesSchema.safeParse({
+      title: 'X',
+      pubDate: '2026-01-01',
+      type: 'video',
+      video: 'web_assets/clip.mp4',
     });
     expect(result.success).toBe(true);
   });
