@@ -87,15 +87,17 @@ Posts with a `pubDate` in the future are hidden automatically — the build filt
 
 ### Field Notes (`src/content/field-notes/`)
 
-Short-form entries: links, images, or embeds with optional commentary. Lives at `/field-notes/`. Paginated at 10 per page. Frontmatter fields:
+Short-form entries: links, images, slideshows, videos, or embeds with optional commentary. Lives at `/field-notes/`. Paginated at 10 per page. Frontmatter fields:
 
 | Field | Type | Required | Notes |
 |---|---|---|---|
 | `title` | string | yes | For `link` type, renders as an external link (↗) to `url` |
 | `pubDate` | date | yes | Controls ordering and scheduling |
-| `type` | `link` \| `image` \| `embed` | yes | Determines how the entry is rendered |
+| `type` | `link` \| `image` \| `slideshow` \| `video` \| `embed` | yes | Determines how the entry is rendered |
 | `url` | string (URL) | for link | Target URL; title becomes a link opening in new tab |
 | `image` | string | for image | Cloudinary path (e.g. `web_assets/photo.jpg`) or full URL |
+| `images` | string[] | for slideshow | List of Cloudinary paths |
+| `video` | string | for video | Cloudinary path (e.g. `web_assets/clip.mp4`, extension optional) or full URL. Cloudinary videos get `q_auto` delivery and a first-frame poster; upload with `resource_type: video` |
 | `embed` | string | for embed | Raw HTML embed code (iframe, etc.) |
 | `draft` | boolean | no | Defaults `false`; drafts hidden in production |
 

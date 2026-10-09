@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getImageConfig } from '../../utils/cloudinary';
 import { isPublished } from '../../utils/publish';
 import FieldNoteSlideshow from '../../components/FieldNoteSlideshow.astro';
+import FieldNoteVideo from '../../components/FieldNoteVideo.astro';
 
 export async function getStaticPaths({ paginate }) {
   const entries = (await getCollection('field-notes'))
@@ -58,7 +59,7 @@ const renderedEntries = await Promise.all(
 
     <div class="space-y-10">
       {renderedEntries.map(({ entry, Content }, i) => {
-        const { title, pubDate, type, url, image, images, embed } = entry.data;
+        const { title, pubDate, type, url, image, images, embed, video } = entry.data;
         const imgConfig = getImageConfig(image, cloudName, [400, 600, 800]);
         const uid = `fn-${i}`;
 
@@ -73,6 +74,7 @@ const renderedEntries = await Promise.all(
                 type === 'link' ? 'text-orange-500' :
                 type === 'image' ? 'text-blue-400' :
                 type === 'slideshow' ? 'text-blue-400' :
+                type === 'video' ? 'text-blue-400' :
                 'text-purple-400'
               }>{type}</span>
             </div>
@@ -124,6 +126,11 @@ const renderedEntries = await Promise.all(
             {/* Slideshow */}
             {type === 'slideshow' && images && images.length > 0 && (
               <FieldNoteSlideshow images={images} alt={title} />
+            )}
+
+            {/* Video */}
+            {type === 'video' && video && (
+              <FieldNoteVideo video={video} alt={title} />
             )}
 
             {/* Embed */}

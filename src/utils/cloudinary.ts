@@ -100,3 +100,43 @@ export function getOgImageUrl(imageUrl: string | null | undefined, cloudName: st
 
   return fallback;
 }
+
+export interface VideoConfig {
+  type: 'cloudinary' | 'external';
+  src: string;
+  poster?: string;
+}
+
+function makeVideoUrl(cloudName: string, path: string, transform: string): string {
+  return `https://res.cloudinary.com/${cloudName}/video/upload/${transform}/${CLOUDINARY_VERSION}/${path}`;
+}
+
+function withExtension(path: string, ext: string): string {
+  return path.replace(/\.[a-z0-9]+$/i, '') + `.${ext}`;
+}
+
+// Resolves a field-note `video` value to a playable src plus a poster frame.
+// Accepts a `web_assets/` path (extension optional) or a full Cloudinary video
+// URL; anything else (e.g. a self-hosted .mp4) is passed through untouched.
+export function getVideoConfig(
+  video: string | null | undefined,
+  cloudName: string
+): VideoConfig | null {
+  if (!video) return null;
+
+  let path: string | null = null;
+  if (video.includes('res.cloudinary.com')) {
+    path = extractCloudinaryPath(video);
+    if (!path) return { type: 'external', src: video };
+  } else if (video.startsWith('web_assets/')) {
+    path = video;
+  }
+
+  if (!path) return { type: 'external', src: video };
+
+  return {
+    type: 'cloudinary',
+    src: makeVideoUrl(cloudName, withExtension(path, 'mp4'), 'q_auto'),
+    poster: makeVideoUrl(cloudName, withExtension(path, 'jpg'), 'so_0,f_auto,q_auto,w_800'),
+  };
+}
