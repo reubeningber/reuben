@@ -8,9 +8,9 @@
 // a PR itself; the workflow's create-pull-request step handles that.
 
 import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
-import { createHash } from "node:crypto";
+import { createHash, randomBytes } from "node:crypto";
 import { lookupGenre } from "./lib/genre.mjs";
-import { field, amazonLink } from "./lib/rss.mjs";
+import { amazonLink, parseRatedDates, parseShelfWidget } from "./lib/goodreads.mjs";
 import { selectCandidates, UNDATED_YEAR } from "./lib/candidates.mjs";
 
 const GOODREADS_USER_ID = "7384813";
@@ -18,7 +18,6 @@ const DATA_DIR = new URL("../src/data/reading/", import.meta.url);
 const CURRENTLY_READING_PATH = new URL("../src/data/reading/currently-reading.json", import.meta.url);
 const NOW_PAGE_PATH = new URL("../src/pages/now.astro", import.meta.url);
 const READING_PAGE_PATH = new URL("../src/pages/reading.astro", import.meta.url);
-const UNDATED_LOOKBACK_DAYS = 14;
 const LAST_UPDATED_RE = /Last updated on [A-Za-z]+ \d{1,2}, \d{4}/;
 
 const CLOUD_NAME = requireEnv("PUBLIC_CLOUDINARY_CLOUD_NAME");
@@ -34,23 +33,37 @@ function requireEnv(name) {
   return v;
 }
 
-async function fetchShelf(params) {
-  const url = `https://www.goodreads.com/review/list_rss/${GOODREADS_USER_ID}?${params}`;
-  const res = await fetch(url, { headers: { "User-Agent": "reubeningber.com reading-page-sync" } });
-  if (!res.ok) throw new Error(`Goodreads RSS fetch failed: ${res.status} ${url}`);
-  const xml = await res.text();
-  const items = xml.match(/<item>[\s\S]*?<\/item>/g) ?? [];
-  return items.map((it) => ({
-    title: field(it, "title"),
-    author: field(it, "author_name").replace(/\s+/g, " ").trim(),
-    isbn: field(it, "isbn"),
-    img: field(it, "book_large_image_url") || field(it, "book_medium_image_url"),
-    bookId: field(it, "book_id"),
-    dateRead: field(it, "user_read_at") || null,
-    dateAdded: field(it, "user_date_added") || null,
-    rating: Number(field(it, "user_rating")) || 0,
-    audio: field(it, "user_shelves").split(",").map((s) => s.trim()).includes("audio"),
-  }));
+const USER_AGENT = "reubeningber.com reading-page-sync";
+
+async function fetchGoodreads(url) {
+  const res = await fetch(url, { headers: { "User-Agent": USER_AGENT } });
+  if (!res.ok) throw new Error(`Goodreads fetch failed: ${res.status} ${url}`);
+  return res.text();
+}
+
+// The widget returns the shelf's 100 most recent books at most, with no paging,
+// which is plenty for a weekly diff. Goodreads caches its output per widget_id
+// and ignores every other param on later requests, so each fetch needs a new one.
+async function fetchShelf(shelf, params = "") {
+  const url =
+    `https://www.goodreads.com/review/custom_widget/${GOODREADS_USER_ID}` +
+    `?shelf=${shelf}&num_books=100&show_title=1&show_author=1&show_cover=1&show_rating=1&show_tags=1` +
+    `&widget_id=${randomBytes(8).toString("hex")}${params}`;
+  const books = parseShelfWidget(await fetchGoodreads(url));
+  for (const b of books) {
+    if (!b.bookId) console.warn(`  skipped (no Goodreads cover to get a book ID from): ${b.title}`);
+  }
+  return books.filter((b) => b.bookId);
+}
+
+async function fetchRatedDates() {
+  return parseRatedDates(
+    await fetchGoodreads(`https://www.goodreads.com/widgets/user_update_widget?num_updates=10&user=${GOODREADS_USER_ID}`)
+  );
+}
+
+function loadCurrentlyReading() {
+  return existsSync(CURRENTLY_READING_PATH) ? JSON.parse(readFileSync(CURRENTLY_READING_PATH, "utf-8")) : [];
 }
 
 function loadExisting() {
@@ -59,8 +72,6 @@ function loadExisting() {
     : [];
   const byYear = {};
   const existingIds = new Set();
-  const existingDatedReads = new Set();
-  const existingIdsWithDate = new Set();
   for (const file of files) {
     const year = file === `${UNDATED_YEAR}.json` ? UNDATED_YEAR : Number(file.replace(".json", ""));
     const filePath = new URL(file, DATA_DIR);
@@ -69,21 +80,14 @@ function loadExisting() {
     for (const b of books) {
       const m = b.cover.match(/reading_covers\/(\w+)/);
       if (m) existingIds.add(m[1]);
-      if (m && b.dateRead) {
-        existingDatedReads.add(`${m[1]}|${b.dateRead}`);
-        existingIdsWithDate.add(m[1]);
-      }
     }
   }
-  return { byYear, existingIds, existingDatedReads, existingIdsWithDate };
+  return { byYear, existingIds };
 }
 
-async function uploadCover(bookId, imgUrl, isbn) {
+async function uploadCover(bookId, imgUrl) {
   const publicId = `reading_covers/${bookId}`;
-  let bytes = await tryDownload(imgUrl);
-  if (!bytes && isbn) {
-    bytes = await tryDownload(`https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`);
-  }
+  const bytes = await tryDownload(imgUrl);
   if (!bytes) return { ok: false };
 
   const timestamp = Math.floor(Date.now() / 1000);
@@ -133,10 +137,8 @@ function bumpLastUpdated(pagePath) {
 }
 
 async function syncCurrentlyReading(knownCoverIds) {
-  const shelf = await fetchShelf("shelf=currently-reading&per_page=100");
-  const existing = existsSync(CURRENTLY_READING_PATH)
-    ? JSON.parse(readFileSync(CURRENTLY_READING_PATH, "utf-8"))
-    : [];
+  const shelf = await fetchShelf("currently-reading");
+  const existing = loadCurrentlyReading();
   const existingByBookId = new Map(existing.map((e) => [coverIdOf(e), e]));
   const knownIds = new Set([...knownCoverIds, ...existingByBookId.keys()]);
 
@@ -144,7 +146,7 @@ async function syncCurrentlyReading(knownCoverIds) {
   for (const b of shelf) {
     let cover = `reading_covers/${b.bookId}`;
     if (!knownIds.has(b.bookId)) {
-      const upload = await uploadCover(b.bookId, b.img, b.isbn);
+      const upload = await uploadCover(b.bookId, b.img);
       if (!upload.ok) {
         console.warn(`  skipped currently-reading cover (upload failed): ${b.title}`);
         continue;
@@ -152,11 +154,12 @@ async function syncCurrentlyReading(knownCoverIds) {
       cover = upload.publicId;
     }
 
+    const existingEntry = existingByBookId.get(b.bookId);
     const entry = {
       title: b.title,
       author: b.author,
       cover,
-      amazon: amazonLink(b.isbn, b.title, b.author),
+      amazon: existingEntry?.amazon ?? amazonLink(null, b.title, b.author),
     };
     if (b.audio) entry.audio = true;
 
@@ -164,11 +167,10 @@ async function syncCurrentlyReading(knownCoverIds) {
     // heuristic as fallback — see lib/genre.mjs) is only worth re-running
     // when we don't already have an answer for this book, since currently-
     // reading entries are rebuilt from the live shelf every sync.
-    const existingEntry = existingByBookId.get(b.bookId);
     if (existingEntry?.genre) {
       entry.genre = existingEntry.genre;
     } else {
-      const genre = await lookupGenre({ isbn: b.isbn, title: b.title, author: b.author });
+      const genre = await lookupGenre({ title: b.title, author: b.author });
       if (genre) entry.genre = genre;
     }
 
@@ -183,12 +185,13 @@ async function syncCurrentlyReading(knownCoverIds) {
 }
 
 async function main() {
-  const { byYear, existingIds, existingDatedReads, existingIdsWithDate } = loadExisting();
+  const { byYear, existingIds } = loadExisting();
+  const previouslyReading = new Map(loadCurrentlyReading().map((e) => [coverIdOf(e), e]));
 
-  const dated = await fetchShelf("shelf=read&sort=date_read&order=d&per_page=100");
-  const defaultOrder = await fetchShelf("shelf=read&per_page=100");
+  const shelf = await fetchShelf("read", "&sort=date_read&order=d");
+  const ratedDates = await fetchRatedDates();
 
-  const candidates = selectCandidates(dated, defaultOrder, existingIds, existingDatedReads, existingIdsWithDate, UNDATED_LOOKBACK_DAYS);
+  const candidates = selectCandidates(shelf, existingIds, ratedDates);
 
   if (candidates.length === 0) {
     console.log("No new read books found.");
@@ -199,7 +202,7 @@ async function main() {
   const changedYears = new Set();
   for (const c of candidates) {
     console.log(`  - ${c.title} (${c.year})`);
-    const upload = await uploadCover(c.bookId, c.img, c.isbn);
+    const upload = await uploadCover(c.bookId, c.img);
     if (!upload.ok) {
       console.warn(`    skipped (cover upload failed): ${c.title}`);
       continue;
@@ -208,12 +211,14 @@ async function main() {
       title: c.title,
       author: c.author,
       cover: upload.publicId,
-      amazon: amazonLink(c.isbn, c.title, c.author),
+      // A book usually passes through currently-reading first, so keep what
+      // that entry already has rather than looking it up again.
+      amazon: previouslyReading.get(c.bookId)?.amazon ?? amazonLink(null, c.title, c.author),
     };
     if (c.dateReadIso) entry.dateRead = c.dateReadIso;
     if (c.rating > 0) entry.rating = c.rating;
     if (c.audio) entry.audio = true;
-    const genre = await lookupGenre({ isbn: c.isbn, title: c.title, author: c.author });
+    const genre = previouslyReading.get(c.bookId)?.genre ?? (await lookupGenre({ title: c.title, author: c.author }));
     if (genre) entry.genre = genre;
     byYear[c.year] = byYear[c.year] ?? [];
     byYear[c.year].push(entry);
@@ -244,7 +249,12 @@ async function main() {
 
   const summaryParts = [];
   if (added.length > 0) {
-    summaryParts.push(`Added ${added.length} book(s) to /reading:\n${added.map((e) => `- ${e.title}`).join("\n")}`);
+    const lines = added.map((e) =>
+      e.dateRead
+        ? `- ${e.title} (dated ${e.dateRead} from its Goodreads rating, check it's the finish date)`
+        : `- ${e.title} (no date available, filed under ${UNDATED_YEAR}, move it by hand)`
+    );
+    summaryParts.push(`Added ${added.length} book(s) to /reading:\n${lines.join("\n")}`);
   }
   if (currentlyReading.changed) {
     summaryParts.push(

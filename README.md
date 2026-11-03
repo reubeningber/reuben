@@ -177,7 +177,7 @@ Creates a new blog post with interactive prompts.
 
 ### `scripts/update-reading.mjs`
 
-Diffs Reuben's Goodreads "read" shelf against `src/data/reading/{year}.json`, uploads covers for any new books to Cloudinary (`reading_covers/{goodreads_book_id}`), looks up a genre for each new book via `scripts/lib/genre.mjs` (Open Library, no key required), and writes the updated year files. Runs weekly via `.github/workflows/update-reading.yml`, which opens a PR when there's anything new. Requires `CLOUDINARY_API_KEY` and `CLOUDINARY_API_SECRET` (repo secrets in CI, or in local `.env` to run manually):
+Diffs Reuben's Goodreads "read" shelf (via its public embed widget) against `src/data/reading/{year}.json`, uploads covers for any new books to Cloudinary (`reading_covers/{goodreads_book_id}`), looks up a genre for each new book via `scripts/lib/genre.mjs` (Open Library, no key required), and writes the updated year files. Runs weekly via `.github/workflows/update-reading.yml`, which opens a PR when there's anything new. Requires `CLOUDINARY_API_KEY` and `CLOUDINARY_API_SECRET` (repo secrets in CI, or in local `.env` to run manually):
 ```bash
 node scripts/update-reading.mjs
 ```
