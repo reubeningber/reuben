@@ -3,8 +3,8 @@ title: "My NYC Marathon Photos Were Published on Business Insider"
 subTitle: "Ten years on the engineering team, and now my photos are on the site."
 pubDate: "2026-11-04"
 category: Photography
-image: "web_assets/as-seen-in-business-insider-browser-1920x960.png"
-imageAlt: "As seen in Business Insider, next to a browser window showing my NYC Marathon photo leading the story"
+image: "web_assets/as-seen-on-business-insider-browser-1920x960.png"
+imageAlt: "As seen on Business Insider, next to a browser window showing my NYC Marathon photo leading the story"
 tags: ["photography", "nyc", "personal", "street-photography"]
 description: "I've been on the engineering team at Business Insider for over 10 years. This week, my NYC Marathon photos ran on the site."
 ---
